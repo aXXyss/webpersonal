@@ -1,0 +1,15 @@
+{% extends "core/base.html" %} 
+
+{% load i18n %}
+
+{% block meta %}
+    {{ block.super }}
+    <meta name="robots" content="noindex, nofollow">
+{% endblock %}
+
+
+{% block content %}
+    <h1>Has cerrado la sesión correctamente</h1>
+    <p><a href="{% url 'login' %}">Volver a iniciar sesión</a></p>
+    <p><a href="/">Volver a la página principal</a></p>
+{% endblock %}

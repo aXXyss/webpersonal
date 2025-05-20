@@ -1,0 +1,31 @@
+{% extends "core/base.html" %}
+
+{% load i18n %}
+{% block title %}{% blocktrans %}Registro completado{% endblocktrans %}{% endblock %}
+
+{% block background %}{% load static %}{% static 'core/img/home-bg.jpg' %}{% endblock %}
+
+{% block headers %}
+<h1 class="text-white font-weight-black pt-3 mt-n5">{% trans "Registro Completado" %}</h1>
+<p class="lead text-white mt-3"></p>
+{% endblock %}
+
+{% block meta %}
+    {{ block.super }}
+    <meta name="robots" content="noindex, nofollow">
+{% endblock %}
+
+
+{% block content %}
+<main role="main" class="container">
+   <div class="starter-template">
+      <h1>{% trans "Tu usuario ha sido creado con exito" %}</h1>
+      <p class="lead">{% trans "Si la página no es redirigida en 5 segundos pulsa" %} <a href="{% url 'users:login' %}">{% trans "aquí" %}</a></p>
+   </div>
+</main>
+<script>
+   setTimeout(function(){ 
+       window.location.replace("{% url 'users:login' %}");
+   }, 5000);
+</script>
+{% endblock %}

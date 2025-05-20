@@ -1,0 +1,55 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% load i18n %}
+{% block title %}{% blocktrans %}Contact{% endblocktrans %}{% endblock %}
+
+{% block background %}{% load static %}{% static 'core/img/contact-bg.jpg' %}{% endblock %}
+
+{% block headers %}
+<h1>Contacto</h1>
+<span class="subheading">{% trans "Asesoría - Desarrollo - Servicios" %}</span>
+{% endblock %}
+
+{% block content %}    
+    
+<section class="page-section about-heading">
+    <div class="container">
+        <div class="about-heading-content">
+            <div class="row">
+                <div class="col-xl-8 col-lg-8 col-md-4 mx-auto">
+                    <div class="bg-secondary rounded p-5">
+                        <h2 class="section-heading mb-4">
+                            <span class="section-heading-lower">{% trans "Formulario de Contacto" %}</span>
+                        </h2>
+
+                        <h2>{% trans "Gracias por su mensaje" %}</h2>
+                        <p>{% trans "En breve nos pondremos en contacto con Usted." %}</p>
+
+
+                    </div>
+                </div>
+
+                <!-- Información sobre la protección de datos -->
+                <div class="col-xl-4 col-lg-4 col-md-4 mx-auto"> 
+                    <div class="bg-light border rounded p-2">  
+                        <div class="small text-justify bg-light">
+        
+                            <h6>{% blocktrans %}<strong>Información básica sobre la protección de datos</strong>{% endblocktrans %}</h6>
+                            <p>{% blocktrans %}<strong>Responsable del tratamiento</strong><br />Joaquín Denis Tremols{% endblocktrans %}</p>
+                            <p>{% blocktrans %}<strong>Dirección del responsable</strong><br />Calle 25 de Abril 10, piso 4, puerta 8, CP 46900, Torrent (Valencia/València){% endblocktrans %}</p>
+                            <p>{% blocktrans %}<strong>Finalidad</strong><br />Sus datos serán usados para poder atender sus solicitudes y prestarle nuestros servicios.{% endblocktrans %}</p>
+                            <p>{% blocktrans %}<strong>Publicidad</strong><br />Solo le enviaremos publicidad con su autorización previa, que podrá facilitarnos mediante la casilla correspondiente establecida al efecto.{% endblocktrans %}</p>
+                            <p>{% blocktrans %}<strong>Legitimación</strong><br />Únicamente trataremos sus datos con su consentimiento previo, que podrá facilitarnos mediante la casilla correspondiente establecida al efecto.{% endblocktrans %}</p>
+                            <p>{% blocktrans %}<strong>Destinatarios</strong><br />Con carácter general, sólo el personal de nuestra entidad que esté debidamente autorizado podrá tener conocimiento de la información que le pedimos.{% endblocktrans %}</p>
+                            <p>{% blocktrans %}<strong>Derechos</strong><br />Tiene derecho a saber qué información tenemos sobre usted, corregirla y eliminarla, tal y como se explica en la información adicional disponible en nuestra página web. Así mismo, también podrá ejercer el derecho de Portabilidad, solicitando el traspaso de su información a otra entidad.{% endblocktrans %}</p>
+                            <p>{% blocktrans %}<strong>Información adicional</strong><br />Más información en el apartado "<a href="/page/1/politica-pivacidad/">Política de privacidad</a>" de nuestra página web.{% endblocktrans %}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

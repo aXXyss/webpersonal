@@ -1,0 +1,37 @@
+{% extends 'core/base.html' %}
+
+{% load i18n %}
+{% block title %}{% blocktrans %}Portada{% endblocktrans %}{% endblock %}
+{% block meta_description %}{% blocktrans %}Página principal de aXXyss soluciones. Descubre nuestros servicios de tecnología de la información y programación.{% endblocktrans %}{% endblock %}
+
+{% block background %}{% load static %}{% static 'core/img/home-bg.jpg' %}{% endblock %}
+
+{% block headers %}
+<h1 class="text-white font-weight-black pt-3 mt-n5">Joaquin Denis</h1>
+<p class="lead text-white mt-3">{% trans "Desarrollador Full-Stack | Desarrollador de Sistemas de Gestión a Medida" %}</p>
+{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-lg-3 col-md-4 offset-lg-1">
+        <img class="img-fluid" src="{% static 'core/img/desarrollador.jpg' %}" alt="Concepto de desarrollo web y programación">
+    </div>
+    <div class="col-lg-7 col-md-8">
+
+        <h2>{% blocktrans %}Creación de Soluciones a Medida{% endblocktrans %}</h2>
+        <p>{% blocktrans %}Creando <b>soluciones web</b> o <b>aplicaciones de gestión</b> que entienden el negocio desde sus cimientos. Nuestro enfoque es comprender a 
+            fondo sus procesos y objetivos para desarrollar soluciones que realmente impulsen su éxito.{% endblocktrans %}</p>
+
+        <h2>{% blocktrans %}Experiencia y Enfoque Integral{% endblocktrans %}</h2>
+        <p>{% blocktrans %}Mi trayectoria de más de dos décadas diseñando e implementando sistemas de gestión a medida me permite abordar los proyectos web con una
+                perspectiva integral, enfocándome en la eficiencia, la escalabilidad y la alineación con los objetivos de negocio. Este enfoque asegura una comunicación clara y una solución 
+                final que realmente satisface sus necesidades.{% endblocktrans %}</p>
+
+        <h2>{% trans "¿Necesita una Solución? ¡Contáctanos!" %}</h2>
+        <p>{% trans "¿Necesita un <b>sitio web</b> o una <b>solución de gestión a medida</b>? ¿Busca un <b>desarrollador full-stack</b> con una sólida base en <b>sistemas de gestión</b>? ¡Contacta con nosotros hoy mismo para discutir tu proyecto y cómo podemos ayudarte a alcanzar tus objetivos!" %}</p>
+
+        <p><a class="nav-link" href="{% url 'contact:contact' %}">{% trans "Contacto" %}</a></p>
+
+    </div>
+</div>
+{% endblock %}

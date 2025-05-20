@@ -1,0 +1,50 @@
+{% extends 'core/base.html' %}
+
+{% load i18n %}
+{% block title %}{% blocktrans %}Blog{% endblocktrans %}{% endblock %}
+{% block meta_description %}{% blocktrans %}Descubre las últimas noticias, artículos y tutoriales sobre tecnología y programación.{% endblocktrans %}{% endblock %}
+
+
+{% block background %}{% load static %}{% static 'core/img/blog-bg.jpg' %}{% endblock %}
+
+{% block headers %}
+<h1 class="text-white font-weight-black pt-3 mt-n5">{% trans "Blog" %}</h1>
+<p class="lead text-white mt-3">{% trans "Últimas publicaciones" %}</p>
+{% endblock %}
+
+{% block content %}
+
+        {% for post in posts %}
+        <div>
+            <h2><a href="{% url 'blog:post_detail' slug=post.slug %}">{{ post.title }}</a></h2>
+            <p>
+                {% trans "Publicado el" %}: {{ post.published_date|date:"d M Y" }} {% trans "por" %}
+                {% if post.author.userprofile.avatar %}
+                    <img src="{{ post.author.userprofile.avatar.url }}" alt="{{ post.author.get_full_name|default:post.author.username }}" style="width: 30px; height: 30px; border-radius: 50%; vertical-align: middle; margin-right: 5px;">
+                {% endif %}
+                {{ post.author.get_full_name|default:post.author.username }}
+            </p>
+            {% if post.image %}
+                <img src="{{ post.image.url }}" alt="{{ post.title }}" style="max-width: 100%; height: auto;">
+            {% endif %}
+            <p>{{ post.content|truncatewords:30|safe }}</p>
+            <div>
+                <em>#</em>
+                {% for category in post.categories.all %}
+                    <em><a href="{% url 'blog:post_list_by_category' slug=category.slug %}">{{ category.name }}</a>{% if not forloop.last %}, {% endif %}</em>
+                {% empty %}
+                    <em>{% trans "Sin categorías" %}</em>
+                {% endfor %}
+            </div>
+            <a href="{% url 'blog:post_detail' slug=post.slug %}">{% trans "Leer más..." %}</a>
+        </div>
+        <hr>
+    {% empty %}
+        {% if category %}
+            <p>{% blocktrans with category_name=category.name %}No hay artículos publicados en la categoría "{{ category_name }}"{% endblocktrans %}.</p>
+        {% else %}
+            <p>{% trans "Todavía no hay artículos publicados." %}</p>
+        {% endif %}
+    {% endfor %}
+
+{% endblock %}

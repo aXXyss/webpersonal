@@ -1,0 +1,351 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-05-17 12:37+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: contact/forms.py:8
+msgid "Nombre"
+msgstr "Nom"
+
+#: contact/forms.py:12
+msgid "Nombre y Apellidos"
+msgstr "Nom et Prénom"
+
+#: contact/forms.py:18 contact/forms.py:22
+msgid "Empresa"
+msgstr "Société"
+
+#: contact/forms.py:28
+msgid "Email"
+msgstr "Email"
+
+#: contact/forms.py:32
+msgid "Correo electrónico"
+msgstr "Courrier électronique"
+
+#: contact/forms.py:38 contact/forms.py:42
+msgid "Zona geográfica"
+msgstr "Zone géographique"
+
+#: contact/forms.py:48
+msgid "Contenido"
+msgstr "Contenu"
+
+#: contact/forms.py:53
+msgid "Mensaje"
+msgstr "Message"
+
+#: contact/forms.py:60
+msgid "Aviso Legal"
+msgstr "Mentions légales"
+
+#: contact/forms.py:65
+msgid "Publicidad"
+msgstr "Publicité"
+
+#: contact/templates/contact/contact copy.html:5
+msgid "Contact"
+msgstr "Contact"
+
+#: contact/templates/contact/contact copy.html:6
+#: contact/templates/contact/contact.html:6
+msgid ""
+"Ponte en contacto con aXXyss soluciones para consultas sobre tecnología de "
+"la información, programación y soluciones Linux. Envía tu mensaje a través "
+"de nuestro formulario de contacto."
+msgstr ""
+
+#: contact/templates/contact/contact copy.html:12
+#: contact/templates/contact/contact.html:12
+msgid "Contacto"
+msgstr "Contact"
+
+#: contact/templates/contact/contact copy.html:13
+#: contact/templates/contact/contact.html:13
+#: contact/templates/contact/success.html:11
+msgid "Asesoría - Desarrollo - Servicios"
+msgstr "Conseil - Développement - Services"
+
+#: contact/templates/contact/contact copy.html:24
+#: contact/templates/contact/contact.html:23
+msgid "Formulario de contacto"
+msgstr "Formulaire de contact"
+
+#: contact/templates/contact/contact copy.html:66
+#: contact/templates/contact/contact.html:62
+msgid "He leído y acepto la"
+msgstr "J'ai lu et j'accepte la "
+
+#: contact/templates/contact/contact copy.html:66
+#: contact/templates/contact/contact.html:62
+msgid "Política de privacidad"
+msgstr "Politique de confidentialité"
+
+#: contact/templates/contact/contact copy.html:74
+#: contact/templates/contact/contact.html:70
+msgid ""
+"Consiento el uso de mis datos personales para recibir publicidad de su "
+"entidad."
+msgstr ""
+"Je consens à l'utilisation de mes données personnelles pour recevoir de la "
+"publicité de votre entité. "
+
+#: contact/templates/contact/contact copy.html:88
+#: contact/templates/contact/contact.html:83
+msgid "Enviar mensaje"
+msgstr "Envoyer un message"
+
+#: contact/templates/contact/contact copy.html:105
+#: contact/templates/contact/success.html:38
+msgid "<strong>Información básica sobre la protección de datos</strong>"
+msgstr "<strong>Informations de base sur la protection des données</strong>"
+
+#: contact/templates/contact/success.html:39
+msgid "<strong>Responsable del tratamiento</strong><br />Joaquín Denis Tremols"
+msgstr "<strong>Responsable du traitement</strong><br />Joaquín Denis Tremols"
+
+#: contact/templates/contact/contact copy.html:107
+msgid ""
+"<strong>Dirección del responsable</strong><br />Calle 25 de Abril 10, piso "
+"4, puerta 8, CP 46900, Torrent (Valencia/València)- España"
+msgstr ""
+"<strong>Adresse du responsable</strong><br />Calle 25 de Abril 10, piso 4, "
+"porte 8, CP 46900, Torrent (Valence/València)"
+
+#: contact/templates/contact/contact copy.html:108
+#: contact/templates/contact/success.html:41
+msgid ""
+"<strong>Finalidad</strong><br />Sus datos serán usados para poder atender "
+"sus solicitudes y prestarle nuestros servicios."
+msgstr ""
+"<strong>Objectif</strong><br />Vos données seront utilisées pour pouvoir "
+"répondre à vos demandes et vous fournir nos services."
+
+#: contact/templates/contact/contact copy.html:109
+msgid ""
+"<strong>Información de interés</strong><br />Únicamente le enviaremos "
+"comunicaciones de su interés con su autorización previa, que podrá "
+"facilitarnos mediante la casilla correspondiente establecida al efecto."
+msgstr ""
+"<strong>Informations d'intérêt</strong><br />Nous vous enverrons uniquement "
+"de la publicité avec votre autorisation préalable, que vous pouvez nous "
+"fournir en cochant la case correspondante établie à cet effet."
+
+#: contact/templates/contact/contact copy.html:110
+#: contact/templates/contact/success.html:43
+msgid ""
+"<strong>Legitimación</strong><br />Únicamente trataremos sus datos con su "
+"consentimiento previo, que podrá facilitarnos mediante la casilla "
+"correspondiente establecida al efecto."
+msgstr ""
+"<strong>Légitimation</strong><br />Nous ne traiterons vos données qu'avec "
+"votre consentement préalable, que vous pouvez nous fournir en cochant la "
+"case correspondante établie à cet effet."
+
+#: contact/templates/contact/contact copy.html:111
+#: contact/templates/contact/success.html:44
+msgid ""
+"<strong>Destinatarios</strong><br />Con carácter general, sólo el personal "
+"de nuestra entidad que esté debidamente autorizado podrá tener conocimiento "
+"de la información que le pedimos."
+msgstr ""
+"<strong>Destinataires</strong><br />Généralement, uniquement le personnel de "
+"notre entité dûment autorisé peut avoir connaissance des informations que "
+"nous avons demandées."
+
+#: contact/templates/contact/contact copy.html:112
+msgid ""
+"<strong>Derechos</strong><br />Tiene derecho a saber qué información tenemos "
+"sobre usted, corregirla y eliminarla, tal y como se explica en la "
+"información adicional disponible en nuestra página web."
+msgstr ""
+"<strong>Droits</strong><br />Vous avez le droit de savoir quelles "
+"informations nous détenons à votre sujet, la corriger et la supprimer, comme "
+"expliqué dans les informations complémentaires disponibles sur notre site "
+"web. De même, Vous pouvez exercer le droit à la portabilité en demandant le "
+"transfert de vos informations à une autre entité."
+
+#: contact/templates/contact/contact copy.html:113
+msgid ""
+"<strong>Información adicional</strong><br />Más información en el apartado "
+"\"<a href=\"/page/2/politica-de-privacidad/\">Política de privacidad</a>\" "
+"de nuestra página web."
+msgstr ""
+"<strong>Informations complémentaires: </strong><br />Plus d'informations "
+"dans la section \"<a href=\"/page/1/privacy-policy/\">Politique de "
+"confidentialité</a>\" de notre site Web."
+
+#: contact/templates/contact/contact.html:97
+msgid "Información sobre la protección de datos"
+msgstr "<strong>Informations de base sur la protection des données</strong>"
+
+#: contact/templates/contact/contact.html:99
+msgid "<strong>Responsable del tratamiento</strong>"
+msgstr "<strong>Responsable du traitement</strong><br />"
+
+#: contact/templates/contact/contact.html:100
+msgid "Joaquín Denis Tremols"
+msgstr ""
+
+#: contact/templates/contact/contact.html:101
+msgid "<strong>Dirección del responsable</strong>"
+msgstr "<strong>Adresse du Responsable</strong>"
+
+#: contact/templates/contact/contact.html:102
+msgid ""
+"Calle 25 de Abril 10, piso 4, puerta 8, CP 46900, Torrent (Valencia/"
+"València)- España"
+msgstr ""
+"Calle 25 de Abril 10, piso 4, "
+"porte 8, CP 46900, Torrent (Valence/València)"
+
+#: contact/templates/contact/contact.html:103
+msgid "<strong>Finalidad</strong>"
+msgstr "<strong>Objectif</strong>"
+
+#: contact/templates/contact/contact.html:104
+msgid ""
+"Sus datos serán usados para poder atender sus solicitudes y prestarle "
+"nuestros servicios."
+msgstr ""
+"Vos données seront utilisées pour pouvoir "
+"répondre à vos demandes et vous fournir nos services."
+
+#: contact/templates/contact/contact.html:105
+msgid "<strong>Información de interés</strong>"
+msgstr "<strong>Informations d'intérêt</strong><br />"
+
+#: contact/templates/contact/contact.html:106
+msgid ""
+"Únicamente le enviaremos comunicaciones de su interés con su autorización "
+"previa, que podrá facilitarnos mediante la casilla correspondiente "
+"establecida al efecto."
+msgstr ""
+"Nous vous enverrons uniquement "
+"de la publicité avec votre autorisation préalable, que vous pouvez nous "
+"fournir en cochant la case correspondante établie à cet effet."
+
+#: contact/templates/contact/contact.html:107
+msgid "<strong>Legitimación</strong>"
+msgstr "<strong>Légitimation</strong><br />"
+
+#: contact/templates/contact/contact.html:108
+msgid ""
+"Únicamente trataremos sus datos con su consentimiento previo, que podrá "
+"facilitarnos mediante la casilla correspondiente establecida al efecto."
+msgstr ""
+"Nous ne traiterons vos données qu'avec "
+"votre consentement préalable, que vous pouvez nous fournir en cochant la "
+"case correspondante établie à cet effet."
+
+#: contact/templates/contact/contact.html:109
+msgid "<strong>Destinatarios</strong>"
+msgstr "<strong>Destinataires</strong><br />"
+
+#: contact/templates/contact/contact.html:110
+msgid ""
+"Con carácter general, sólo el personal de nuestra entidad que esté "
+"debidamente autorizado podrá tener conocimiento de la información que le "
+"pedimos."
+msgstr ""
+"Généralement, uniquement le personnel de "
+"notre entité dûment autorisé peut avoir connaissance des informations que "
+"nous avons demandées."
+
+#: contact/templates/contact/contact.html:111
+msgid "<strong>Derechos</strong>"
+msgstr "<strong>Droits</strong><br />"
+
+#: contact/templates/contact/contact.html:112
+msgid ""
+"Tiene derecho a saber qué información tenemos sobre usted, corregirla y "
+"eliminarla, tal y como se explica en la información adicional disponible en "
+"nuestra página web."
+msgstr ""
+"Vous avez le droit de savoir quelles "
+"informations nous détenons à votre sujet, la corriger et la supprimer, comme "
+"expliqué dans les informations complémentaires disponibles sur notre site "
+"web. De même, Vous pouvez exercer le droit à la portabilité en demandant le "
+"transfert de vos informations à une autre entité."
+
+#: contact/templates/contact/contact.html:113
+msgid "<strong>Información adicional</strong>"
+msgstr "<strong>Informations complémentaires: </strong><br />"
+
+#: contact/templates/contact/contact.html:114
+msgid ""
+"Más información en el apartado \"<a href=\"/page/2/politica-de-privacidad/"
+"\">Política de privacidad</a>\" de nuestra página web."
+msgstr ""
+"Plus d'informations "
+"dans la section \"<a href=\"/page/1/privacy-policy/\">Politique de "
+"confidentialité</a>\" de notre site Web."
+
+#: contact/templates/contact/success.html:23
+msgid "Formulario de Contacto"
+msgstr "Formulaire de contact"
+
+#: contact/templates/contact/success.html:26
+msgid "Gracias por su mensaje"
+msgstr "Merci pour votre message"
+
+#: contact/templates/contact/success.html:27
+msgid "En breve nos pondremos en contacto con Usted."
+msgstr "Nous vous contacterons sous peu."
+
+#: contact/templates/contact/success.html:40
+msgid ""
+"<strong>Dirección del responsable</strong><br />Calle 25 de Abril 10, piso "
+"4, puerta 8, CP 46900, Torrent (Valencia/València)"
+msgstr ""
+"<strong>Adresse du responsable</strong><br />Calle 25 de Abril 10, piso 4, "
+"porte 8, CP 46900, Torrent (Valence/València)"
+
+#: contact/templates/contact/success.html:42
+msgid ""
+"<strong>Publicidad</strong><br />Solo le enviaremos publicidad con su "
+"autorización previa, que podrá facilitarnos mediante la casilla "
+"correspondiente establecida al efecto."
+msgstr ""
+"<strong>Publicité</strong><br />Nous vous enverrons uniquement de la "
+"publicité avec votre autorisation préalable, que vous pouvez nous fournir en "
+"cochant la case correspondante établie à cet effet."
+
+#: contact/templates/contact/success.html:45
+msgid ""
+"<strong>Derechos</strong><br />Tiene derecho a saber qué información tenemos "
+"sobre usted, corregirla y eliminarla, tal y como se explica en la "
+"información adicional disponible en nuestra página web. Así mismo, también "
+"podrá ejercer el derecho de Portabilidad, solicitando el traspaso de su "
+"información a otra entidad."
+msgstr ""
+"<strong>Droits</strong><br />Vous avez le droit de savoir quelles "
+"informations nous détenons à votre sujet, la corriger et la supprimer, comme "
+"expliqué dans les informations complémentaires disponibles sur notre site "
+"web. De même, Vous pouvez exercer le droit à la portabilité en demandant le "
+"transfert de vos informations à une autre entité."
+
+#: contact/templates/contact/success.html:46
+msgid ""
+"<strong>Información adicional</strong><br />Más información en el apartado "
+"\"<a href=\"/page/1/politica-pivacidad/\">Política de privacidad</a>\" de "
+"nuestra página web."
+msgstr ""
+"<strong>Informations complémentaires: </strong><br />Plus d'informations "
+"dans la section \"<a href=\"/page/1/privacy-policy/\">Politique de "
+"confidentialité</a>\" de notre site Web."
+

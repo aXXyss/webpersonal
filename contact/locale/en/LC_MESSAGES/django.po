@@ -1,0 +1,295 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-05-17 11:22+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: contact/forms.py:8
+msgid "Nombre"
+msgstr "Name"
+
+#: contact/forms.py:12
+msgid "Nombre y Apellidos"
+msgstr "Name and Surname"
+
+#: contact/forms.py:18 contact/forms.py:22
+msgid "Empresa"
+msgstr "Company"
+
+#: contact/forms.py:28
+msgid "Email"
+msgstr "Email"
+
+#: contact/forms.py:32
+msgid "Correo electrónico"
+msgstr "Email"
+
+#: contact/forms.py:38 contact/forms.py:42
+msgid "Zona geográfica"
+msgstr "Geographical area"
+
+#: contact/forms.py:48
+msgid "Contenido"
+msgstr "Content"
+
+#: contact/forms.py:53
+msgid "Mensaje"
+msgstr "Message"
+
+#: contact/forms.py:60
+msgid "Aviso Legal"
+msgstr "Legal Notice"
+
+#: contact/forms.py:65
+msgid "Publicidad"
+msgstr "Advertising"
+
+#: contact/templates/contact/contact.html:5
+#: contact/templates/contact/success.html:5
+msgid "Contact"
+msgstr "Contact"
+
+#: contact/templates/contact/contact.html:6
+msgid ""
+"Ponte en contacto con aXXyss soluciones para consultas sobre tecnología de "
+"la información, programación y soluciones Linux. Envía tu mensaje a través "
+"de nuestro formulario de contacto."
+msgstr ""
+
+#: contact/templates/contact/contact.html:12
+msgid "Contacto"
+msgstr "Contact"
+
+#: contact/templates/contact/contact.html:13
+#: contact/templates/contact/success.html:11
+msgid "Asesoría - Desarrollo - Servicios"
+msgstr "Consulting - Development - Services"
+
+#: contact/templates/contact/contact.html:23
+msgid "Formulario de contacto"
+msgstr "Contact form"
+
+#: contact/templates/contact/contact.html:62
+msgid "He leído y acepto la"
+msgstr "I have read and accept the "
+
+#: contact/templates/contact/contact.html:62
+msgid "Política de privacidad"
+msgstr "Privacy Policy"
+
+#: contact/templates/contact/contact.html:70
+msgid ""
+"Consiento el uso de mis datos personales para recibir publicidad de su "
+"entidad."
+msgstr ""
+"I consent to the use of my personal data to receive advertising from your "
+"entity."
+
+#: contact/templates/contact/contact.html:83
+msgid "Enviar mensaje"
+msgstr "Send message"
+
+#: contact/templates/contact/contact.html:96
+msgid "Información sobre la protección de datos"
+msgstr "<strong>Basic information on data protection</strong>"
+
+#: contact/templates/contact/contact.html:98
+msgid "<strong>Responsable del tratamiento</strong>"
+msgstr "<strong>Data Controller</strong><br />"
+
+#: contact/templates/contact/contact.html:99
+msgid "Joaquín Denis Tremols"
+msgstr ""
+
+#: contact/templates/contact/contact.html:100
+msgid "<strong>Dirección del responsable</strong>"
+msgstr "<strong>Controller's Address</strong><br />"
+
+#: contact/templates/contact/contact.html:101, Torrent (Valencia/València)- España"
+msgid ""
+"Calle 25 de Abril 10, piso 4, puerta 8, CP 46900, Torrent (Valencia/"
+"València)- España"
+msgstr ""
+"Calle 25 de Abril 10, floor 4, "
+"door 8, CP 46900, Torrent (Valencia/València)"
+
+#: contact/templates/contact/contact.html:102
+msgid "<strong>Finalidad</strong>"
+msgstr "<strong>Purpose</strong><br />"
+
+#: contact/templates/contact/contact.html:103
+msgid ""
+"Sus datos serán usados para poder atender sus solicitudes y prestarle "
+"nuestros servicios."
+msgstr ""
+"Your data will be used to respond to your "
+"requests and provide our services."
+
+#: contact/templates/contact/contact.html:104
+msgid "<strong>Información de interés</strong>"
+msgstr "<strong>Advertising</strong><br />"
+
+#: contact/templates/contact/contact.html:105
+msgid ""
+"Únicamente le enviaremos comunicaciones de su interés con su autorización "
+"previa, que podrá facilitarnos mediante la casilla correspondiente "
+"establecida al efecto."
+msgstr ""
+"We will only send you advertising with "
+"your prior authorization, which you can provide by checking the "
+"corresponding box provided for this purpose."
+
+#: contact/templates/contact/contact.html:106
+msgid "<strong>Legitimación</strong>"
+msgstr "<strong>Legitimation</strong><br />"
+
+#: contact/templates/contact/contact.html:107
+msgid ""
+"Únicamente trataremos sus datos con su consentimiento previo, que podrá "
+"facilitarnos mediante la casilla correspondiente establecida al efecto."
+msgstr ""
+"We will only process your data with your "
+"prior consent, which you can provide by checking the corresponding box "
+"provided for this purpose."
+
+#: contact/templates/contact/contact.html:108
+msgid "<strong>Destinatarios</strong>"
+msgstr "<strong>Recipients</strong><br />"
+
+#: contact/templates/contact/contact.html:109
+msgid ""
+"Con carácter general, sólo el personal de nuestra entidad que esté "
+"debidamente autorizado podrá tener conocimiento de la información que le "
+"pedimos."
+msgstr ""
+"Generally, only duly authorized personnel "
+"of our organization may have access to the information we request."
+
+#: contact/templates/contact/contact.html:110
+msgid "<strong>Derechos</strong>"
+msgstr "<strong>Rights</strong><br />"
+
+#: contact/templates/contact/contact.html:111
+msgid ""
+"Tiene derecho a saber qué información tenemos sobre usted, corregirla y "
+"eliminarla, tal y como se explica en la información adicional disponible en "
+"nuestra página web."
+msgstr ""
+"You have the right to know what information we "
+"have about you, correct it, and delete it, as explained in the additional "
+"information available on our website. You may also exercise your right to "
+"data portability by requesting the transfer of your information to another "
+"entity."
+
+#: contact/templates/contact/contact.html:112
+msgid "<strong>Información adicional</strong>"
+msgstr "<strong>Additional Information</strong><br />"
+
+#: contact/templates/contact/contact.html:113
+msgid ""
+"Más información en el apartado \"<a href=\"/page/2/politica-de-privacidad/"
+"\">Política de privacidad</a>\" de nuestra página web."
+msgstr ""
+"More information in the <a "
+"href=\"/page/1/privacy-policy/\">Privacy Policy</a>\" section of our website."
+
+#: contact/templates/contact/success.html:23
+msgid "Formulario de Contacto"
+msgstr "Contact Form"
+
+#: contact/templates/contact/success.html:26
+msgid "Gracias por su mensaje"
+msgstr "Thank you for your message"
+
+#: contact/templates/contact/success.html:27
+msgid "En breve nos pondremos en contacto con Usted."
+msgstr "We will contact you shortly."
+
+#: contact/templates/contact/success.html:38
+msgid "<strong>Información básica sobre la protección de datos</strong>"
+msgstr "<strong>Basic information on data protection</strong>"
+
+#: contact/templates/contact/success.html:39
+msgid "<strong>Responsable del tratamiento</strong><br />Joaquín Denis Tremols"
+msgstr "<strong>Data Controller</strong><br />Joaquín Denis Tremols"
+
+#: contact/templates/contact/success.html:40
+msgid ""
+"<strong>Dirección del responsable</strong><br />Calle 25 de Abril 10, piso "
+"4, puerta 8, CP 46900, Torrent (Valencia/València)"
+msgstr ""
+"<strong>Controller's Address</strong><br />Calle 25 de Abril 10, floor 4, "
+"door 8, CP 46900, Torrent (Valencia/València)"
+
+#: contact/templates/contact/success.html:41
+msgid ""
+"<strong>Finalidad</strong><br />Sus datos serán usados para poder atender "
+"sus solicitudes y prestarle nuestros servicios."
+msgstr ""
+"<strong>Purpose</strong><br />Your data will be used to respond to your "
+"requests and provide our services."
+
+#: contact/templates/contact/success.html:42
+msgid ""
+"<strong>Publicidad</strong><br />Solo le enviaremos publicidad con su "
+"autorización previa, que podrá facilitarnos mediante la casilla "
+"correspondiente establecida al efecto."
+msgstr ""
+"<strong>Advertising</strong><br />We will only send you advertising with "
+"your prior authorization, which you can provide by checking the "
+"corresponding box provided for this purpose."
+
+#: contact/templates/contact/success.html:43
+msgid ""
+"<strong>Legitimación</strong><br />Únicamente trataremos sus datos con su "
+"consentimiento previo, que podrá facilitarnos mediante la casilla "
+"correspondiente establecida al efecto."
+msgstr ""
+"<strong>Legitimation</strong><br />We will only process your data with your "
+"prior consent, which you can provide by checking the corresponding box "
+"provided for this purpose."
+
+#: contact/templates/contact/success.html:44
+msgid ""
+"<strong>Destinatarios</strong><br />Con carácter general, sólo el personal "
+"de nuestra entidad que esté debidamente autorizado podrá tener conocimiento "
+"de la información que le pedimos."
+msgstr ""
+"<strong>Recipients</strong><br />Generally, only duly authorized personnel "
+"of our organization may have access to the information we request."
+
+#: contact/templates/contact/success.html:45
+msgid ""
+"<strong>Derechos</strong><br />Tiene derecho a saber qué información tenemos "
+"sobre usted, corregirla y eliminarla, tal y como se explica en la "
+"información adicional disponible en nuestra página web. Así mismo, también "
+"podrá ejercer el derecho de Portabilidad, solicitando el traspaso de su "
+"información a otra entidad."
+msgstr ""
+"<strong>Rights</strong><br />You have the right to know what information we "
+"have about you, correct it, and delete it, as explained in the additional "
+"information available on our website. You may also exercise your right to "
+"data portability by requesting the transfer of your information to another "
+"entity."
+
+#: contact/templates/contact/success.html:46
+msgid ""
+"<strong>Información adicional</strong><br />Más información en el apartado "
+"\"<a href=\"/page/1/politica-pivacidad/\">Política de privacidad</a>\" de "
+"nuestra página web."
+msgstr ""
+"<strong>Additional Information</strong><br />More information in the <a "
+"href=\"/page/1/privacy-policy/\">Privacy Policy</a>\" section of our website."

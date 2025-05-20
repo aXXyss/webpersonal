@@ -1,0 +1,240 @@
+{% extends 'core/base.html' %}
+
+{% load i18n %}
+{% block title %}{% blocktrans %}Blog{% endblocktrans %}{% endblock %}
+{% block meta_description %}{{ post.content|striptags|truncatewords:30 }}{% endblock %}
+
+
+{% block background %}{% load static %}{% static 'core/img/portfolio-bg.jpg' %}{% endblock %}
+
+{% block headers %}
+    <h1 class="text-white font-weight-black pt-3 mt-n5">{% trans "Artículo" %}</h1>
+    <p class="lead text-white mt-3">{{ post.title }}</p>
+{% endblock %}
+
+{% block content %}
+    <h1>{{ post.title }}</h1>
+    <p>Publicado el: {{ post.published_date|date:"d M Y" }} {% trans "por" %}
+        {% if post.author.userprofile.avatar %}
+            <img src="{{ post.author.userprofile.avatar.url }}" alt="{{ post.author.get_full_name|default:post.author.username }}" style="width: 50px; height: 50px; border-radius: 50%; vertical-align: middle; margin-right: 10px;">
+        {% endif %}
+        {{ post.author.get_full_name|default:post.author.username }}
+    </p>
+
+    {% if post.image %}
+        <img src="{{ post.image.url }}" alt="{{ post.title }}" class="img-fluid" style="max-width: 100%;">
+    {% endif %}
+
+    <div class="post-content">
+        <br>
+        {{ post.content|safe }}
+
+        <hr>
+        <div>
+            <em>#</em>
+            {% for category in post.categories.all %}
+                <em><a href="{% url 'blog:post_list_by_category' slug=category.slug %}">{{ category.name }}</a>{% if not forloop.last %}, {% endif %}</em>
+            {% empty %}
+                <em>{% trans "Sin categorías" %}</em>
+            {% endfor %}
+        </div>
+        <hr>
+        {% if user.is_authenticated %}
+            <div class="card my-4">
+                <h2 class="card-header">{% trans "Deja un comentario:" %}</h2>
+                <div class="card-body">
+                    <form method="post" action="{% url 'blog:save_comment' %}" id="comment-form">
+                        {% csrf_token %}
+                        <div class="form-group full-width-textarea">
+                            {{ form.comment }}
+                        </div>
+                        <input type="hidden" name="post" value="{{ post.id }}">
+                        <input type="hidden" name="url" value="{{ request.path }}">
+                        <button type="submit" class="btn btn-primary">{% trans "Enviar comentario" %}</button>
+                    </form>
+                </div>
+            </div>
+        {% else %}
+            <div class="media-body" style="display: flex; align-items: center;">
+                {% trans "Para dejar un comentario tiene que estar conectado:" %}
+                <a class="nav-link px-lg-3 py-3 py-lg-4" href="{% url 'users:login' %}">
+                    <p class="d-inline text-sm z-index-1 font-weight-semibold" data-bs-toggle="tooltip"
+                        data-bs-placement="bottom" title="Sign IN">
+                        <i class="fa fa-sign-in me-1"></i>Sign IN</p>
+                </a>
+            </div>
+        {% endif %}
+
+        <div class="card my-4">
+            <h2 class="card-header">{% trans "Comentarios:" %} ({{ comments.count }})</h2>
+            <div class="card-body" id="comments-container">
+                {% for comment in comments %}
+                    {% if comment.parent is None %}
+                        {% include 'blog/partials/comment_tree.html' with comment=comment %}
+                    {% endif %}
+                {% empty %}
+                    <p>{% trans "Todavía no hay comentarios." %}</p>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <a href="{% url 'blog:post_list' %}">{% trans "Volver al blog" %}</a>
+    <hr>
+{% endblock %}
+
+{% block extra_js %}
+
+document.addEventListener('DOMContentLoaded', function() {
+    const commentForm = document.getElementById('comment-form');
+    const commentsContainer = document.getElementById('comments-container');
+
+    if (commentForm) {
+        commentForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const formData = new FormData(this);
+            fetch(this.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'X-Requested-With': 'XMLHttpRequest'
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    const newCommentElement = createCommentElement(data.comment_data);
+                    commentsContainer.appendChild(newCommentElement);
+                    this.querySelector('textarea').value = '';
+                } else {
+                    alert('Error al enviar el comentario.');
+                    console.error('Error:', data.error);
+                }
+            })
+            .catch(error => {
+                console.error('Fetch error:', error);
+                alert('Error de conexión al enviar el comentario.');
+            });
+        });
+    }
+
+    commentsContainer.addEventListener('click', function(event) {
+        if (event.target.classList.contains('reply-button')) {
+            const commentId = event.target.getAttribute('data-comment-id');
+            const replyFormContainer = document.getElementById(`reply-form-${commentId}`);
+            if (replyFormContainer) {
+                replyFormContainer.style.display = 'block';
+                const replySubmitForm = replyFormContainer.querySelector('form');
+                if (replySubmitForm) {
+                    let formSubmitted = false; // Bandera para evitar envíos múltiples
+
+                    replySubmitForm.addEventListener('submit', function(event) {
+                        event.preventDefault();
+
+                        const commentTextarea = this.querySelector('textarea[name="comment"]');
+                        if (!commentTextarea.value.trim()) {
+                            alert("Por favor, introduce un comentario antes de enviar la respuesta.");
+                            return;
+                        }
+
+                        const formData = new FormData(this);
+                        console.log('Datos del formulario:', [...formData.entries()]);
+
+                        if (formSubmitted) {
+                            return; // Si el formulario ya se envió, no hacer nada
+                        }
+
+                        formSubmitted = true; // Marcar el formulario como enviado
+
+                        fetch(this.action, {
+                            method: 'POST',
+                            body: formData,
+                            headers: {
+                                'X-Requested-With': 'XMLHttpRequest'
+                            }
+                        })
+                        .then(response => {
+                            console.log('Respuesta recibida:', response);
+                            return response.json();
+                        })
+                        .then(data => {
+                            console.log('Datos JSON recibidos:', data);
+                            if (data.success) {
+                                const repliesContainer = document.getElementById(`replies-${data.comment_data.parent_id}`);
+                                console.log('repliesContainer: ', repliesContainer); // Agrega este log
+
+                                const newReplyElement = createCommentElement(data.comment_data, true);
+
+                                if (repliesContainer) {
+                                    repliesContainer.appendChild(newReplyElement);
+                                    // Forzar la actualización del DOM después de un breve retraso
+                                    setTimeout(function() {
+                                        repliesContainer.appendChild(newReplyElement);
+                                    }, 100);
+                                } else {
+                                    console.error('No se encontró el contenedor de respuestas:', `replies-${data.comment_data.parent_id}`);
+                                }
+
+                                this.querySelector('textarea').value = '';
+                                const replyFormContainer = document.getElementById(`reply-form-${data.comment_data.parent_id}`);
+                                replyFormContainer.style.display = 'none';
+                            } else {
+                                alert('Error al enviar la respuesta.');
+                                console.error('Error:', data.error);
+                            }
+                        })
+                        .catch(error => {
+                            console.error('Fetch error:', error);
+                            alert('Error de conexión al enviar la respuesta.');
+                        })
+                        .finally(() => { // Mover la bandera aquí
+                            formSubmitted = false; // Restablecer la bandera después de recibir la respuesta
+                        });
+                    });
+                }
+            }
+        }
+    });
+
+    function createCommentElement(commentData, isReply = false) {
+        const commentDiv = document.createElement('div');
+        commentDiv.classList.add('media', 'mb-4');
+        if (isReply) {
+            commentDiv.classList.add('ml-5', 'indented-comment');
+        }
+
+        let csrfTokenHTML = '';
+        const csrfTokenElement = document.querySelector('#comment-form > input[name="csrfmiddlewaretoken"]');
+        if (csrfTokenElement) {
+            csrfTokenHTML = csrfTokenElement.outerHTML;
+        }
+
+        commentDiv.innerHTML = `
+            ${commentData.user_profile_photo_html}
+            <div class="media-body">
+                <h5 class="mt-1 text-sm">${commentData.username} <small class="text-muted">${commentData.created_at}</small></h5>
+                <div class="mt-2">${commentData.comment_content}</div>
+                <button class="btn btn-sm btn-outline-secondary reply-button" data-comment-id="${commentData.id}">Responder</button>
+                <div id="reply-form-${commentData.id}" style="display: none; margin-top: 10px;">
+                    <form method="POST" action="/blog/comment/${commentData.id}/reply/" id="reply-form-${commentData.id}-submit">
+                        ${csrfTokenHTML}
+                        <div class="form-group">
+                            <textarea class="form-control" name="comment" rows="2" placeholder="Responder" required></textarea>
+                        </div>
+                        <input type="hidden" name="parent_id" value="${commentData.id}">
+                        <button type="submit" class="btn btn-sm btn-primary">Enviar Respuesta</button>
+                    </form>
+                </div>
+                ${isReply ? '' : ''} <div style="margin-left: 3rem;"></div>
+            </div>
+        `;
+
+        const repliesDiv = document.createElement('div');
+        repliesDiv.id = `replies-${commentData.id}`;
+        commentDiv.appendChild(repliesDiv);
+
+        return commentDiv;
+    }
+});
+
+{% endblock %}

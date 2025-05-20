@@ -1,0 +1,91 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% load i18n %}
+{% block title %}{% blocktrans %}Políticas{% endblocktrans %}{% endblock %}
+
+{% block background %}{% load static %}{% static 'core/img/politica-bg.jpg' %}{% endblock %}
+
+{% block headers %}
+<h1 class="text-white font-weight-black pt-3 mt-n5">{% trans "Políticas y Legalidad" %}</h1>
+<p class="lead text-white mt-3">{{ translation.title|default:page.title }}</p>
+
+<style>
+  .table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  th, td {
+    padding: 10px;
+    border: 1px solid #000;
+    text-align: left;
+  }
+
+  th {
+    background-color: #bfbfbf;
+    color: #fff;
+  }
+
+  /* En móviles: activamos scroll si hace falta */
+  @media (max-width: 768px) {
+    table {
+      width: auto;
+      min-width: 100%;
+    }
+  }
+</style>
+
+{% endblock %}
+
+{% block meta %}
+    {{ block.super }}
+    <meta name="robots" content="noindex, nofollow">
+{% endblock %}
+
+{% block content %}
+
+    <section class="page-section about-heading">
+        <div class="container-fluid no-side-padding">
+            <div class="about-heading-content mbtm">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-11 col-lg-10 col-xl-10">
+                        <!-- VERSIÓN CON FONDO (solo en pantallas sm y mayores) -->
+                        <div class="bg-faded rounded p-5 custom-content-box d-none d-sm-block">
+                          <h2 class="section-heading mb-4 text-center">
+                              <span class="section-heading-lower">{{ translation.title|default:page.title }}</span>
+                          </h2>
+                          <div class="section-content text-justify">
+                              {{ translation.content|default:page.content|safe }}
+                              {% if user.is_authenticated %}
+                                  <p><a href="{% url 'admin:pages_page_change' page.id %}">Editar</a></p>
+                              {% endif %}
+                          </div>
+                        </div>
+
+                        <!-- VERSIÓN SIN FONDO (solo en móvil) -->
+                        <div class="d-block d-sm-none">
+                          <h2 class="section-heading mb-4 text-center">
+                              <span class="section-heading-lower">{{ translation.title|default:page.title }}</span>
+                          </h2>
+                          <div class="section-content">
+                              {{ translation.content|default:page.content|safe }}
+                              {% if user.is_authenticated %}
+                                  <p><a href="{% url 'admin:pages_page_change' page.id %}">Editar</a></p>
+                              {% endif %}
+                          </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

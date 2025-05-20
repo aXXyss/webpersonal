@@ -1,0 +1,23 @@
+.ck.ck-editor__editable {
+    background-color: #1e1e1e !important;
+    color: #ffffff !important;
+}
+
+.ck.ck-editor__editable * {
+    color: #ffffff !important;
+}
+
+/* Opcional: Ajustar bordes y selección */
+.ck.ck-editor__editable:focus {
+    border: 1px solid #666 !important;
+}
+
+/* Asegura que los encabezados también hereden el color */
+.ck.ck-editor__editable h1,
+.ck.ck-editor__editable h2,
+.ck.ck-editor__editable h3,
+.ck.ck-editor__editable h4,
+.ck.ck-editor__editable h5,
+.ck.ck-editor__editable h6 {
+    color: #ffffff !important;
+}

@@ -1,0 +1,276 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-05-17 12:09+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: core/templates/core/about.html:4 core/templates/core/about.html:10
+msgid "Acerca de"
+msgstr "À propos de moi"
+
+#: core/templates/core/about.html:5
+msgid ""
+"Conoce más sobre aXXyss soluciones, mi experiencia en tecnología de la "
+"información, programación y mi enfoque en soluciones Linux."
+msgstr ""
+"En savoir plus sur les solutions aXXyss et mon expérience en technologies de "
+"l'information, programmation et mon intérêt pour les solutions Linux. "
+
+#: core/templates/core/about.html:11
+msgid "Biografía"
+msgstr "Biographie"
+
+#: core/templates/core/about.html:26
+msgid "Mi Trayectoria Profesional"
+msgstr "Ma carrière professionnelle"
+
+#: core/templates/core/about.html:27
+msgid ""
+"Evolucionando de 25 Años en <b>Desarrollo de Sistemas de Gestión</b> a "
+"<b>Desarrollador Full-Stack</b>"
+msgstr ""
+"Évoluant de 25 ans de <b>développement de systèmes de gestion</b> à "
+"<b>développeur Full-Stack</b>"
+
+#: core/templates/core/about.html:28
+msgid ""
+"Ahora aplico mi profunda comprensión de la gestión empresarial a la "
+"<b>creación de soluciones web</b> integrales e innovadoras."
+msgstr ""
+"J'applique désormais ma profonde compréhension de la gestion d'entreprise à "
+"la création de <b>solutions Web</b> complètes et innovantes."
+
+#: core/templates/core/about.html:29
+msgid ""
+"Desde la planificación estratégica hasta la implementación técnica, mi "
+"objetivo es transformar ideas en realidades digitales que impulsen el "
+"crecimiento y la\n"
+"            productividad de mis clientes en Europa, África y América Latina."
+msgstr ""
+"De la planification stratégique à la mise en œuvre technique, mon objectif "
+"est de transformer les idées en réalités numériques qui stimulent la "
+"croissance et la productivité de mes clients en Europe, en Afrique et en "
+"Amérique latine."
+
+#: core/templates/core/about.html:32
+msgid "Servicios que Ofrezco"
+msgstr "Services que j'offre"
+
+#: core/templates/core/about.html:34
+msgid "Mis servicios incluyen:"
+msgstr "Mes services comprennent"
+
+#: core/templates/core/about.html:37
+msgid ""
+"<b>Desarrollo web</b> personalizado con <b>Django</b> y <b>WordPress</b>"
+msgstr ""
+"<b>Développement Web</b> personnalisé avec <b>Django</b> et <b>WordPress</b>"
+
+#: core/templates/core/about.html:38
+msgid "<b>Diseño web</b> responsive y atractivo"
+msgstr "<b>Conception Web</b> réactive et attrayante"
+
+#: core/templates/core/about.html:39
+msgid "<b>Optimización</b> para motores de búsqueda (SEO)"
+msgstr "<b>Optimisation</b> des moteurs de recherche (SEO)"
+
+#: core/templates/core/about.html:40
+msgid "<b>Mantenimiento</b> y <b>soporte</b> web"
+msgstr "<b>Maintenance</b> et <b>support</b> web"
+
+#: core/templates/core/about.html:43
+msgid "Mis Habilidades Técnicas"
+msgstr "Mes compétences incluent :"
+
+#: core/templates/core/about.html:45
+msgid "Mis habilidades incluyen:"
+msgstr "Mes compétences incluent :"
+
+#: core/templates/core/about.html:48
+msgid "<b>Sistemas operativos: </b>Servidores Linux (Debian, Ubuntu)"
+msgstr "<b>Systèmes d'exploitation: </b> serveurs Linux (Debian, Ubuntu)"
+
+#: core/templates/core/about.html:49
+msgid "<b>Bases de datos: </b>MySQL, MariaDB"
+msgstr "<b>Bases de données: </b>MySQL, MariaDB"
+
+#: core/templates/core/about.html:50
+msgid "<b>Virtualización: </b>Proxmox, VMware, VirtualBox"
+msgstr "<b>Virtualisation: </b>VMware, VirtualBox, Proxmox"
+
+#: core/templates/core/about.html:51
+msgid "<b>Herramientas: </b>Python (Django), MS-Access"
+msgstr "<b>Outils: </b>Python (Django), MS-Access"
+
+#: core/templates/core/about.html:52
+msgid "<b>ERP: </b>Dolibarr"
+msgstr ""
+
+#: core/templates/core/about.html:55 core/templates/core/base.html:83
+#: core/templates/core/base.html:221
+#: core/templates/core/base_perso_cookies_banner.html:89
+#: core/templates/core/base_perso_cookies_banner.html:227
+#: core/templates/core/home.html:33
+msgid "Contacto"
+msgstr "Contact"
+
+#: core/templates/core/base.html:9
+#: core/templates/core/base_perso_cookies_banner.html:9
+msgid ""
+"aXXyss soluciones - Technología de la información - Programación - Linux "
+msgstr ""
+"aXXyss Solutions - Technologies de l'information - Programmation - Linux"
+
+#: core/templates/core/base.html:11
+#: core/templates/core/base_perso_cookies_banner.html:11
+msgid "aXXyss Soluciones"
+msgstr "axxyss Solutions"
+
+#: core/templates/core/base.html:68 core/templates/core/base.html:212
+#: core/templates/core/base_perso_cookies_banner.html:74
+#: core/templates/core/base_perso_cookies_banner.html:218
+#: core/templates/core/home.html:4
+msgid "Portada"
+msgstr "Accueil"
+
+#: core/templates/core/base.html:73 core/templates/core/base.html:215
+#: core/templates/core/base_perso_cookies_banner.html:79
+#: core/templates/core/base_perso_cookies_banner.html:221
+msgid "Sobre mí"
+msgstr "À propos de moi"
+
+#: core/templates/core/base.html:78 core/templates/core/base.html:218
+#: core/templates/core/base_perso_cookies_banner.html:84
+#: core/templates/core/base_perso_cookies_banner.html:224
+msgid "Portafolio"
+msgstr "Portefeuille"
+
+#: core/templates/core/base.html:88 core/templates/core/base.html:224
+#: core/templates/core/base_perso_cookies_banner.html:94
+#: core/templates/core/base_perso_cookies_banner.html:230
+msgid "Blog"
+msgstr "Blog"
+
+#: core/templates/core/base.html:111
+#: core/templates/core/base_perso_cookies_banner.html:117
+msgid "Iniciar sesión"
+msgstr "Se connecter"
+
+#: core/templates/core/base.html:209
+#: core/templates/core/base_perso_cookies_banner.html:215
+msgid "Información"
+msgstr "Information"
+
+#: core/templates/core/base.html:230
+#: core/templates/core/base_perso_cookies_banner.html:236
+msgid "Legal"
+msgstr "Légal"
+
+#: core/templates/core/base.html:248
+#: core/templates/core/base_perso_cookies_banner.html:254
+msgid "Soluciones Informáticas"
+msgstr "Solutions Informatiques"
+
+#: core/templates/core/base.html:251
+#: core/templates/core/base_perso_cookies_banner.html:257
+msgid "Hecho con Django por aXXyss"
+msgstr "Créé avec Django par axxyss"
+
+#: core/templates/core/base_perso_cookies_banner.html:41
+msgid ""
+"Este sitio web utiliza cookies para mejorar la experiencia del usuario. Al "
+"continuar navegando, aceptas nuestra "
+msgstr ""
+"Ce site Web utilise des cookies pour améliorer l'expérience utilisateur. Si "
+"vous continuez votre navigation, vous acceptez nos "
+
+#: core/templates/core/base_perso_cookies_banner.html:41
+msgid "política de cookies"
+msgstr "politique relative aux cookies"
+
+#: core/templates/core/base_perso_cookies_banner.html:42
+msgid "Aceptar"
+msgstr "Accepter"
+
+#: core/templates/core/base_perso_cookies_banner.html:43
+msgid "Rechazar"
+msgstr "Refuser"
+
+#: core/templates/core/home.html:5
+msgid ""
+"Página principal de aXXyss soluciones. Descubre nuestros servicios de "
+"tecnología de la información y programación."
+msgstr ""
+"Page d'accueil d'aXXyss Solutions. Découvrez nos services informatiques et "
+"de programmation."
+
+#: core/templates/core/home.html:11
+msgid ""
+"Desarrollador Full-Stack | Desarrollador de Sistemas de Gestión a Medida"
+msgstr ""
+"Développeur Full-Stack | Développeur de systèmes de gestion personnalisés"
+
+#: core/templates/core/home.html:21
+msgid "Creación de Soluciones a Medida"
+msgstr "Création de solutions personnalisées"
+
+#: core/templates/core/home.html:22
+msgid ""
+"Creando <b>soluciones web</b> o <b>aplicaciones de gestión</b> que entienden "
+"el negocio desde sus cimientos. Nuestro enfoque es comprender a \n"
+"            fondo sus procesos y objetivos para desarrollar soluciones que "
+"realmente impulsen su éxito."
+msgstr ""
+"Développement de <b>solutions Web</b> ou des <b>applications de gestion</b> "
+"qui comprennent l'entreprise depuis ses fondations. Notre approche consiste "
+"à comprendre en \n"
+" profondeur vos processus et vos objectifs afin de développer des solutions "
+"qui favorisent véritablement votre réussite."
+
+#: core/templates/core/home.html:25
+msgid "Experiencia y Enfoque Integral"
+msgstr "Expérience et approche globale"
+
+#: core/templates/core/home.html:26
+msgid ""
+"Mi trayectoria de más de dos décadas diseñando e implementando sistemas de "
+"gestión a medida me permite abordar los proyectos web con una\n"
+"                perspectiva integral, enfocándome en la eficiencia, la "
+"escalabilidad y la alineación con los objetivos de negocio. Este enfoque "
+"asegura una comunicación clara y una solución \n"
+"                final que realmente satisface sus necesidades."
+msgstr ""
+"Mon expérience de plus de deux décennies dans la conception et la mise en "
+"œuvre de systèmes de gestion personnalisés me permettent d'aborder les "
+"projets Web dans une perspective holistique, en mettant l'accent sur "
+"l'efficacité, l'évolutivité et l'alignement avec les objectifs commerciaux."
+
+#: core/templates/core/home.html:30
+msgid "¿Necesitaa una Solución? ¡Contáctanos!"
+msgstr "Avez-vous besoin d'une solution ? Contactez-nous!"
+
+#: core/templates/core/home.html:31
+msgid ""
+"¿Necesita un <b>sitio web</b> o una <b>solución de gestión a medida</b>? "
+"¿Busca un <b>desarrollador full-stack</b> con una sólida base en <b>sistemas "
+"de gestión</b>? ¡Contacta con nosotros hoy mismo para discutir tu proyecto y "
+"cómo podemos ayudarte a alcanzar tus objetivos!"
+msgstr ""
+"Avez-vous besoin d'un site Web personnalisé ou d'une solution de gestion ? "
+"Vous recherchez un développeur full-stack avec une base solide en systèmes "
+"de gestion ? \n"
+" Contactez-nous dès aujourd'hui pour discuter de votre projet et voir "
+"comment nous pouvons vous aider à atteindre vos objectifs ! "

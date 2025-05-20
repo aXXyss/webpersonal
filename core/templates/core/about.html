@@ -1,0 +1,59 @@
+{% extends 'core/base.html' %}
+
+{% load i18n %}
+{% block title %}{% blocktrans %}Acerca de{% endblocktrans %}{% endblock %}
+{% block meta_description %}{% blocktrans %}Conoce más sobre aXXyss soluciones, mi experiencia en tecnología de la información, programación y mi enfoque en soluciones Linux.{% endblocktrans %}{% endblock %}
+
+{% block background %}{% load static %}{% static 'core/img/about-bg.jpg' %}{% endblock %}
+
+{% block headers %}
+<h1 class="text-white font-weight-black pt-3 mt-n5">{% trans "Acerca de" %}</h1>
+<p class="lead text-white mt-3">{% trans "Biografía" %}</p>
+{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-lg-3 col-md-4 offset-lg-1 text-center">
+        <img class="img-fluid rounded-circle"
+            data-bs-toggle="tooltip"
+            data-bs-placement="bottom"
+            title="Joaquin Denis"
+            src="{% static 'core/img/avatar.jpg' %}"
+            alt="Fotografía de perfil de Joaquin Denis"
+            style="width:80%; margin: 0 auto; display: block;">
+    </div>
+    <div class="col-lg-7 col-md-8">
+        <h2>{% blocktrans %}Mi Trayectoria Profesional{% endblocktrans %}</h2>
+        <p>{% blocktrans %}Evolucionando de 25 Años en <b>Desarrollo de Sistemas de Gestión</b> a <b>Desarrollador Full-Stack</b>{% endblocktrans %}</p>
+        <p>{% blocktrans %}Ahora aplico mi profunda comprensión de la gestión empresarial a la <b>creación de soluciones web</b> integrales e innovadoras.{% endblocktrans %}</p>
+        <p>{% blocktrans %}Desde la planificación estratégica hasta la implementación técnica, mi objetivo es transformar ideas en realidades digitales que impulsen el crecimiento y la
+            productividad de mis clientes en Europa, África y América Latina.{% endblocktrans %}</p>
+
+        <h2>{% blocktrans %}Servicios que Ofrezco{% endblocktrans %}</h2>
+        <p>
+            {% blocktrans %}Mis servicios incluyen:{% endblocktrans %}
+        </p>
+        <ul>
+            <li>{% blocktrans %}<b>Desarrollo web</b> personalizado con <b>Django</b> y <b>WordPress</b>{% endblocktrans %}</li>
+            <li>{% blocktrans %}<b>Diseño web</b> responsive y atractivo{% endblocktrans %}</li>
+            <li>{% blocktrans %}<b>Optimización</b> para motores de búsqueda (SEO){% endblocktrans %}</li>
+            <li>{% blocktrans %}<b>Mantenimiento</b> y <b>soporte</b> web{% endblocktrans %}</li>
+        </ul>
+
+        <h2>{% blocktrans %}Mis Habilidades Técnicas{% endblocktrans %}</h2>
+        <p>
+            {% blocktrans %}Mis habilidades incluyen:{% endblocktrans %}
+        </p>
+        <ul>
+            <li>{% blocktrans %}<b>Sistemas operativos: </b>Servidores Linux (Debian, Ubuntu){% endblocktrans %}</li>
+            <li>{% blocktrans %}<b>Bases de datos: </b>MySQL, MariaDB{% endblocktrans %}</li>
+            <li>{% blocktrans %}<b>Virtualización: </b>Proxmox, VMware, VirtualBox{% endblocktrans %}</li>
+            <li>{% blocktrans %}<b>Herramientas: </b>Python (Django), MS-Access{% endblocktrans %}</li>
+            <li>{% blocktrans %}<b>ERP: </b>Dolibarr{% endblocktrans %}</li>
+        </ul>
+        <br>
+        <p><a class="nav-link" href="{% url 'contact:contact' %}">{% trans "Contacto" %}</a></p>
+
+    </div>
+</div>
+{% endblock %}

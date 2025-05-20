@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="es">
+
+  <head>
+    {% load i18n %}
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="{% block meta_description %}{% blocktrans %}aXXyss soluciones - Technología de la información - Programación - Linux {% endblocktrans %}{% endblock %}" />
+
+    <title>{% block title %}{% endblock %} | {% trans "aXXyss Soluciones" %}</title>
+    {% load static %}
+    <link rel="icon" type="image/x-icon" href="{% static 'core/img/favicon.ico' %}" />
+
+    <!-- Estilos y fuentes del template  -->
+    <!-- <link rel="canonical" href="https://app-generator.dev/product/material-kit/django/" /> -->
+      
+    <!--     Fonts and icons     -->
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700,900" />
+
+    <!-- Nucleo Icons -->
+    <link href="{% static 'core/css/nucleo-icons.css' %}" rel="stylesheet" />
+    <link href="{% static 'core/css/nucleo-svg.css' %}" rel="stylesheet" />
+
+    <!-- Font Awesome Icons -->
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.0/js/all.min.js" crossorigin="anonymous"></script>
+
+    <!-- Material Icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
+
+    <!-- CSS Files -->
+    <link id="pagestyle" href="{% static 'core/css/material-kit.css' %}" rel="stylesheet" />
+    <link id="pagestyle" href="{% static 'core/css/perso_style.css' %}" rel="stylesheet" />
+    
+
+  </head>
+
+  <body class="index-page bg-gray-200">
+
+    <div id="cookie-notice" style="position: fixed; bottom: 0; left: 0; width: 100%; background-color: rgba(0, 0, 0, 0.8); color: white; padding: 20px; text-align: center; z-index: 1000;">
+      <p>{% trans "Este sitio web utiliza cookies para mejorar la experiencia del usuario. Al continuar navegando, aceptas nuestra " %} <a href="" id="cookie-policy-link" data-url="{% url 'page' 3 'politica-de-cookies' %}" style="color: lightblue;">{% trans "política de cookies" %}</a>.</p>
+      <button id="accept-cookies" style="background-color: #4CAF50; color: white; padding: 10px 20px; border: none; cursor: pointer; margin-right: 10px;">{% trans "Aceptar" %}</button>
+      <button id="reject-cookies" style="background-color: #f44336; color: white; padding: 10px 20px; border: none; cursor: pointer;">{% trans "Rechazar" %}</button>
+    </div>
+
+    <header class="header-2"></header>
+
+    <div class="card card-body blur shadow-blur mx-3 mx-md-4 mt-n6"></div>
+
+    <!-- Navbar -->
+    <div class="container position-sticky z-index-sticky top-0">
+      <div class="row">
+        <div class="col-12">
+          <nav class="navbar navbar-expand-lg blur border-radius-xl top-0 z-index-fixed shadow position-absolute my-3 p-2 start-0 end-0 mx-4">
+            <div class="container-fluid px-0 d-flex justify-content-between align-items-center">
+              <div class="d-flex align-items-center flex-grow-1">
+                <!-- Solo el logo -->
+                <a class="navbar-brand font-weight-bolder ms-sm-3 text-sm" href="/" rel="tooltip" title="aXXyss Soluciones" data-placement="bottom">
+                  <img src="{% static 'core/img/aXXyss.png' %}" alt="Logo" class="logo"style="height: 75px;">
+                </a>
+              </div>
+  
+              <button class="navbar-toggler shadow-none ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon mt-2">
+                  <span class="navbar-toggler-bar bar1"></span>
+                  <span class="navbar-toggler-bar bar2"></span>
+                  <span class="navbar-toggler-bar bar3"></span>
+                </span>
+              </button>
+              <div class="collapse navbar-collapse pt-3 pb-2 py-lg-0 w-100" id="navigation">
+                <ul class="navbar-nav navbar-nav-hover ms-auto">
+                  <li class="nav-item ms-lg-auto">
+                    <a class="nav-link px-lg-3 py-3 py-lg-4" href="{% url 'home' %}">
+                      <p class="d-inline text-sm z-index-1 font-weight-semibold" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Home">{% trans "Portada" %}</p>
+                    </a>
+                  </li>
+                  <li class="nav-item ms-lg-auto">
+                    <a class="nav-link px-lg-3 py-3 py-lg-4" href="{% url 'about' %}">
+                      <p class="d-inline text-sm z-index-1 font-weight-semibold" data-bs-toggle="tooltip" data-bs-placement="bottom" title="About">{% trans "Sobre mí" %}</p>
+                    </a>
+                  </li>
+                  <li class="nav-item ms-lg-auto">
+                    <a class="nav-link px-lg-3 py-3 py-lg-4" href="{% url 'portfolio:project_list' %}">
+                      <p class="d-inline text-sm z-index-1 font-weight-semibold" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Portfolio">{% trans "Portafolio" %}</p>
+                    </a>
+                  </li>
+                  <li class="nav-item ms-lg-auto">
+                    <a class="nav-link px-lg-3 py-3 py-lg-4" href="{% url 'contact:contact' %}">
+                      <p class="d-inline text-sm z-index-1 font-weight-semibold" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Contact">{% trans "Contacto" %}</p>
+                    </a>
+                  </li>
+                  <li class="nav-item ms-lg-auto">
+                    <a class="nav-link px-lg-3 py-3 py-lg-4" href="{% url 'blog:post_list' %}">
+                      <p class="d-inline text-sm z-index-1 font-weight-semibold" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Blog">{% trans "Blog" %}</p>
+                    </a>
+                  </li>
+                  {% if user.is_authenticated %}
+                  <li class="nav-item ms-lg-auto">
+                    <form method="post" action="{% url 'users:logout' %}" class="d-inline">
+                        {% csrf_token %}
+                        <button type="submit" class="nav-link px-lg-3 py-3 py-lg-4" style="border: none; background: none; padding: 0; cursor: pointer;">
+                            <p class="d-inline text-sm z-index-1 font-weight-semibold" 
+                                data-bs-toggle="tooltip"
+                                data-bs-placement="bottom" 
+                                title="Sign OUT"
+                                style="color: #007bff;">{{ user.username }}&nbsp;
+                            </p>
+                            <i class="fa fa-sign-out me-1"></i>   
+                        </button>
+                    </form>
+                </li>
+                  {% else %}
+                  <li class="nav-item ms-lg-auto">
+                    <a class="nav-link px-lg-3 py-3 py-lg-4" href="{% url 'users:login' %}">
+                      <i class="fa fa-sign-in me-1"></i>
+                      <p class="d-inline text-sm z-index-1 font-weight-semibold" data-bs-toggle="tooltip"
+                        data-bs-placement="bottom" title="Sign IN">{% trans "Iniciar sesión" %}</p>
+                    </a>
+                  </li>
+                  {% endif %}
+                </ul>
+                <!--  Menú para los diferentes idiomas -->
+                <form action="{% url 'set_language' %}" method="post" class="form-inline ml-auto" id="language-form">
+                  {% csrf_token %}
+                  <input name="language" type="hidden" value="{{ request.LANGUAGE_CODE }}" />
+                  {% get_available_languages as LANGUAGES %}
+                  {% for lang_code, lang_name in LANGUAGES %}
+                      <button type="button" data-lang="{{ lang_code }}" class="btn btn-sm language-button {% if lang_code == LANGUAGE_CODE %}active{% else %}inactive{% endif %}">
+                          {{ lang_code|upper }}
+                      </button>
+                  {% endfor %}
+                </form>
+              </div>
+            </div>
+          </nav>
+          <!-- End Navbar -->
+        </div>
+      </div>
+    </div>
+  
+
+  
+
+    <header class="header-2">
+      <div class="page-header min-vh-50 relative" style="background-image: url('{% block background %} {% endblock %}')">
+        <span class="mask bg-gradient-dark opacity-4"></span>
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-7 text-center mx-auto">
+              {% block headers %}{% endblock %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Contenido -->
+    <div class="card card-body blur shadow-blur mx-3 mx-md-4 mt-n6">
+
+      <section class="pt-3 pb-4" id="count-stats">
+        <div class="container">
+            {% block content %}{% endblock %}
+        </div>
+      </section>
+    </div>
+    
+    {% if request.path != "/" %}<hr>{% endif %}
+   
+    <!-- Pié de página -->
+    <footer class="footer pt-5 mt-5">
+      <div class="container">
+          <div class="row justify-content-center"> <!-- Centra los bloques en pantallas pequeñas -->
+            <div class="col-md-3 mb-4 text-start"> <!-- Alinea el texto a la izquierda -->
+              <ul class="list-inline text-center text-md-start"> <!-- Centra los iconos en pantallas pequeñas -->
+                  <li class="list-inline-item">
+                      {% if LINK_GITHUB %}
+                      <a href="{{LINK_GITHUB}}" class="link" target="_blank">
+                          <span class="fa-stack fa-lg">
+                              <i class="fab fa-github fa-stack-1x opacity-8" style="font-size: 20px;"></i>
+                          </span>
+                      </a>
+                      {% endif %}
+                  </li>
+                  <li class="list-inline-item">
+                      {% if LINK_TWITTER %}
+                      <a href="{{LINK_TWITTER}}" class="link" target="_blank">
+                          <span class="fa-stack fa-lg">
+                              <i class="fab fa-twitter fa-stack-1x opacity-8" style="font-size: 20px;"></i>
+                          </span>
+                      </a>
+                      {% endif %}
+                  </li>
+                  <li class="list-inline-item">
+                      {% if LINK_LINKEDIN %}
+                      <a href="{{LINK_LINKEDIN}}" class="link" target="_blank">
+                          <span class="fa-stack fa-lg">
+                              <i class="fab fa-linkedin fa-stack-1x opacity-8" style="font-size: 20px;"></i>
+                          </span>
+                      </a>
+                      {% endif %}
+                  </li>
+                  <li class="list-inline-item">
+                      {% if LINK_INSTAGRAM %}
+                      <a href="{{LINK_INSTAGRAM}}" class="link" target="_blank">
+                          <span class="fa-stack fa-lg">
+                              <i class="fab fa-instagram fa-stack-1x opacity-8" style="font-size: 20px;"></i>
+                          </span>
+                      </a>
+                      {% endif %}
+                  </li>
+              </ul>
+            </div>
+  
+            <div class="col-md-2 col-sm-6 col-6 mb-4 text-start"> <!-- Alinea el texto a la izquierda -->
+                <h6 class="text-sm">{% trans "Información" %}</h6>
+                <ul class="flex-column ms-n3 nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'home' %}"><span class="fa fa-toggle-on fa-sm" aria-hidden="true" style="margin-right: 5px;"></span> {% trans "Portada" %}</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'about' %}"><span class="fa fa-toggle-on fa-sm" aria-hidden="true" style="margin-right: 5px;"></span> {% trans "Sobre mí" %}</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'portfolio:project_list' %}"><span class="fa fa-toggle-on fa-sm" aria-hidden="true" style="margin-right: 5px;"></span> {% trans "Portafolio" %}</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'contact:contact' %}"><span class="fa fa-toggle-on fa-sm" aria-hidden="true" style="margin-right: 5px;"></span> {% trans "Contacto" %}</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'blog:post_list' %}"><span class="fa fa-toggle-on fa-sm" aria-hidden="true" style="margin-right: 5px;"></span> {% trans "Blog" %}</a>
+                    </li>
+                </ul>
+            </div>
+  
+            <div class="col-md-2 col-sm-6 col-6 mb-4 text-start">
+              <h6 class="text-sm">{% trans "Legal" %}</h6>
+              <ul class="flex-column ms-n3 nav">
+                  {% load pages_extras %}
+                  {% load custom_tags %}
+                  {% get_page_list as page_list %}
+                  {% for page in page_list %}
+                      <li class="nav-item">
+                        <a class="nav-link" href="{% url 'page' page.id translation.link|default:page.link %}">
+                              <span class="fa fa-toggle-on fa-sm" aria-hidden="true" style="margin-right: 5px;"></span>
+                              {% translated_page_content page %}  {# Mostrar el título traducido en el enlace #}
+                          </a>
+                      </li>
+                  {% endfor %}
+              </ul>
+            </div>
+  
+            <div class="col-12 text-center">
+              <p class="text-dark text-sm font-weight-normal custom-margin">
+                  <span class="copyright text-muted">Copyright &copy; 2025 · aXXyss - {% trans "Soluciones Informáticas" %}</span>
+              </p>
+              <p class="text-dark text-sm font-weight-normal custom-margin">
+                  <span class="copyright text-muted">{% trans "Hecho con Django por aXXyss" %}</span>
+              </p>
+            </div>
+      </div>
+    </footer>
+
+
+    <!--   Core JS Files   -->
+<script src="{% static 'core/js/core/popper.min.js' %}"></script>
+<script src="{% static 'core/js/core/bootstrap.min.js' %}" type="text/javascript"></script>
+<script src="{% static 'core/js/plugins/perfect-scrollbar.min.js' %}"></script>
+
+<!-- Control Center for Material UI Kit: parallax effects, scripts for the example pages etc -->
+<!--  Google Maps Plugin    -->
+
+<script src="{% static 'core/js/material-kit.min.js' %}" type="text/javascript"></script>
+
+<script>
+  {% block extra_js %}
+  {% endblock %}
+</script>
+
+<!-- Control de las Cookies En produccion Cambiar el path=/; domain=localhost por axxyss.com -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+      const cookiePolicyLink = document.getElementById('cookie-policy-link');
+      cookiePolicyLink.href = cookiePolicyLink.dataset.url;
+      const cookieNotice = document.getElementById('cookie-notice');
+      const acceptCookiesButton = document.getElementById('accept-cookies');
+      const rejectCookiesButton = document.getElementById('reject-cookies');
+
+      function setCookie(name, value, days) {
+        let expires = "";
+        if (days) {
+            let date = new Date();
+            date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+            expires = "; expires=" + date.toUTCString();
+        }
+        document.cookie = name + "=" + (value || "") + expires + "; path=/; domain=192.168.1.50";  
+      }
+
+      function getCookie(name) {
+          let nameEQ = name + "=";
+          let ca = document.cookie.split(';');
+          for(let i = 0; i < ca.length; i++) {
+              let c = ca[i];
+              while (c.charAt(0)==' ') c = c.substring(1,c.length);
+              if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+          }
+          console.log('Cookie obtenida:', name, '=', null); // Log de la cookie no encontrada
+          return null;
+      }
+
+      if (!getCookie('cookie_consent')) {
+        console.log('Cookie no encontrada, mostrando aviso.');
+        cookieNotice.style.display = 'block';
+      } else {
+        console.log('Cookie encontrada:', getCookie('cookie_consent'));
+        console.log('Ocultando aviso.'); // Log adicional
+        cookieNotice.style.display = 'none';
+      }
+
+      acceptCookiesButton.addEventListener('click', function() {
+          setCookie('cookie_consent', 'accepted', 365);
+          cookieNotice.style.display = 'none';
+      });
+
+      rejectCookiesButton.addEventListener('click', function() {
+          setCookie('cookie_consent', 'rejected', 365);
+          cookieNotice.style.display = 'none';
+      });
+  });
+</script>
+
+<!--  Script para aclarar los botones de los idiomas que no estan activados -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const languageButtons = document.querySelectorAll('.language-button');
+    const languageForm = document.getElementById('language-form');
+    const languageInput = languageForm.querySelector('input[name="language"]');
+    const navbarToggler = document.querySelector('.navbar-toggler');
+
+    // Función para actualizar la apariencia de los botones
+    function updateLanguageButtons(activeButton) {
+        languageButtons.forEach(button => {
+            if (button === activeButton) {
+                button.classList.remove('inactive');
+                button.classList.add('active');
+            } else {
+                button.classList.remove('active');
+                button.classList.add('inactive');
+            }
+        });
+    }
+
+    // Función para manejar el clic/touch en los botones de idioma
+    function handleLanguageButtonClick(button) {
+        // Asegúrate de que el menú esté expandido
+        if (navbarToggler) {
+            navbarToggler.click(); // Simula un clic en el botón de toggle
+        }
+        // Actualiza la apariencia de los botones
+        updateLanguageButtons(button);
+        // Actualiza el valor del campo oculto y envía el formulario
+        languageInput.value = button.dataset.lang;
+        languageForm.submit();
+    }
+
+    // Agrega un event listener a cada botón de idioma
+    languageButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            handleLanguageButtonClick(this);
+        });
+
+        // Agrega un evento touchstart para dispositivos táctiles
+        button.addEventListener('touchstart', function() {
+            handleLanguageButtonClick(this);
+        });
+    });
+
+    // Asegura que el botón del idioma actual esté activo al cargar la página
+    const currentLanguageButton = Array.from(languageButtons).find(button => button.dataset.lang === languageInput.value);
+    if (currentLanguageButton) {
+        updateLanguageButtons(currentLanguageButton);
+    }
+  });
+</script>
+
+
+<!-- Start cookieyes banner --> 
+<script id="cookieyes" type="text/javascript" src="https://cdn-cookieyes.com/client_data/f0684ed432fc0090c98ee471/script.js"></script>
+<!-- End cookieyes banner -->
+
+<!--    
+    <script src="https://www.google.com/recaptcha/api.js"></script>
+    <script>
+      function someFunction() {
+          grecaptcha.execute();
+      }
+    </script>
+  -->
+  </body>
+
+</html>

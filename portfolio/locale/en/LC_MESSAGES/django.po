@@ -1,0 +1,52 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-04-29 16:42+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: portfolio/templates/portfolio/project_detail.html:22
+msgid "Visitar sitio web"
+msgstr "Visit website"
+
+#: portfolio/templates/portfolio/project_detail.html:24
+msgid "Volver a la lista de proyectos"
+msgstr "Return to the list of projects"
+
+#: portfolio/templates/portfolio/project_list.html:5
+#: portfolio/templates/portfolio/project_list.html:11
+msgid "Portafolio"
+msgstr "Portfolio"
+
+#: portfolio/templates/portfolio/project_list.html:6
+msgid ""
+"Explora mi portfolio de proyectos en tecnología de la información, "
+"desarrollo de software y soluciones Linux. Mira ejemplos de mi trabajo y "
+"experiencia."
+msgstr ""
+"Explore my portfolio of projects in information technology, software "
+"development, and Linux solutions. See examples of my work and experience."
+
+#: portfolio/templates/portfolio/project_list.html:12
+msgid "Aplicaciones"
+msgstr "Applications"
+
+#: portfolio/templates/portfolio/project_list.html:24
+msgid "Ver detalles"
+msgstr "See details"
+
+#: portfolio/templates/portfolio/project_list.html:31
+msgid "No hay proyectos disponibles."
+msgstr "There are no projects available."
