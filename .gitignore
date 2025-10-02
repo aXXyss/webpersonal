@@ -130,3 +130,28 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Django specific
+staticfiles/
+media/
+*.pot
+*.mo
+
+# CKEditor (uploads)
+ckeditor_uploads/
+
+# SQLite backups (por si acaso)
+*.sqlite3
+*.sqlite3-journal
+
+# VSCode / JetBrains
+.vscode/
+.idea/
+
+# Plesk / logs
+logs/
+*.log
+
+# Archivos de sincronización de tu máquina
+.sync_*
+
