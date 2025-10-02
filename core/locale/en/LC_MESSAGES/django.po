@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-17 11:32+0200\n"
+"POT-Creation-Date: 2025-07-01 07:58+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -91,36 +91,36 @@ msgstr "Search Engine <b>optimization</b> (SEO)"
 msgid "<b>Mantenimiento</b> y <b>soporte</b> web"
 msgstr "<b>Web Maintenance</b> and <b>support</b>"
 
-#: core/templates/core/about.html:44
+#: core/templates/core/about.html:43
 msgid "Mis Habilidades Técnicas"
 msgstr "My skills include"
 
-#: core/templates/core/about.html:46
+#: core/templates/core/about.html:45
 msgid "Mis habilidades incluyen:"
 msgstr "My skills include"
 
-#: core/templates/core/about.html:49
+#: core/templates/core/about.html:48
 msgid "<b>Sistemas operativos: </b>Servidores Linux (Debian, Ubuntu)"
 msgstr "<b>Operating systems: </b>Linux servers (Debian, Ubuntu)"
 
-#: core/templates/core/about.html:50
+#: core/templates/core/about.html:49
 msgid "<b>Bases de datos: </b>MySQL, MariaDB"
 msgstr "<b>Databases: </b>MySQL, MariaDB"
 
-#: core/templates/core/about.html:51
+#: core/templates/core/about.html:50
 msgid "<b>Virtualización: </b>Proxmox, VMware, VirtualBox"
 msgstr "<b>Virtualization: </b>VMware, VirtualBox, Proxmox"
 
-#: core/templates/core/about.html:52
+#: core/templates/core/about.html:51
 msgid "<b>Herramientas: </b>Python (Django), MS-Access"
 msgstr "<b>Tools: </b>Python (Django), MS-Access"
 
-#: core/templates/core/about.html:53
+#: core/templates/core/about.html:52
 msgid "<b>ERP: </b>Dolibarr"
 msgstr ""
 
-#: core/templates/core/about.html:56 core/templates/core/base.html:83
-#: core/templates/core/base.html:221
+#: core/templates/core/about.html:55 core/templates/core/base.html:95
+#: core/templates/core/base.html:224
 #: core/templates/core/base_perso_cookies_banner.html:89
 #: core/templates/core/base_perso_cookies_banner.html:227
 #: core/templates/core/home.html:33
@@ -138,52 +138,52 @@ msgstr "aXXyss solutions - Information Technology - Programming - Linux"
 msgid "aXXyss Soluciones"
 msgstr "aXXyss Solutions"
 
-#: core/templates/core/base.html:68 core/templates/core/base.html:212
+#: core/templates/core/base.html:80 core/templates/core/base.html:215
 #: core/templates/core/base_perso_cookies_banner.html:74
 #: core/templates/core/base_perso_cookies_banner.html:218
 #: core/templates/core/home.html:4
 msgid "Portada"
 msgstr "Home"
 
-#: core/templates/core/base.html:73 core/templates/core/base.html:215
+#: core/templates/core/base.html:85 core/templates/core/base.html:218
 #: core/templates/core/base_perso_cookies_banner.html:79
 #: core/templates/core/base_perso_cookies_banner.html:221
 msgid "Sobre mí"
 msgstr "About me"
 
-#: core/templates/core/base.html:78 core/templates/core/base.html:218
+#: core/templates/core/base.html:90 core/templates/core/base.html:221
 #: core/templates/core/base_perso_cookies_banner.html:84
 #: core/templates/core/base_perso_cookies_banner.html:224
 msgid "Portafolio"
 msgstr "Portfolio"
 
-#: core/templates/core/base.html:88 core/templates/core/base.html:224
+#: core/templates/core/base.html:100 core/templates/core/base.html:227
 #: core/templates/core/base_perso_cookies_banner.html:94
 #: core/templates/core/base_perso_cookies_banner.html:230
 msgid "Blog"
 msgstr "Blog"
 
-#: core/templates/core/base.html:111
+#: core/templates/core/base.html:123
 #: core/templates/core/base_perso_cookies_banner.html:117
 msgid "Iniciar sesión"
 msgstr "Log In"
 
-#: core/templates/core/base.html:209
+#: core/templates/core/base.html:212
 #: core/templates/core/base_perso_cookies_banner.html:215
 msgid "Información"
 msgstr "Information"
 
-#: core/templates/core/base.html:230
+#: core/templates/core/base.html:233
 #: core/templates/core/base_perso_cookies_banner.html:236
 msgid "Legal"
 msgstr "Legal"
 
-#: core/templates/core/base.html:248
+#: core/templates/core/base.html:251
 #: core/templates/core/base_perso_cookies_banner.html:254
 msgid "Soluciones Informáticas"
 msgstr "IT solutions"
 
-#: core/templates/core/base.html:251
+#: core/templates/core/base.html:254
 #: core/templates/core/base_perso_cookies_banner.html:257
 msgid "Hecho con Django por aXXyss"
 msgstr "Created with Django by aXXyss"
@@ -232,9 +232,11 @@ msgid ""
 "            fondo sus procesos y objetivos para desarrollar soluciones que "
 "realmente impulsen su éxito."
 msgstr ""
-"Creating <b>web solutions</b> or <b>management applications</b> that understand "
-"the business from its foundation. Our approach is to thoroughly understand \n"
-"your processes and objectives to develop solutions that truly drive your success."
+"Creating <b>web solutions</b> or <b>management applications</b> that "
+"understand the business from its foundation. Our approach is to thoroughly "
+"understand \n"
+"your processes and objectives to develop solutions that truly drive your "
+"success."
 
 #: core/templates/core/home.html:25
 msgid "Experiencia y Enfoque Integral"
@@ -255,7 +257,7 @@ msgstr ""
 "business objectives."
 
 #: core/templates/core/home.html:30
-msgid "¿Necesitaa una Solución? ¡Contáctanos!"
+msgid "¿Necesita una Solución? ¡Contáctanos!"
 msgstr "Need a Solution? Contact Us!"
 
 #: core/templates/core/home.html:31
@@ -265,6 +267,7 @@ msgid ""
 "de gestión</b>? ¡Contacta con nosotros hoy mismo para discutir tu proyecto y "
 "cómo podemos ayudarte a alcanzar tus objetivos!"
 msgstr ""
-"Do you need a custom <b>website</b> or <b>management solution</b>? "
-"Looking for a <b>full-stack developer</b> with a solid foundation in <b>management systems</b>? "
-"Contact us today to discuss your project and how we can help you achieve your goals!"
+"Do you need a custom <b>website</b> or <b>management solution</b>? Looking "
+"for a <b>full-stack developer</b> with a solid foundation in <b>management "
+"systems</b>? Contact us today to discuss your project and how we can help "
+"you achieve your goals!"

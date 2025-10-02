@@ -73,6 +73,7 @@ INSTALLED_APPS = [
     'portfolio.apps.PortfolioConfig',
     'social.apps.SocialConfig',
     'django_recaptcha',
+    'django_countries',
 
 ]
 
@@ -86,6 +87,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
 
 ROOT_URLCONF = 'webpersonal.urls'
 
@@ -246,6 +248,7 @@ DEFAULT_FROM_EMAIL = env('ENV_DEFAULT_FROM_EMAIL')
 # Captcha
 RECAPTCHA_PUBLIC_KEY = env('ENV_RECAPTCHA_PUBLIC_KEY')
 RECAPTCHA_PRIVATE_KEY = env('ENV_RECAPTCHA_PRIVATE_KEY')
+RECAPTCHA_USE_SSL = True
 #SILENCED_SYSTEM_CHECKS = ['captcha.recaptcha_test_key_error']
 
 SITE_ID = 1

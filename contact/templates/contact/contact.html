@@ -21,7 +21,7 @@
           <div class="row">
             <div class="col-lg-8 mx-auto">
               <h2 class="text-center">{% trans "Formulario de contacto" %}</h2>
-              <form action="" method="POST">
+              <form action="" method="POST" id="contactForm">
                 {% csrf_token %}
                 <div class="input-group input-group-dynamic mb-4">
                   <div class="input-group">
@@ -43,9 +43,9 @@
                 </div>
                 <div class="input-group input-group-dynamic">
                   <div class="input-group">
-                    {{form.zone}}
+                    {{form.country}} {# Esto renderizará el <select> con class="form-control" #}
                   </div>
-                  {{form.zone.errors}}
+                  {{form.country.errors}}
                 </div>
                 <div class="input-group mb-4 input-group-static">
                   <div class="input-group">
@@ -72,6 +72,15 @@
                       {{ form.publicidad.errors }}
                     </div>
                   </div>
+
+                  {# --- AÑADIR ESTE CAMPO HONEYPOT --- #}
+                  {# Este campo se renderiza como <input type="hidden"> gracias a forms.HiddenInput en forms.py #}
+                  {{ form.honeypot_field }}
+                  {# No es necesario label ni errores para este campo oculto #}
+                  {# ----------------------------------- #}
+
+                  {# Campo oculto para el timing #}
+                  <input type="hidden" name="start_time" value="{{ request.session.form_load_time }}" />
 
                   <div class="form-group">
                     <div class="input-group">

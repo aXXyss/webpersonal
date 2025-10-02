@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-17 12:09+0200\n"
+"POT-Creation-Date: 2025-07-01 07:58+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -119,8 +119,8 @@ msgstr "<b>Outils: </b>Python (Django), MS-Access"
 msgid "<b>ERP: </b>Dolibarr"
 msgstr ""
 
-#: core/templates/core/about.html:55 core/templates/core/base.html:83
-#: core/templates/core/base.html:221
+#: core/templates/core/about.html:55 core/templates/core/base.html:95
+#: core/templates/core/base.html:224
 #: core/templates/core/base_perso_cookies_banner.html:89
 #: core/templates/core/base_perso_cookies_banner.html:227
 #: core/templates/core/home.html:33
@@ -139,52 +139,52 @@ msgstr ""
 msgid "aXXyss Soluciones"
 msgstr "axxyss Solutions"
 
-#: core/templates/core/base.html:68 core/templates/core/base.html:212
+#: core/templates/core/base.html:80 core/templates/core/base.html:215
 #: core/templates/core/base_perso_cookies_banner.html:74
 #: core/templates/core/base_perso_cookies_banner.html:218
 #: core/templates/core/home.html:4
 msgid "Portada"
 msgstr "Accueil"
 
-#: core/templates/core/base.html:73 core/templates/core/base.html:215
+#: core/templates/core/base.html:85 core/templates/core/base.html:218
 #: core/templates/core/base_perso_cookies_banner.html:79
 #: core/templates/core/base_perso_cookies_banner.html:221
 msgid "Sobre mí"
 msgstr "À propos de moi"
 
-#: core/templates/core/base.html:78 core/templates/core/base.html:218
+#: core/templates/core/base.html:90 core/templates/core/base.html:221
 #: core/templates/core/base_perso_cookies_banner.html:84
 #: core/templates/core/base_perso_cookies_banner.html:224
 msgid "Portafolio"
 msgstr "Portefeuille"
 
-#: core/templates/core/base.html:88 core/templates/core/base.html:224
+#: core/templates/core/base.html:100 core/templates/core/base.html:227
 #: core/templates/core/base_perso_cookies_banner.html:94
 #: core/templates/core/base_perso_cookies_banner.html:230
 msgid "Blog"
 msgstr "Blog"
 
-#: core/templates/core/base.html:111
+#: core/templates/core/base.html:123
 #: core/templates/core/base_perso_cookies_banner.html:117
 msgid "Iniciar sesión"
 msgstr "Se connecter"
 
-#: core/templates/core/base.html:209
+#: core/templates/core/base.html:212
 #: core/templates/core/base_perso_cookies_banner.html:215
 msgid "Información"
 msgstr "Information"
 
-#: core/templates/core/base.html:230
+#: core/templates/core/base.html:233
 #: core/templates/core/base_perso_cookies_banner.html:236
 msgid "Legal"
 msgstr "Légal"
 
-#: core/templates/core/base.html:248
+#: core/templates/core/base.html:251
 #: core/templates/core/base_perso_cookies_banner.html:254
 msgid "Soluciones Informáticas"
 msgstr "Solutions Informatiques"
 
-#: core/templates/core/base.html:251
+#: core/templates/core/base.html:254
 #: core/templates/core/base_perso_cookies_banner.html:257
 msgid "Hecho con Django por aXXyss"
 msgstr "Créé avec Django par axxyss"
@@ -259,7 +259,7 @@ msgstr ""
 "l'efficacité, l'évolutivité et l'alignement avec les objectifs commerciaux."
 
 #: core/templates/core/home.html:30
-msgid "¿Necesitaa una Solución? ¡Contáctanos!"
+msgid "¿Necesita una Solución? ¡Contáctanos!"
 msgstr "Avez-vous besoin d'une solution ? Contactez-nous!"
 
 #: core/templates/core/home.html:31

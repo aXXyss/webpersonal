@@ -26,3 +26,4 @@ pyOpenSSL
 Werkzeug
 mysqlclient
 django-extensions
+django-countries
