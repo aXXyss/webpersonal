@@ -27,3 +27,6 @@ Werkzeug
 mysqlclient
 django-extensions
 django-countries
+requests
+django-modeltranslation
+

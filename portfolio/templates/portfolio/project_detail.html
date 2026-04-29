@@ -7,6 +7,15 @@
 
 {% block background %}{% static 'core/img/portfolio-bg.jpg' %}{% endblock %}
 
+{% block background_webp_style %}
+<style>
+  .page-header {
+    background-image: -webkit-image-set(url('{% static 'core/img/portfolio-bg.webp' %}') 1x) !important;
+    background-image: image-set(url('{% static 'core/img/portfolio-bg.webp' %}') 1x) !important;
+  }
+</style>
+{% endblock %}
+
 {% block headers %}
 <h1 class="text-white font-weight-black pt-3 mt-n5">{{ project.translation.title|default:project.title }}</h1>
 {% endblock %}
@@ -19,7 +28,7 @@
             {% endif %}
             <p>{{ project.translation.description|default:project.description|safe }}</p>
             {% if project.link %}
-                <p><a class="btn btn-primary" href="{{ project.translation.link|default:project.link }}" target="_blank">{% trans "Visitar sitio web" %}</a></p>
+                <p><a class="btn btn-dark btn-lg mt-3 shadow-dark" href="{{ project.translation.link|default:project.link }}" target="_blank">{% trans "Visitar sitio web" %}</a></p>
             {% endif %}
             <p><a href="{% url 'portfolio:project_list' %}">{% trans "Volver a la lista de proyectos" %}</a></p>
         </div>

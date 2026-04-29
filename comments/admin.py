@@ -1,10 +1,24 @@
 from django.contrib import admin
+from django import forms
+from .models import Comment
 
-# Register your models here.
-from comments.models import Comment
+class CommentAdminForm(forms.ModelForm):
+    comment = forms.CharField(
+        widget=forms.Textarea(attrs={
+            'rows': 15,  # Altura en líneas
+            'cols': 100,  # Ancho en caracteres
+            'style': 'width: 100%;'  # O usar CSS
+        })
+    )
+    
+    class Meta:
+        model = Comment
+        fields = '__all__'
 
-@admin.register(Comment)
 class CommentAdmin(admin.ModelAdmin):
-    """Comment admin."""
+    form = CommentAdminForm
+    list_display = ('user', 'post', 'created_at', 'approved_comment')
+    list_filter = ('approved_comment', 'created_at')
+    search_fields = ('user__username', 'comment', 'post__title')
 
-    list_display = ('id', 'user', 'post', 'comment')
+admin.site.register(Comment, CommentAdmin)

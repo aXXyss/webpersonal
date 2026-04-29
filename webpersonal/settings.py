@@ -53,6 +53,7 @@ ALLOWED_HOSTS = ['axxyss.com', 'www.axxyss.com', 'localhost', '127.0.0.1','0.0.0
 # Application definition
 
 INSTALLED_APPS = [
+    'modeltranslation',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -74,6 +75,7 @@ INSTALLED_APPS = [
     'social.apps.SocialConfig',
     'django_recaptcha',
     'django_countries',
+
 
 ]
 
@@ -126,7 +128,7 @@ DATABASES = {
          'OPTIONS': {
             'charset': 'utf8mb4',  # Recomendado para soporte completo de caracteres
             'use_unicode': True,
-            'init_command': "SET time_zone = 'Europe/Madrid'",
+            'init_command': "SET time_zone = 'Europe/Madrid', sql_mode='STRICT_TRANS_TABLES'",
         },
     }
 }
@@ -174,15 +176,30 @@ LANGUAGES = [
     ('fr', 'Français'),  
 ]
 
+# Para la traducción del Blog
+MODELTRANSLATION_DEFAULT_LANGUAGE = 'es'
+MODELTRANSLATION_LANGUAGES = ('es', 'en', 'fr')
+
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 
-STATIC_ROOT = '/var/www/html/webpersonal/static/'
+# Static files (CSS, JavaScript, Images)
+# https://docs.djangoproject.com/en/3.2/howto/static-files/
+
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     BASE_DIR / 'static',
 ]
+
+# Diferente ruta de STATIC_ROOT según el entorno (local o servidor)
+if DEBUG:
+    # Entorno local (desarrollo)
+    STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+else:
+    # Entorno de producción (servidor Plesk)
+    STATIC_ROOT = '/var/www/html/webpersonal/static/'
+
 
 
 STATICFILES_FINDERS = [
@@ -212,6 +229,7 @@ CKEDITOR_5_CONFIGS = {
             'bulletedList', 'numberedList', 'todoList', '|',
             'alignment', 'outdent', 'indent', '|',
             'blockQuote', 'codeBlock', '|',
+            'sourceEditing', '|',
             'undo', 'redo', '|',
             'horizontalLine', 'highlight', 'removeFormat'
         ],
@@ -247,12 +265,28 @@ DEFAULT_FROM_EMAIL = env('ENV_DEFAULT_FROM_EMAIL')
 
 # Captcha
 RECAPTCHA_PUBLIC_KEY = env('ENV_RECAPTCHA_PUBLIC_KEY')
-RECAPTCHA_PRIVATE_KEY = env('ENV_RECAPTCHA_PRIVATE_KEY')
+RECAPTCHA_ENTERPRISE_PROJECT_ID = env('ENV_RECAPTCHA_ENTERPRISE_PROJECT_ID')
+RECAPTCHA_DEFAULT_SCORE = 0.6 # Puedes ajustarlo entre 0.0 (bot) y 1.0 (humano)
 RECAPTCHA_USE_SSL = True
 #SILENCED_SYSTEM_CHECKS = ['captcha.recaptcha_test_key_error']
 
 SITE_ID = 1
 
+SILENCED_SYSTEM_CHECKS = [
+    'django_recaptcha.recaptcha_test_key_error',
+]
+
+
 LOGIN_URL = '/login/'
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
+
+
+if not DEBUG:
+    SECURE_HSTS_SECONDS = 31536000
+    SECURE_SSL_REDIRECT = True
+    SECURE_BROWSER_XSS_FILTER = True
+    SECURE_CONTENT_TYPE_NOSNIFF = True
+    SESSION_COOKIE_SECURE = True
+    CSRF_COOKIE_SECURE = True
+

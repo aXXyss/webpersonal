@@ -6,6 +6,9 @@ from django.contrib.sitemaps.views import sitemap
 from core.sitemaps import StaticViewSitemap
 from blog.sitemaps import PostSitemap
 from portfolio.sitemaps import ProjectSitemap
+# Importa TemplateView para servir el archivo
+from django.views.generic import TemplateView 
+
 
 
 sitemaps = {
@@ -20,6 +23,12 @@ urlpatterns = [
     path('i18n/', set_language, name='set_language'), # Agrega esta línea
 
     path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
+
+    # --- RUTA DE VERIFICACIÓN DE GOOGLE (FUERA DE i18n_patterns) ---
+    path(
+        "google19c4ca07d59e3550.html",
+        TemplateView.as_view(template_name="core/google19c4ca07d59e3550.html", content_type="text/html"),
+    ),
 ]
 urlpatterns += i18n_patterns(
     path('', include('core.urls')),

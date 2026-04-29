@@ -1,27 +1,27 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# aXXyss Soluciones - English Translation.
+# Copyright (C) 2026 Joaquin Denis
+# This file is distributed under the same license as the aXXyss package.
+# Joaquin Denis <contacto@axxyss.com>, 2026.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: aXXyss 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-01 07:58+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"POT-Creation-Date: 2026-04-29 15:39+0200\n"
+"PO-Revision-Date: 2026-01-23 19:40+0100\n"
+"Last-Translator: Joaquin Denis\n"
+"Language-Team: English\n"
+"Language: en\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: core/templates/core/about.html:4 core/templates/core/about.html:10
+#: templates/core/about.html:4 templates/core/about.html:19
 msgid "Acerca de"
 msgstr "About me"
 
-#: core/templates/core/about.html:5
+#: templates/core/about.html:5
 msgid ""
 "Conoce más sobre aXXyss soluciones, mi experiencia en tecnología de la "
 "información, programación y mi enfoque en soluciones Linux."
@@ -29,15 +29,15 @@ msgstr ""
 "Learn more about aXXyss solutions, my experience in information technology, "
 "programming, and my focus on Linux solutions."
 
-#: core/templates/core/about.html:11
+#: templates/core/about.html:20
 msgid "Biografía"
 msgstr "Biography"
 
-#: core/templates/core/about.html:26
+#: templates/core/about.html:35
 msgid "Mi Trayectoria Profesional"
 msgstr "My Professional Career"
 
-#: core/templates/core/about.html:27
+#: templates/core/about.html:36
 msgid ""
 "Evolucionando de 25 Años en <b>Desarrollo de Sistemas de Gestión</b> a "
 "<b>Desarrollador Full-Stack</b>"
@@ -45,7 +45,7 @@ msgstr ""
 "Evolving from 25 Years in <b>Management Systems Development</b> to <b>Full-"
 "Stack Developer</b>"
 
-#: core/templates/core/about.html:28
+#: templates/core/about.html:37
 msgid ""
 "Ahora aplico mi profunda comprensión de la gestión empresarial a la "
 "<b>creación de soluciones web</b> integrales e innovadoras."
@@ -53,7 +53,7 @@ msgstr ""
 "Now I apply my deep understanding of business management to the creation of "
 "comprehensive and innovative <b>web solutions</b>."
 
-#: core/templates/core/about.html:29
+#: templates/core/about.html:38
 msgid ""
 "Desde la planificación estratégica hasta la implementación técnica, mi "
 "objetivo es transformar ideas en realidades digitales que impulsen el "
@@ -62,133 +62,142 @@ msgid ""
 msgstr ""
 "From strategic planning to technical implementation, my goal is to transform "
 "ideas into digital realities that drive the growth and productivity of my "
-"clients in Europe, Africa, and Latin America."
+"clients in Europe, Africa, and North America."
 
-#: core/templates/core/about.html:32
+#: templates/core/about.html:41
 msgid "Servicios que Ofrezco"
 msgstr "Services I Offer"
 
-#: core/templates/core/about.html:34
+#: templates/core/about.html:43
 msgid "Mis servicios incluyen:"
 msgstr "My services include:"
 
-#: core/templates/core/about.html:37
+#: templates/core/about.html:46
 msgid ""
 "<b>Desarrollo web</b> personalizado con <b>Django</b> y <b>WordPress</b>"
-msgstr ""
-"<b>Custom web development</b> with <b>Django</b> and <b>WordPress</b> "
-"responsive y atractivo"
+msgstr "Custom <b>Web Development</b> with <b>Django</b> and <b>WordPress</b>"
 
-#: core/templates/core/about.html:38
+#: templates/core/about.html:47
 msgid "<b>Diseño web</b> responsive y atractivo"
-msgstr "Responsive and attractive <b>Web design</b>"
+msgstr "Responsive and attractive <b>Web Design</b>"
 
-#: core/templates/core/about.html:39
+#: templates/core/about.html:48
 msgid "<b>Optimización</b> para motores de búsqueda (SEO)"
-msgstr "Search Engine <b>optimization</b> (SEO)"
+msgstr "Search Engine <b>Optimization</b> (SEO)"
 
-#: core/templates/core/about.html:40
+#: templates/core/about.html:49
 msgid "<b>Mantenimiento</b> y <b>soporte</b> web"
-msgstr "<b>Web Maintenance</b> and <b>support</b>"
+msgstr "Web <b>Maintenance</b> and <b>Support</b>"
 
-#: core/templates/core/about.html:43
+#: templates/core/about.html:52
 msgid "Mis Habilidades Técnicas"
-msgstr "My skills include"
+msgstr "Technical Skills"
 
-#: core/templates/core/about.html:45
+#: templates/core/about.html:54
 msgid "Mis habilidades incluyen:"
-msgstr "My skills include"
+msgstr "My skills include:"
 
-#: core/templates/core/about.html:48
+#: templates/core/about.html:57
 msgid "<b>Sistemas operativos: </b>Servidores Linux (Debian, Ubuntu)"
-msgstr "<b>Operating systems: </b>Linux servers (Debian, Ubuntu)"
+msgstr "<b>Operating Systems: </b>Linux Servers (Debian, Ubuntu)"
 
-#: core/templates/core/about.html:49
+#: templates/core/about.html:58
 msgid "<b>Bases de datos: </b>MySQL, MariaDB"
 msgstr "<b>Databases: </b>MySQL, MariaDB"
 
-#: core/templates/core/about.html:50
+#: templates/core/about.html:59
 msgid "<b>Virtualización: </b>Proxmox, VMware, VirtualBox"
-msgstr "<b>Virtualization: </b>VMware, VirtualBox, Proxmox"
+msgstr "<b>Virtualization: </b>Proxmox, VMware, VirtualBox"
 
-#: core/templates/core/about.html:51
+#: templates/core/about.html:60
 msgid "<b>Herramientas: </b>Python (Django), MS-Access"
 msgstr "<b>Tools: </b>Python (Django), MS-Access"
 
-#: core/templates/core/about.html:52
+#: templates/core/about.html:61
 msgid "<b>ERP: </b>Dolibarr"
-msgstr ""
+msgstr "<b>ERP: </b>Dolibarr"
 
-#: core/templates/core/about.html:55 core/templates/core/base.html:95
-#: core/templates/core/base.html:224
-#: core/templates/core/base_perso_cookies_banner.html:89
-#: core/templates/core/base_perso_cookies_banner.html:227
-#: core/templates/core/home.html:33
+#: templates/core/about.html:64 templates/core/base.html:146
+#: templates/core/base.html:285
+#: templates/core/base_perso_cookies_banner.html:89
+#: templates/core/base_perso_cookies_banner.html:227
 msgid "Contacto"
 msgstr "Contact"
 
-#: core/templates/core/base.html:9
-#: core/templates/core/base_perso_cookies_banner.html:9
+#: templates/core/base.html:10
+msgid ""
+"aXXyss Soluciones - Programador experto en Django y software forestal. "
+"Servicios remotos en España, Europa francófona (Francia, Suiza, Bélgica), "
+"Canadá y África."
+msgstr ""
+"aXXyss Solutions - Expert Django developer and forestry software. Remote "
+"services in Spain, French-speaking Europe, Canada, and Africa."
+
+#: templates/core/base.html:12 templates/core/base_perso_cookies_banner.html:11
+msgid "aXXyss Soluciones"
+msgstr "aXXyss Solutions"
+
+#: templates/core/base.html:106 templates/core/base.html:109
+msgid "Soluciones"
+msgstr "Solutions"
+
+#: templates/core/base.html:128 templates/core/base.html:273
+#: templates/core/base_perso_cookies_banner.html:74
+#: templates/core/base_perso_cookies_banner.html:218
+msgid "Portada"
+msgstr "Home"
+
+#: templates/core/base.html:134 templates/core/base.html:277
+#: templates/core/base_perso_cookies_banner.html:79
+#: templates/core/base_perso_cookies_banner.html:221
+msgid "Sobre mí"
+msgstr "About me"
+
+#: templates/core/base.html:140 templates/core/base.html:281
+#: templates/core/base_perso_cookies_banner.html:84
+#: templates/core/base_perso_cookies_banner.html:224
+msgid "Portafolio"
+msgstr "Portfolio"
+
+#: templates/core/base.html:152 templates/core/base.html:289
+#: templates/core/base_perso_cookies_banner.html:94
+#: templates/core/base_perso_cookies_banner.html:230
+msgid "Blog"
+msgstr "Blog"
+
+#: templates/core/base.html:173
+#: templates/core/base_perso_cookies_banner.html:117
+msgid "Iniciar sesión"
+msgstr "Log In"
+
+#: templates/core/base.html:269
+#: templates/core/base_perso_cookies_banner.html:215
+msgid "Información"
+msgstr "Information"
+
+#: templates/core/base.html:295
+#: templates/core/base_perso_cookies_banner.html:236
+msgid "Legal"
+msgstr "Legal"
+
+#: templates/core/base.html:316
+msgid "Desarrollo Web en Torrent"
+msgstr "Web Development in Torrent (Valencia)"
+
+#: templates/core/base.html:321
+msgid "Hecho con"
+msgstr "Powered by"
+
+#: templates/core/base.html:323
+msgid "por"
+msgstr "by"
+
+#: templates/core/base_perso_cookies_banner.html:9
 msgid ""
 "aXXyss soluciones - Technología de la información - Programación - Linux "
 msgstr "aXXyss solutions - Information Technology - Programming - Linux"
 
-#: core/templates/core/base.html:11
-#: core/templates/core/base_perso_cookies_banner.html:11
-msgid "aXXyss Soluciones"
-msgstr "aXXyss Solutions"
-
-#: core/templates/core/base.html:80 core/templates/core/base.html:215
-#: core/templates/core/base_perso_cookies_banner.html:74
-#: core/templates/core/base_perso_cookies_banner.html:218
-#: core/templates/core/home.html:4
-msgid "Portada"
-msgstr "Home"
-
-#: core/templates/core/base.html:85 core/templates/core/base.html:218
-#: core/templates/core/base_perso_cookies_banner.html:79
-#: core/templates/core/base_perso_cookies_banner.html:221
-msgid "Sobre mí"
-msgstr "About me"
-
-#: core/templates/core/base.html:90 core/templates/core/base.html:221
-#: core/templates/core/base_perso_cookies_banner.html:84
-#: core/templates/core/base_perso_cookies_banner.html:224
-msgid "Portafolio"
-msgstr "Portfolio"
-
-#: core/templates/core/base.html:100 core/templates/core/base.html:227
-#: core/templates/core/base_perso_cookies_banner.html:94
-#: core/templates/core/base_perso_cookies_banner.html:230
-msgid "Blog"
-msgstr "Blog"
-
-#: core/templates/core/base.html:123
-#: core/templates/core/base_perso_cookies_banner.html:117
-msgid "Iniciar sesión"
-msgstr "Log In"
-
-#: core/templates/core/base.html:212
-#: core/templates/core/base_perso_cookies_banner.html:215
-msgid "Información"
-msgstr "Information"
-
-#: core/templates/core/base.html:233
-#: core/templates/core/base_perso_cookies_banner.html:236
-msgid "Legal"
-msgstr "Legal"
-
-#: core/templates/core/base.html:251
-#: core/templates/core/base_perso_cookies_banner.html:254
-msgid "Soluciones Informáticas"
-msgstr "IT solutions"
-
-#: core/templates/core/base.html:254
-#: core/templates/core/base_perso_cookies_banner.html:257
-msgid "Hecho con Django por aXXyss"
-msgstr "Created with Django by aXXyss"
-
-#: core/templates/core/base_perso_cookies_banner.html:41
+#: templates/core/base_perso_cookies_banner.html:41
 msgid ""
 "Este sitio web utiliza cookies para mejorar la experiencia del usuario. Al "
 "continuar navegando, aceptas nuestra "
@@ -196,78 +205,118 @@ msgstr ""
 "This website uses cookies to improve user experience. By continuing to "
 "browse, you accept our "
 
-#: core/templates/core/base_perso_cookies_banner.html:41
+#: templates/core/base_perso_cookies_banner.html:41
 msgid "política de cookies"
 msgstr "cookie policy"
 
-#: core/templates/core/base_perso_cookies_banner.html:42
+#: templates/core/base_perso_cookies_banner.html:42
 msgid "Aceptar"
 msgstr "Accept"
 
-#: core/templates/core/base_perso_cookies_banner.html:43
+#: templates/core/base_perso_cookies_banner.html:43
 msgid "Rechazar"
 msgstr "Decline"
 
-#: core/templates/core/home.html:5
+#: templates/core/base_perso_cookies_banner.html:254
+msgid "Soluciones Informáticas"
+msgstr "IT Solutions"
+
+#: templates/core/base_perso_cookies_banner.html:257
+msgid "Hecho con Django por aXXyss"
+msgstr "Created with Django by aXXyss"
+
+#: templates/core/home.html:5
+msgid "Desarrollo Web Django, WordPress y Software Forestal"
+msgstr "Django Web Development, WordPress and Forestry Software"
+
+#: templates/core/home.html:9
 msgid ""
-"Página principal de aXXyss soluciones. Descubre nuestros servicios de "
-"tecnología de la información y programación."
+"Programador experto en Django y WordPress E-commerce. Soluciones para "
+"aserraderos en África, tiendas online en Canadá (Quebec) y soporte IT en "
+"Torrent, Valencia."
 msgstr ""
-"aXXyss Solutions homepage. Discover our information technology and "
-"programming services."
+"Expert Django and WordPress E-commerce developer. Solutions for sawmills in "
+"Africa, online stores in Canada (Quebec) and IT support in Torrent, Valencia."
 
-#: core/templates/core/home.html:11
+#: templates/core/home.html:26
+msgid "Desarrollador Full-Stack | Django & WordPress E-commerce"
+msgstr "Full-Stack Developer | Django & WordPress E-commerce Specialist"
+
+#: templates/core/home.html:27
+msgid "Convierto procesos industriales complejos en aplicaciones web modernas"
+msgstr "I turn complex industrial processes into modern web applications"
+
+#: templates/core/home.html:41
+msgid "Software a Medida para la Industria Forestal y Global"
+msgstr "Custom Software for the Global Forestry Industry"
+
+#: templates/core/home.html:42
 msgid ""
-"Desarrollador Full-Stack | Desarrollador de Sistemas de Gestión a Medida"
-msgstr "Full-Stack Developer | Custom Management Systems Developer"
-
-#: core/templates/core/home.html:21
-msgid "Creación de Soluciones a Medida"
-msgstr "Creating Custom Solutions"
-
-#: core/templates/core/home.html:22
-msgid ""
-"Creando <b>soluciones web</b> o <b>aplicaciones de gestión</b> que entienden "
-"el negocio desde sus cimientos. Nuestro enfoque es comprender a \n"
-"            fondo sus procesos y objetivos para desarrollar soluciones que "
-"realmente impulsen su éxito."
+"Desde mi estudio en <b>Torrent (Valencia)</b>, desarrollo <b>soluciones web</"
+"b> y sistemas de gestión que cruzan fronteras. Especializado en el sector de "
+"<b>aserraderos y gestión forestal</b>, diseño herramientas que entienden los "
+"procesos industriales complejos para clientes en <b>África, Canadá y Europa</"
+"b>."
 msgstr ""
-"Creating <b>web solutions</b> or <b>management applications</b> that "
-"understand the business from its foundation. Our approach is to thoroughly "
-"understand \n"
-"your processes and objectives to develop solutions that truly drive your "
-"success."
+"From my studio in <b>Torrent (Valencia)</b>, I develop <b>web solutions</b> "
+"and management systems that cross borders. Specialized in the <b>sawmill and "
+"forestry management</b> sector, I design tools that understand complex "
+"industrial processes for clients in <b>Africa, Canada, and Europe</b>."
 
-#: core/templates/core/home.html:25
-msgid "Experiencia y Enfoque Integral"
-msgstr "Experience and Comprehensive Approach"
+#: templates/core/home.html:44
+msgid "Especialista en Modernización de Software Industrial"
+msgstr "Industrial Software Modernization Specialist"
 
-#: core/templates/core/home.html:26
+#: templates/core/home.html:45
 msgid ""
-"Mi trayectoria de más de dos décadas diseñando e implementando sistemas de "
-"gestión a medida me permite abordar los proyectos web con una\n"
-"                perspectiva integral, enfocándome en la eficiencia, la "
-"escalabilidad y la alineación con los objetivos de negocio. Este enfoque "
-"asegura una comunicación clara y una solución \n"
-"                final que realmente satisface sus necesidades."
+"Cuento con una solución propia de <b>gestión forestal</b> basada en "
+"arquitectura MySQL. Actualmente, lidero la transición de sistemas de "
+"escritorio legacy (MS Access) hacia potentes aplicaciones <b>Cloud nativas "
+"con Django</b>. Esta experiencia me permite migrar sistemas antiguos a la "
+"web sin pérdida de datos."
 msgstr ""
-"My experience of more than two decades designing and implementing custom "
-"management systems allows me to approach web projects from a holistic "
-"perspective, focusing on efficiency, scalability, and alignment with "
-"business objectives."
+"I have my own <b>forestry management</b> solution based on MySQL "
+"architecture. Currently, I lead the transition from legacy desktop systems "
+"(MS Access) to powerful <b>Cloud native applications with Django</b>. This "
+"experience allows me to migrate old systems to the web without data loss."
 
-#: core/templates/core/home.html:30
-msgid "¿Necesita una Solución? ¡Contáctanos!"
-msgstr "Need a Solution? Contact Us!"
+#: templates/core/home.html:47
+msgid "Soluciones E-commerce y WordPress Internacional"
+msgstr "International E-commerce and WordPress Solutions"
 
-#: core/templates/core/home.html:31
+#: templates/core/home.html:48
 msgid ""
-"¿Necesita un <b>sitio web</b> o una <b>solución de gestión a medida</b>? "
-"¿Busca un <b>desarrollador full-stack</b> con una sólida base en <b>sistemas "
-"de gestión</b>? ¡Contacta con nosotros hoy mismo para discutir tu proyecto y "
-"cómo podemos ayudarte a alcanzar tus objetivos!"
+"Además de sistemas industriales, desarrollo <b>tiendas online con WordPress "
+"y WooCommerce</b>. He implementado soluciones de comercio electrónico para "
+"el mercado de <b>Quebec (Canadá)</b>, asegurando plataformas rápidas, "
+"seguras y adaptadas a las necesidades locales."
 msgstr ""
-"Do you need a custom <b>website</b> or <b>management solution</b>? Looking "
-"for a <b>full-stack developer</b> with a solid foundation in <b>management "
-"systems</b>? Contact us today to discuss your project and how we can help "
-"you achieve your goals!"
+"In addition to industrial systems, I develop <b>online stores with WordPress "
+"and WooCommerce</b>. I have implemented e-commerce solutions for the "
+"<b>Quebec (Canada)</b> market, ensuring fast, secure platforms adapted to "
+"local needs."
+
+#: templates/core/home.html:50
+msgid "Más de 20 años de experiencia integral"
+msgstr "Over 20 Years of Comprehensive Experience"
+
+#: templates/core/home.html:51
+msgid ""
+"Mi trayectoria me permite abordar proyectos con una perspectiva única, "
+"enfocándome en la eficiencia y la escalabilidad. Ya sea un aserradero en el "
+"Congo o una web en España, aseguro una solución que satisface sus "
+"necesidades reales."
+msgstr ""
+"My career allows me to approach projects with a unique perspective, focusing "
+"on efficiency and scalability. Whether it's a sawmill in Congo or a website "
+"in Switzerland, I ensure a solution that meets your real needs."
+
+#: templates/core/home.html:55
+msgid "Contactar ahora"
+msgstr "Contact now"
+
+#~ msgid ""
+#~ "Soluciones de Gestión Forestal y Comercio Electrónico para Europa, África "
+#~ "y Canadá"
+#~ msgstr ""
+#~ "Forestry Management and E-commerce Solutions for Europe, Africa and Canada"

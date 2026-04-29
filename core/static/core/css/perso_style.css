@@ -191,3 +191,12 @@ h2 {
     /* Otros estilos que desees aplicar (alineación, etc.) */
 }
 
+/* Aplica el mismo color al placeholder del select */
+select option[value=""] {
+    color: #000 !important; /* o el color de texto principal que uses */
+}
+
+/* Si usas un tono específico en Bootstrap (por ejemplo gris oscuro) */
+.form-control option[value=""] {
+    color: #212529 !important; /* tono estándar del texto en Bootstrap */
+}

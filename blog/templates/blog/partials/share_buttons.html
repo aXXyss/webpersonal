@@ -1,0 +1,219 @@
+{% load i18n %}
+
+<div class="share-buttons">
+    <h5>{% trans "Compartir este artículo" %}</h5>
+    <div class="share-buttons-container">
+        <!-- LinkedIn - NO usar urlencode -->
+        <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ share_url }}" 
+           target="_blank" 
+           rel="noopener noreferrer"
+           class="share-btn share-linkedin"
+           title="Compartir en LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+            <span>LinkedIn</span>
+        </a>
+
+        <!-- Twitter/X -->
+        <a href="https://twitter.com/intent/tweet?url={{ share_url|urlencode }}&text={{ post.title|urlencode }}" 
+           target="_blank" 
+           rel="noopener noreferrer"
+           class="share-btn share-twitter"
+           title="Compartir en X/Twitter">
+            <i class="fab fa-x-twitter"></i>
+            <span>Twitter</span>
+        </a>
+
+        <!-- Mastodon -->
+        <a href="https://mastodonshare.com/?text={{ post.title|urlencode }}%20{{ share_url|urlencode }}" 
+           target="_blank" 
+           rel="noopener noreferrer"
+           class="share-btn share-mastodon"
+           title="Compartir en Mastodon">
+            <i class="fab fa-mastodon"></i>
+            <span>Mastodon</span>
+        </a>
+
+        <!-- Bluesky -->
+        <a href="https://bsky.app/intent/compose?text={{ post.title|urlencode }}%20{{ share_url|urlencode }}" 
+           target="_blank" 
+           rel="noopener noreferrer"
+           class="share-btn share-bluesky"
+           title="Compartir en Bluesky">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 530" width="18" height="18" fill="currentColor">
+                <path d="m135.72 44.03c66.496 49.921 138.02 151.14 164.28 205.46 26.262-54.316 97.782-155.54 164.28-205.46 47.98-36.021 125.72-63.892 125.72 24.795 0 17.712-10.155 148.79-16.111 170.07-20.703 73.984-96.144 92.854-163.25 81.433 117.3 19.964 147.14 86.092 82.697 152.22-122.39 125.59-175.91-31.511-189.63-71.766-2.514-7.3797-3.6904-10.832-3.7077-7.8964-0.0174-2.9357-1.1937 0.51669-3.7077 7.8964-13.714 40.255-67.233 197.36-189.63 71.766-64.444-66.128-34.605-132.26 82.697-152.22-67.108 11.421-142.55-7.4491-163.25-81.433-5.9562-21.282-16.111-152.36-16.111-170.07 0-88.687 77.742-60.816 125.72-24.795z"/>
+            </svg>
+            <span>Bluesky</span>
+        </a>
+
+        <!-- Facebook - NO usar urlencode -->
+        <a href="https://www.facebook.com/sharer/sharer.php?u={{ share_url }}" 
+           target="_blank" 
+           rel="noopener noreferrer"
+           class="share-btn share-facebook"
+           title="Compartir en Facebook">
+            <i class="fab fa-facebook-f"></i>
+            <span>Facebook</span>
+        </a>
+
+        <!-- WhatsApp -->
+        <a href="https://wa.me/?text={{ post.title|urlencode }}%20{{ share_url|urlencode }}" 
+           target="_blank" 
+           rel="noopener noreferrer"
+           class="share-btn share-whatsapp"
+           title="Compartir por WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+            <span>WhatsApp</span>
+        </a>
+
+        <!-- Email -->
+        <a href="mailto:?subject={{ post.title|urlencode }}&body={% trans 'Te recomiendo este artículo' %}:%20{{ share_url|urlencode }}" 
+           class="share-btn share-email"
+           title="Compartir por Email">
+            <i class="fas fa-envelope"></i>
+            <span>Email</span>
+        </a>
+
+        <!-- Copiar enlace -->
+        <button onclick="copyToClipboard('{{ share_url }}')" 
+                class="share-btn share-copy"
+                title="{% trans 'Copiar enlace' %}">
+            <i class="fas fa-link"></i>
+            <span>{% trans "Copiar" %}</span>
+        </button>
+    </div>
+</div>
+
+<script>
+function copyToClipboard(text) {
+    navigator.clipboard.writeText(text).then(function() {
+        alert('{% trans "Enlace copiado al portapapeles" %}');
+    }, function(err) {
+        console.error('Error al copiar: ', err);
+    });
+}
+</script>
+
+<style>
+.share-buttons {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+.share-buttons h5 {
+    margin-bottom: 1rem;
+    color: #333;
+    font-size: 1.1rem;
+}
+
+.share-buttons-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.share-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1.2rem;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.share-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    color: white;
+    text-decoration: none;
+}
+
+.share-btn i,
+.share-btn svg {
+    font-size: 1.1rem;
+}
+
+/* Colores específicos por red social */
+.share-linkedin {
+    background: #0077b5;
+}
+
+.share-linkedin:hover {
+    background: #006399;
+}
+
+.share-twitter {
+    background: #000000;
+}
+
+.share-twitter:hover {
+    background: #333333;
+}
+
+.share-mastodon {
+    background: #6364FF;
+}
+
+.share-mastodon:hover {
+    background: #563ACC;
+}
+
+.share-bluesky {
+    background: #1185fe;
+}
+
+.share-bluesky:hover {
+    background: #0D6ECD;
+}
+
+.share-facebook {
+    background: #1877f2;
+}
+
+.share-facebook:hover {
+    background: #145dbf;
+}
+
+.share-whatsapp {
+    background: #25d366;
+}
+
+.share-whatsapp:hover {
+    background: #1eab52;
+}
+
+.share-email {
+    background: #6c757d;
+}
+
+.share-email:hover {
+    background: #545b62;
+}
+
+.share-copy {
+    background: #6f42c1;
+}
+
+.share-copy:hover {
+    background: #5a32a3;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .share-buttons-container {
+        flex-direction: column;
+    }
+    
+    .share-btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
+</style>

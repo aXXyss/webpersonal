@@ -1,88 +1,105 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# French translations for your Django Blog.
+# Copyright (C) 2026
+# This file is distributed under the same license as the project package.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-04-24 12:30+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"POT-Creation-Date: 2026-01-30 19:09+0100\n"
+"PO-Revision-Date: 2026-01-29 20:10+0100\n"
+"Last-Translator: Gemini\n"
+"Language-Team: French\n"
+"Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: blog/templates/blog/post_detail.html:4 blog/templates/blog/post_list.html:4
-#: blog/templates/blog/post_list.html:11
+#: templates/blog/partials/share_buttons.html:4
+msgid "Compartir este artículo"
+msgstr "Partagez cet article"
+
+#: templates/blog/partials/share_buttons.html:69
+msgid "Te recomiendo este artículo"
+msgstr "Je recommande cet article"
+
+#: templates/blog/partials/share_buttons.html:79
+msgid "Copiar enlace"
+msgstr "Copier le lien"
+
+#: templates/blog/partials/share_buttons.html:81
+msgid "Copiar"
+msgstr "Copier"
+
+#: templates/blog/partials/share_buttons.html:89
+msgid "Enlace copiado al portapapeles"
+msgstr "Lien copié dans le presse-papiers"
+
+#: templates/blog/post_detail.html:4 templates/blog/post_list.html:4
+#: templates/blog/post_list.html:11
 msgid "Blog"
-msgstr ""
+msgstr "Blog"
 
-#: blog/templates/blog/post_detail.html:11
-msgid "Artículo"
-msgstr "Publication"
+#: templates/blog/post_detail.html:58 templates/blog/post_list.html:21
+msgid "Publicado el"
+msgstr "Publié le"
 
-#: blog/templates/blog/post_detail.html:17
-#: blog/templates/blog/post_list.html:21
+#: templates/blog/post_detail.html:58 templates/blog/post_list.html:21
 msgid "por"
 msgstr "par"
 
-#: blog/templates/blog/post_detail.html:38
-#: blog/templates/blog/post_list.html:36
+#: templates/blog/post_detail.html:79 templates/blog/post_list.html:36
 msgid "Sin categorías"
 msgstr "Sans catégories"
 
-#: blog/templates/blog/post_detail.html:44
+#: templates/blog/post_detail.html:90
 msgid "Deja un comentario:"
-msgstr "Laissez un commentaire:"
+msgstr "Laissez un commentaire :"
 
-#: blog/templates/blog/post_detail.html:53
+#: templates/blog/post_detail.html:99
 msgid "Enviar comentario"
 msgstr "Envoyer le commentaire"
 
-#: blog/templates/blog/post_detail.html:59
+#: templates/blog/post_detail.html:105
 msgid "Para dejar un comentario tiene que estar conectado:"
-msgstr "Pour laisser un commentaire, vous devez être connecté:"
+msgstr "Pour laisser un commentaire, vous devez être connecté :"
 
-#: blog/templates/blog/post_detail.html:69
+#: templates/blog/post_detail.html:115
 msgid "Comentarios:"
-msgstr "Commentaires:"
+msgstr "Commentaires :"
 
-#: blog/templates/blog/post_detail.html:76
+#: templates/blog/post_detail.html:122
 msgid "Todavía no hay comentarios."
 msgstr "Il n'y a pas encore de commentaires."
 
-#: blog/templates/blog/post_detail.html:81
+#: templates/blog/post_detail.html:127
 msgid "Volver al blog"
 msgstr "Retour au blog"
 
-#: blog/templates/blog/post_list.html:5
+#: templates/blog/post_list.html:5
 msgid ""
 "Descubre las últimas noticias, artículos y tutoriales sobre tecnología y "
 "programación."
 msgstr ""
+"Découvrez les dernières actualités, articles et tutoriels sur la technologie "
+"et la programmation."
 
-#: blog/templates/blog/post_list.html:12
+#: templates/blog/post_list.html:12
 msgid "Últimas publicaciones"
 msgstr "Dernières publications"
 
-#: blog/templates/blog/post_list.html:21
-msgid "Publicado el"
-msgstr "Publié le"
-
-#: blog/templates/blog/post_list.html:39
+#: templates/blog/post_list.html:39
 msgid "Leer más..."
-msgstr "En savoir plus..."
+msgstr "Lire la suite..."
 
-#: blog/templates/blog/post_list.html:44
+#: templates/blog/post_list.html:44
 #, python-format
 msgid "No hay artículos publicados en la categoría \"%(category_name)s\""
-msgstr "Il ný a pas d'articles publiés dans la catégorie \"%(category_name)s\""
+msgstr ""
+"Il n'y a pas d'articles publiés dans la catégorie \"%(category_name)s\""
 
-#: blog/templates/blog/post_list.html:46
+#: templates/blog/post_list.html:46
 msgid "Todavía no hay artículos publicados."
 msgstr "Il n'y a pas encore d'articles publiés."
+

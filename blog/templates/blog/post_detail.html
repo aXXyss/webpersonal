@@ -4,17 +4,65 @@
 {% block title %}{% blocktrans %}Blog{% endblocktrans %}{% endblock %}
 {% block meta_description %}{{ post.content|striptags|truncatewords:30 }}{% endblock %}
 
+{% block extra_meta %}
+{% load static %}
+<!-- Open Graph / Facebook / LinkedIn -->
+<meta property="og:type" content="article">
+<meta property="og:url" content="{{ share_url }}">
+<meta property="og:title" content="{{ post.title }}">
+<meta property="og:description" content="{{ post.content|striptags|truncatewords:30 }}">
+<meta property="og:site_name" content="aXXyss Soluciones">
+<meta property="og:locale" content="{% if LANGUAGE_CODE == 'es' %}es_ES{% elif LANGUAGE_CODE == 'en' %}en_US{% elif LANGUAGE_CODE == 'fr' %}fr_FR{% endif %}">
+{% if post.image %}
+<meta property="og:image" content="{{ request.scheme }}://{{ request.get_host }}{{ post.image.url }}">
+<meta property="og:image:secure_url" content="https://{{ request.get_host }}{{ post.image.url }}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="{{ post.title }}">
+{% else %}
+<meta property="og:image" content="https://{{ request.get_host }}{% static 'core/img/aXXyss.png' %}">
+{% endif %}
 
-{% block background %}{% load static %}{% static 'core/img/portfolio-bg.jpg' %}{% endblock %}
+<!-- Artículo específico -->
+<meta property="article:published_time" content="{{ post.published_date|date:'c' }}">
+<meta property="article:modified_time" content="{{ post.updated|date:'c' }}">
+<meta property="article:author" content="{{ post.author.get_full_name|default:post.author.username }}">
+{% for category in post.categories.all %}
+<meta property="article:section" content="{{ category.name }}">
+{% endfor %}
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:url" content="{{ share_url }}">
+<meta name="twitter:title" content="{{ post.title }}">
+<meta name="twitter:description" content="{{ post.content|striptags|truncatewords:30 }}">
+{% if post.image %}
+<meta name="twitter:image" content="{{ request.scheme }}://{{ request.get_host }}{{ post.image.url }}">
+{% else %}
+<meta name="twitter:image" content="{{ request.scheme }}://{{ request.get_host }}{% static 'core/img/default-blog-share.jpg' %}">
+{% endif %}
+<meta name="twitter:site" content="@axxyss">
+<meta name="twitter:creator" content="@axxyss">
+{% endblock %}
+
+{% block background %}{% load static %}{% static 'core/img/blog-bg.jpg' %}{% endblock %}
+
+{% block background_webp_style %}
+<style>
+  .page-header {
+    background-image: -webkit-image-set(url('{% static 'core/img/blog-bg.webp' %}') 1x) !important;
+    background-image: image-set(url('{% static 'core/img/blog-bg.webp' %}') 1x) !important;
+  }
+</style>
+{% endblock %}
 
 {% block headers %}
-    <h1 class="text-white font-weight-black pt-3 mt-n5">{% trans "Artículo" %}</h1>
-    <p class="lead text-white mt-3">{{ post.title }}</p>
+    <h1 class="text-white font-weight-black pt-3 mt-n5">{{ post.title }}</h1>
 {% endblock %}
 
 {% block content %}
     <h1>{{ post.title }}</h1>
-    <p>Publicado el: {{ post.published_date|date:"d M Y" }} {% trans "por" %}
+    <p>{% trans "Publicado el" %}: {{ post.published_date|date:"d M Y" }} {% trans "por" %}
         {% if post.author.userprofile.avatar %}
             <img src="{{ post.author.userprofile.avatar.url }}" alt="{{ post.author.get_full_name|default:post.author.username }}" style="width: 50px; height: 50px; border-radius: 50%; vertical-align: middle; margin-right: 10px;">
         {% endif %}
@@ -39,6 +87,11 @@
             {% endfor %}
         </div>
         <hr>
+
+        <!-- BOTONES DE COMPARTIR -->
+        {% include 'blog/partials/share_buttons.html' %}
+        <hr>
+
         {% if user.is_authenticated %}
             <div class="card my-4">
                 <h2 class="card-header">{% trans "Deja un comentario:" %}</h2>
@@ -88,163 +141,157 @@
     <link href="{% static 'core/css/prism.css' %}" rel="stylesheet" />
 {% endblock %}
 
-
-
 {% block extra_js %}
-
     {% load static %}
+    
+    {# ✅ SIN <script> tags - ya están en base.html #}
+    // Slugs traducidos del post actual
+    window.postTranslatedSlugs = {
+        'es': '{{ translated_slugs.es }}',
+        'en': '{{ translated_slugs.en }}',
+        'fr': '{{ translated_slugs.fr }}'
+    };
 
-document.addEventListener('DOMContentLoaded', function() {
-    const commentForm = document.getElementById('comment-form');
-    const commentsContainer = document.getElementById('comments-container');
+    // Sistema de comentarios
+    document.addEventListener('DOMContentLoaded', function() {
+        const commentForm = document.getElementById('comment-form');
+        const commentsContainer = document.getElementById('comments-container');
 
-    if (commentForm) {
-        commentForm.addEventListener('submit', function(event) {
-            event.preventDefault();
+        if (commentForm) {
+            commentForm.addEventListener('submit', function(event) {
+                event.preventDefault();
 
-            const formData = new FormData(this);
-            fetch(this.action, {
-                method: 'POST',
-                body: formData,
-                headers: {
-                    'X-Requested-With': 'XMLHttpRequest'
-                }
-            })
-            .then(response => response.json())
-            .then(data => {
-                if (data.success) {
-                    const newCommentElement = createCommentElement(data.comment_data);
-                    commentsContainer.appendChild(newCommentElement);
-                    this.querySelector('textarea').value = '';
-                } else {
-                    alert('Error al enviar el comentario.');
-                    console.error('Error:', data.error);
-                }
-            })
-            .catch(error => {
-                console.error('Fetch error:', error);
-                alert('Error de conexión al enviar el comentario.');
+                const formData = new FormData(this);
+                fetch(this.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'X-Requested-With': 'XMLHttpRequest'
+                    }
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        const newCommentElement = createCommentElement(data.comment_data);
+                        commentsContainer.appendChild(newCommentElement);
+                        this.querySelector('textarea').value = '';
+                    } else {
+                        alert('Error al enviar el comentario.');
+                        console.error('Error:', data.error);
+                    }
+                })
+                .catch(error => {
+                    console.error('Fetch error:', error);
+                    alert('Error de conexión al enviar el comentario.');
+                });
             });
-        });
-    }
+        }
 
-    commentsContainer.addEventListener('click', function(event) {
-        if (event.target.classList.contains('reply-button')) {
-            const commentId = event.target.getAttribute('data-comment-id');
-            const replyFormContainer = document.getElementById(`reply-form-${commentId}`);
-            if (replyFormContainer) {
-                replyFormContainer.style.display = 'block';
-                const replySubmitForm = replyFormContainer.querySelector('form');
-                if (replySubmitForm) {
-                    let formSubmitted = false; // Bandera para evitar envíos múltiples
+        commentsContainer.addEventListener('click', function(event) {
+            if (event.target.classList.contains('reply-button')) {
+                const commentId = event.target.getAttribute('data-comment-id');
+                const replyFormContainer = document.getElementById(`reply-form-${commentId}`);
+                if (replyFormContainer) {
+                    replyFormContainer.style.display = 'block';
+                    const replySubmitForm = replyFormContainer.querySelector('form');
+                    if (replySubmitForm) {
+                        let formSubmitted = false;
 
-                    replySubmitForm.addEventListener('submit', function(event) {
-                        event.preventDefault();
+                        replySubmitForm.addEventListener('submit', function(event) {
+                            event.preventDefault();
 
-                        const commentTextarea = this.querySelector('textarea[name="comment"]');
-                        if (!commentTextarea.value.trim()) {
-                            alert("Por favor, introduce un comentario antes de enviar la respuesta.");
-                            return;
-                        }
-
-                        const formData = new FormData(this);
-                        console.log('Datos del formulario:', [...formData.entries()]);
-
-                        if (formSubmitted) {
-                            return; // Si el formulario ya se envió, no hacer nada
-                        }
-
-                        formSubmitted = true; // Marcar el formulario como enviado
-
-                        fetch(this.action, {
-                            method: 'POST',
-                            body: formData,
-                            headers: {
-                                'X-Requested-With': 'XMLHttpRequest'
+                            const commentTextarea = this.querySelector('textarea[name="comment"]');
+                            if (!commentTextarea.value.trim()) {
+                                alert("Por favor, introduce un comentario antes de enviar la respuesta.");
+                                return;
                             }
-                        })
-                        .then(response => {
-                            console.log('Respuesta recibida:', response);
-                            return response.json();
-                        })
-                        .then(data => {
-                            console.log('Datos JSON recibidos:', data);
-                            if (data.success) {
-                                const repliesContainer = document.getElementById(`replies-${data.comment_data.parent_id}`);
-                                console.log('repliesContainer: ', repliesContainer); // Agrega este log
 
-                                const newReplyElement = createCommentElement(data.comment_data, true);
+                            const formData = new FormData(this);
 
-                                if (repliesContainer) {
-                                    repliesContainer.appendChild(newReplyElement);
-                                    // Forzar la actualización del DOM después de un breve retraso
-                                    setTimeout(function() {
-                                        repliesContainer.appendChild(newReplyElement);
-                                    }, 100);
-                                } else {
-                                    console.error('No se encontró el contenedor de respuestas:', `replies-${data.comment_data.parent_id}`);
+                            if (formSubmitted) {
+                                return;
+                            }
+
+                            formSubmitted = true;
+
+                            fetch(this.action, {
+                                method: 'POST',
+                                body: formData,
+                                headers: {
+                                    'X-Requested-With': 'XMLHttpRequest'
                                 }
+                            })
+                            .then(response => response.json())
+                            .then(data => {
+                                if (data.success) {
+                                    const repliesContainer = document.getElementById(`replies-${data.comment_data.parent_id}`);
+                                    const newReplyElement = createCommentElement(data.comment_data, true);
 
-                                this.querySelector('textarea').value = '';
-                                const replyFormContainer = document.getElementById(`reply-form-${data.comment_data.parent_id}`);
-                                replyFormContainer.style.display = 'none';
-                            } else {
-                                alert('Error al enviar la respuesta.');
-                                console.error('Error:', data.error);
-                            }
-                        })
-                        .catch(error => {
-                            console.error('Fetch error:', error);
-                            alert('Error de conexión al enviar la respuesta.');
-                        })
-                        .finally(() => { // Mover la bandera aquí
-                            formSubmitted = false; // Restablecer la bandera después de recibir la respuesta
+                                    if (repliesContainer) {
+                                        repliesContainer.appendChild(newReplyElement);
+                                    } else {
+                                        console.error('No se encontró el contenedor de respuestas:', `replies-${data.comment_data.parent_id}`);
+                                    }
+
+                                    this.querySelector('textarea').value = '';
+                                    const replyFormContainer = document.getElementById(`reply-form-${data.comment_data.parent_id}`);
+                                    replyFormContainer.style.display = 'none';
+                                } else {
+                                    alert('Error al enviar la respuesta.');
+                                    console.error('Error:', data.error);
+                                }
+                            })
+                            .catch(error => {
+                                console.error('Fetch error:', error);
+                                alert('Error de conexión al enviar la respuesta.');
+                            })
+                            .finally(() => {
+                                formSubmitted = false;
+                            });
                         });
-                    });
+                    }
                 }
             }
+        });
+
+        function createCommentElement(commentData, isReply = false) {
+            const commentDiv = document.createElement('div');
+            commentDiv.classList.add('media', 'mb-4');
+            if (isReply) {
+                commentDiv.classList.add('ml-5', 'indented-comment');
+            }
+
+            let csrfTokenHTML = '';
+            const csrfTokenElement = document.querySelector('#comment-form > input[name="csrfmiddlewaretoken"]');
+            if (csrfTokenElement) {
+                csrfTokenHTML = csrfTokenElement.outerHTML;
+            }
+
+            commentDiv.innerHTML = `
+                ${commentData.user_profile_photo_html}
+                <div class="media-body">
+                    <h5 class="mt-1 text-sm">${commentData.username} <small class="text-muted">${commentData.created_at}</small></h5>
+                    <div class="mt-2">${commentData.comment_content}</div>
+                    <button class="btn btn-sm btn-outline-secondary reply-button" data-comment-id="${commentData.id}">Responder</button>
+                    <div id="reply-form-${commentData.id}" style="display: none; margin-top: 10px;">
+                        <form method="POST" action="/blog/comment/${commentData.id}/reply/" id="reply-form-${commentData.id}-submit">
+                            ${csrfTokenHTML}
+                            <div class="form-group">
+                                <textarea class="form-control" name="comment" rows="2" placeholder="Responder" required></textarea>
+                            </div>
+                            <input type="hidden" name="parent_id" value="${commentData.id}">
+                            <button type="submit" class="btn btn-sm btn-primary">Enviar Respuesta</button>
+                        </form>
+                    </div>
+                    <div style="margin-left: 3rem;"></div>
+                </div>
+            `;
+
+            const repliesDiv = document.createElement('div');
+            repliesDiv.id = `replies-${commentData.id}`;
+            commentDiv.appendChild(repliesDiv);
+
+            return commentDiv;
         }
     });
-
-    function createCommentElement(commentData, isReply = false) {
-        const commentDiv = document.createElement('div');
-        commentDiv.classList.add('media', 'mb-4');
-        if (isReply) {
-            commentDiv.classList.add('ml-5', 'indented-comment');
-        }
-
-        let csrfTokenHTML = '';
-        const csrfTokenElement = document.querySelector('#comment-form > input[name="csrfmiddlewaretoken"]');
-        if (csrfTokenElement) {
-            csrfTokenHTML = csrfTokenElement.outerHTML;
-        }
-
-        commentDiv.innerHTML = `
-            ${commentData.user_profile_photo_html}
-            <div class="media-body">
-                <h5 class="mt-1 text-sm">${commentData.username} <small class="text-muted">${commentData.created_at}</small></h5>
-                <div class="mt-2">${commentData.comment_content}</div>
-                <button class="btn btn-sm btn-outline-secondary reply-button" data-comment-id="${commentData.id}">Responder</button>
-                <div id="reply-form-${commentData.id}" style="display: none; margin-top: 10px;">
-                    <form method="POST" action="/blog/comment/${commentData.id}/reply/" id="reply-form-${commentData.id}-submit">
-                        ${csrfTokenHTML}
-                        <div class="form-group">
-                            <textarea class="form-control" name="comment" rows="2" placeholder="Responder" required></textarea>
-                        </div>
-                        <input type="hidden" name="parent_id" value="${commentData.id}">
-                        <button type="submit" class="btn btn-sm btn-primary">Enviar Respuesta</button>
-                    </form>
-                </div>
-                ${isReply ? '' : ''} <div style="margin-left: 3rem;"></div>
-            </div>
-        `;
-
-        const repliesDiv = document.createElement('div');
-        repliesDiv.id = `replies-${commentData.id}`;
-        commentDiv.appendChild(repliesDiv);
-
-        return commentDiv;
-    }
-});
-
 {% endblock %}

@@ -1,8 +1,8 @@
 from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import User
-from django_ckeditor_5.fields import CKEditor5Field
 from categories.models import Category
+from django.urls import reverse 
 
 class UserProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
@@ -14,9 +14,9 @@ class UserProfile(models.Model):
     
 class Post(models.Model):
     author = models.ForeignKey('auth.User', on_delete=models.CASCADE, verbose_name='autor')
-    title = models.CharField(max_length=200,verbose_name='Título')
-    slug = models.SlugField(unique=True)  # Para URLs amigables
-    content = CKEditor5Field(verbose_name='Contenido')
+    title = models.CharField(max_length=200, verbose_name='Título')
+    slug = models.SlugField(unique=True)
+    content = models.TextField(verbose_name='Contenido')  # ← TextField
     image = models.ImageField(upload_to='blog/images/', blank=True, null=True, verbose_name='imagen')
     categories = models.ManyToManyField(Category)
     created_date = models.DateTimeField(auto_now_add=True, verbose_name='Fecha de creación')
@@ -27,6 +27,10 @@ class Post(models.Model):
         self.published_date = timezone.now()
         self.save()
 
+    def get_absolute_url(self):
+        return reverse('blog:post_detail', kwargs={'slug': self.slug})
+
     def __str__(self):
         return self.title
+    
     

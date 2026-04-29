@@ -1,151 +1,203 @@
 <!DOCTYPE html>
 <html lang="{{ LANGUAGE_CODE }}">
 
-  <head>
-    {% load i18n %}
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta name="description" content="{% block meta_description %}{% blocktrans %}aXXyss soluciones - Technología de la información - Programación - Linux {% endblocktrans %}{% endblock %}" />
+<head>
+  {% load i18n %}
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" 
+  content="{% block meta_description %}{% blocktrans %}aXXyss Soluciones - Programador experto en Django y software forestal. Servicios remotos en España, Europa francófona (Francia, Suiza, Bélgica), Canadá y África.{% endblocktrans %}{% endblock %}" />
 
-    <title>{% block title %}{% endblock %} | {% trans "aXXyss Soluciones" %}</title>
-    {% load static %}
-    <link rel="icon" type="image/x-icon" href="{% static 'core/img/favicon.ico' %}" />
+  <title>{% block title %}Desarrollo Web Django y Software Forestal{% endblock %} | {% trans "aXXyss Soluciones" %}</title>
 
-    {% get_current_language as current_language %}
-    {% get_available_languages as available_languages %}
-    {% get_current_language_bidi as LANGUAGE_BIDI %}
+  {% load static %}
+  <link rel="icon" type="image/x-icon" href="{% static 'core/img/favicon.ico' %}" />
 
-    {% for lang_code, lang_name in available_languages %}
-      {% if lang_code == 'es' %}
-        <link rel="alternate" hreflang="es" href="https://axxyss.com/es{{ request.path|slice:'3:' }}" />
-        <link rel="alternate" hreflang="es-ES" href="https://axxyss.com/es{{ request.path|slice:'3:' }}" />
-      {% elif lang_code == 'en' %}
-        <link rel="alternate" hreflang="en" href="https://axxyss.com/en{{ request.path|slice:'3:' }}" />
-        <link rel="alternate" hreflang="en-US" href="https://axxyss.com/en{{ request.path|slice:'3:' }}" />
-      {% elif lang_code == 'fr' %}
-        <link rel="alternate" hreflang="fr" href="https://axxyss.com/fr{{ request.path|slice:'3:' }}" />
-        <link rel="alternate" hreflang="fr-FR" href="https://axxyss.com/fr{{ request.path|slice:'3:' }}" />
-      {% endif %}
-    {% endfor %}
-
-    <link rel="alternate" hreflang="x-default" href="https://axxyss.com/" />
+ 
+  {% get_current_language as current_language %}
+  {% get_available_languages as available_languages %}
 
 
-    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700,900" />
-
-    <link href="{% static 'core/css/nucleo-icons.css' %}" rel="stylesheet" />
-    <link href="{% static 'core/css/nucleo-svg.css' %}" rel="stylesheet" />
-
-    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.0/js/all.min.js" crossorigin="anonymous"></script>
-
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
-
-    <link href="{% static 'core/css/material-kit.css' %}" rel="stylesheet" />
-    <link id="pagestyle" href="{% static 'core/css/perso_style.css' %}" rel="stylesheet" />
-
-    {% block extra_css %}{% endblock %}
+  <link rel="canonical" href="https://axxyss.com{{ request.path }}" />
 
 
-  </head>
+  {% for lang_code, lang_name in available_languages %}
+    {% if lang_code == 'es' %}
+      <link rel="alternate" hreflang="es" href="https://axxyss.com/es{{ request.path|slice:'3:' }}" />
+      <link rel="alternate" hreflang="es-ES" href="https://axxyss.com/es{{ request.path|slice:'3:' }}" />
+    {% elif lang_code == 'en' %}
+      <link rel="alternate" hreflang="en" href="https://axxyss.com/en{{ request.path|slice:'3:' }}" />
+      <link rel="alternate" hreflang="en-US" href="https://axxyss.com/en{{ request.path|slice:'3:' }}" />
+    {% elif lang_code == 'fr' %}
+      <link rel="alternate" hreflang="fr" href="https://axxyss.com/fr{{ request.path|slice:'3:' }}" />
+      <link rel="alternate" hreflang="fr-FR" href="https://axxyss.com/fr{{ request.path|slice:'3:' }}" />
+    {% endif %}
+  {% endfor %}
 
-  <body class="index-page bg-gray-200">
 
-    <header class="header-2"></header>
+  <link rel="alternate" hreflang="x-default" href="https://axxyss.com/es{{ request.path|slice:'3:' }}" />
 
-    <div class="card card-body blur shadow-blur mx-3 mx-md-4 mt-n6"></div>
 
-    <div class="container position-sticky z-index-sticky top-0">
-      <div class="row">
-        <div class="col-12">
-          <nav class="navbar navbar-expand-lg blur border-radius-xl top-0 z-index-fixed shadow position-absolute my-3 p-2 start-0 end-0 mx-4">
-            <div class="container-fluid px-0 d-flex justify-content-between align-items-center">
-              <div class="d-flex align-items-center flex-grow-1">
-                <a class="navbar-brand font-weight-bolder ms-sm-3 text-sm" href="/" rel="tooltip" title="aXXyss Soluciones" data-placement="bottom">
-                  <img src="{% static 'core/img/aXXyss.png' %}" alt="Logo" class="logo"style="height: 75px;">
-                </a>
-              </div>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700,900&display=swap" /> 
 
-              <button class="navbar-toggler shadow-none ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon mt-2">
-                  <span class="navbar-toggler-bar bar1"></span>
-                  <span class="navbar-toggler-bar bar2"></span>
-                  <span class="navbar-toggler-bar bar3"></span>
+  <link href="{% static 'core/css/nucleo-icons.css' %}" rel="stylesheet" />
+  <link href="{% static 'core/css/nucleo-svg.css' %}" rel="stylesheet" />
+
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.0/js/all.min.js"
+    crossorigin="anonymous"></script>
+
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
+
+  <link href="{% static 'core/css/material-kit.css' %}" rel="stylesheet" />
+  <link id="pagestyle" href="{% static 'core/css/perso_style.css' %}" rel="stylesheet" />
+
+  {% block extra_css %}{% endblock %}
+
+ <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "aXXyss Soluciones",
+  "image": "https://axxyss.com{% static 'core/img/logo.png' %}",
+  "url": "https://axxyss.com",
+  "telephone": "+34641424864",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Torrent",
+    "addressRegion": "Valencia",
+    "addressCountry": "ES"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 39.43,
+    "longitude": -0.46
+  },
+  "jobTitle": "Programador Web Django",
+  "sameAs": [
+    "https://www.linkedin.com/in/joaquin-denis/",
+    "https://www.instagram.com/axxyss_sol/"
+  ]
+}
+</script>
+
+  {% block extra_meta %}
+  <!-- Meta tags adicionales para páginas específicas -->
+  {% endblock %}
+
+</head>
+
+<body class="index-page bg-gray-200">
+
+  <header class="header-2"></header>
+
+  <div class="card card-body blur shadow-blur mx-3 mx-md-4 mt-n6"></div>
+
+  <div class="container position-sticky z-index-sticky top-0">
+    <div class="row">
+      <div class="col-12">
+        <nav class="navbar navbar-expand-lg blur border-radius-xl top-0 z-index-fixed shadow position-absolute my-3 py-1 px-2 start-0 end-0 mx-4">
+          <div class="container-fluid px-0 d-flex justify-content-between align-items-center">
+            <div class="d-flex align-items-center flex-grow-1">
+              <a class="navbar-brand font-weight-bolder ms-sm-3 text-sm d-flex align-items-center" 
+                href="/" rel="tooltip" title="aXXyss {% trans 'Soluciones' %}" data-placement="bottom">
+                <img src="{% static 'core/img/aXXyss.png' %}" alt="Logo" class="logo" style="height: 85px;">
+                <span class="ms-2 text-secondary" style="font-size: 1.1rem; font-weight: 500; margin-top: 34px; font-style: italic;">
+                  {% trans "Soluciones" %}
                 </span>
-              </button>
-              <div class="collapse navbar-collapse pt-3 pb-2 py-lg-0 w-100" id="navigation">
-                <ul class="navbar-nav navbar-nav-hover ms-auto">
-                  <li class="nav-item ms-lg-auto">
-                    <a class="nav-link px-lg-3 py-3 py-lg-4" href="{% url 'home' %}">
-                      <p class="d-inline text-sm z-index-1 font-weight-semibold" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Home">{% trans "Portada" %}</p>
-                    </a>
-                  </li>
-                  <li class="nav-item ms-lg-auto">
-                    <a class="nav-link px-lg-3 py-3 py-lg-4" href="{% url 'about' %}">
-                      <p class="d-inline text-sm z-index-1 font-weight-semibold" data-bs-toggle="tooltip" data-bs-placement="bottom" title="About">{% trans "Sobre mí" %}</p>
-                    </a>
-                  </li>
-                  <li class="nav-item ms-lg-auto">
-                    <a class="nav-link px-lg-3 py-3 py-lg-4" href="{% url 'portfolio:project_list' %}">
-                      <p class="d-inline text-sm z-index-1 font-weight-semibold" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Portfolio">{% trans "Portafolio" %}</p>
-                    </a>
-                  </li>
-                  <li class="nav-item ms-lg-auto">
-                    <a class="nav-link px-lg-3 py-3 py-lg-4" href="{% url 'contact:contact' %}">
-                      <p class="d-inline text-sm z-index-1 font-weight-semibold" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Contact">{% trans "Contacto" %}</p>
-                    </a>
-                  </li>
-                  <li class="nav-item ms-lg-auto">
-                    <a class="nav-link px-lg-3 py-3 py-lg-4" href="{% url 'blog:post_list' %}">
-                      <p class="d-inline text-sm z-index-1 font-weight-semibold" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Blog">{% trans "Blog" %}</p>
-                    </a>
-                  </li>
-                  {% if user.is_authenticated %}
-                  <li class="nav-item ms-lg-auto">
-                    <form method="post" action="{% url 'users:logout' %}" class="d-inline">
-                        {% csrf_token %}
-                        <button type="submit" class="nav-link px-lg-3 py-3 py-lg-4" style="border: none; background: none; padding: 0; cursor: pointer;">
-                            <p class="d-inline text-sm z-index-1 font-weight-semibold"
-                                data-bs-toggle="tooltip"
-                                data-bs-placement="bottom"
-                                title="Sign OUT"
-                                style="color: #007bff;">{{ user.username }}&nbsp;
-                            </p>
-                            <i class="fa fa-sign-out me-1"></i>
-                        </button>
-                    </form>
-                </li>
-                  {% else %}
-                  <li class="nav-item ms-lg-auto">
-                    <a class="nav-link px-lg-3 py-3 py-lg-4" href="{% url 'users:login' %}">
-                      <i class="fa fa-sign-in me-1"></i>
-                      <p class="d-inline text-sm z-index-1 font-weight-semibold" data-bs-toggle="tooltip"
-                        data-bs-placement="bottom" title="Sign IN">{% trans "Iniciar sesión" %}</p>
-                    </a>
-                  </li>
-                  {% endif %}
-                </ul>
-                <form action="{% url 'set_language' %}" method="post" class="form-inline ml-auto" id="language-form">
-                  {% csrf_token %}
-                  <input name="language" type="hidden" value="" />
-                  {% get_available_languages as LANGUAGES %}
-                  {% for lang_code, lang_name in LANGUAGES %}
-                      <button type="button" data-lang="{{ lang_code }}" class="btn btn-sm language-button {% if lang_code == LANGUAGE_CODE %}active{% else %}inactive{% endif %}">
-                          {{ lang_code|upper }}
-                      </button>
-                  {% endfor %}
-                </form>
-              </div>
+              </a>
             </div>
-          </nav>
+
+            <button class="navbar-toggler shadow-none ms-2" type="button" data-bs-toggle="collapse"
+              data-bs-target="#navigation" aria-controls="navigation" aria-expanded="false"
+              aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon mt-2">
+                <span class="navbar-toggler-bar bar1"></span>
+                <span class="navbar-toggler-bar bar2"></span>
+                <span class="navbar-toggler-bar bar3"></span>
+              </span>
+            </button>
+            <div class="collapse navbar-collapse pt-3 pb-2 py-lg-0 w-100" id="navigation">
+              <ul class="navbar-nav navbar-nav-hover ms-auto">
+                <li class="nav-item ms-lg-auto">
+                  <a class="nav-link px-lg-3 py-3 py-lg-4" href="{% url 'home' %}">
+                    <p class="d-inline text-sm z-index-1 font-weight-semibold" data-bs-toggle="tooltip"
+                      data-bs-placement="bottom" title="Home">{% trans "Portada" %}</p>
+                  </a>
+                </li>
+                <li class="nav-item ms-lg-auto">
+                  <a class="nav-link px-lg-3 py-3 py-lg-4" href="{% url 'about' %}">
+                    <p class="d-inline text-sm z-index-1 font-weight-semibold" data-bs-toggle="tooltip"
+                      data-bs-placement="bottom" title="About">{% trans "Sobre mí" %}</p>
+                  </a>
+                </li>
+                <li class="nav-item ms-lg-auto">
+                  <a class="nav-link px-lg-3 py-3 py-lg-4" href="{% url 'portfolio:project_list' %}">
+                    <p class="d-inline text-sm z-index-1 font-weight-semibold" data-bs-toggle="tooltip"
+                      data-bs-placement="bottom" title="Portfolio">{% trans "Portafolio" %}</p>
+                  </a>
+                </li>
+                <li class="nav-item ms-lg-auto">
+                  <a class="nav-link px-lg-3 py-3 py-lg-4" href="{% url 'contact:contact' %}">
+                    <p class="d-inline text-sm z-index-1 font-weight-semibold" data-bs-toggle="tooltip"
+                      data-bs-placement="bottom" title="Contact">{% trans "Contacto" %}</p>
+                  </a>
+                </li>
+                <li class="nav-item ms-lg-auto">
+                  <a class="nav-link px-lg-3 py-3 py-lg-4" href="{% url 'blog:post_list' %}">
+                    <p class="d-inline text-sm z-index-1 font-weight-semibold" data-bs-toggle="tooltip"
+                      data-bs-placement="bottom" title="Blog">{% trans "Blog" %}</p>
+                  </a>
+                </li>
+                {% if user.is_authenticated %}
+                <li class="nav-item ms-lg-auto">
+                  <form method="post" action="{% url 'users:logout' %}" class="d-inline">
+                    {% csrf_token %}
+                    <button type="submit" class="nav-link px-lg-3 py-3 py-lg-4"
+                      style="border: none; background: none; padding: 0; cursor: pointer;">
+                      <p class="d-inline text-sm z-index-1 font-weight-semibold" data-bs-toggle="tooltip"
+                        data-bs-placement="bottom" title="Sign OUT" style="color: #007bff;">{{ user.username }}&nbsp;
+                      </p>
+                      <i class="fa fa-sign-out me-1"></i>
+                    </button>
+                  </form>
+                </li>
+                {% else %}
+                <li class="nav-item ms-lg-auto">
+                  <a class="nav-link px-lg-3 py-3 py-lg-4" href="{% url 'users:login' %}">
+                    <i class="fa fa-sign-in me-1"></i>
+                    <p class="d-inline text-sm z-index-1 font-weight-semibold" data-bs-toggle="tooltip"
+                      data-bs-placement="bottom" title="Sign IN">{% trans "Iniciar sesión" %}</p>
+                  </a>
+                </li>
+                {% endif %}
+              </ul>
+              <form action="{% url 'set_language' %}" method="post" class="form-inline ml-auto" id="language-form">
+                {% csrf_token %}
+                <input name="language" type="hidden" value="" />
+                {% get_available_languages as LANGUAGES %}
+                {% for lang_code, lang_name in LANGUAGES %}
+                <button type="button" data-lang="{{ lang_code }}"
+                  class="btn btn-sm language-button {% if lang_code == LANGUAGE_CODE %}active{% else %}inactive{% endif %}">
+                  {{ lang_code|upper }}
+                </button>
+                {% endfor %}
+              </form>
+            </div>
           </div>
+        </nav>
       </div>
     </div>
+  </div>
 
 
 
-    <header class="header-2">
-      <div class="page-header relative" style="background-image: url('{% block background %} {% endblock %}')">
+  <header class="header-2">
+      <div class="page-header relative" style="background-image: url('{% block background %}{% endblock %}')">
+        {% block background_webp_style %}{% endblock %}
         <span class="mask bg-gradient-dark opacity-4"></span>
         <div class="container">
           <div class="row">
@@ -155,192 +207,231 @@
           </div>
         </div>
       </div>
-    </header>
+  </header>
 
-    <div class="card card-body blur shadow-blur mx-3 mx-md-4 mt-n6">
+  <div class="card card-body blur shadow-blur mx-3 mx-md-4 mt-n6">
 
-      <section class="pt-3 pb-4" id="count-stats">
-        <div class="container">
-            {% block content %}{% endblock %}
-        </div>
-      </section>
-    </div>
-
-    {% if request.path != "/" %}<hr>{% endif %}
-
-    <footer class="footer pt-2 mt-2">
+    <section class="pt-3 pb-4" id="count-stats">
       <div class="container">
-          <div class="row justify-content-center"> <div class="col-md-3 mb-4 text-start"> <ul class="list-inline text-center text-md-start"> <li class="list-inline-item">
-                      {% if LINK_GITHUB %}
-                      <a href="{{LINK_GITHUB}}" class="link" target="_blank">
-                          <span class="fa-stack fa-lg">
-                              <i class="fab fa-github fa-stack-1x opacity-8" style="font-size: 20px;"></i>
-                          </span>
-                      </a>
-                      {% endif %}
-                  </li>
-                  <li class="list-inline-item">
-                      {% if LINK_TWITTER %}
-                      <a href="{{LINK_TWITTER}}" class="link" target="_blank">
-                          <span class="fa-stack fa-lg">
-                              <i class="fab fa-twitter fa-stack-1x opacity-8" style="font-size: 20px;"></i>
-                          </span>
-                      </a>
-                      {% endif %}
-                  </li>
-                  <li class="list-inline-item">
-                      {% if LINK_LINKEDIN %}
-                      <a href="{{LINK_LINKEDIN}}" class="link" target="_blank">
-                          <span class="fa-stack fa-lg">
-                              <i class="fab fa-linkedin fa-stack-1x opacity-8" style="font-size: 20px;"></i>
-                          </span>
-                      </a>
-                      {% endif %}
-                  </li>
-                  <li class="list-inline-item">
-                      {% if LINK_INSTAGRAM %}
-                      <a href="{{LINK_INSTAGRAM}}" class="link" target="_blank">
-                          <span class="fa-stack fa-lg">
-                              <i class="fab fa-instagram fa-stack-1x opacity-8" style="font-size: 20px;"></i>
-                          </span>
-                      </a>
-                      {% endif %}
-                  </li>
-              </ul>
-            </div>
-
-            <div class="col-md-2 col-sm-6 col-6 mb-4 text-start"> <h6 class="text-sm">{% trans "Información" %}</h6>
-                <ul class="flex-column ms-n3 nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'home' %}"><span class="fa fa-toggle-on fa-sm" aria-hidden="true" style="margin-right: 5px;"></span> {% trans "Portada" %}</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'about' %}"><span class="fa fa-toggle-on fa-sm" aria-hidden="true" style="margin-right: 5px;"></span> {% trans "Sobre mí" %}</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'portfolio:project_list' %}"><span class="fa fa-toggle-on fa-sm" aria-hidden="true" style="margin-right: 5px;"></span> {% trans "Portafolio" %}</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'contact:contact' %}"><span class="fa fa-toggle-on fa-sm" aria-hidden="true" style="margin-right: 5px;"></span> {% trans "Contacto" %}</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'blog:post_list' %}"><span class="fa fa-toggle-on fa-sm" aria-hidden="true" style="margin-right: 5px;"></span> {% trans "Blog" %}</a>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="col-md-2 col-sm-6 col-6 mb-4 text-start">
-              <h6 class="text-sm">{% trans "Legal" %}</h6>
-              <ul class="flex-column ms-n3 nav">
-                  {% load pages_extras %}
-                  {% load custom_tags %}
-                  {% get_page_list as page_list %}
-                  {% for page in page_list %}
-                      <li class="nav-item">
-                        <a class="nav-link" href="{% url 'page' page.id translation.link|default:page.link %}">
-                              <span class="fa fa-toggle-on fa-sm" aria-hidden="true" style="margin-right: 5px;"></span>
-                              {% translated_page_content page %}  {# Mostrar el título traducido en el enlace #}
-                          </a>
-                      </li>
-                  {% endfor %}
-              </ul>
-            </div>
-
-            <div class="col-12 text-center">
-              <p class="text-dark text-sm font-weight-normal custom-margin">
-                  <span class="copyright text-muted">Copyright &copy; 2025 · aXXyss - {% trans "Soluciones Informáticas" %}</span>
-              </p>
-              <p class="text-dark text-sm font-weight-normal custom-margin">
-                  <span class="copyright text-muted">{% trans "Hecho con Django por aXXyss" %}</span>
-              </p>
-            </div>
+        {% block content %}{% endblock %}
       </div>
-    </footer>
+    </section>
+  </div>
+
+  {% if request.path != "/" %}
+  <hr>{% endif %}
+
+  <footer class="footer pt-2 mt-2">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-3 mb-4 text-start">
+          <ul class="list-inline text-center text-md-start">
+            <li class="list-inline-item">
+              {% if LINK_GITHUB %}
+              <a href="{{LINK_GITHUB}}" class="link" target="_blank">
+                <span class="fa-stack fa-lg">
+                  <i class="fab fa-github fa-stack-1x opacity-8" style="font-size: 20px;"></i>
+                </span>
+              </a>
+              {% endif %}
+            </li>
+            <li class="list-inline-item">
+              {% if LINK_TWITTER %}
+              <a href="{{LINK_TWITTER}}" class="link" target="_blank">
+                <span class="fa-stack fa-lg">
+                  <i class="fab fa-twitter fa-stack-1x opacity-8" style="font-size: 20px;"></i>
+                </span>
+              </a>
+              {% endif %}
+            </li>
+            <li class="list-inline-item">
+              {% if LINK_LINKEDIN %}
+              <a href="{{LINK_LINKEDIN}}" class="link" target="_blank">
+                <span class="fa-stack fa-lg">
+                  <i class="fab fa-linkedin fa-stack-1x opacity-8" style="font-size: 20px;"></i>
+                </span>
+              </a>
+              {% endif %}
+            </li>
+            <li class="list-inline-item">
+              {% if LINK_INSTAGRAM %}
+              <a href="{{LINK_INSTAGRAM}}" class="link" target="_blank">
+                <span class="fa-stack fa-lg">
+                  <i class="fab fa-instagram fa-stack-1x opacity-8" style="font-size: 20px;"></i>
+                </span>
+              </a>
+              {% endif %}
+            </li>
+          </ul>
+        </div>
+
+        <div class="col-md-2 col-sm-6 col-6 mb-4 text-start">
+          <h6 class="text-sm">{% trans "Información" %}</h6>
+          <ul class="flex-column ms-n3 nav">
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'home' %}"><span class="fa fa-toggle-on fa-sm" aria-hidden="true"
+                  style="margin-right: 5px;"></span> {% trans "Portada" %}</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'about' %}"><span class="fa fa-toggle-on fa-sm" aria-hidden="true"
+                  style="margin-right: 5px;"></span> {% trans "Sobre mí" %}</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'portfolio:project_list' %}"><span class="fa fa-toggle-on fa-sm"
+                  aria-hidden="true" style="margin-right: 5px;"></span> {% trans "Portafolio" %}</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'contact:contact' %}"><span class="fa fa-toggle-on fa-sm"
+                  aria-hidden="true" style="margin-right: 5px;"></span> {% trans "Contacto" %}</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'blog:post_list' %}"><span class="fa fa-toggle-on fa-sm"
+                  aria-hidden="true" style="margin-right: 5px;"></span> {% trans "Blog" %}</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="col-md-2 col-sm-6 col-6 mb-4 text-start">
+          <h6 class="text-sm">{% trans "Legal" %}</h6>
+          <ul class="flex-column ms-n3 nav">
+            {% load pages_extras %}
+            {% load custom_tags %}
+            {% get_page_list as page_list %}
+            {% for page in page_list %}
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'page' page.id translation.link|default:page.link %}">
+                <span class="fa fa-toggle-on fa-sm" aria-hidden="true" style="margin-right: 5px;"></span>
+                {% translated_page_content page %} {# Mostrar el título traducido en el enlace #}
+              </a>
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+
+        <div class="col-12 text-center">
+          <p class="text-dark text-sm font-weight-normal custom-margin">
+            <span class="copyright text-muted">
+              Copyright &copy; 2026 · 
+              <a href="https://axxyss.com" class="text-muted">aXXyss Soluciones</a> 
+              | {% trans "Desarrollo Web en Torrent" %}
+            </span>
+          </p>
+          <p class="text-dark text-sm font-weight-normal custom-margin">
+            <span class="copyright text-muted">
+              {% trans "Hecho con" %} 
+              <a href="https://www.djangoproject.com/" target="_blank" class="text-muted">Django</a> 
+              {% trans "por" %} 
+              <a href="https://axxyss.com" class="text-muted">aXXyss</a>
+            </span>
+          </p>
+        </div>
+  </footer>
 
 
-    <!--   Core JS Files   -->
-<script src="{% static 'core/js/core/popper.min.js' %}"></script>
-<script src="{% static 'core/js/core/bootstrap.min.js' %}" type="text/javascript"></script>
-<script src="{% static 'core/js/plugins/perfect-scrollbar.min.js' %}"></script>
+  <!--   Core JS Files   -->
+  <script src="{% static 'core/js/core/popper.min.js' %}"></script>
+  <script src="{% static 'core/js/core/bootstrap.min.js' %}" type="text/javascript"></script>
+  <script src="{% static 'core/js/plugins/perfect-scrollbar.min.js' %}"></script>
 
-<!-- Control Center for Material UI Kit: parallax effects, scripts for the example pages etc -->
-<!--  Google Maps Plugin    -->
+  <!-- Control Center for Material UI Kit: parallax effects, scripts for the example pages etc -->
+  <!--  Google Maps Plugin    -->
 
-<script src="{% static 'core/js/material-kit.min.js' %}" type="text/javascript"></script>
+  <script src="{% static 'core/js/material-kit.min.js' %}" type="text/javascript"></script>
 
-<script>
-  {% block extra_js %}
-  {% endblock %}
-</script>
+  <script>
+    {% block extra_js %}
+    {% endblock %}
+  </script>
 
-<!--  Script para resaltar el código por ejemplo en el blog -->
-<script src="{% static 'core/js/prism.js' %}"></script>
+  <!--  Script para resaltar el código por ejemplo en el blog -->
+  <script src="{% static 'core/js/prism.js' %}"></script>
 
 
-<!--  Script para aclarar los botones de los idiomas que no estan activados -->
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const languageButtons = document.querySelectorAll('.language-button');
-    const languageForm = document.getElementById('language-form');
-    const languageInput = languageForm.querySelector('input[name="language"]');
-    const navbarToggler = document.querySelector('.navbar-toggler');
+  <!--  Script para aclarar los botones de los idiomas que no estan activados -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const languageButtons = document.querySelectorAll('.language-button');
+      const languageForm = document.getElementById('language-form');
+      const languageInput = languageForm.querySelector('input[name="language"]');
+      const navbarToggler = document.querySelector('.navbar-toggler');
 
-    // Función para actualizar la apariencia de los botones
-    function updateLanguageButtons(activeButton) {
+      function updateLanguageButtons(activeButton) {
         languageButtons.forEach(button => {
-            if (button === activeButton) {
-                button.classList.remove('inactive');
-                button.classList.add('active');
-            } else {
-                button.classList.remove('active');
-                button.classList.add('inactive');
-            }
+          if (button === activeButton) {
+            button.classList.remove('inactive');
+            button.classList.add('active');
+          } else {
+            button.classList.remove('active');
+            button.classList.add('inactive');
+          }
         });
-    }
+      }
 
-    // Función para manejar el clic/touch en los botones de idioma
-    function handleLanguageButtonClick(button) {
-        // Asegúrate de que el menú esté expandido
-        if (navbarToggler) {
-            navbarToggler.click(); // Simula un clic en el botón de toggle
+      function handleLanguageButtonClick(button) {
+        const targetLang = button.dataset.lang;
+        
+        // ✅ CASO 1: Posts del blog
+        if (window.postTranslatedSlugs && window.location.pathname.includes('/blog/post/')) {
+            const targetSlug = window.postTranslatedSlugs[targetLang];
+            
+            if (targetSlug) {
+                const newUrl = `/${targetLang}/blog/post/${targetSlug}/`;
+                window.location.href = newUrl;
+                return;
+            }
         }
-        // Actualiza la apariencia de los botones
+        
+        // ✅ CASO 2: Categorías del blog
+        if (window.categoryTranslatedSlugs && window.location.pathname.includes('/blog/category/')) {
+            const targetSlug = window.categoryTranslatedSlugs[targetLang];
+            
+            if (targetSlug) {
+                const newUrl = `/${targetLang}/blog/category/${targetSlug}/`;
+                window.location.href = newUrl;
+                return;
+            }
+        }
+        
+        // ✅ CASO 3: Otras páginas (comportamiento por defecto)
+        if (navbarToggler) {
+            navbarToggler.click();
+        }
         updateLanguageButtons(button);
-        // Actualiza el valor del campo oculto y envía el formulario
-        languageInput.value = button.dataset.lang;
+        languageInput.value = targetLang;
         languageForm.submit();
     }
 
-    // Agrega un event listener a cada botón de idioma
-    languageButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            handleLanguageButtonClick(this);
+      languageButtons.forEach(button => {
+        button.addEventListener('click', function () {
+          handleLanguageButtonClick(this);
         });
 
-        // Agrega un evento touchstart para dispositivos táctiles
-        button.addEventListener('touchstart', function() {
-            handleLanguageButtonClick(this);
+        button.addEventListener('touchstart', function () {
+          handleLanguageButtonClick(this);
         });
-    });
+      });
 
-    // Asegura que el botón del idioma actual esté activo al cargar la página
-    const currentLanguageButton = Array.from(languageButtons).find(button => button.dataset.lang === languageInput.value);
-    if (currentLanguageButton) {
+      const currentLanguageButton = Array.from(languageButtons).find(
+        button => button.dataset.lang === '{{ LANGUAGE_CODE }}'
+      );
+      if (currentLanguageButton) {
         updateLanguageButtons(currentLanguageButton);
-    }
-  });
-</script>
+      }
+    });
+  </script>
 
 
-<!-- Start cookieyes banner --> 
-<script id="cookieyes" type="text/javascript" src="https://cdn-cookieyes.com/client_data/76d56409d616fe95b2a53be0/script.js">
-<!-- End cookieyes banner -->
+  <!-- Start cookieyes banner -->
+  <script id="cookieyes" type="text/javascript"
+    src="https://cdn-cookieyes.com/client_data/76d56409d616fe95b2a53be0/script.js">
+  </script>
+      <!-- End cookieyes banner -->
 
 
 
-  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+      <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
 
-  </body>
+</body>
 
 </html>

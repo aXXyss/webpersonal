@@ -2,40 +2,101 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from blog.models import Post
 from comments.forms import CreateCommentForm
-from django.http import JsonResponse
+from django.http import JsonResponse, Http404
 from django.template.loader import render_to_string
 from django.utils import timezone
-from users.models import Profile # Corrección aquí: UserProfile -> Profile
+from django.utils.translation import get_language
+from django.core.mail import send_mail
+from django.conf import settings
+from django.urls import reverse
+from users.models import Profile
 from comments import models
 from categories.models import Category
 
 def post_list(request):
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')
-    paginator = Paginator(posts, 5) # Show 5 posts per page
+    paginator = Paginator(posts, 5)
 
     page = request.GET.get('page')
     try:
         posts = paginator.page(page)
     except PageNotAnInteger:
-        # If page is not an integer, deliver first page.
         posts = paginator.page(1)
     except EmptyPage:
-        # If page is out of range (e.g. 9999), deliver last page of results.
         posts = paginator.page(paginator.num_pages)
 
     return render(request, 'blog/post_list.html', {'posts': posts})
 
 def post_detail(request, slug):
-    post = get_object_or_404(Post, slug=slug)
+    current_lang = get_language()
+    
+    post = None
+    try:
+        post = Post.objects.get(**{f'slug_{current_lang}': slug})
+    except Post.DoesNotExist:
+        try:
+            post = Post.objects.get(slug_es=slug)
+        except Post.DoesNotExist:
+            try:
+                post = Post.objects.get(slug_en=slug)
+            except Post.DoesNotExist:
+                try:
+                    post = Post.objects.get(slug_fr=slug)
+                except Post.DoesNotExist:
+                    raise Http404("Post no encontrado")
+    
     comments = models.Comment.objects.filter(post=post).order_by('created_at')
     form = CreateCommentForm()
-    return render(request, 'blog/post_detail.html', {'post': post, 'comments': comments, 'form': form})
+    share_url = request.build_absolute_uri()
+
+    # ✅ AÑADIR: Pasar los slugs traducidos
+    translated_slugs = {
+        'es': post.slug_es,
+        'en': post.slug_en,
+        'fr': post.slug_fr,
+    }
+
+    return render(request, 'blog/post_detail.html', {
+        'post': post, 
+        'comments': comments, 
+        'form': form, 
+        'share_url': share_url,
+        'translated_slugs': translated_slugs,  # ✅ AÑADIR ESTO
+    })
 
 
 def post_list_by_category(request, slug):
-    category = get_object_or_404(Category, slug=slug)
+    current_lang = get_language()
+    
+    category = None
+    try:
+        category = Category.objects.get(**{f'slug_{current_lang}': slug})
+    except Category.DoesNotExist:
+        try:
+            category = Category.objects.get(slug_es=slug)
+        except Category.DoesNotExist:
+            try:
+                category = Category.objects.get(slug_en=slug)
+            except Category.DoesNotExist:
+                try:
+                    category = Category.objects.get(slug_fr=slug)
+                except Category.DoesNotExist:
+                    raise Http404("Categoría no encontrada")
+    
     posts = Post.objects.filter(categories=category, published_date__lte=timezone.now()).order_by('-published_date')
-    return render(request, 'blog/post_list.html', {'posts': posts, 'category': category})
+    
+    # ✅ AÑADIR: Pasar los slugs traducidos de la categoría
+    translated_category_slugs = {
+        'es': category.slug_es,
+        'en': category.slug_en,
+        'fr': category.slug_fr,
+    }
+    
+    return render(request, 'blog/post_list.html', {
+        'posts': posts, 
+        'category': category,
+        'translated_category_slugs': translated_category_slugs,  # ✅ AÑADIR
+    })
 
 
 def save_comment(request):
@@ -46,16 +107,42 @@ def save_comment(request):
                 comment = form.save(commit=False)
                 comment.post = Post.objects.get(id=request.POST.get('post'))
                 comment.user = request.user
-                # Obtener el perfil del usuario
                 try:
                     user_profile = Profile.objects.get(user=request.user)
-                    comment.profile = user_profile # Asignar el perfil al comentario
+                    comment.profile = user_profile
                 except Profile.DoesNotExist:
-                    return JsonResponse({'success': False, 'error': 'Perfil no encontrado'}, status=400) # Devolver error si el perfil no existe
+                    return JsonResponse({'success': False, 'error': 'Perfil no encontrado'}, status=400)
 
                 comment.save()
 
-                # Obtener la foto de perfil del usuario
+                # Enviar email de notificación
+                try:
+                    post_url = request.build_absolute_uri(comment.post.get_absolute_url())
+                    subject = f'Nuevo comentario en: {comment.post.title}'
+                    message = f"""
+Nuevo comentario en tu blog:
+
+Post: {comment.post.title}
+Autor: {comment.user.username} ({comment.user.email})
+Fecha: {comment.created_at.strftime("%d/%m/%Y %H:%M")}
+
+Comentario:
+{comment.comment}
+
+Ver post: {post_url}
+                    """
+                    
+                    send_mail(
+                        subject=subject,
+                        message=message,
+                        from_email=settings.DEFAULT_FROM_EMAIL,
+                        recipient_list=[settings.DEFAULT_FROM_EMAIL],  # Te envía a ti mismo
+                        fail_silently=True,  # No rompe si el email falla
+                    )
+                except Exception as email_error:
+                    print(f"Error enviando email: {email_error}")
+                    # Continúa aunque falle el email
+
                 try:
                     user_profile_photo = user_profile.photo.url if user_profile.photo else '/media/blog/avatars/noavatar.png'
                 except Profile.DoesNotExist:
@@ -84,20 +171,50 @@ def save_reply(request, comment_id):
         if form.is_valid():
             try:
                 reply = form.save(commit=False)
-                reply.post = models.Comment.objects.get(id=comment_id).post
+                parent_comment = models.Comment.objects.get(id=comment_id)
+                reply.post = parent_comment.post
                 reply.user = request.user
-                reply.parent = models.Comment.objects.get(id=comment_id)
+                reply.parent = parent_comment
 
-                # Obtener el perfil del usuario
                 try:
                     user_profile = Profile.objects.get(user=request.user)
-                    reply.profile = user_profile # Asignar el perfil a la respuesta
+                    reply.profile = user_profile
                 except Profile.DoesNotExist:
-                    return JsonResponse({'success': False, 'error': 'Perfil no encontrado'}, status=400) # Devolver error si el perfil no existe
+                    return JsonResponse({'success': False, 'error': 'Perfil no encontrado'}, status=400)
 
                 reply.save()
 
-                # Obtener la foto de perfil del usuario
+                # Enviar email de notificación
+                try:
+                    post_url = request.build_absolute_uri(reply.post.get_absolute_url())
+                    subject = f'Nueva respuesta en: {reply.post.title}'
+                    message = f"""
+Nueva respuesta a un comentario en tu blog:
+
+Post: {reply.post.title}
+Respondiendo a: {parent_comment.user.username}
+Autor de la respuesta: {reply.user.username} ({reply.user.email})
+Fecha: {reply.created_at.strftime("%d/%m/%Y %H:%M")}
+
+Comentario original:
+{parent_comment.comment}
+
+Respuesta:
+{reply.comment}
+
+Ver post: {post_url}
+                    """
+                    
+                    send_mail(
+                        subject=subject,
+                        message=message,
+                        from_email=settings.DEFAULT_FROM_EMAIL,
+                        recipient_list=[settings.DEFAULT_FROM_EMAIL],
+                        fail_silently=True,
+                    )
+                except Exception as email_error:
+                    print(f"Error enviando email: {email_error}")
+
                 try:
                     user_profile_photo = user_profile.photo.url if user_profile.photo else '/media/blog/avatars/noavatar.png'
                 except Profile.DoesNotExist:
@@ -114,8 +231,8 @@ def save_reply(request, comment_id):
 
                 return JsonResponse({'success': True, 'comment_data': comment_data})
             except Exception as e:
-                print(f"Error en save_reply: {e}") # Log del error
-                return JsonResponse({'success': False, 'error': str(e)}, status=500) # Devuelve el error en JSON
+                print(f"Error en save_reply: {e}")
+                return JsonResponse({'success': False, 'error': str(e)}, status=500)
         else:
             return JsonResponse({'success': False, 'error': form.errors}, status=400)
     else:

@@ -1,36 +1,60 @@
 {% extends 'core/base.html' %}
-
 {% load i18n %}
-{% block title %}{% blocktrans %}Portada{% endblocktrans %}{% endblock %}
-{% block meta_description %}{% blocktrans %}Página principal de aXXyss soluciones. Descubre nuestros servicios de tecnología de la información y programación.{% endblocktrans %}{% endblock %}
+
+{% block title %}
+    {% trans "Desarrollo Web Django, WordPress y Software Forestal" %}
+{% endblock %}
+
+{% block meta_description %}
+    {% trans "Programador experto en Django y WordPress E-commerce. Soluciones para aserraderos en África, tiendas online en Canadá (Quebec) y soporte IT en Torrent, Valencia." %}
+{% endblock %}
 
 {% block background %}{% load static %}{% static 'core/img/home-bg.jpg' %}{% endblock %}
 
+{% block background_webp_style %}
+<style>
+  .page-header {
+    background-image: -webkit-image-set(url('{% static 'core/img/home-bg.webp' %}') 1x) !important;
+    background-image: image-set(url('{% static 'core/img/home-bg.webp' %}') 1x) !important;
+  }
+</style>
+{% endblock %}
+
 {% block headers %}
 <h1 class="text-white font-weight-black pt-3 mt-n5">Joaquin Denis</h1>
-<p class="lead text-white mt-3">{% trans "Desarrollador Full-Stack | Desarrollador de Sistemas de Gestión a Medida" %}</p>
+<p class="lead text-white mt-3">
+    {% trans "Desarrollador Full-Stack | Django & WordPress E-commerce" %}<br>
+    <small class="opacity-8">{% trans "Convierto procesos industriales complejos en aplicaciones web modernas" %}</small>
+</p>
 {% endblock %}
 
 {% block content %}
 <div class="row">
     <div class="col-lg-3 col-md-4 offset-lg-1">
-        <img class="img-fluid" src="{% static 'core/img/desarrollador.jpg' %}" alt="Concepto de desarrollo web y programación">
+        <picture>
+            <source srcset="{% static 'core/img/desarrollador.webp' %}" type="image/webp">
+            <img class="img-fluid rounded shadow" src="{% static 'core/img/desarrollador.jpg' %}" alt="Joaquin Denis - Desarrollo de Software Forestal y Web">
+            </picture>
     </div>
     <div class="col-lg-7 col-md-8">
 
-        <h2>{% blocktrans %}Creación de Soluciones a Medida{% endblocktrans %}</h2>
-        <p>{% blocktrans %}Creando <b>soluciones web</b> o <b>aplicaciones de gestión</b> que entienden el negocio desde sus cimientos. Nuestro enfoque es comprender a 
-            fondo sus procesos y objetivos para desarrollar soluciones que realmente impulsen su éxito.{% endblocktrans %}</p>
+        <h2>{% trans "Software a Medida para la Industria Forestal y Global" %}</h2>
+        <p>{% blocktrans %}Desde mi estudio en <b>Torrent (Valencia)</b>, desarrollo <b>soluciones web</b> y sistemas de gestión que cruzan fronteras. Especializado en el sector de <b>aserraderos y gestión forestal</b>, diseño herramientas que entienden los procesos industriales complejos para clientes en <b>África, Canadá y Europa</b>.{% endblocktrans %}</p>
 
-        <h2>{% blocktrans %}Experiencia y Enfoque Integral{% endblocktrans %}</h2>
-        <p>{% blocktrans %}Mi trayectoria de más de dos décadas diseñando e implementando sistemas de gestión a medida me permite abordar los proyectos web con una
-                perspectiva integral, enfocándome en la eficiencia, la escalabilidad y la alineación con los objetivos de negocio. Este enfoque asegura una comunicación clara y una solución 
-                final que realmente satisface sus necesidades.{% endblocktrans %}</p>
+        <h2>{% trans "Especialista en Modernización de Software Industrial" %}</h2>
+        <p>{% blocktrans %}Cuento con una solución propia de <b>gestión forestal</b> basada en arquitectura MySQL. Actualmente, lidero la transición de sistemas de escritorio legacy (MS Access) hacia potentes aplicaciones <b>Cloud nativas con Django</b>. Esta experiencia me permite migrar sistemas antiguos a la web sin pérdida de datos.{% endblocktrans %}</p>
 
-        <h2>{% trans "¿Necesita una Solución? ¡Contáctanos!" %}</h2>
-        <p>{% trans "¿Necesita un <b>sitio web</b> o una <b>solución de gestión a medida</b>? ¿Busca un <b>desarrollador full-stack</b> con una sólida base en <b>sistemas de gestión</b>? ¡Contacta con nosotros hoy mismo para discutir tu proyecto y cómo podemos ayudarte a alcanzar tus objetivos!" %}</p>
+        <h2>{% trans "Soluciones E-commerce y WordPress Internacional" %}</h2>
+        <p>{% blocktrans %}Además de sistemas industriales, desarrollo <b>tiendas online con WordPress y WooCommerce</b>. He implementado soluciones de comercio electrónico para el mercado de <b>Quebec (Canadá)</b>, asegurando plataformas rápidas, seguras y adaptadas a las necesidades locales.{% endblocktrans %}</p>
 
-        <p><a class="nav-link" href="{% url 'contact:contact' %}">{% trans "Contacto" %}</a></p>
+        <h2>{% blocktrans %}Más de 20 años de experiencia integral{% endblocktrans %}</h2>
+        <p>{% blocktrans %}Mi trayectoria me permite abordar proyectos con una perspectiva única, enfocándome en la eficiencia y la escalabilidad. Ya sea un aserradero en el Congo o una web en España, aseguro una solución que satisface sus necesidades reales.{% endblocktrans %}</p>
+
+        <p>
+            <a class="btn btn-dark btn-lg mt-3 shadow-dark" href="{% url 'contact:contact' %}">
+                {% trans "Contactar ahora" %}
+            </a>
+        </p>
 
     </div>
 </div>

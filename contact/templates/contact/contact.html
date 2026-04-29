@@ -1,12 +1,23 @@
 {% extends 'core/base.html' %}
 {% load static %}
-
 {% load i18n %}
+
 {% block title %}{% blocktrans %}Contact{% endblocktrans %}{% endblock %}
-{% block meta_description %}{% translate "Ponte en contacto con aXXyss soluciones para consultas sobre tecnología de la información, programación y soluciones Linux. Envía tu mensaje a través de nuestro formulario de contacto." %}{% endblock %}
+{% block meta_description %}
+{% translate "Ponte en contacto con aXXyss soluciones para consultas sobre tecnología de la información, programación y
+soluciones Linux. Envía tu mensaje a través de nuestro formulario de contacto." %}
+{% endblock %}
 
+{% block background %}{% static 'core/img/contact-bg.jpg' %}{% endblock %}
 
-{% block background %}{% load static %}{% static 'core/img/contact-bg.jpg' %}{% endblock %}
+{% block background_webp_style %}
+<style>
+  .page-header {
+    background-image: -webkit-image-set(url('{% static 'core/img/contact-bg.webp' %}') 1x) !important;
+    background-image: image-set(url('{% static 'core/img/contact-bg.webp' %}') 1x) !important;
+  }
+</style>
+{% endblock %}
 
 {% block headers %}
 <h1 class="text-white font-weight-black pt-3 mt-n5">{% trans "Contacto" %}</h1>
@@ -14,119 +25,132 @@
 {% endblock %}
 
 {% block content %}
+<section>
+  <div class="container-4">
+    <div class="about-heading-content">
+      <div class="row">
 
-    <section>
-      <div class="container-4">
-        <div class="about-heading-content">
-          <div class="row">
-            <div class="col-lg-8 mx-auto">
-              <h2 class="text-center">{% trans "Formulario de contacto" %}</h2>
-              <form action="" method="POST" id="contactForm">
-                {% csrf_token %}
-                <div class="input-group input-group-dynamic mb-4">
-                  <div class="input-group">
-                    {{form.name}}
-                  </div>
-                  {{form.name.errors}}
-                </div>
-                <div class="input-group input-group-dynamic">
-                  <div class="input-group">
-                    {{form.company}}
-                  </div>
-                  {{form.company.errors}}
-                </div>
-                <div class="input-group input-group-dynamic">
-                  <div class="input-group">
-                    {{form.email}}
-                  </div>
-                  {{form.email.errors}}
-                </div>
-                <div class="input-group input-group-dynamic">
-                  <div class="input-group">
-                    {{form.country}} {# Esto renderizará el <select> con class="form-control" #}
-                  </div>
-                  {{form.country.errors}}
-                </div>
-                <div class="input-group mb-4 input-group-static">
-                  <div class="input-group">
-                    {{form.content}}
-                  </div>
-                  {{form.content.errors}}
-                </div>
+        <div class="col-lg-8 mx-auto">
+          <h2 class="text-center">{% trans "Formulario de contacto" %}</h2>
 
-                <div class="row">
-                  <div class="col-md-12">
-                    <div class="form-check form-switch mb-4 d-flex align-items-center avisolegal">
-                      {{ form.avisolegal }}
-                      <label class="form-check-label ms-3 mb-0" for="{{ form.avisolegal.id_for_label }}">
-                        {% trans "He leído y acepto la" %} <a href="/page/1/politica-pivacidad/" class="text-dark"><u>{% trans "Política de privacidad" %}</u></a>.
-                      </label>
-                      {{ form.avisolegal.errors }}
-                    </div>
+          <form action="" method="POST" id="contactForm">
+            {% csrf_token %}
 
-                    <div class="form-control form-switch mb-4 d-flex align-items-center publicidad">
-                      {{ form.publicidad }}
-                      <label class="form-check-label ms-3 mb-0" for="{{ form.publicidad.id_for_label }}">
-                        {% trans "Consiento el uso de mis datos personales para recibir publicidad de su entidad." %}
-                      </label>
-                      {{ form.publicidad.errors }}
-                    </div>
-                  </div>
-
-                  {# --- AÑADIR ESTE CAMPO HONEYPOT --- #}
-                  {# Este campo se renderiza como <input type="hidden"> gracias a forms.HiddenInput en forms.py #}
-                  {{ form.honeypot_field }}
-                  {# No es necesario label ni errores para este campo oculto #}
-                  {# ----------------------------------- #}
-
-                  {# Campo oculto para el timing #}
-                  <input type="hidden" name="start_time" value="{{ request.session.form_load_time }}" />
-
-                  <div class="form-group">
-                    <div class="input-group">
-                      {{form.captcha}}
-                    </div>
-                  </div>
-
-                  <div class="col-md-12">
-                    <button type="submit" class="btn bg-gradient-dark w-100">{% trans "Enviar mensaje" %}</button>
-                  </div>
-                </div>
-              </form>
-
-              {% if form.non_field_errors %}
-              <div style="color: red;">{{ form.non_field_errors }}</div>
-              {% endif %}
-
+            <div class="input-group input-group-dynamic mb-4">
+              <div class="input-group">{{ form.name }}</div>
+              {{ form.name.errors }}
             </div>
 
-            <!-- Información sobre la protección de datos -->
-            <div class="col-xl-4 col-lg-4 col-md-4">
-              <div class="bg-light border rounded p-2"> 
-                <h2 style="font-size: 1.2em;" class="text-justify">{% blocktrans %}Información sobre la protección de datos{% endblocktrans %}</h2> 
-                <div class="small text-justify bg-lighter">
-                  <h6>{% blocktrans %}<strong>Responsable del tratamiento</strong>{% endblocktrans %}</h6>
-                  <p>{% blocktrans %}Joaquín Denis Tremols{% endblocktrans %}</p>
-                  <h6>{% blocktrans %}<strong>Dirección del responsable</strong>{% endblocktrans %}</h6>
-                  <p>{% blocktrans %}Calle 25 de Abril 10, piso 4, puerta 8, CP 46900, Torrent (Valencia/València)- España{% endblocktrans %}</p>
-                  <h6>{% blocktrans %}<strong>Finalidad</strong>{% endblocktrans %}</h6>
-                  <p>{% blocktrans %}Sus datos serán usados para poder atender sus solicitudes y prestarle nuestros servicios.{% endblocktrans %}</p>
-                  <h6>{% blocktrans %}<strong>Información de interés</strong>{% endblocktrans %}</h6>
-                  <p>{% blocktrans %}Únicamente le enviaremos comunicaciones de su interés con su autorización previa, que podrá facilitarnos mediante la casilla correspondiente establecida al efecto.{% endblocktrans %}</p>
-                  <h6>{% blocktrans %}<strong>Legitimación</strong>{% endblocktrans %}</h6>
-                  <p>{% blocktrans %}Únicamente trataremos sus datos con su consentimiento previo, que podrá facilitarnos mediante la casilla correspondiente establecida al efecto.{% endblocktrans %}</p>
-                  <h6>{% blocktrans %}<strong>Destinatarios</strong>{% endblocktrans %}</h6>
-                  <p>{% blocktrans %}Con carácter general, sólo el personal de nuestra entidad que esté debidamente autorizado podrá tener conocimiento de la información que le pedimos.{% endblocktrans %}</p>
-                  <h6>{% blocktrans %}<strong>Derechos</strong>{% endblocktrans %}</h6>
-                  <p>{% blocktrans %}Tiene derecho a saber qué información tenemos sobre usted, corregirla y eliminarla, tal y como se explica en la información adicional disponible en nuestra página web.{% endblocktrans %}</p>
-                  <h6>{% blocktrans %}<strong>Información adicional</strong>{% endblocktrans %}</h6>
-                  <p>{% blocktrans %}Más información en el apartado "<a href="/page/2/politica-de-privacidad/">Política de privacidad</a>" de nuestra página web.{% endblocktrans %}</p>
-                </div>
-              </div>
+            <div class="input-group input-group-dynamic mb-4">
+              <div class="input-group">{{ form.company }}</div>
+              {{ form.company.errors }}
+            </div>
+
+            <div class="input-group input-group-dynamic mb-4">
+              <div class="input-group">{{ form.email }}</div>
+              {{ form.email.errors }}
+            </div>
+
+            <div class="input-group input-group-dynamic mb-4">
+              <div class="input-group">{{ form.country }}</div>
+              {{ form.country.errors }}
+            </div>
+
+            <div class="input-group mb-4 input-group-static">
+              <div class="input-group">{{ form.content }}</div>
+              {{ form.content.errors }}
+            </div>
+
+            <div class="form-check form-switch mb-4 d-flex align-items-center avisolegal">
+              {{ form.avisolegal }}
+              <label class="form-check-label ms-3 mb-0" for="{{ form.avisolegal.id_for_label }}">
+                {% trans "He leído y acepto la" %}
+                <a href="/page/1/politica-privacidad/" class="text-dark">
+                  <u>{% trans "Política de privacidad" %}</u>
+                </a>.
+              </label>
+              {{ form.avisolegal.errors }}
+            </div>
+
+            <div class="form-check form-switch mb-4 d-flex align-items-center publicidad">
+              {{ form.publicidad }}
+              <label class="form-check-label ms-3 mb-0" for="{{ form.publicidad.id_for_label }}">
+                {% trans "Consiento el uso de mis datos personales para recibir publicidad de su entidad." %}
+              </label>
+              {{ form.publicidad.errors }}
+            </div>
+
+            <!-- HONEYPOT (completamente invisible) -->
+            <div style="display:none;">
+              {{ form.honeypot_field }}
+            </div>
+
+            <!-- CAMPO DE TIEMPO OCULTO -->
+            <input type="hidden" id="start_time" name="start_time" value="{{ request.session.form_load_time }}" />
+
+            <!-- CAPTCHA -->
+            <div class="mb-3">
+              {{ form.captcha }}
+              {{ form.captcha.errors }}
+            </div>
+
+            <!-- BOTÓN ENVIAR -->
+            <div class="col-md-12">
+              <button type="submit" class="btn bg-gradient-dark w-100">
+                {% trans "Enviar mensaje" %}
+              </button>
+            </div>
+
+          </form>
+
+          {% if form.non_field_errors %}
+          <div style="color: red;">{{ form.non_field_errors }}</div>
+          {% endif %}
+        </div>
+
+
+        <!-- COLUMNA INFORMACIÓN RGPD -->
+        <div class="col-xl-4 col-lg-4 col-md-4">
+          <div class="bg-light border rounded p-2">
+            <h2 style="font-size: 1.2em;" class="text-justify">
+              {% blocktrans %}Información sobre la protección de datos{% endblocktrans %}
+            </h2>
+
+            <div class="small text-justify bg-lighter">
+
+              <h6><strong>{% trans "Responsable del tratamiento" %}</strong></h6>
+              <p>Joaquín Denis Tremols</p>
+
+              <h6><strong>{% trans "Dirección del responsable" %}</strong></h6>
+              <p>Calle 25 de Abril 10, piso 4, puerta 8, CP 46900, Torrent (Valencia/València) - España</p>
+
+              <h6><strong>{% trans "Finalidad" %}</strong></h6>
+              <p>{% trans "Sus datos serán usados para poder atender sus solicitudes y prestarle nuestros servicios." %}
+              </p>
+
+              <h6><strong>{% trans "Información de interés" %}</strong></h6>
+              <p>{% trans "Únicamente le enviaremos comunicaciones de su interés con su autorización previa." %}</p>
+
+              <h6><strong>{% trans "Legitimación" %}</strong></h6>
+              <p>{% trans "Únicamente trataremos sus datos con su consentimiento previo." %}</p>
+
+              <h6><strong>{% trans "Destinatarios" %}</strong></h6>
+              <p>{% trans "Solo el personal autorizado tendrá conocimiento de los datos proporcionados." %}</p>
+
+              <h6><strong>{% trans "Derechos" %}</strong></h6>
+              <p>{% trans "Tiene derecho a saber qué información tenemos sobre usted, corregirla y eliminarla." %}</p>
+
+              <h6><strong>{% trans "Información adicional" %}</strong></h6>
+              <p>{% trans "Más información en" %} <a href="/page/2/politica-de-privacidad/">
+                  <u>{% trans "Política de privacidad" %}</u></a>
+              </p>
+
             </div>
           </div>
         </div>
-      </div>
-    </section>
 
-   {% endblock %}
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
