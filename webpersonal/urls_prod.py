@@ -6,7 +6,7 @@ from django.contrib.sitemaps.views import sitemap
 from core.sitemaps import StaticViewSitemap
 from blog.sitemaps import PostSitemap
 from portfolio.sitemaps import ProjectSitemap
-from django.views.generic import TemplateView 
+from django.views.generic import TemplateView, RedirectView
 
 # Configuración de los sitemaps
 sitemaps = {
@@ -26,6 +26,25 @@ urlpatterns = [
         "google19c4ca07d59e3550.html",
         TemplateView.as_view(template_name="core/google19c4ca07d59e3550.html", content_type="text/html"),
     ),
+
+    # --- REDIRECCIONES 301 (URLs antiguas → URLs nuevas) ---
+    # Posts Django/Debian (slugs con "-12" al final, renombrados al traducir)
+    path('es/blog/post/desarrollo-web-con-django-en-debian-12/',
+         RedirectView.as_view(url='/es/blog/post/desarrollo-web-con-django-en-debian/', permanent=True)),
+    path('en/blog/post/desarrollo-web-con-django-en-debian-12/',
+         RedirectView.as_view(url='/en/blog/post/web-development-with-django-on-debian/', permanent=True)),
+    path('fr/blog/post/desarrollo-web-con-django-en-debian-12/',
+         RedirectView.as_view(url='/fr/blog/post/developpement-web-avec-django-sur-debian/', permanent=True)),
+
+    # Posts aaPanel (slugs en español en versiones EN/FR, renombrados al traducir)
+    path('en/blog/post/que-es-aapanel/',
+         RedirectView.as_view(url='/en/blog/post/what-is-aapanel/', permanent=True)),
+    path('fr/blog/post/que-es-aapanel/',
+         RedirectView.as_view(url='/fr/blog/post/quest-ce-que-aapanel/', permanent=True)),
+
+    # Post WebP (slug en inglés en versión ES, renombrado al traducir)
+    path('es/blog/post/complete-guide-how-to-convert-images-to-webp/',
+         RedirectView.as_view(url='/es/blog/post/guia-completa-como-convertir-imagenes-a-webp/', permanent=True)),
 ]
 
 # 2. RUTAS MULTILINGÜES (Con prefijo /es/, /fr/, /en/)
