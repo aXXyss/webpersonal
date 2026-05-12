@@ -4,6 +4,20 @@
 {% block title %}{% blocktrans %}Blog{% endblocktrans %}{% endblock %}
 {% block meta_description %}{{ post.content|striptags|truncatewords:30 }}{% endblock %}
 
+{% block canonical %}
+<link rel="canonical" href="https://axxyss.com{{ request.path }}" />
+{% endblock %}
+
+{% block hreflang %}
+<link rel="alternate" hreflang="es" href="https://axxyss.com/es/blog/post/{{ translated_slugs.es }}/" />
+<link rel="alternate" hreflang="es-ES" href="https://axxyss.com/es/blog/post/{{ translated_slugs.es }}/" />
+<link rel="alternate" hreflang="en" href="https://axxyss.com/en/blog/post/{{ translated_slugs.en }}/" />
+<link rel="alternate" hreflang="en-US" href="https://axxyss.com/en/blog/post/{{ translated_slugs.en }}/" />
+<link rel="alternate" hreflang="fr" href="https://axxyss.com/fr/blog/post/{{ translated_slugs.fr }}/" />
+<link rel="alternate" hreflang="fr-FR" href="https://axxyss.com/fr/blog/post/{{ translated_slugs.fr }}/" />
+<link rel="alternate" hreflang="x-default" href="https://axxyss.com/es/blog/post/{{ translated_slugs.es }}/" />
+{% endblock %}
+
 {% block extra_meta %}
 {% load static %}
 <!-- Open Graph / Facebook / LinkedIn -->

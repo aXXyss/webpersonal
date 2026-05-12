@@ -18,10 +18,11 @@
   {% get_current_language as current_language %}
   {% get_available_languages as available_languages %}
 
-
+  {% block canonical %}
   <link rel="canonical" href="https://axxyss.com{{ request.path }}" />
+  {% endblock %}
 
-
+  {% block hreflang %}
   {% for lang_code, lang_name in available_languages %}
     {% if lang_code == 'es' %}
       <link rel="alternate" hreflang="es" href="https://axxyss.com/es{{ request.path|slice:'3:' }}" />
@@ -34,9 +35,8 @@
       <link rel="alternate" hreflang="fr-FR" href="https://axxyss.com/fr{{ request.path|slice:'3:' }}" />
     {% endif %}
   {% endfor %}
-
-
   <link rel="alternate" hreflang="x-default" href="https://axxyss.com/es{{ request.path|slice:'3:' }}" />
+  {% endblock %}
 
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
