@@ -32,24 +32,25 @@ def post_detail(request, slug):
     
     post = None
     try:
+        # Slug correcto para el idioma activo
         post = Post.objects.get(**{f'slug_{current_lang}': slug})
     except Post.DoesNotExist:
-        try:
-            post = Post.objects.get(slug_es=slug)
-        except Post.DoesNotExist:
+        # Buscar en otros idiomas y redirigir a la URL correcta (301)
+        for lang in ['es', 'en', 'fr']:
             try:
-                post = Post.objects.get(slug_en=slug)
+                post = Post.objects.get(**{f'slug_{lang}': slug})
+                # Encontrado en otro idioma — redirigir al slug correcto del idioma activo
+                correct_slug = getattr(post, f'slug_{current_lang}')
+                correct_url = reverse('blog:post_detail', kwargs={'slug': correct_slug})
+                return redirect(correct_url, permanent=True)
             except Post.DoesNotExist:
-                try:
-                    post = Post.objects.get(slug_fr=slug)
-                except Post.DoesNotExist:
-                    raise Http404("Post no encontrado")
+                continue
+        raise Http404("Post no encontrado")
     
     comments = models.Comment.objects.filter(post=post).order_by('created_at')
     form = CreateCommentForm()
     share_url = request.build_absolute_uri()
 
-    # ✅ AÑADIR: Pasar los slugs traducidos
     translated_slugs = {
         'es': post.slug_es,
         'en': post.slug_en,
@@ -61,7 +62,7 @@ def post_detail(request, slug):
         'comments': comments, 
         'form': form, 
         'share_url': share_url,
-        'translated_slugs': translated_slugs,  # ✅ AÑADIR ESTO
+        'translated_slugs': translated_slugs,
     })
 
 
@@ -72,20 +73,20 @@ def post_list_by_category(request, slug):
     try:
         category = Category.objects.get(**{f'slug_{current_lang}': slug})
     except Category.DoesNotExist:
-        try:
-            category = Category.objects.get(slug_es=slug)
-        except Category.DoesNotExist:
+        # Buscar en otros idiomas y redirigir a la URL correcta (301)
+        for lang in ['es', 'en', 'fr']:
             try:
-                category = Category.objects.get(slug_en=slug)
+                category = Category.objects.get(**{f'slug_{lang}': slug})
+                # Encontrado en otro idioma — redirigir al slug correcto del idioma activo
+                correct_slug = getattr(category, f'slug_{current_lang}')
+                correct_url = reverse('blog:post_list_by_category', kwargs={'slug': correct_slug})
+                return redirect(correct_url, permanent=True)
             except Category.DoesNotExist:
-                try:
-                    category = Category.objects.get(slug_fr=slug)
-                except Category.DoesNotExist:
-                    raise Http404("Categoría no encontrada")
+                continue
+        raise Http404("Categoría no encontrada")
     
     posts = Post.objects.filter(categories=category, published_date__lte=timezone.now()).order_by('-published_date')
     
-    # ✅ AÑADIR: Pasar los slugs traducidos de la categoría
     translated_category_slugs = {
         'es': category.slug_es,
         'en': category.slug_en,
@@ -95,7 +96,7 @@ def post_list_by_category(request, slug):
     return render(request, 'blog/post_list.html', {
         'posts': posts, 
         'category': category,
-        'translated_category_slugs': translated_category_slugs,  # ✅ AÑADIR
+        'translated_category_slugs': translated_category_slugs,
     })
 
 
@@ -136,12 +137,11 @@ Ver post: {post_url}
                         subject=subject,
                         message=message,
                         from_email=settings.DEFAULT_FROM_EMAIL,
-                        recipient_list=[settings.DEFAULT_FROM_EMAIL],  # Te envía a ti mismo
-                        fail_silently=True,  # No rompe si el email falla
+                        recipient_list=[settings.DEFAULT_FROM_EMAIL],
+                        fail_silently=True,
                     )
                 except Exception as email_error:
                     print(f"Error enviando email: {email_error}")
-                    # Continúa aunque falle el email
 
                 try:
                     user_profile_photo = user_profile.photo.url if user_profile.photo else '/media/blog/avatars/noavatar.png'
