@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Disallow: /axxysswebadmin/
+Disallow: /ckeditor5/
+
+# Sitemaps para buscadores
+Sitemap: https://axxyss.com/es/sitemap.xml
+Sitemap: https://axxyss.com/fr/sitemap.xml
+Sitemap: https://axxyss.com/en/sitemap.xml
