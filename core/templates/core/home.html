@@ -58,4 +58,54 @@
 
     </div>
 </div>
+
+{% if reviews %}
+<div class="row mt-5">
+    <div class="col-12 text-center mb-4">
+        <h2>{% trans "Lo que dicen mis clientes" %}</h2>
+        <p class="text-muted">
+            <span class="text-warning fs-5">★★★★★</span>
+            <strong>{{ rating }} / 5</strong> &nbsp;·&nbsp; {{ total }} {% trans "reseñas en Google" %}
+        </p>
+    </div>
+</div>
+
+<div class="row row-cols-1 row-cols-md-3 g-4 mb-4">
+    {% for review in reviews %}
+    <div class="col">
+        <div class="card h-100 shadow-sm border-0">
+            <div class="card-body">
+                <div class="text-warning mb-2" style="font-size:1.1rem;">
+                    {% for i in "12345" %}
+                        {% if forloop.counter <= review.rating %}★{% else %}☆{% endif %}
+                    {% endfor %}
+                </div>
+                <p class="card-text fst-italic">"{{ review.originalText.text }}"</p>
+            </div>
+            <div class="card-footer bg-white border-0 d-flex align-items-center gap-2">
+                <img src="{{ review.authorAttribution.photoUri }}" 
+                     alt="{{ review.authorAttribution.displayName }}"
+                     class="rounded-circle" width="36" height="36">
+                <div>
+                    <div class="fw-semibold small">{{ review.authorAttribution.displayName }}</div>
+                    <div class="text-muted" style="font-size:0.75rem;">{{ review.relativePublishTimeDescription }}</div>
+                </div>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg"
+                     alt="Google" height="14" class="ms-auto opacity-50">
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+<div class="row mb-5">
+    <div class="col-12 text-center">
+        <a href="https://www.google.com/maps/search/?api=1&query=Axxyss+Soluciones&query_place_id={{ place_id }}" 
+            target="_blank" rel="noopener" class="btn btn-outline-dark">
+            {% trans "Ver todas las reseñas en Google" %} ↗
+        </a>
+    </div>
+</div>
+{% endif %}
+
 {% endblock %}

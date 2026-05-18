@@ -29,4 +29,5 @@ django-extensions
 django-countries
 requests
 django-modeltranslation
+requests
 
