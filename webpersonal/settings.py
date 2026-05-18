@@ -13,10 +13,6 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 from pathlib import Path
 import os
 
-from pickle import TRUE
-
-from numpy import True_
-
 from django.utils.translation import gettext_lazy as _
 
 #################################################################################
@@ -44,7 +40,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: don't run with debug turned on in production!
 #DEBUG = True
-DEBUG = True
+DEBUG = env.bool('DEBUG', default=False)
 
 #ALLOWED_HOSTS = []
 ALLOWED_HOSTS = ['axxyss.com', 'www.axxyss.com', 'localhost', '127.0.0.1','0.0.0.0','192.168.1.50','precision.axxyss']
@@ -188,17 +184,17 @@ MODELTRANSLATION_LANGUAGES = ('es', 'en', 'fr')
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [
-    BASE_DIR / 'static',
-]
+
 
 # Diferente ruta de STATIC_ROOT según el entorno (local o servidor)
 if DEBUG:
     # Entorno local (desarrollo)
+    STATICFILES_DIRS = [BASE_DIR / 'static']
     STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 else:
     # Entorno de producción (servidor Plesk)
-    STATIC_ROOT = '/var/www/html/webpersonal/static/'
+    STATICFILES_DIRS = []
+    STATIC_ROOT = '/var/www/vhosts/axxyss.com/httpdocs/webpersonal/static/'
 
 
 
@@ -209,6 +205,7 @@ STATICFILES_FINDERS = [
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+
 
 
 

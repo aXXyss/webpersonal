@@ -18,18 +18,14 @@ def get_google_reviews():
     }
     try:
         r = requests.get(url, headers=headers, params=params, timeout=5)
-        print("STATUS:", r.status_code)
-        print("RESPONSE:", r.json())
         data = r.json()
         cache.set('google_reviews', data, timeout=3600)
         return data
     except Exception as e:
-        print("ERROR:", e)
         return {}
 
 def home(request):
     google_data = get_google_reviews()
-    # Filtrar solo reseñas con texto
     reviews = [r for r in google_data.get("reviews", []) if r.get("text", {}).get("text")]
     context = {
         'reviews': reviews,
