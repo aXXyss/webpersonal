@@ -2,8 +2,9 @@
 {% load i18n %}
 {% load static %}
 
-{% block title %}{{ project.translation.title|default:project.title }}{% endblock %}
-{% block meta_description %}{{ project.translation.title|default:project.title }}{% endblock %}
+{% block title %}{% if project.translation %}{{ project.translation.title }}{% else %}{{ project.title }}{% endif %}{% endblock %}
+
+{% block meta_description %}{% if project.translation and project.translation.meta_description %}{{ project.translation.meta_description }}{% elif project.meta_description %}{{ project.meta_description }}{% else %}{{ project.title }}{% endif %}{% endblock %}
 
 {% block background %}{% static 'core/img/portfolio-bg.jpg' %}{% endblock %}
 
@@ -17,20 +18,35 @@
 {% endblock %}
 
 {% block headers %}
-<h1 class="text-white font-weight-black pt-3 mt-n5">{{ project.translation.title|default:project.title }}</h1>
+<h1 class="text-white font-weight-black pt-3 mt-n5">{% if project.translation %}{{ project.translation.title }}{% else %}{{ project.title }}{% endif %}</h1>
 {% endblock %}
 
 {% block content %}
     <div class="row">
         <div class="col-lg-8 offset-lg-2">
             {% if project.image %}
-                <img class="img-fluid mb-4" src="{{ project.image.url }}" alt="{{ project.translation.title|default:project.title }}">
+                <img class="img-fluid mb-4" src="{{ project.image.url }}" alt="{% if project.translation %}{{ project.translation.title }}{% else %}{{ project.title }}{% endif %}">
             {% endif %}
-            <p>{{ project.translation.description|default:project.description|safe }}</p>
-            {% if project.link %}
-                <p><a class="btn btn-dark btn-lg mt-3 shadow-dark" href="{{ project.translation.link|default:project.link }}" target="_blank">{% trans "Visitar sitio web" %}</a></p>
+            {% if project.translation and project.translation.description %}
+                {{ project.translation.description|safe }}
+            {% else %}
+                {{ project.description|safe }}
+            {% endif %}
+            {% if project.translation and project.translation.link %}
+                <p><a class="btn btn-dark btn-lg mt-3 shadow-dark" href="{{ project.translation.link }}" target="_blank">{% trans "Visitar sitio web" %}</a></p>
+            {% elif project.link %}
+                <p><a class="btn btn-dark btn-lg mt-3 shadow-dark" href="{{ project.link }}" target="_blank">{% trans "Visitar sitio web" %}</a></p>
             {% endif %}
             <p><a href="{% url 'portfolio:project_list' %}">{% trans "Volver a la lista de proyectos" %}</a></p>
         </div>
     </div>
+{% endblock %}
+
+{% block extra_js %}
+window.projectTranslatedSlugs = {
+    'es': '{{ project.slug }}',
+    {% for lang, slug in language_slugs.items %}
+    '{{ lang }}': '{{ slug }}',
+    {% endfor %}
+};
 {% endblock %}

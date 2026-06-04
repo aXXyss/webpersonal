@@ -391,13 +391,33 @@
                 return;
             }
         }
-        
-        // ✅ CASO 3: Otras páginas (comportamiento por defecto)
-        if (navbarToggler) {
-            navbarToggler.click();
+
+        // ✅ CASO 3: Proyectos del portfolio
+        if (window.projectTranslatedSlugs && window.location.pathname.includes('/portfolio/project/')) {
+            const targetSlug = window.projectTranslatedSlugs[targetLang];
+            
+            if (targetSlug) {
+                const newUrl = `/${targetLang}/portfolio/project/${targetSlug}/`;
+                window.location.href = newUrl;
+                return;
+            }
         }
+
+        
+        // ✅ CASO 4: Otras páginas (comportamiento por defecto)
         updateLanguageButtons(button);
         languageInput.value = targetLang;
+
+        const currentPath = window.location.pathname;
+        const newPath = '/' + targetLang + currentPath.slice(3);
+        let nextInput = languageForm.querySelector('input[name="next"]');
+        if (!nextInput) {
+            nextInput = document.createElement('input');
+            nextInput.type = 'hidden';
+            nextInput.name = 'next';
+            languageForm.appendChild(nextInput);
+        }
+        nextInput.value = newPath;
         languageForm.submit();
     }
 

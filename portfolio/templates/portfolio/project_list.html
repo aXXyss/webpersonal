@@ -28,9 +28,9 @@
                 <img class="img-fluid" src="{{ project.image.url }}" alt="{{ project.translation.title|default:project.title }}">
             </div>
             <div class="col-lg-7 col-md-8">
-                <h2 class="section-heading title"><a href="{% url 'portfolio:project_detail' project.id %}">{{ project.translation.title|default:project.title }}</a></h2>
+                <h2 class="section-heading title"><a href="{% url 'portfolio:project_detail' project.translation.slug|default:project.slug %}">{{ project.translation.title|default:project.title }}</a></h2>
                 <p>{{ project.translation.description|default:project.description|safe|truncatewords_html:15 }}</p>
-                <p><a href="{% url 'portfolio:project_detail' project.id %}">{% trans "Ver detalles" %}</a></p>
+                <p><a href="{% url 'portfolio:project_detail' project.translation.slug|default:project.slug %}">{% trans "Ver detalles" %}</a></p>
             </div>
         </div>
         {% if not forloop.last %}
