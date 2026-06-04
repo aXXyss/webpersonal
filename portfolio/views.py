@@ -30,7 +30,7 @@ def project_detail(request, slug):
     language_slugs = {'es': project.slug}
     for t in project.translations.all():
         if t.slug:
-            language_slugs[t.language] = t.slug
+            language_slugs[t.language.lower()] = t.slug
 
     return render(request, 'portfolio/project_detail.html', {
         'project': project,
