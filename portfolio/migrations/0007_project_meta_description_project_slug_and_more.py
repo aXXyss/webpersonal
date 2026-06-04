@@ -21,7 +21,7 @@ class Migration(migrations.Migration):
             model_name="project",
             name="slug",
             field=models.SlugField(
-                blank=True, max_length=200, unique=True, verbose_name="Slug"
+                blank=True, max_length=200, verbose_name="Slug"
             ),
         ),
         migrations.AddField(
