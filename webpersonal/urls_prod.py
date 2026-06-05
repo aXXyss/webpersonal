@@ -45,6 +45,14 @@ urlpatterns = [
     # Post WebP (slug en inglés en versión ES, renombrado al traducir)
     path('es/blog/post/complete-guide-how-to-convert-images-to-webp/',
          RedirectView.as_view(url='/es/blog/post/guia-completa-como-convertir-imagenes-a-webp/', permanent=True)),
+
+    # Post Como migrar Django (slug en inglés en versión ES, renombrado al traducir
+    path('es/blog/post/como-migrar-django-shared-hosting-vps-nginx-gunico/',
+	RedirectView.as_view(url='/es/blog/post/como-migrar-django-a-vps-nginx-gunicorn/', permanent=True)),
+    path('en/blog/post/how-to-migrate-your-django-app-from-shared-hosting-to/',
+     	RedirectView.as_view(url='/en/blog/post/how-to-migrate-django-to-vps-nginx-gunicorn/', permanent=True)),
+    path('fr/blog/post/comment-migrer-votre-application-django-dun-hebergemen/',
+	     RedirectView.as_view(url='/fr/blog/post/migrer-django-vers-vps-nginx-gunicorn/', permanent=True)),
 ]
 
 # 2. RUTAS MULTILINGÜES (Con prefijo /es/, /fr/, /en/)
