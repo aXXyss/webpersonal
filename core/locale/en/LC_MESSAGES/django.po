@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: aXXyss 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-04-29 15:39+0200\n"
-"PO-Revision-Date: 2026-01-23 19:40+0100\n"
+"POT-Creation-Date: 2026-06-05 13:26+0200\n"
+"PO-Revision-Date: 2026-06-05 13:39+0200\n"
 "Last-Translator: Joaquin Denis\n"
 "Language-Team: English\n"
 "Language: en\n"
@@ -16,109 +16,185 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.6\n"
 
-#: templates/core/about.html:4 templates/core/about.html:19
-msgid "Acerca de"
+#: templates/core/about.html:4 templates/core/base.html:136
+#: templates/core/base.html:279
+#: templates/core/base_perso_cookies_banner.html:79
+#: templates/core/base_perso_cookies_banner.html:221
+msgid "Sobre mí"
 msgstr "About me"
 
 #: templates/core/about.html:5
 msgid ""
-"Conoce más sobre aXXyss soluciones, mi experiencia en tecnología de la "
-"información, programación y mi enfoque en soluciones Linux."
+"Joaquin Denis — Programador web freelance en Torrent, Valencia. "
+"Especializado en Django y Python. Desarrollo web a medida, e-commerce y "
+"software de gestión para empresas."
 msgstr ""
-"Learn more about aXXyss solutions, my experience in information technology, "
-"programming, and my focus on Linux solutions."
+"Joaquin Denis — Freelance web developer in Torrent, Valencia. Specialized "
+"in Django and Python. Custom web development, e-commerce and business "
+"management software."
+
+#: templates/core/about.html:19
+msgid "Acerca de"
+msgstr "About me"
 
 #: templates/core/about.html:20
 msgid "Biografía"
 msgstr "Biography"
 
 #: templates/core/about.html:35
-msgid "Mi Trayectoria Profesional"
-msgstr "My Professional Career"
+msgid "Programador web freelance en Torrent, Valencia"
+msgstr "Freelance web developer in Torrent, Valencia"
 
 #: templates/core/about.html:36
 msgid ""
-"Evolucionando de 25 Años en <b>Desarrollo de Sistemas de Gestión</b> a "
-"<b>Desarrollador Full-Stack</b>"
+"Soy Joaquin Denis, programador web independiente con sede en Torrent "
+"(Valencia). Con más de 25 años de experiencia en informática y desarrollo de "
+"software, me especializo en la creación de aplicaciones web a medida con <a "
+"href=\"https://www.djangoproject.com/\" target=\"_blank\" "
+"rel=\"noopener\"><b>Django</b></a> y <a href=\"https://www.python.org/\" "
+"target=\"_blank\" rel=\"noopener\"><b>Python</b></a>."
 msgstr ""
-"Evolving from 25 Years in <b>Management Systems Development</b> to <b>Full-"
-"Stack Developer</b>"
+"I am Joaquin Denis, an independent web developer based in Torrent "
+"(Valencia). With over 25 years of experience in IT and software development, "
+"I specialize in building custom web applications with <a "
+"href=\"https://www.djangoproject.com/\" target=\"_blank\" "
+"rel=\"noopener\"><b>Django</b></a> and <a href=\"https://www.python.org/\" "
+"target=\"_blank\" rel=\"noopener\"><b>Python</b></a>."
 
 #: templates/core/about.html:37
 msgid ""
-"Ahora aplico mi profunda comprensión de la gestión empresarial a la "
-"<b>creación de soluciones web</b> integrales e innovadoras."
+"Trabajo de forma remota con clientes en España, América del Norte y África, "
+"transformando procesos empresariales complejos en herramientas digitales "
+"eficientes y fiables."
 msgstr ""
-"Now I apply my deep understanding of business management to the creation of "
-"comprehensive and innovative <b>web solutions</b>."
+"I work remotely with clients in Spain, North America and Africa, "
+"transforming complex business processes into efficient and reliable digital "
+"tools."
 
-#: templates/core/about.html:38
-msgid ""
-"Desde la planificación estratégica hasta la implementación técnica, mi "
-"objetivo es transformar ideas en realidades digitales que impulsen el "
-"crecimiento y la\n"
-"            productividad de mis clientes en Europa, África y América Latina."
-msgstr ""
-"From strategic planning to technical implementation, my goal is to transform "
-"ideas into digital realities that drive the growth and productivity of my "
-"clients in Europe, Africa, and North America."
-
-#: templates/core/about.html:41
+#: templates/core/about.html:39
 msgid "Servicios que Ofrezco"
 msgstr "Services I Offer"
 
-#: templates/core/about.html:43
-msgid "Mis servicios incluyen:"
-msgstr "My services include:"
-
-#: templates/core/about.html:46
+#: templates/core/about.html:41
 msgid ""
-"<b>Desarrollo web</b> personalizado con <b>Django</b> y <b>WordPress</b>"
-msgstr "Custom <b>Web Development</b> with <b>Django</b> and <b>WordPress</b>"
+"<b>Desarrollo web</b> personalizado con <a href=\"https://"
+"www.djangoproject.com/\" target=\"_blank\" rel=\"noopener\"><b>Django</b></"
+"a> y <a href=\"https://wordpress.org/\" target=\"_blank\" "
+"rel=\"noopener\"><b>WordPress</b></a>"
+msgstr ""
+"Custom <b>web development</b> with <a href=\"https://"
+"www.djangoproject.com/\" target=\"_blank\" rel=\"noopener\"><b>Django</b></"
+"a> and <a href=\"https://wordpress.org/\" target=\"_blank\" "
+"rel=\"noopener\"><b>WordPress</b></a>"
 
-#: templates/core/about.html:47
+#: templates/core/about.html:42
 msgid "<b>Diseño web</b> responsive y atractivo"
 msgstr "Responsive and attractive <b>Web Design</b>"
 
-#: templates/core/about.html:48
-msgid "<b>Optimización</b> para motores de búsqueda (SEO)"
-msgstr "Search Engine <b>Optimization</b> (SEO)"
+#: templates/core/about.html:43
+msgid "<b>E-commerce</b> y tiendas online"
+msgstr "<b>E-commerce</b> and online stores"
+
+#: templates/core/about.html:44
+msgid "<b>Software de gestión</b> empresarial a medida"
+msgstr "Custom business <b>management software</b>"
+
+#: templates/core/about.html:45
+msgid "<b>Alojamiento web</b> y configuración de servidores Linux"
+msgstr "<b>Web hosting</b> and Linux server configuration"
+
+#: templates/core/about.html:46
+msgid "<b>Optimización SEO</b> y mantenimiento web"
+msgstr "<b>SEO optimization</b> and web maintenance"
 
 #: templates/core/about.html:49
-msgid "<b>Mantenimiento</b> y <b>soporte</b> web"
-msgstr "Web <b>Maintenance</b> and <b>Support</b>"
-
-#: templates/core/about.html:52
-msgid "Mis Habilidades Técnicas"
+#, fuzzy
+#| msgid "Mis Habilidades Técnicas"
+msgid "Habilidades Técnicas"
 msgstr "Technical Skills"
 
+#: templates/core/about.html:51
+msgid ""
+"<b>Lenguajes: </b><a href=\"https://www.python.org/\" target=\"_blank\" "
+"rel=\"noopener\">Python</a>, <a href=\"https://developer.mozilla.org/es/docs/"
+"Web/HTML\" target=\"_blank\" rel=\"noopener\">HTML</a>, <a href=\"https://"
+"developer.mozilla.org/es/docs/Web/CSS\" target=\"_blank\" "
+"rel=\"noopener\">CSS</a>"
+msgstr ""
+"<b>Languages: </b><a href=\"https://www.python.org/\" target=\"_blank\" "
+"rel=\"noopener\">Python</a>, <a href=\"https://developer.mozilla.org/en/docs/"
+"Web/HTML\" target=\"_blank\" rel=\"noopener\">HTML</a>, <a href=\"https://"
+"developer.mozilla.org/en/docs/Web/CSS\" target=\"_blank\" "
+"rel=\"noopener\">CSS</a>"
+
+#: templates/core/about.html:52
+msgid ""
+"<b>Frameworks: </b><a href=\"https://www.djangoproject.com/\" "
+"target=\"_blank\" rel=\"noopener\">Django</a>, <a href=\"https://"
+"wordpress.org/\" target=\"_blank\" rel=\"noopener\">WordPress</a>"
+msgstr ""
+"<b>Frameworks: </b><a href=\"https://www.djangoproject.com/\" "
+"target=\"_blank\" rel=\"noopener\">Django</a>, <a href=\"https://"
+"wordpress.org/\" target=\"_blank\" rel=\"noopener\">WordPress</a>"
+
+#: templates/core/about.html:53
+msgid ""
+"<b>Servidores: </b><a href=\"https://www.debian.org/\" target=\"_blank\" "
+"rel=\"noopener\">Linux (Debian</a>, <a href=\"https://ubuntu.com/\" "
+"target=\"_blank\" rel=\"noopener\">Ubuntu</a>), <a href=\"https://"
+"httpd.apache.org/\" target=\"_blank\" rel=\"noopener\">Apache</a>, <a "
+"href=\"https://nginx.org/\" target=\"_blank\" rel=\"noopener\">nginx</a>, <a "
+"href=\"https://gunicorn.org/\" target=\"_blank\" rel=\"noopener\">gunicorn</"
+"a>"
+msgstr ""
+"<b>Servers: </b><a href=\"https://www.debian.org/\" target=\"_blank\" "
+"rel=\"noopener\">Linux (Debian</a>, <a href=\"https://ubuntu.com/\" "
+"target=\"_blank\" rel=\"noopener\">Ubuntu</a>), <a href=\"https://"
+"httpd.apache.org/\" target=\"_blank\" rel=\"noopener\">Apache</a>, <a "
+"href=\"https://nginx.org/\" target=\"_blank\" rel=\"noopener\">nginx</a>, <a "
+"href=\"https://gunicorn.org/\" target=\"_blank\" rel=\"noopener\">gunicorn</"
+"a>"
+
 #: templates/core/about.html:54
-msgid "Mis habilidades incluyen:"
-msgstr "My skills include:"
+msgid ""
+"<b>Bases de datos: </b><a href=\"https://www.mysql.com/\" target=\"_blank\" "
+"rel=\"noopener\">MySQL</a>, <a href=\"https://mariadb.org/\" "
+"target=\"_blank\" rel=\"noopener\">MariaDB</a>"
+msgstr ""
+"<b>Databases: </b><a href=\"https://www.mysql.com/\" target=\"_blank\" "
+"rel=\"noopener\">MySQL</a>, <a href=\"https://mariadb.org/\" "
+"target=\"_blank\" rel=\"noopener\">MariaDB</a>"
+
+#: templates/core/about.html:55
+msgid ""
+"<b>Virtualización: </b><a href=\"https://www.proxmox.com/\" "
+"target=\"_blank\" rel=\"noopener\">Proxmox</a>, <a href=\"https://"
+"www.vmware.com/\" target=\"_blank\" rel=\"noopener\">VMware</a>"
+msgstr ""
+"<b>Virtualization: </b><a href=\"https://www.proxmox.com/\" "
+"target=\"_blank\" rel=\"noopener\">Proxmox</a>, <a href=\"https://"
+"www.vmware.com/\" target=\"_blank\" rel=\"noopener\">VMware</a>"
+
+#: templates/core/about.html:56
+msgid ""
+"<b>Automatización: </b><a href=\"https://www.ansible.com/\" "
+"target=\"_blank\" rel=\"noopener\">Ansible</a> (iniciando)"
+msgstr ""
+"<b>Automation: </b><a href=\"https://www.ansible.com/\" "
+"target=\"_blank\" rel=\"noopener\">Ansible</a> (beginner)"
 
 #: templates/core/about.html:57
-msgid "<b>Sistemas operativos: </b>Servidores Linux (Debian, Ubuntu)"
-msgstr "<b>Operating Systems: </b>Linux Servers (Debian, Ubuntu)"
+msgid ""
+"<b>ERP: </b><a href=\"https://www.dolibarr.org/\" target=\"_blank\" "
+"rel=\"noopener\">Dolibarr</a>"
+msgstr ""
+"<b>ERP: </b><a href=\"https://www.dolibarr.org/\" target=\"_blank\" "
+"rel=\"noopener\">Dolibarr</a>"
 
-#: templates/core/about.html:58
-msgid "<b>Bases de datos: </b>MySQL, MariaDB"
-msgstr "<b>Databases: </b>MySQL, MariaDB"
-
-#: templates/core/about.html:59
-msgid "<b>Virtualización: </b>Proxmox, VMware, VirtualBox"
-msgstr "<b>Virtualization: </b>Proxmox, VMware, VirtualBox"
-
-#: templates/core/about.html:60
-msgid "<b>Herramientas: </b>Python (Django), MS-Access"
-msgstr "<b>Tools: </b>Python (Django), MS-Access"
-
-#: templates/core/about.html:61
-msgid "<b>ERP: </b>Dolibarr"
-msgstr "<b>ERP: </b>Dolibarr"
-
-#: templates/core/about.html:64 templates/core/base.html:146
-#: templates/core/base.html:285
+#: templates/core/about.html:60 templates/core/base.html:148
+#: templates/core/base.html:287
 #: templates/core/base_perso_cookies_banner.html:89
 #: templates/core/base_perso_cookies_banner.html:227
 msgid "Contacto"
@@ -137,58 +213,52 @@ msgstr ""
 msgid "aXXyss Soluciones"
 msgstr "aXXyss Solutions"
 
-#: templates/core/base.html:106 templates/core/base.html:109
+#: templates/core/base.html:108 templates/core/base.html:111
 msgid "Soluciones"
 msgstr "Solutions"
 
-#: templates/core/base.html:128 templates/core/base.html:273
+#: templates/core/base.html:130 templates/core/base.html:275
 #: templates/core/base_perso_cookies_banner.html:74
 #: templates/core/base_perso_cookies_banner.html:218
 msgid "Portada"
 msgstr "Home"
 
-#: templates/core/base.html:134 templates/core/base.html:277
-#: templates/core/base_perso_cookies_banner.html:79
-#: templates/core/base_perso_cookies_banner.html:221
-msgid "Sobre mí"
-msgstr "About me"
-
-#: templates/core/base.html:140 templates/core/base.html:281
+#: templates/core/base.html:142 templates/core/base.html:283
 #: templates/core/base_perso_cookies_banner.html:84
 #: templates/core/base_perso_cookies_banner.html:224
 msgid "Portafolio"
 msgstr "Portfolio"
 
-#: templates/core/base.html:152 templates/core/base.html:289
+#: templates/core/base.html:154 templates/core/base.html:291
 #: templates/core/base_perso_cookies_banner.html:94
 #: templates/core/base_perso_cookies_banner.html:230
 msgid "Blog"
 msgstr "Blog"
 
-#: templates/core/base.html:173
+#: templates/core/base.html:175
 #: templates/core/base_perso_cookies_banner.html:117
 msgid "Iniciar sesión"
 msgstr "Log In"
 
-#: templates/core/base.html:269
+#: templates/core/base.html:271
 #: templates/core/base_perso_cookies_banner.html:215
 msgid "Información"
 msgstr "Information"
 
-#: templates/core/base.html:295
+#: templates/core/base.html:297
 #: templates/core/base_perso_cookies_banner.html:236
 msgid "Legal"
 msgstr "Legal"
 
-#: templates/core/base.html:316
+#: templates/core/base.html:318
 msgid "Desarrollo Web en Torrent"
 msgstr "Web Development in Torrent (Valencia)"
 
-#: templates/core/base.html:321
+#: templates/core/base.html:323
 msgid "Hecho con"
 msgstr "Powered by"
 
-#: templates/core/base.html:323
+#: templates/core/base.html:325
 msgid "por"
 msgstr "by"
 
@@ -314,6 +384,85 @@ msgstr ""
 #: templates/core/home.html:55
 msgid "Contactar ahora"
 msgstr "Contact now"
+
+#: templates/core/home.html:65
+msgid "Lo que dicen mis clientes"
+msgstr ""
+
+#: templates/core/home.html:68
+msgid "reseñas en Google"
+msgstr ""
+
+#: templates/core/home.html:105
+msgid "Ver todas las reseñas en Google"
+msgstr ""
+
+#~ msgid ""
+#~ "Conoce más sobre aXXyss soluciones, mi experiencia en tecnología de la "
+#~ "información, programación y mi enfoque en soluciones Linux."
+#~ msgstr ""
+#~ "Learn more about aXXyss solutions, my experience in information "
+#~ "technology, programming, and my focus on Linux solutions."
+
+#~ msgid "Mi Trayectoria Profesional"
+#~ msgstr "My Professional Career"
+
+#~ msgid ""
+#~ "Evolucionando de 25 Años en <b>Desarrollo de Sistemas de Gestión</b> a "
+#~ "<b>Desarrollador Full-Stack</b>"
+#~ msgstr ""
+#~ "Evolving from 25 Years in <b>Management Systems Development</b> to "
+#~ "<b>Full-Stack Developer</b>"
+
+#~ msgid ""
+#~ "Ahora aplico mi profunda comprensión de la gestión empresarial a la "
+#~ "<b>creación de soluciones web</b> integrales e innovadoras."
+#~ msgstr ""
+#~ "Now I apply my deep understanding of business management to the creation "
+#~ "of comprehensive and innovative <b>web solutions</b>."
+
+#~ msgid ""
+#~ "Desde la planificación estratégica hasta la implementación técnica, mi "
+#~ "objetivo es transformar ideas en realidades digitales que impulsen el "
+#~ "crecimiento y la\n"
+#~ "            productividad de mis clientes en Europa, África y América "
+#~ "Latina."
+#~ msgstr ""
+#~ "From strategic planning to technical implementation, my goal is to "
+#~ "transform ideas into digital realities that drive the growth and "
+#~ "productivity of my clients in Europe, Africa, and North America."
+
+#~ msgid "Mis servicios incluyen:"
+#~ msgstr "My services include:"
+
+#~ msgid ""
+#~ "<b>Desarrollo web</b> personalizado con <b>Django</b> y <b>WordPress</b>"
+#~ msgstr ""
+#~ "Custom <b>Web Development</b> with <b>Django</b> and <b>WordPress</b>"
+
+#~ msgid "<b>Optimización</b> para motores de búsqueda (SEO)"
+#~ msgstr "Search Engine <b>Optimization</b> (SEO)"
+
+#~ msgid "<b>Mantenimiento</b> y <b>soporte</b> web"
+#~ msgstr "Web <b>Maintenance</b> and <b>Support</b>"
+
+#~ msgid "Mis habilidades incluyen:"
+#~ msgstr "My skills include:"
+
+#~ msgid "<b>Sistemas operativos: </b>Servidores Linux (Debian, Ubuntu)"
+#~ msgstr "<b>Operating Systems: </b>Linux Servers (Debian, Ubuntu)"
+
+#~ msgid "<b>Bases de datos: </b>MySQL, MariaDB"
+#~ msgstr "<b>Databases: </b>MySQL, MariaDB"
+
+#~ msgid "<b>Virtualización: </b>Proxmox, VMware, VirtualBox"
+#~ msgstr "<b>Virtualization: </b>Proxmox, VMware, VirtualBox"
+
+#~ msgid "<b>Herramientas: </b>Python (Django), MS-Access"
+#~ msgstr "<b>Tools: </b>Python (Django), MS-Access"
+
+#~ msgid "<b>ERP: </b>Dolibarr"
+#~ msgstr "<b>ERP: </b>Dolibarr"
 
 #~ msgid ""
 #~ "Soluciones de Gestión Forestal y Comercio Electrónico para Europa, África "

@@ -1,8 +1,8 @@
 {% extends 'core/base.html' %}
 
 {% load i18n %}
-{% block title %}{% blocktrans %}Acerca de{% endblocktrans %}{% endblock %}
-{% block meta_description %}{% blocktrans %}Conoce más sobre aXXyss soluciones, mi experiencia en tecnología de la información, programación y mi enfoque en soluciones Linux.{% endblocktrans %}{% endblock %}
+{% block title %}{% blocktrans %}Sobre mí{% endblocktrans %}{% endblock %}
+{% block meta_description %}{% blocktrans %}Joaquin Denis — Programador web freelance en Torrent, Valencia. Especializado en Django y Python. Desarrollo web a medida, e-commerce y software de gestión para empresas.{% endblocktrans %}{% endblock %}
 
 {% block background %}{% load static %}{% static 'core/img/about-bg.jpg' %}{% endblock %}
 
@@ -32,37 +32,32 @@
             style="width:80%; margin: 0 auto; display: block;">
     </div>
     <div class="col-lg-7 col-md-8">
-        <h2>{% blocktrans %}Mi Trayectoria Profesional{% endblocktrans %}</h2>
-        <p>{% blocktrans %}Evolucionando de 25 Años en <b>Desarrollo de Sistemas de Gestión</b> a <b>Desarrollador Full-Stack</b>{% endblocktrans %}</p>
-        <p>{% blocktrans %}Ahora aplico mi profunda comprensión de la gestión empresarial a la <b>creación de soluciones web</b> integrales e innovadoras.{% endblocktrans %}</p>
-        <p>{% blocktrans %}Desde la planificación estratégica hasta la implementación técnica, mi objetivo es transformar ideas en realidades digitales que impulsen el crecimiento y la
-            productividad de mis clientes en Europa, África y América Latina.{% endblocktrans %}</p>
+        <h2>{% blocktrans %}Programador web freelance en Torrent, Valencia{% endblocktrans %}</h2>
+        <p>{% blocktrans %}Soy Joaquin Denis, programador web independiente con sede en Torrent (Valencia). Con más de 25 años de experiencia en informática y desarrollo de software, me especializo en la creación de aplicaciones web a medida con <a href="https://www.djangoproject.com/" target="_blank" rel="noopener"><b>Django</b></a> y <a href="https://www.python.org/" target="_blank" rel="noopener"><b>Python</b></a>.{% endblocktrans %}</p>
+        <p>{% blocktrans %}Trabajo de forma remota con clientes en España, América del Norte y África, transformando procesos empresariales complejos en herramientas digitales eficientes y fiables.{% endblocktrans %}</p>
 
         <h2>{% blocktrans %}Servicios que Ofrezco{% endblocktrans %}</h2>
-        <p>
-            {% blocktrans %}Mis servicios incluyen:{% endblocktrans %}
-        </p>
         <ul>
-            <li>{% blocktrans %}<b>Desarrollo web</b> personalizado con <b>Django</b> y <b>WordPress</b>{% endblocktrans %}</li>
+            <li>{% blocktrans %}<b>Desarrollo web</b> personalizado con <a href="https://www.djangoproject.com/" target="_blank" rel="noopener"><b>Django</b></a> y <a href="https://wordpress.org/" target="_blank" rel="noopener"><b>WordPress</b></a>{% endblocktrans %}</li>
             <li>{% blocktrans %}<b>Diseño web</b> responsive y atractivo{% endblocktrans %}</li>
-            <li>{% blocktrans %}<b>Optimización</b> para motores de búsqueda (SEO){% endblocktrans %}</li>
-            <li>{% blocktrans %}<b>Mantenimiento</b> y <b>soporte</b> web{% endblocktrans %}</li>
+            <li>{% blocktrans %}<b>E-commerce</b> y tiendas online{% endblocktrans %}</li>
+            <li>{% blocktrans %}<b>Software de gestión</b> empresarial a medida{% endblocktrans %}</li>
+            <li>{% blocktrans %}<b>Alojamiento web</b> y configuración de servidores Linux{% endblocktrans %}</li>
+            <li>{% blocktrans %}<b>Optimización SEO</b> y mantenimiento web{% endblocktrans %}</li>
         </ul>
 
-        <h2>{% blocktrans %}Mis Habilidades Técnicas{% endblocktrans %}</h2>
-        <p>
-            {% blocktrans %}Mis habilidades incluyen:{% endblocktrans %}
-        </p>
+        <h2>{% blocktrans %}Habilidades Técnicas{% endblocktrans %}</h2>
         <ul>
-            <li>{% blocktrans %}<b>Sistemas operativos: </b>Servidores Linux (Debian, Ubuntu){% endblocktrans %}</li>
-            <li>{% blocktrans %}<b>Bases de datos: </b>MySQL, MariaDB{% endblocktrans %}</li>
-            <li>{% blocktrans %}<b>Virtualización: </b>Proxmox, VMware, VirtualBox{% endblocktrans %}</li>
-            <li>{% blocktrans %}<b>Herramientas: </b>Python (Django), MS-Access{% endblocktrans %}</li>
-            <li>{% blocktrans %}<b>ERP: </b>Dolibarr{% endblocktrans %}</li>
+            <li>{% blocktrans %}<b>Lenguajes: </b><a href="https://www.python.org/" target="_blank" rel="noopener">Python</a>, <a href="https://developer.mozilla.org/es/docs/Web/HTML" target="_blank" rel="noopener">HTML</a>, <a href="https://developer.mozilla.org/es/docs/Web/CSS" target="_blank" rel="noopener">CSS</a>{% endblocktrans %}</li>
+            <li>{% blocktrans %}<b>Frameworks: </b><a href="https://www.djangoproject.com/" target="_blank" rel="noopener">Django</a>, <a href="https://wordpress.org/" target="_blank" rel="noopener">WordPress</a>{% endblocktrans %}</li>
+            <li>{% blocktrans %}<b>Servidores: </b><a href="https://www.debian.org/" target="_blank" rel="noopener">Linux (Debian</a>, <a href="https://ubuntu.com/" target="_blank" rel="noopener">Ubuntu</a>), <a href="https://httpd.apache.org/" target="_blank" rel="noopener">Apache</a>, <a href="https://nginx.org/" target="_blank" rel="noopener">nginx</a>, <a href="https://gunicorn.org/" target="_blank" rel="noopener">gunicorn</a>{% endblocktrans %}</li>
+            <li>{% blocktrans %}<b>Bases de datos: </b><a href="https://www.mysql.com/" target="_blank" rel="noopener">MySQL</a>, <a href="https://mariadb.org/" target="_blank" rel="noopener">MariaDB</a>{% endblocktrans %}</li>
+            <li>{% blocktrans %}<b>Virtualización: </b><a href="https://www.proxmox.com/" target="_blank" rel="noopener">Proxmox</a>, <a href="https://www.vmware.com/" target="_blank" rel="noopener">VMware</a>{% endblocktrans %}</li>
+            <li>{% blocktrans %}<b>Automatización: </b><a href="https://www.ansible.com/" target="_blank" rel="noopener">Ansible</a> (iniciando){% endblocktrans %}</li>
+            <li>{% blocktrans %}<b>ERP: </b><a href="https://www.dolibarr.org/" target="_blank" rel="noopener">Dolibarr</a>{% endblocktrans %}</li>
         </ul>
         <br>
-        <p><a class="nav-link" href="{% url 'contact:contact' %}">{% trans "Contacto" %}</a></p>
-
+        <p><a class="btn btn-dark btn-lg mt-3 shadow-dark" href="{% url 'contact:contact' %}">{% trans "Contacto" %}</a></p>
     </div>
 </div>
 {% endblock %}
