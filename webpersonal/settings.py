@@ -291,3 +291,5 @@ if not DEBUG:
 GOOGLE_PLACES_API_KEY = env('GOOGLE_PLACES_API_KEY')
 GOOGLE_PLACE_ID = env('GOOGLE_PLACE_ID')
 
+
+SITE_URL = env('SITE_URL', default='https://axxyss.com').strip()

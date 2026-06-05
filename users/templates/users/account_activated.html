@@ -1,0 +1,21 @@
+{% extends 'core/base.html' %}
+{% load i18n %}
+
+{% block title %}{% trans "Cuenta activada" %}{% endblock %}
+
+{% block background %}{% load static %}{% static 'core/img/home-bg.jpg' %}{% endblock %}
+
+{% block headers %}
+<h1 class="text-white font-weight-black pt-3 mt-n5">{% trans "¡Cuenta activada!" %}</h1>
+{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-lg-6 text-center">
+        <i class="fas fa-check-circle fa-5x text-success mb-4"></i>
+        <h2>{% trans "¡Tu cuenta está lista!" %}</h2>
+        <p>{% trans "Tu cuenta ha sido activada correctamente. Ya puedes iniciar sesión." %}</p>
+        <a href="{% url 'users:login' %}" class="btn btn-dark btn-lg mt-3">{% trans "Iniciar sesión" %}</a>
+    </div>
+</div>
+{% endblock %}

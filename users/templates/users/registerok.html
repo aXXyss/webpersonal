@@ -10,22 +10,17 @@
 <p class="lead text-white mt-3"></p>
 {% endblock %}
 
-{% block meta %}
-    {{ block.super }}
-    <meta name="robots" content="noindex, nofollow">
+{% block robots %}
+<meta name="robots" content="noindex, nofollow">
 {% endblock %}
-
 
 {% block content %}
 <main role="main" class="container">
-   <div class="starter-template">
-      <h1>{% trans "Tu usuario ha sido creado con exito" %}</h1>
-      <p class="lead">{% trans "Si la página no es redirigida en 5 segundos pulsa" %} <a href="{% url 'users:login' %}">{% trans "aquí" %}</a></p>
+   <div class="text-center">
+      <i class="fas fa-envelope fa-5x text-primary mb-4"></i>
+      <h2>{% trans "Revisa tu correo electrónico" %}</h2>
+      <p class="lead">{% trans "Te hemos enviado un email de activación. Haz clic en el enlace para activar tu cuenta." %}</p>
+      <p class="text-muted">{% trans "Si no recibes el email en unos minutos, revisa la carpeta de spam." %}</p>
    </div>
 </main>
-<script>
-   setTimeout(function(){ 
-       window.location.replace("{% url 'users:login' %}");
-   }, 5000);
-</script>
 {% endblock %}

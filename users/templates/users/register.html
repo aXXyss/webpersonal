@@ -1,31 +1,24 @@
 {% extends "core/base.html" %}
-
 {% load i18n %}
 {% block title %}{% blocktrans %}Registro{% endblocktrans %}{% endblock %}
-
 {% block background %}{% load static %}{% static 'core/img/home-bg.jpg' %}{% endblock %}
-
 {% block headers %}
 <h1 class="text-white font-weight-black pt-3 mt-n5">{% trans "Registrar una cuenta" %}</h1>
 <p class="lead text-white mt-3"></p>
 {% endblock %}
 
-{% block meta %}
-    {{ block.super }}
-    <meta name="robots" content="noindex, nofollow">
+{% block robots %}
+<meta name="robots" content="noindex, nofollow">
 {% endblock %}
 
 {% block content %}
-
-
 <div class="container my-auto">
     <div class="row">
         <div class="col-lg-4 col-md-8 col-12 mx-auto">
             <div class="card z-index-0 fadeIn3 fadeInBottom">
                 <div class="card-body">
-                    <form class="form-signin" method="POST">
+                    <form class="form-signin" method="POST" action="{% url 'users:register' %}">
                         {% csrf_token %}
-
                         <div class="input-group input-group-outline my-3">
                             <label for="id_email" class="sr-only">{% trans "Correo electrónico" %}</label>
                             <input type="email" name="email" id="id_email" class="form-control" placeholder="{% trans 'Correo electrónico' %}" required autofocus>
@@ -35,19 +28,17 @@
                             <input type="text" name="username" id="id_username" class="form-control" placeholder="{% trans 'Nombre de usuario' %}" required>
                         </div>
                         <div class="input-group input-group-outline my-3">
-                            <label for="inputPassword" class="sr-only">{% trans "Contraseña" %}</label>
+                            <label for="id_password" class="sr-only">{% trans "Contraseña" %}</label>
                             <input type="password" name="password" id="id_password" class="form-control" placeholder="{% trans 'Contraseña' %}" required>
                         </div>
                         <div class="input-group input-group-outline my-3">
-                            <label for="inputPassword" class="sr-only">{% trans "Repetir contraseña" %}</label>
+                            <label for="id_password_confirmation" class="sr-only">{% trans "Repetir contraseña" %}</label>
                             <input type="password" name="password_confirmation" id="id_password_confirmation" class="form-control" placeholder="{% trans 'Repetir contraseña' %}" required>
                         </div>
                         <div class="checkbox mb-3"></div>
-                        
                         <div class="text-center">
-                            <button type="submit" class="btn bg-gradient-dark w-100 my-4 mb-2">{% trans "Iniciar sesión" %}</button>
+                            <button type="submit" class="btn bg-gradient-dark w-100 my-4 mb-2">{% trans "Registrarse" %}</button>
                         </div>
-
                         {% if form.errors %}
                             {% for field in form %}
                                 {% for error in field.errors %}
@@ -68,5 +59,4 @@
         </div>
     </div>
 </div>
-
 {% endblock %}

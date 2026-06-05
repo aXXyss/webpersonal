@@ -24,4 +24,9 @@ urlpatterns = [
         view=TemplateView.as_view(template_name='users/registerok.html'),
         name='registerok'
     ),
+    path(
+        route='activar/<uuid:token>/',
+        view=views.ActivateAccountView.as_view(),
+        name='activate'
+    ),
 ]
