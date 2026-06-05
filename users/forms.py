@@ -5,6 +5,7 @@ from django.conf import settings
 from users.models import Profile
 from django.urls import reverse
 from django.utils.translation import gettext_lazy as _
+from django.utils.translation import activate, get_language
 
 class SignupForm(forms.Form):
     """Sign up form."""
@@ -47,7 +48,7 @@ class SignupForm(forms.Form):
             raise forms.ValidationError(_('Las contraseñas no coinciden.'))
         return data
 
-    def save(self):
+    def save(self, language='es'):
         data = self.cleaned_data
         data.pop('password_confirmation')
         user = User.objects.create_user(**data)
@@ -56,29 +57,19 @@ class SignupForm(forms.Form):
         profile = Profile(user=user)
         profile.save()
 
+        current_language = get_language()
+        activate(language)
+
         try:
-
-            activation_url = f"{settings.SITE_URL}{reverse('users:activate', kwargs={'token': profile.activation_token})}"
+            activation_url = f"{settings.SITE_URL}/{language}/activar/{profile.activation_token}/"
             send_mail(
-                subject='Activa tu cuenta en aXXyss Soluciones',
-                message=f"""Hola {user.username},
-
-Gracias por registrarte en aXXyss Soluciones.
-
-Para activar tu cuenta haz clic en el siguiente enlace:
-
-{activation_url}
-
-Si no te has registrado, ignora este mensaje.
-
-Un saludo,
-Joaquin Denis
-aXXyss Soluciones
-https://axxyss.com
-""",
+                subject=str(_('Activa tu cuenta en aXXyss Soluciones')),
+                message=str(_('Hola %(username)s,\n\nGracias por registrarte en aXXyss Soluciones.\n\nPara activar tu cuenta haz clic en el siguiente enlace:\n\n%(url)s\n\nSi no te has registrado, ignora este mensaje.\n\nUn saludo,\nJoaquin Denis\naXXyss Soluciones\nhttps://axxyss.com\n')) % {'username': user.username, 'url': activation_url},
                 from_email=settings.DEFAULT_FROM_EMAIL,
                 recipient_list=[user.email],
                 fail_silently=True,
             )
         except Exception as e:
             print(f"Error enviando email de activación: {e}")
+        finally:
+            activate(current_language)

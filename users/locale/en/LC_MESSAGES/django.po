@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-05 16:20+0200\n"
-"PO-Revision-Date: 2026-06-05 16:22+0200\n"
+"POT-Creation-Date: 2026-06-05 16:28+0200\n"
+"PO-Revision-Date: 2026-06-05 16:30+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -19,17 +19,45 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.6\n"
 
-#: forms.py:33
+#: forms.py:34
 msgid "Este nombre de usuario ya está en uso."
 msgstr "This username is already taken."
 
-#: forms.py:39
+#: forms.py:40
 msgid "Ya existe una cuenta con este email."
 msgstr "An account with this email already exists."
 
-#: forms.py:47
+#: forms.py:48
 msgid "Las contraseñas no coinciden."
 msgstr "Passwords do not match."
+
+#: forms.py:66
+msgid "Activa tu cuenta en aXXyss Soluciones"
+msgstr "Activate your account on aXXyss Soluciones"
+
+#: forms.py:67
+#, python-format
+msgid ""
+"Hola %(username)s,\n"
+"\n"
+"Gracias por registrarte en aXXyss Soluciones.\n"
+"\n"
+"Para activar tu cuenta haz clic en el siguiente enlace:\n"
+"\n"
+"%(url)s\n"
+"\n"
+"Si no te has registrado, ignora este mensaje.\n"
+"\n"
+"Un saludo,\n"
+"Joaquin Denis\n"
+"aXXyss Soluciones\n"
+"https://axxyss.com\n"
+msgstr ""
+"Hello %(username)s,\\n\\nThank you for registering on aXXyss Soluciones."
+"\\n\\nTo activate your account click the following link:"
+"\\n\\n%(url)s\\n\\nIf you did not register, please ignore this message."
+"\\n\\nBest regards,\\nJoaquin Denis\\naXXyss Soluciones\\nhttps://"
+"axxyss.com\\n\n"
 
 #: templates/users/account_activated.html:4
 msgid "Cuenta activada"

@@ -5,15 +5,15 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth import views as auth_views
 from users.forms import SignupForm
 from users.models import Profile
+from django.utils.translation import get_language
 
 class SignupView(FormView):
-    """Users sign up view."""
     template_name = 'users/register.html'
     form_class = SignupForm
     success_url = reverse_lazy('users:registerok')
 
     def form_valid(self, form):
-        form.save()
+        form.save(language=get_language())
         return super().form_valid(form)
 
 class LoginView(auth_views.LoginView):
