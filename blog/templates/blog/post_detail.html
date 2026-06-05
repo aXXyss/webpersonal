@@ -124,7 +124,7 @@
         {% else %}
             <div class="media-body" style="display: flex; align-items: center;">
                 {% trans "Para dejar un comentario tiene que estar conectado:" %}
-                <a class="nav-link px-lg-3 py-3 py-lg-4" href="{% url 'users:login' %}">
+                <a class="nav-link px-lg-3 py-3 py-lg-4" href="{% url 'users:login' %}?next={{ request.path }}">
                     <p class="d-inline text-sm z-index-1 font-weight-semibold" data-bs-toggle="tooltip"
                         data-bs-placement="bottom" title="Sign IN">
                         <i class="fa fa-sign-in me-1"></i>Sign IN</p>
@@ -251,8 +251,7 @@
                                     const replyFormContainer = document.getElementById(`reply-form-${data.comment_data.parent_id}`);
                                     replyFormContainer.style.display = 'none';
                                 } else {
-                                    alert('Error al enviar la respuesta.');
-                                    console.error('Error:', data.error);
+                                    alert(data.error || 'Debe estar conectado para responder.');
                                 }
                             })
                             .catch(error => {

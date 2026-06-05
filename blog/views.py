@@ -166,6 +166,9 @@ Ver post: {post_url}
 
 
 def save_reply(request, comment_id):
+    if not request.user.is_authenticated:
+        return JsonResponse({'success': False, 'error': 'Debes estar conectado para responder'}, status=401)
+    
     if request.method == 'POST' and request.headers.get('x-requested-with') == 'XMLHttpRequest':
         form = CreateCommentForm(request.POST)
         if form.is_valid():
