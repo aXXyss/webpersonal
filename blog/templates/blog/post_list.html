@@ -34,7 +34,7 @@
                 {{ post.author.get_full_name|default:post.author.username }}
             </p>
             {% if post.image %}
-                <img src="{{ post.image.url }}" alt="{{ post.title }}" style="max-width: 100%; height: auto;">
+                <img src="{{ post.image.url }}" alt="{{ post.title }}" class="img-fluid d-block mx-auto" style="max-height: 400px; object-fit: cover;">
             {% endif %}
             <p>{{ post.content|truncatewords:30|safe }}</p>
             <div>
