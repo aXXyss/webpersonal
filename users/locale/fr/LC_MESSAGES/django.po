@@ -5,83 +5,114 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-04-21 18:48+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"POT-Creation-Date: 2026-06-05 16:05+0200\n"
+"PO-Revision-Date: 2026-06-05 16:11+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Poedit 3.6\n"
 
-#: users/templates/users/login.html:4 users/templates/users/login.html:9
-#: users/templates/users/login.html:44 users/templates/users/register.html:48
+#: templates/users/account_activated.html:4
+msgid "Cuenta activada"
+msgstr "Compte activé"
+
+#: templates/users/account_activated.html:9
+msgid "¡Cuenta activada!"
+msgstr "Compte activé !"
+
+#: templates/users/account_activated.html:16
+msgid "¡Tu cuenta está lista!"
+msgstr "Votre compte est prêt !"
+
+#: templates/users/account_activated.html:17
+msgid "Tu cuenta ha sido activada correctamente. Ya puedes iniciar sesión."
+msgstr ""
+"Votre compte a été activé avec succès. Vous pouvez maintenant vous "
+"connecter."
+
+#: templates/users/account_activated.html:18 templates/users/login.html:4
+#: templates/users/login.html:9 templates/users/login.html:43
 msgid "Iniciar sesión"
 msgstr "Se connecter"
 
-#: users/templates/users/login.html:30
+#: templates/users/login.html:29
 msgid "Usuario"
 msgstr "Utilisateur"
 
-#: users/templates/users/login.html:35 users/templates/users/register.html:38
-#: users/templates/users/register.html:39
+#: templates/users/login.html:34 templates/users/register.html:31
+#: templates/users/register.html:32
 msgid "Contraseña"
 msgstr "Mot de passe"
 
-#: users/templates/users/login.html:41
+#: templates/users/login.html:40
 msgid "Recordar"
 msgstr "Mémoriser"
 
-#: users/templates/users/login.html:47
+#: templates/users/login.html:46
 msgid "Todavía no tiene una cuenta?"
 msgstr "Vous n'avez pas encore de compte ?"
 
-#: users/templates/users/login.html:48
+#: templates/users/login.html:47 templates/users/register.html:40
 msgid "Registrarse"
 msgstr "S'enregistrer"
 
-#: users/templates/users/register.html:4
+#: templates/users/register.html:3
 msgid "Registro"
 msgstr "Enregistrement"
 
-#: users/templates/users/register.html:9
+#: templates/users/register.html:6
 msgid "Registrar una cuenta"
 msgstr "Enregistrer un compte"
 
-#: users/templates/users/register.html:30
-#: users/templates/users/register.html:31
+#: templates/users/register.html:23 templates/users/register.html:24
 msgid "Correo electrónico"
 msgstr "Courrier électronique"
 
-#: users/templates/users/register.html:34
-#: users/templates/users/register.html:35
+#: templates/users/register.html:27 templates/users/register.html:28
 msgid "Nombre de usuario"
 msgstr "Utilisateur"
 
-#: users/templates/users/register.html:42
-#: users/templates/users/register.html:43
+#: templates/users/register.html:35 templates/users/register.html:36
 msgid "Repetir contraseña"
 msgstr "Répéter le mot de passe"
 
-#: users/templates/users/registerok.html:4
+#: templates/users/registerok.html:4
 msgid "Registro completado"
 msgstr "Enregistrement terminé"
 
-#: users/templates/users/registerok.html:9
+#: templates/users/registerok.html:9
 msgid "Registro Completado"
 msgstr "Enregistrement terminé"
 
-#: users/templates/users/registerok.html:22
-msgid "Tu usuario ha sido creado con exito"
-msgstr "Votre utilisateur a été créé avec succès."
+#: templates/users/registerok.html:21
+msgid "Revisa tu correo electrónico"
+msgstr "Vérifiez votre courrier électronique"
 
-#: users/templates/users/registerok.html:23
-msgid "Si la página no es redirigida en 5 segundos pulsa"
-msgstr "Si la page n'est pas redirigée dans les 5 secondes, appuyez"
+#: templates/users/registerok.html:22
+msgid ""
+"Te hemos enviado un email de activación. Haz clic en el enlace para activar "
+"tu cuenta."
+msgstr ""
+"Nous vous avons envoyé un email d'activation. Cliquez sur le lien pour "
+"activer votre compte."
 
-#: users/templates/users/registerok.html:23
-msgid "aquí"
-msgstr " ici"
+#: templates/users/registerok.html:23
+msgid "Si no recibes el email en unos minutos, revisa la carpeta de spam."
+msgstr ""
+"Si vous ne recevez pas l'email dans quelques minutes, vérifiez votre "
+"dossier spam."
+
+#~ msgid "Tu usuario ha sido creado con exito"
+#~ msgstr "Votre utilisateur a été créé avec succès."
+
+#~ msgid "Si la página no es redirigida en 5 segundos pulsa"
+#~ msgstr "Si la page n'est pas redirigée dans les 5 secondes, appuyez"
+
+#~ msgid "aquí"
+#~ msgstr " ici"
