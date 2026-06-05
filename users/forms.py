@@ -4,6 +4,7 @@ from django.core.mail import send_mail
 from django.conf import settings
 from users.models import Profile
 from django.urls import reverse
+from django.utils.translation import gettext_lazy as _
 
 class SignupForm(forms.Form):
     """Sign up form."""
@@ -29,13 +30,13 @@ class SignupForm(forms.Form):
     def clean_username(self):
         username = self.cleaned_data['username']
         if User.objects.filter(username=username).exists():
-            raise forms.ValidationError('Este nombre de usuario ya está en uso.')
+            raise forms.ValidationError(_('Este nombre de usuario ya está en uso.'))
         return username
 
     def clean_email(self):
         email = self.cleaned_data['email']
         if User.objects.filter(email=email).exists():
-            raise forms.ValidationError('Ya existe una cuenta con este email.')
+            raise forms.ValidationError(_('Ya existe una cuenta con este email.'))
         return email
 
     def clean(self):
@@ -43,7 +44,7 @@ class SignupForm(forms.Form):
         password = data.get('password')
         password_confirmation = data.get('password_confirmation')
         if password and password_confirmation and password != password_confirmation:
-            raise forms.ValidationError('Las contraseñas no coinciden.')
+            raise forms.ValidationError(_('Las contraseñas no coinciden.'))
         return data
 
     def save(self):
