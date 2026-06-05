@@ -16,6 +16,7 @@ class Post(models.Model):
     author = models.ForeignKey('auth.User', on_delete=models.CASCADE, verbose_name='autor')
     title = models.CharField(max_length=200, verbose_name='Título')
     slug = models.SlugField(unique=True)
+    meta_description = models.CharField(max_length=160, blank=True, verbose_name='Meta descripción')
     content = models.TextField(verbose_name='Contenido')  # ← TextField
     image = models.ImageField(upload_to='blog/images/', blank=True, null=True, verbose_name='imagen')
     categories = models.ManyToManyField(Category)

@@ -14,8 +14,20 @@ class PostAdmin(TranslationAdmin):
     readonly_fields = ('created_date', 'updated')
     list_display = ('title', 'author', 'published_date', 'created_date')
     list_filter = ('created_date', 'updated', 'published_date')
+    
+    fieldsets = (
+        (None, {
+            'fields': ('author', 'title_es', 'title_en', 'title_fr',
+                      'slug_es', 'slug_en', 'slug_fr',
+                      'meta_description_es', 'meta_description_en', 'meta_description_fr',
+                      'content_es', 'content_en', 'content_fr',
+                      'image', 'categories', 'published_date')
+        }),
+        ('Fechas', {
+            'fields': ('created_date', 'updated'),
+        }),
+    )
 
-    # Slug traducido se genera desde title traducido
     def get_prepopulated_fields(self, request, obj=None):
         return {
             'slug_es': ('title_es',),
