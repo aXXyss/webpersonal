@@ -22,6 +22,8 @@
   <link rel="canonical" href="https://axxyss.com{{ request.path }}" />
   {% endblock %}
 
+  {% block robots %}{% endblock %}
+
   {% block hreflang %}
   {% for lang_code, lang_name in available_languages %}
     {% if lang_code == 'es' %}
