@@ -37,6 +37,7 @@ urlpatterns += i18n_patterns(
     path('contact/', include('contact.urls')),
     path('blog/', include('blog.urls')),
     path('', include(('users.urls', 'users'), namespace='users')), # Colocar al final, para evitar conflictos con otras rutas
+    path('comments/', include('comments.urls')),
 )
 
 if settings.DEBUG:

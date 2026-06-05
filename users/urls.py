@@ -7,7 +7,7 @@ from users import views
 
 urlpatterns = [
     path(
-        route='login',
+        route='login/',
         view=views.LoginView.as_view(),
         name='login'
     ),
@@ -63,5 +63,15 @@ urlpatterns = [
             template_name='users/password_reset_complete.html'
         ),
         name='password_reset_complete'
+    ),
+    path(
+        route='perfil/',
+        view=views.ProfileView.as_view(),
+        name='profile'
+    ),
+    path(
+        route='perfil/editar/',
+        view=views.ProfileEditView.as_view(),
+        name='profile_edit'
     ),
 ]

@@ -155,28 +155,28 @@
                   </a>
                 </li>
                 {% if user.is_authenticated %}
-                <li class="nav-item ms-lg-auto">
-                  <form method="post" action="{% url 'users:logout' %}" class="d-inline">
-                    <input type="hidden" name="next" value="{{ request.path }}">
-                    {% csrf_token %}
-                    <button type="submit" class="nav-link px-lg-3 py-3 py-lg-4"
-                      style="border: none; background: none; padding: 0; cursor: pointer;">
-                      <p class="d-inline text-sm z-index-1 font-weight-semibold" data-bs-toggle="tooltip"
-                        data-bs-placement="bottom" title="Sign OUT" style="color: #007bff;">{{ user.username }}&nbsp;
-                      </p>
-                      <i class="fa fa-sign-out me-1"></i>
-                    </button>
-                  </form>
-                </li>
-                {% else %}
-                <li class="nav-item ms-lg-auto">
-                  <a class="nav-link px-lg-3 py-3 py-lg-4" href="{% url 'users:login' %}">
-                    <i class="fa fa-sign-in me-1"></i>
-                    <p class="d-inline text-sm z-index-1 font-weight-semibold" data-bs-toggle="tooltip"
-                      data-bs-placement="bottom" title="Sign IN">{% trans "Iniciar sesión" %}</p>
-                  </a>
-                </li>
-                {% endif %}
+                  <li class="nav-item ms-lg-auto d-flex align-items-center">
+                      <a href="{% url 'users:profile' %}" class="nav-link px-lg-3 py-3 py-lg-4">
+                          <p class="d-inline text-sm z-index-1 font-weight-semibold" style="color: #007bff;">
+                              {{ user.username }}
+                          </p>
+                      </a>
+                      <form method="post" action="{% url 'users:logout' %}" style="display:inline; margin:0;">
+                          {% csrf_token %}
+                          <input type="hidden" name="next" value="{{ request.path }}">
+                          <button type="submit" style="border: none; background: none; padding: 0; cursor: pointer; color: #007bff;">
+                              <i class="fa fa-sign-out"></i>
+                          </button>
+                      </form>
+                  </li>
+                  {% else %}
+                  <li class="nav-item ms-lg-auto">
+                      <a class="nav-link px-lg-3 py-3 py-lg-4" href="{% url 'users:login' %}?next={{ request.path }}">
+                          <i class="fa fa-sign-in me-1"></i>
+                          <p class="d-inline text-sm z-index-1 font-weight-semibold">{% trans "Iniciar sesión" %}</p>
+                      </a>
+                  </li>
+                  {% endif %}
               </ul>
               <form action="{% url 'set_language' %}" method="post" class="form-inline ml-auto" id="language-form">
                 {% csrf_token %}

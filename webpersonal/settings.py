@@ -274,7 +274,7 @@ SILENCED_SYSTEM_CHECKS = [
 ]
 
 
-LOGIN_URL = '/login/'
+LOGIN_URL = '/es/login/'
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
 

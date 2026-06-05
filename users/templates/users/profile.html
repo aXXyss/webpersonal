@@ -1,0 +1,54 @@
+{% extends "core/base.html" %}
+{% load i18n %}
+{% block title %}{% trans "Mi perfil" %}{% endblock %}
+{% block background %}{% load static %}{% static 'core/img/about-bg.jpg' %}{% endblock %}
+{% block headers %}
+<h1 class="text-white font-weight-black pt-3 mt-n5">{% trans "Mi perfil" %}</h1>
+{% endblock %}
+{% block robots %}
+<meta name="robots" content="noindex, nofollow">
+{% endblock %}
+
+{% block content %}
+<div class="row">
+    <!-- Columna izquierda: datos del perfil -->
+    <div class="col-lg-3 text-center mb-4">
+        {% if profile.photo %}
+            <img src="{{ profile.photo.url }}" alt="{{ request.user.username }}" class="img-fluid rounded-circle mb-3" style="width: 150px; height: 150px; object-fit: cover;">
+        {% else %}
+            <img src="{% static 'core/img/avatar.jpg' %}" alt="{{ request.user.username }}" class="img-fluid rounded-circle mb-3" style="width: 150px; height: 150px; object-fit: cover;">
+        {% endif %}
+        <h4>{{ request.user.username }}</h4>
+        <p class="text-muted">{{ request.user.email }}</p>
+        <a href="{% url 'users:profile_edit' %}" class="btn btn-dark btn-sm mt-2">{% trans "Editar perfil" %}</a>
+    </div>
+
+    <!-- Columna derecha: comentarios -->
+    <div class="col-lg-9">
+        <h3>{% trans "Mis comentarios" %} <span class="badge bg-secondary">{{ comments.count }}</span></h3>
+        <hr>
+        {% for comment in comments %}
+        <div class="card mb-3">
+            <div class="card-body">
+                <p class="text-muted text-sm mb-1">
+                    {% trans "En" %}: <a href="{% url 'blog:post_detail' slug=comment.post.slug %}">{{ comment.post.title }}</a>
+                    · {{ comment.created_at|date:"d M Y" }}
+                    {% if comment.replies.count > 0 %}
+                        · <span class="text-success">{{ comment.replies.count }} {% trans "respuesta(s)" %}</span>
+                    {% endif %}
+                </p>
+                <p class="mb-0">{{ comment.comment }}</p>
+                <form method="POST" action="{% url 'comments:delete_comment' comment.id %}" class="mt-2">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-sm btn-outline-danger" onclick="return confirm('{% trans "¿Estás seguro de que quieres borrar este comentario?" %}')">
+                        <i class="fas fa-trash"></i> {% trans "Borrar" %}
+                    </button>
+                </form>
+            </div>
+        </div>
+        {% empty %}
+        <p class="text-muted">{% trans "Todavía no has dejado ningún comentario." %}</p>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

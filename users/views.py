@@ -1,11 +1,14 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from django.views.generic import FormView, View
+from django.views.generic import FormView, View, TemplateView, UpdateView
 from django.urls import reverse_lazy
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth import views as auth_views
+from django.utils.decorators import method_decorator
+from django.contrib.auth.decorators import login_required
 from users.forms import SignupForm
 from users.models import Profile
 from django.utils.translation import get_language
+from comments.models import Comment
 
 class SignupView(FormView):
     template_name = 'users/register.html'
@@ -33,3 +36,27 @@ class ActivateAccountView(View):
             return render(request, 'users/account_activated.html')
         else:
             return redirect('users:login')
+
+@method_decorator(login_required, name='dispatch')
+class ProfileView(TemplateView):
+    template_name = 'users/profile.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        user = self.request.user
+        comments = Comment.objects.filter(
+            user=user, parent=None
+        ).select_related('post').order_by('-created_at')
+        context['comments'] = comments
+        context['profile'] = Profile.objects.get(user=user)
+        return context
+
+@method_decorator(login_required, name='dispatch')
+class ProfileEditView(UpdateView):
+    model = Profile
+    fields = ['photo']
+    template_name = 'users/profile_edit.html'
+    success_url = reverse_lazy('users:profile')
+
+    def get_object(self):
+        return Profile.objects.get(user=self.request.user)

@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-05 16:42+0200\n"
-"PO-Revision-Date: 2026-06-05 16:54+0200\n"
+"POT-Creation-Date: 2026-06-05 19:34+0200\n"
+"PO-Revision-Date: 2026-06-05 19:42+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -187,6 +187,51 @@ msgid "Si no recibes el email en unos minutos, revisa la carpeta de spam."
 msgstr ""
 "Si vous ne recevez pas l'email dans quelques minutes, vérifiez votre dossier "
 "spam."
+
+#: templates/users/profile.html:3 templates/users/profile.html:6
+msgid "Mi perfil"
+msgstr "Mon profil"
+
+#: templates/users/profile.html:23 templates/users/profile_edit.html:3
+#: templates/users/profile_edit.html:6
+msgid "Editar perfil"
+msgstr "Modifier le profil"
+
+#: templates/users/profile.html:28
+msgid "Mis comentarios"
+msgstr "Mes commentaires"
+
+#: templates/users/profile.html:34
+msgid "En"
+msgstr "Dans"
+
+#: templates/users/profile.html:37
+msgid "respuesta(s)"
+msgstr "réponse(s)"
+
+#: templates/users/profile.html:43
+msgid "¿Estás seguro de que quieres borrar este comentario?"
+msgstr "Êtes-vous sûr de vouloir supprimer ce commentaire ?"
+
+#: templates/users/profile.html:44
+msgid "Borrar"
+msgstr "Supprimer"
+
+#: templates/users/profile.html:50
+msgid "Todavía no has dejado ningún comentario."
+msgstr "Vous n'avez encore laissé aucun commentaire."
+
+#: templates/users/profile_edit.html:25
+msgid "Foto de perfil"
+msgstr "Photo de profil"
+
+#: templates/users/profile_edit.html:29
+msgid "Guardar cambios"
+msgstr "Enregistrer les modifications"
+
+#: templates/users/profile_edit.html:33
+msgid "Volver al perfil"
+msgstr "Retour au profil"
 
 #: templates/users/register.html:3
 msgid "Registro"
