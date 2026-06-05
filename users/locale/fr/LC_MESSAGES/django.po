@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-05 16:28+0200\n"
-"PO-Revision-Date: 2026-06-05 16:30+0200\n"
+"POT-Creation-Date: 2026-06-05 16:42+0200\n"
+"PO-Revision-Date: 2026-06-05 16:54+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -30,11 +30,7 @@ msgstr "Un compte avec cet email existe déjà."
 msgid "Las contraseñas no coinciden."
 msgstr "Les mots de passe ne correspondent pas."
 
-#: forms.py:66
-msgid "Activa tu cuenta en aXXyss Soluciones"
-msgstr "Activez votre compte sur aXXyss Soluciones"
-
-#: forms.py:67
+#: forms.py:65
 #, python-format
 msgid ""
 "Hola %(username)s,\n"
@@ -58,6 +54,10 @@ msgstr ""
 "message.\\n\\nCordialement,\\nJoaquin Denis\\naXXyss Soluciones\\nhttps://"
 "axxyss.com\\n\n"
 
+#: forms.py:69
+msgid "Activa tu cuenta en aXXyss Soluciones"
+msgstr "Activez votre compte sur aXXyss Soluciones"
+
 #: templates/users/account_activated.html:4
 msgid "Cuenta activada"
 msgstr "Compte activé"
@@ -77,6 +77,7 @@ msgstr ""
 
 #: templates/users/account_activated.html:18 templates/users/login.html:4
 #: templates/users/login.html:9 templates/users/login.html:43
+#: templates/users/password_reset_complete.html:17
 msgid "Iniciar sesión"
 msgstr "Se connecter"
 
@@ -94,12 +95,98 @@ msgid "Recordar"
 msgstr "Mémoriser"
 
 #: templates/users/login.html:46
+msgid "¿Olvidaste tu contraseña?"
+msgstr "Mot de passe oublié ?"
+
+#: templates/users/login.html:49
 msgid "Todavía no tiene una cuenta?"
 msgstr "Vous n'avez pas encore de compte ?"
 
-#: templates/users/login.html:47 templates/users/register.html:40
+#: templates/users/login.html:50 templates/users/register.html:40
 msgid "Registrarse"
 msgstr "S'enregistrer"
+
+#: templates/users/password_reset.html:3 templates/users/password_reset.html:6
+msgid "Restablecer contraseña"
+msgstr "Réinitialiser le mot de passe"
+
+#: templates/users/password_reset.html:17
+msgid ""
+"Introduce tu email y te enviaremos un enlace para restablecer tu contraseña."
+msgstr ""
+"Entrez votre email et nous vous enverrons un lien pour réinitialiser votre "
+"mot de passe."
+
+#: templates/users/password_reset.html:21 templates/users/register.html:23
+#: templates/users/register.html:24
+msgid "Correo electrónico"
+msgstr "Courrier électronique"
+
+#: templates/users/password_reset.html:24
+msgid "Enviar enlace"
+msgstr "Envoyer le lien"
+
+#: templates/users/password_reset_complete.html:3
+msgid "Contraseña cambiada"
+msgstr "Mot de passe modifié"
+
+#: templates/users/password_reset_complete.html:6
+msgid "¡Contraseña cambiada!"
+msgstr "Mot de passe modifié!"
+
+#: templates/users/password_reset_complete.html:15
+msgid "¡Listo!"
+msgstr "C'est fait !"
+
+#: templates/users/password_reset_complete.html:16
+msgid "Tu contraseña ha sido cambiada correctamente."
+msgstr "Votre mot de passe a été modifié avec succès."
+
+#: templates/users/password_reset_confirm.html:3
+#: templates/users/password_reset_confirm.html:6
+#: templates/users/password_reset_confirm.html:21
+msgid "Nueva contraseña"
+msgstr "Nouveau mot de passe"
+
+#: templates/users/password_reset_confirm.html:24
+msgid "Confirmar contraseña"
+msgstr "Confirmer le mot de passe"
+
+#: templates/users/password_reset_confirm.html:32
+msgid "Cambiar contraseña"
+msgstr "Changer le mot de passe"
+
+#: templates/users/password_reset_confirm.html:37
+msgid "El enlace no es válido o ha expirado. Solicita uno nuevo."
+msgstr "Le lien est invalide ou a expiré. Veuillez en demander un nouveau."
+
+#: templates/users/password_reset_confirm.html:39
+msgid "Solicitar nuevo enlace"
+msgstr "Demander un nouveau lien"
+
+#: templates/users/password_reset_done.html:3
+#: templates/users/password_reset_done.html:6
+msgid "Email enviado"
+msgstr "Email envoyé"
+
+#: templates/users/password_reset_done.html:15
+msgid "Revisa tu correo"
+msgstr "Vérifiez votre courrier"
+
+#: templates/users/password_reset_done.html:16
+msgid ""
+"Si existe una cuenta con ese email, recibirás un enlace para restablecer tu "
+"contraseña."
+msgstr ""
+"Si un compte existe avec cet email, vous recevrez un lien pour réinitialiser "
+"votre mot de passe."
+
+#: templates/users/password_reset_done.html:17
+#: templates/users/registerok.html:23
+msgid "Si no recibes el email en unos minutos, revisa la carpeta de spam."
+msgstr ""
+"Si vous ne recevez pas l'email dans quelques minutes, vérifiez votre dossier "
+"spam."
 
 #: templates/users/register.html:3
 msgid "Registro"
@@ -108,10 +195,6 @@ msgstr "Enregistrement"
 #: templates/users/register.html:6
 msgid "Registrar una cuenta"
 msgstr "Enregistrer un compte"
-
-#: templates/users/register.html:23 templates/users/register.html:24
-msgid "Correo electrónico"
-msgstr "Courrier électronique"
 
 #: templates/users/register.html:27 templates/users/register.html:28
 msgid "Nombre de usuario"
@@ -140,12 +223,6 @@ msgid ""
 msgstr ""
 "Nous vous avons envoyé un email d'activation. Cliquez sur le lien pour "
 "activer votre compte."
-
-#: templates/users/registerok.html:23
-msgid "Si no recibes el email en unos minutos, revisa la carpeta de spam."
-msgstr ""
-"Si vous ne recevez pas l'email dans quelques minutes, vérifiez votre dossier "
-"spam."
 
 #~ msgid "Tu usuario ha sido creado con exito"
 #~ msgstr "Votre utilisateur a été créé avec succès."

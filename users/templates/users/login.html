@@ -42,6 +42,9 @@
                         <div class="text-center">
                             <button type="submit" class="btn bg-gradient-dark w-100 my-4 mb-2">{% trans "Iniciar sesión" %}</button>
                         </div>
+                        <div class="text-center mt-2">
+                            <a href="{% url 'users:password_reset' %}" class="text-sm">{% trans "¿Olvidaste tu contraseña?" %}</a>
+                        </div>
                         <p class="mt-4 text-sm text-center">
                             {% trans "Todavía no tiene una cuenta?" %}
                             <a href="{% url 'users:register' %}">{% trans "Registrarse" %}</a>
