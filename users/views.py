@@ -27,6 +27,10 @@ class LogoutView(LoginRequiredMixin, auth_views.LogoutView):
     """Logout view."""
     template_name = 'users/logged_out.html'
 
+    def get_next_page(self):
+        lang = get_language()
+        return f'/{lang}/'
+
 class ActivateAccountView(View):
     def get(self, request, token):
         profile = get_object_or_404(Profile, activation_token=token)
