@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: aXXyss 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-05 13:26+0200\n"
-"PO-Revision-Date: 2026-01-23 19:30+0100\n"
+"POT-Creation-Date: 2026-06-06 14:47+0200\n"
+"PO-Revision-Date: 2026-06-06 15:00+0200\n"
 "Last-Translator: Joaquin Denis\n"
 "Language-Team: French\n"
 "Language: fr\n"
@@ -16,23 +16,24 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Poedit 3.6\n"
 
 #: templates/core/about.html:4 templates/core/base.html:136
-#: templates/core/base.html:279
+#: templates/core/base.html:280
 #: templates/core/base_perso_cookies_banner.html:79
 #: templates/core/base_perso_cookies_banner.html:221
 msgid "Sobre mí"
 msgstr "À propos"
 
-#: templates/core/about.html:5
+#: templates/core/about.html:5 templates/core/home.html:9
 msgid ""
 "Joaquin Denis — Programador web freelance en Torrent, Valencia. "
 "Especializado en Django y Python. Desarrollo web a medida, e-commerce y "
 "software de gestión para empresas."
 msgstr ""
-"Joaquin Denis — Développeur web freelance à Torrent, Valence. Spécialisé "
-"en Django et Python. Développement web sur mesure, e-commerce et logiciels "
-"de gestion pour entreprises."
+"Joaquin Denis — Développeur web freelance à Torrent, Valence. Spécialisé en "
+"Django et Python. Développement web sur mesure, e-commerce et logiciels de "
+"gestion pour entreprises."
 
 #: templates/core/about.html:19
 msgid "Acerca de"
@@ -55,10 +56,10 @@ msgid ""
 "rel=\"noopener\"><b>Django</b></a> y <a href=\"https://www.python.org/\" "
 "target=\"_blank\" rel=\"noopener\"><b>Python</b></a>."
 msgstr ""
-"Je suis Joaquin Denis, développeur web indépendant basé à Torrent "
-"(Valence). Avec plus de 25 ans d'expérience en informatique et développement "
-"logiciel, je me spécialise dans la création d'applications web sur mesure "
-"avec <a href=\"https://www.djangoproject.com/\" target=\"_blank\" "
+"Je suis Joaquin Denis, développeur web indépendant basé à Torrent (Valence). "
+"Avec plus de 25 ans d'expérience en informatique et développement logiciel, "
+"je me spécialise dans la création d'applications web sur mesure avec <a "
+"href=\"https://www.djangoproject.com/\" target=\"_blank\" "
 "rel=\"noopener\"><b>Django</b></a> et <a href=\"https://www.python.org/\" "
 "target=\"_blank\" rel=\"noopener\"><b>Python</b></a>."
 
@@ -109,8 +110,6 @@ msgid "<b>Optimización SEO</b> y mantenimiento web"
 msgstr "<b>Optimisation SEO</b> et maintenance web"
 
 #: templates/core/about.html:49
-#, fuzzy
-#| msgid "Mis Habilidades Técnicas"
 msgid "Habilidades Técnicas"
 msgstr "Mes Compétences Techniques"
 
@@ -162,9 +161,9 @@ msgid ""
 "rel=\"noopener\">MySQL</a>, <a href=\"https://mariadb.org/\" "
 "target=\"_blank\" rel=\"noopener\">MariaDB</a>"
 msgstr ""
-"<b>Bases de données : </b><a href=\"https://www.mysql.com/\" target=\"_blank\" "
-"rel=\"noopener\">MySQL</a>, <a href=\"https://mariadb.org/\" "
-"target=\"_blank\" rel=\"noopener\">MariaDB</a>"
+"<b>Bases de données : </b><a href=\"https://www.mysql.com/\" "
+"target=\"_blank\" rel=\"noopener\">MySQL</a>, <a href=\"https://mariadb.org/"
+"\" target=\"_blank\" rel=\"noopener\">MariaDB</a>"
 
 #: templates/core/about.html:55
 msgid ""
@@ -193,7 +192,7 @@ msgstr ""
 "rel=\"noopener\">Dolibarr</a>"
 
 #: templates/core/about.html:60 templates/core/base.html:148
-#: templates/core/base.html:287
+#: templates/core/base.html:288
 #: templates/core/base_perso_cookies_banner.html:89
 #: templates/core/base_perso_cookies_banner.html:227
 msgid "Contacto"
@@ -216,48 +215,48 @@ msgstr "aXXyss Solutions"
 msgid "Soluciones"
 msgstr "Solutions"
 
-#: templates/core/base.html:130 templates/core/base.html:275
+#: templates/core/base.html:130 templates/core/base.html:276
 #: templates/core/base_perso_cookies_banner.html:74
 #: templates/core/base_perso_cookies_banner.html:218
 msgid "Portada"
 msgstr "Accueil"
 
-#: templates/core/base.html:142 templates/core/base.html:283
+#: templates/core/base.html:142 templates/core/base.html:284
 #: templates/core/base_perso_cookies_banner.html:84
 #: templates/core/base_perso_cookies_banner.html:224
 msgid "Portafolio"
 msgstr "Portfolio"
 
-#: templates/core/base.html:154 templates/core/base.html:291
+#: templates/core/base.html:154 templates/core/base.html:292
 #: templates/core/base_perso_cookies_banner.html:94
 #: templates/core/base_perso_cookies_banner.html:230
 msgid "Blog"
 msgstr "Blog"
 
-#: templates/core/base.html:175
+#: templates/core/base.html:176
 #: templates/core/base_perso_cookies_banner.html:117
 msgid "Iniciar sesión"
 msgstr "Se connecter"
 
-#: templates/core/base.html:271
+#: templates/core/base.html:272
 #: templates/core/base_perso_cookies_banner.html:215
 msgid "Información"
 msgstr "Informations"
 
-#: templates/core/base.html:297
+#: templates/core/base.html:298
 #: templates/core/base_perso_cookies_banner.html:236
 msgid "Legal"
 msgstr "Mentions Légales"
 
-#: templates/core/base.html:318
+#: templates/core/base.html:319
 msgid "Desarrollo Web en Torrent"
 msgstr "Développement Web à Torrent (Valence)"
 
-#: templates/core/base.html:323
+#: templates/core/base.html:324
 msgid "Hecho con"
 msgstr "Réalisé avec"
 
-#: templates/core/base.html:325
+#: templates/core/base.html:326
 msgid "por"
 msgstr "par"
 
@@ -296,96 +295,80 @@ msgid "Hecho con Django por aXXyss"
 msgstr "Réalisé avec Django par aXXyss"
 
 #: templates/core/home.html:5
-msgid "Desarrollo Web Django, WordPress y Software Forestal"
-msgstr "Développement Web Django, WordPress et Logiciels Forestiers"
-
-#: templates/core/home.html:9
-msgid ""
-"Programador experto en Django y WordPress E-commerce. Soluciones para "
-"aserraderos en África, tiendas online en Canadá (Quebec) y soporte IT en "
-"Torrent, Valencia."
-msgstr ""
-"Développeur expert Django et E-commerce WordPress. Solutions pour scieries "
-"en Afrique, boutiques en ligne au Canada (Québec) et support informatique à "
-"Torrent, Valence."
+msgid "Programador Web Django en Torrent, Valencia | aXXyss Soluciones"
+msgstr "Développeur Web Django à Torrent, Valence | aXXyss Soluciones"
 
 #: templates/core/home.html:26
-msgid "Desarrollador Full-Stack | Django & WordPress E-commerce"
-msgstr "Développeur Full-Stack | Spécialiste E-commerce Django & WordPress"
+msgid "Programador web y desarrollador de software | Django & Python"
+msgstr "Développeur web et développeur de logiciels | Django & Python"
 
 #: templates/core/home.html:27
-msgid "Convierto procesos industriales complejos en aplicaciones web modernas"
+msgid ""
+"Soluciones digitales a medida para empresas en España, América del Norte y "
+"África"
 msgstr ""
-"Je transforme les processus industriels complexes en applications web "
-"modernes"
+"Solutions numériques sur mesure pour les entreprises en Espagne, Amérique du "
+"Nord et Afrique"
 
 #: templates/core/home.html:41
-msgid "Software a Medida para la Industria Forestal y Global"
-msgstr "Logiciels sur Mesure pour l'Industrie Forestière et Mondiale"
+msgid "Desarrollo Web y Software a Medida"
+msgstr "Développement Web et Logiciels sur Mesure"
 
 #: templates/core/home.html:42
 msgid ""
 "Desde mi estudio en <b>Torrent (Valencia)</b>, desarrollo <b>soluciones web</"
-"b> y sistemas de gestión que cruzan fronteras. Especializado en el sector de "
-"<b>aserraderos y gestión forestal</b>, diseño herramientas que entienden los "
-"procesos industriales complejos para clientes en <b>África, Canadá y Europa</"
-"b>."
+"b> y software a medida para empresas. Especializado en <b>Django y Python</"
+"b>, diseño aplicaciones eficientes adaptadas a los procesos reales de cada "
+"cliente."
 msgstr ""
 "Depuis mon studio à <b>Torrent (Valence)</b>, je développe des <b>solutions "
-"web</b> et des systèmes de gestion transfrontaliers. Spécialisé dans le "
-"secteur des <b>scieries et de la gestion forestière</b>, je conçois des "
-"outils adaptés aux processus industriels complexes pour des clients en "
-"<b>Afrique, au Canada et en Europe</b>."
+"web</b> et des logiciels sur mesure pour les entreprises. Spécialisé en "
+"<b>Django et Python</b>, je conçois des applications efficaces adaptées aux "
+"processus réels de chaque client."
 
 #: templates/core/home.html:44
-msgid "Especialista en Modernización de Software Industrial"
-msgstr "Spécialiste en Modernisation de Logiciels Industriels"
+msgid "Modernización de Software Empresarial"
+msgstr "Modernisation des Logiciels d'Entreprise"
 
 #: templates/core/home.html:45
 msgid ""
-"Cuento con una solución propia de <b>gestión forestal</b> basada en "
-"arquitectura MySQL. Actualmente, lidero la transición de sistemas de "
-"escritorio legacy (MS Access) hacia potentes aplicaciones <b>Cloud nativas "
-"con Django</b>. Esta experiencia me permite migrar sistemas antiguos a la "
-"web sin pérdida de datos."
+"Cuento con amplia experiencia en la transición de sistemas legacy hacia "
+"potentes aplicaciones <b>web con Django</b>. Esta experiencia me permite "
+"migrar sistemas antiguos a la web sin pérdida de datos y adaptados a los "
+"procesos reales de la empresa."
 msgstr ""
-"Je dispose d'une solution de <b>gestion forestière</b> basée sur une "
-"architecture MySQL. Actuellement, je dirige la transition de systèmes legacy "
-"(MS Access) vers de puissantes applications <b>Cloud natives avec Django</"
-"b>. Cette expertise me permet de migrer des systèmes anciens vers le web "
-"sans perte de données."
+"Je dispose d'une vaste expérience dans la transition des systèmes legacy "
+"vers de puissantes <b>applications web avec Django</b>. Cela me permet de "
+"migrer d'anciens systèmes vers le web sans perte de données, adaptés aux "
+"processus réels de l'entreprise."
 
 #: templates/core/home.html:47
-msgid "Soluciones E-commerce y WordPress Internacional"
-msgstr "Solutions E-commerce et WordPress International"
+msgid "Soluciones E-commerce y WordPress"
+msgstr "Solutions E-commerce et WordPress"
 
 #: templates/core/home.html:48
 msgid ""
-"Además de sistemas industriales, desarrollo <b>tiendas online con WordPress "
-"y WooCommerce</b>. He implementado soluciones de comercio electrónico para "
-"el mercado de <b>Quebec (Canadá)</b>, asegurando plataformas rápidas, "
-"seguras y adaptadas a las necesidades locales."
+"Además de aplicaciones a medida, desarrollo <b>tiendas online con WordPress "
+"y WooCommerce</b>, asegurando plataformas rápidas, seguras y adaptadas a las "
+"necesidades de cada negocio."
 msgstr ""
-"En plus des systèmes industriels, je développe des <b>boutiques en ligne "
-"avec WordPress et WooCommerce</b>. J'ai réalisé des solutions e-commerce "
-"pour le marché du <b>Québec (Canada)</b>, garantissant des plateformes "
-"rapides, sécurisées et adaptées aux besoins locaux."
+"En plus des applications sur mesure, je développe des <b>boutiques en ligne "
+"avec WordPress et WooCommerce</b>, garantissant des plateformes rapides, "
+"sécurisées et adaptées aux besoins de chaque entreprise."
 
 #: templates/core/home.html:50
-msgid "Más de 20 años de experiencia integral"
-msgstr "Plus de 20 ans d'expérience globale"
+msgid "¿Tienes un proyecto en mente?"
+msgstr "Vous avez un projet en tête ?"
 
 #: templates/core/home.html:51
+#, python-format
 msgid ""
-"Mi trayectoria me permite abordar proyectos con una perspectiva única, "
-"enfocándome en la eficiencia y la escalabilidad. Ya sea un aserradero en el "
-"Congo o una web en España, aseguro una solución que satisface sus "
-"necesidades reales."
+"Cuéntame tu idea y encontramos juntos la mejor solución técnica. Trabajo de "
+"forma <b>100%% remota</b> con clientes de cualquier parte del mundo."
 msgstr ""
-"Mon parcours me permet d'aborder des projets avec une perspective unique, "
-"axée sur l'efficacité et l'évolutivité. Qu'il s'agisse d'une scierie au "
-"Congo ou d'un site web en Suisse, je garantis une solution répondant à vos "
-"besoins réels."
+"Parlez-moi de votre idée et nous trouverons ensemble la meilleure solution "
+"technique. Je travaille <b>100%%</b> à distance avec des clients du monde "
+"entier."
 
 #: templates/core/home.html:55
 msgid "Contactar ahora"
@@ -393,15 +376,50 @@ msgstr "Contactez-moi"
 
 #: templates/core/home.html:65
 msgid "Lo que dicen mis clientes"
-msgstr ""
+msgstr "Ce que disent mes clients"
 
 #: templates/core/home.html:68
 msgid "reseñas en Google"
-msgstr ""
+msgstr "avis sur Google"
 
 #: templates/core/home.html:105
 msgid "Ver todas las reseñas en Google"
-msgstr ""
+msgstr "Voir tous les avis sur Google"
+
+#~ msgid ""
+#~ "Programador experto en Django y WordPress E-commerce. Soluciones para "
+#~ "aserraderos en África, tiendas online en Canadá (Quebec) y soporte IT en "
+#~ "Torrent, Valencia."
+#~ msgstr ""
+#~ "Développeur expert Django et E-commerce WordPress. Solutions pour "
+#~ "scieries en Afrique, boutiques en ligne au Canada (Québec) et support "
+#~ "informatique à Torrent, Valence."
+
+#~ msgid "Desarrollador Full-Stack | Django & WordPress E-commerce"
+#~ msgstr "Développeur Full-Stack | Spécialiste E-commerce Django & WordPress"
+
+#~ msgid ""
+#~ "Convierto procesos industriales complejos en aplicaciones web modernas"
+#~ msgstr ""
+#~ "Je transforme les processus industriels complexes en applications web "
+#~ "modernes"
+
+#~ msgid "Software a Medida para la Industria Forestal y Global"
+#~ msgstr "Logiciels sur Mesure pour l'Industrie Forestière et Mondiale"
+
+#~ msgid "Más de 20 años de experiencia integral"
+#~ msgstr "Plus de 20 ans d'expérience globale"
+
+#~ msgid ""
+#~ "Mi trayectoria me permite abordar proyectos con una perspectiva única, "
+#~ "enfocándome en la eficiencia y la escalabilidad. Ya sea un aserradero en "
+#~ "el Congo o una web en España, aseguro una solución que satisface sus "
+#~ "necesidades reales."
+#~ msgstr ""
+#~ "Mon parcours me permet d'aborder des projets avec une perspective unique, "
+#~ "axée sur l'efficacité et l'évolutivité. Qu'il s'agisse d'une scierie au "
+#~ "Congo ou d'un site web en Suisse, je garantis une solution répondant à "
+#~ "vos besoins réels."
 
 #~ msgid ""
 #~ "Conoce más sobre aXXyss soluciones, mi experiencia en tecnología de la "
