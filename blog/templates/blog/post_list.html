@@ -59,22 +59,22 @@
 
     <!-- Paginación -->
     {% if posts.has_other_pages %}
-    <div class="d-flex justify-content-center mt-4">
+    <div class="d-flex justify-content-center mt-4 mb-2">
         <nav>
-            <ul class="pagination">
+            <ul class="pagination pagination-sm">
                 {% if posts.has_previous %}
                     <li class="page-item">
-                        <a class="page-link" href="?page={{ posts.previous_page_number }}">«</a>
+                        <a class="page-link" href="?page={{ posts.previous_page_number }}" style="background: transparent; border: 1px solid #344767; color: #344767; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; margin: 0 3px;">«</a>
                     </li>
                 {% endif %}
                 {% for num in posts.paginator.page_range %}
-                    <li class="page-item {% if posts.number == num %}active{% endif %}">
-                        <a class="page-link" href="?page={{ num }}">{{ num }}</a>
+                    <li class="page-item">
+                        <a class="page-link {% if posts.number == num %}bg-gradient-dark text-white{% endif %}" href="?page={{ num }}" style="border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; margin: 0 3px; border: 1px solid #344767; {% if posts.number != num %}background: transparent; color: #344767;{% endif %}">{{ num }}</a>
                     </li>
                 {% endfor %}
                 {% if posts.has_next %}
                     <li class="page-item">
-                        <a class="page-link" href="?page={{ posts.next_page_number }}">»</a>
+                        <a class="page-link" href="?page={{ posts.next_page_number }}" style="background: transparent; border: 1px solid #344767; color: #344767; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; margin: 0 3px;">»</a>
                     </li>
                 {% endif %}
             </ul>
