@@ -16,6 +16,11 @@
 </style>
 {% endblock %}
 
+{% block extra_css %}
+{% load static %}
+<link rel="preload" as="image" href="{% static 'core/img/blog-bg.webp' %}" type="image/webp" fetchpriority="high">
+{% endblock %}
+
 {% block headers %}
 <h1 class="text-white font-weight-black pt-3 mt-n5">{% trans "Blog" %}</h1>
 <p class="lead text-white mt-3">{% trans "Últimas publicaciones" %}</p>

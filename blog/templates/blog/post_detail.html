@@ -70,6 +70,7 @@
 </style>
 {% endblock %}
 
+
 {% block headers %}
     <h1 class="text-white font-weight-black pt-3 mt-n5">{{ post.title }}</h1>
 {% endblock %}
@@ -152,6 +153,7 @@
 {% block extra_css %}
     {# ¡Aquí va el CSS de Prism.js! #}
     {% load static %}
+    <link rel="preload" as="image" href="{% static 'core/img/blog-bg.webp' %}" type="image/webp" fetchpriority="high">
     <link href="{% static 'core/css/prism.css' %}" rel="stylesheet" />
 {% endblock %}
 

@@ -17,6 +17,11 @@
 </style>
 {% endblock %}
 
+{% block extra_css %}
+{% load static %}
+<link rel="preload" as="image" href="{% static 'core/img/portfolio-bg.webp' %}" type="image/webp" fetchpriority="high">
+{% endblock %}
+
 {% block headers %}
 <h1 class="text-white font-weight-black pt-3 mt-n5">{% if project.translation %}{{ project.translation.title }}{% else %}{{ project.title }}{% endif %}</h1>
 {% endblock %}
