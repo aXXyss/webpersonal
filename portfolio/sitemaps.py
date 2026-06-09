@@ -2,6 +2,7 @@
 from django.contrib.sitemaps import Sitemap
 from django.shortcuts import reverse
 from django.conf import settings
+from django.utils.translation import get_language
 from .models import Project
 
 class ProjectSitemap(Sitemap):
@@ -16,6 +17,8 @@ class ProjectSitemap(Sitemap):
         # Retorna los objetos del modelo Project
         return Project.objects.all()
 
+    def location(self, obj):
+        return obj.get_sitemap_url(get_language())
+
     def lastmod(self, obj):
-        # Retorna la fecha de actualización
         return obj.updated
