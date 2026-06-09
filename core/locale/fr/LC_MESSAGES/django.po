@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: aXXyss 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-06 14:47+0200\n"
-"PO-Revision-Date: 2026-06-06 15:00+0200\n"
+"POT-Creation-Date: 2026-06-09 16:46+0200\n"
+"PO-Revision-Date: 2026-06-09 16:47+0200\n"
 "Last-Translator: Joaquin Denis\n"
 "Language-Team: French\n"
 "Language: fr\n"
@@ -18,10 +18,10 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Poedit 3.6\n"
 
-#: templates/core/about.html:4 templates/core/base.html:136
-#: templates/core/base.html:280
-#: templates/core/base_perso_cookies_banner.html:79
-#: templates/core/base_perso_cookies_banner.html:221
+#: templates/core/about.html:4 templates/core/base.html:130
+#: templates/core/base.html:264
+#: templates/core/base_perso_cookies_banner.html:77
+#: templates/core/base_perso_cookies_banner.html:211
 msgid "Sobre mí"
 msgstr "À propos"
 
@@ -35,19 +35,19 @@ msgstr ""
 "Django et Python. Développement web sur mesure, e-commerce et logiciels de "
 "gestion pour entreprises."
 
-#: templates/core/about.html:19
+#: templates/core/about.html:24
 msgid "Acerca de"
 msgstr "À propos"
 
-#: templates/core/about.html:20
+#: templates/core/about.html:25
 msgid "Biografía"
 msgstr "Biographie"
 
-#: templates/core/about.html:35
+#: templates/core/about.html:40
 msgid "Programador web freelance en Torrent, Valencia"
 msgstr "Développeur web freelance à Torrent, Valence"
 
-#: templates/core/about.html:36
+#: templates/core/about.html:41
 msgid ""
 "Soy Joaquin Denis, programador web independiente con sede en Torrent "
 "(Valencia). Con más de 25 años de experiencia en informática y desarrollo de "
@@ -63,7 +63,7 @@ msgstr ""
 "rel=\"noopener\"><b>Django</b></a> et <a href=\"https://www.python.org/\" "
 "target=\"_blank\" rel=\"noopener\"><b>Python</b></a>."
 
-#: templates/core/about.html:37
+#: templates/core/about.html:42
 msgid ""
 "Trabajo de forma remota con clientes en España, América del Norte y África, "
 "transformando procesos empresariales complejos en herramientas digitales "
@@ -73,11 +73,11 @@ msgstr ""
 "en Afrique, en transformant des processus métier complexes en outils "
 "numériques efficaces et fiables."
 
-#: templates/core/about.html:39
+#: templates/core/about.html:44
 msgid "Servicios que Ofrezco"
 msgstr "Services proposés"
 
-#: templates/core/about.html:41
+#: templates/core/about.html:46
 msgid ""
 "<b>Desarrollo web</b> personalizado con <a href=\"https://"
 "www.djangoproject.com/\" target=\"_blank\" rel=\"noopener\"><b>Django</b></"
@@ -89,31 +89,31 @@ msgstr ""
 "a> et <a href=\"https://wordpress.org/\" target=\"_blank\" "
 "rel=\"noopener\"><b>WordPress</b></a>"
 
-#: templates/core/about.html:42
+#: templates/core/about.html:47
 msgid "<b>Diseño web</b> responsive y atractivo"
 msgstr "<b>Design web</b> responsive et attractif"
 
-#: templates/core/about.html:43
+#: templates/core/about.html:48
 msgid "<b>E-commerce</b> y tiendas online"
 msgstr "<b>E-commerce</b> et boutiques en ligne"
 
-#: templates/core/about.html:44
+#: templates/core/about.html:49
 msgid "<b>Software de gestión</b> empresarial a medida"
 msgstr "<b>Logiciels de gestion</b> d'entreprise sur mesure"
 
-#: templates/core/about.html:45
+#: templates/core/about.html:50
 msgid "<b>Alojamiento web</b> y configuración de servidores Linux"
 msgstr "<b>Hébergement web</b> et configuration de serveurs Linux"
 
-#: templates/core/about.html:46
+#: templates/core/about.html:51
 msgid "<b>Optimización SEO</b> y mantenimiento web"
 msgstr "<b>Optimisation SEO</b> et maintenance web"
 
-#: templates/core/about.html:49
+#: templates/core/about.html:54
 msgid "Habilidades Técnicas"
 msgstr "Mes Compétences Techniques"
 
-#: templates/core/about.html:51
+#: templates/core/about.html:56
 msgid ""
 "<b>Lenguajes: </b><a href=\"https://www.python.org/\" target=\"_blank\" "
 "rel=\"noopener\">Python</a>, <a href=\"https://developer.mozilla.org/es/docs/"
@@ -127,7 +127,7 @@ msgstr ""
 "developer.mozilla.org/fr/docs/Web/CSS\" target=\"_blank\" "
 "rel=\"noopener\">CSS</a>"
 
-#: templates/core/about.html:52
+#: templates/core/about.html:57
 msgid ""
 "<b>Frameworks: </b><a href=\"https://www.djangoproject.com/\" "
 "target=\"_blank\" rel=\"noopener\">Django</a>, <a href=\"https://"
@@ -137,7 +137,7 @@ msgstr ""
 "target=\"_blank\" rel=\"noopener\">Django</a>, <a href=\"https://"
 "wordpress.org/\" target=\"_blank\" rel=\"noopener\">WordPress</a>"
 
-#: templates/core/about.html:53
+#: templates/core/about.html:58
 msgid ""
 "<b>Servidores: </b><a href=\"https://www.debian.org/\" target=\"_blank\" "
 "rel=\"noopener\">Linux (Debian</a>, <a href=\"https://ubuntu.com/\" "
@@ -155,7 +155,7 @@ msgstr ""
 "href=\"https://gunicorn.org/\" target=\"_blank\" rel=\"noopener\">gunicorn</"
 "a>"
 
-#: templates/core/about.html:54
+#: templates/core/about.html:59
 msgid ""
 "<b>Bases de datos: </b><a href=\"https://www.mysql.com/\" target=\"_blank\" "
 "rel=\"noopener\">MySQL</a>, <a href=\"https://mariadb.org/\" "
@@ -165,7 +165,7 @@ msgstr ""
 "target=\"_blank\" rel=\"noopener\">MySQL</a>, <a href=\"https://mariadb.org/"
 "\" target=\"_blank\" rel=\"noopener\">MariaDB</a>"
 
-#: templates/core/about.html:55
+#: templates/core/about.html:60
 msgid ""
 "<b>Virtualización: </b><a href=\"https://www.proxmox.com/\" "
 "target=\"_blank\" rel=\"noopener\">Proxmox</a>, <a href=\"https://"
@@ -175,7 +175,7 @@ msgstr ""
 "target=\"_blank\" rel=\"noopener\">Proxmox</a>, <a href=\"https://"
 "www.vmware.com/\" target=\"_blank\" rel=\"noopener\">VMware</a>"
 
-#: templates/core/about.html:56
+#: templates/core/about.html:61
 msgid ""
 "<b>Automatización: </b><a href=\"https://www.ansible.com/\" "
 "target=\"_blank\" rel=\"noopener\">Ansible</a> (iniciando)"
@@ -183,7 +183,7 @@ msgstr ""
 "<b>Automatisation : </b><a href=\"https://www.ansible.com/\" "
 "target=\"_blank\" rel=\"noopener\">Ansible</a> (débutant)"
 
-#: templates/core/about.html:57
+#: templates/core/about.html:62
 msgid ""
 "<b>ERP: </b><a href=\"https://www.dolibarr.org/\" target=\"_blank\" "
 "rel=\"noopener\">Dolibarr</a>"
@@ -191,10 +191,10 @@ msgstr ""
 "<b>ERP : </b><a href=\"https://www.dolibarr.org/\" target=\"_blank\" "
 "rel=\"noopener\">Dolibarr</a>"
 
-#: templates/core/about.html:60 templates/core/base.html:148
-#: templates/core/base.html:288
-#: templates/core/base_perso_cookies_banner.html:89
-#: templates/core/base_perso_cookies_banner.html:227
+#: templates/core/about.html:65 templates/core/base.html:142
+#: templates/core/base.html:270
+#: templates/core/base_perso_cookies_banner.html:87
+#: templates/core/base_perso_cookies_banner.html:217
 msgid "Contacto"
 msgstr "Contact"
 
@@ -211,52 +211,52 @@ msgstr ""
 msgid "aXXyss Soluciones"
 msgstr "aXXyss Solutions"
 
-#: templates/core/base.html:108 templates/core/base.html:111
+#: templates/core/base.html:102 templates/core/base.html:105
 msgid "Soluciones"
 msgstr "Solutions"
 
-#: templates/core/base.html:130 templates/core/base.html:276
-#: templates/core/base_perso_cookies_banner.html:74
-#: templates/core/base_perso_cookies_banner.html:218
+#: templates/core/base.html:124 templates/core/base.html:261
+#: templates/core/base_perso_cookies_banner.html:72
+#: templates/core/base_perso_cookies_banner.html:208
 msgid "Portada"
 msgstr "Accueil"
 
-#: templates/core/base.html:142 templates/core/base.html:284
-#: templates/core/base_perso_cookies_banner.html:84
-#: templates/core/base_perso_cookies_banner.html:224
+#: templates/core/base.html:136 templates/core/base.html:267
+#: templates/core/base_perso_cookies_banner.html:82
+#: templates/core/base_perso_cookies_banner.html:214
 msgid "Portafolio"
 msgstr "Portfolio"
 
-#: templates/core/base.html:154 templates/core/base.html:292
-#: templates/core/base_perso_cookies_banner.html:94
-#: templates/core/base_perso_cookies_banner.html:230
+#: templates/core/base.html:148 templates/core/base.html:273
+#: templates/core/base_perso_cookies_banner.html:92
+#: templates/core/base_perso_cookies_banner.html:220
 msgid "Blog"
 msgstr "Blog"
 
-#: templates/core/base.html:176
-#: templates/core/base_perso_cookies_banner.html:117
+#: templates/core/base.html:170
+#: templates/core/base_perso_cookies_banner.html:115
 msgid "Iniciar sesión"
 msgstr "Se connecter"
 
-#: templates/core/base.html:272
-#: templates/core/base_perso_cookies_banner.html:215
+#: templates/core/base.html:258
+#: templates/core/base_perso_cookies_banner.html:205
 msgid "Información"
 msgstr "Informations"
 
-#: templates/core/base.html:298
-#: templates/core/base_perso_cookies_banner.html:236
+#: templates/core/base.html:279
+#: templates/core/base_perso_cookies_banner.html:226
 msgid "Legal"
 msgstr "Mentions Légales"
 
-#: templates/core/base.html:319
+#: templates/core/base.html:300
 msgid "Desarrollo Web en Torrent"
 msgstr "Développement Web à Torrent (Valence)"
 
-#: templates/core/base.html:324
+#: templates/core/base.html:305
 msgid "Hecho con"
 msgstr "Réalisé avec"
 
-#: templates/core/base.html:326
+#: templates/core/base.html:307
 msgid "por"
 msgstr "par"
 
@@ -266,7 +266,7 @@ msgid ""
 msgstr ""
 "aXXyss Solutions - Technologies de l'information - Programmation - Linux"
 
-#: templates/core/base_perso_cookies_banner.html:41
+#: templates/core/base_perso_cookies_banner.html:39
 msgid ""
 "Este sitio web utiliza cookies para mejorar la experiencia del usuario. Al "
 "continuar navegando, aceptas nuestra "
@@ -274,23 +274,23 @@ msgstr ""
 "Ce site web utilise des cookies pour améliorer l'expérience utilisateur. En "
 "continuant à naviguer, vous acceptez notre "
 
-#: templates/core/base_perso_cookies_banner.html:41
+#: templates/core/base_perso_cookies_banner.html:39
 msgid "política de cookies"
 msgstr "politique relative aux cookies"
 
-#: templates/core/base_perso_cookies_banner.html:42
+#: templates/core/base_perso_cookies_banner.html:40
 msgid "Aceptar"
 msgstr "Accepter"
 
-#: templates/core/base_perso_cookies_banner.html:43
+#: templates/core/base_perso_cookies_banner.html:41
 msgid "Rechazar"
 msgstr "Refuser"
 
-#: templates/core/base_perso_cookies_banner.html:254
+#: templates/core/base_perso_cookies_banner.html:244
 msgid "Soluciones Informáticas"
 msgstr "Solutions Informatiques"
 
-#: templates/core/base_perso_cookies_banner.html:257
+#: templates/core/base_perso_cookies_banner.html:247
 msgid "Hecho con Django por aXXyss"
 msgstr "Réalisé avec Django par aXXyss"
 
@@ -298,11 +298,11 @@ msgstr "Réalisé avec Django par aXXyss"
 msgid "Programador Web Django en Torrent, Valencia | aXXyss Soluciones"
 msgstr "Développeur Web Django à Torrent, Valence | aXXyss Soluciones"
 
-#: templates/core/home.html:26
+#: templates/core/home.html:31
 msgid "Programador web y desarrollador de software | Django & Python"
 msgstr "Développeur web et développeur de logiciels | Django & Python"
 
-#: templates/core/home.html:27
+#: templates/core/home.html:32
 msgid ""
 "Soluciones digitales a medida para empresas en España, América del Norte y "
 "África"
@@ -310,11 +310,11 @@ msgstr ""
 "Solutions numériques sur mesure pour les entreprises en Espagne, Amérique du "
 "Nord et Afrique"
 
-#: templates/core/home.html:41
+#: templates/core/home.html:46
 msgid "Desarrollo Web y Software a Medida"
 msgstr "Développement Web et Logiciels sur Mesure"
 
-#: templates/core/home.html:42
+#: templates/core/home.html:47
 msgid ""
 "Desde mi estudio en <b>Torrent (Valencia)</b>, desarrollo <b>soluciones web</"
 "b> y software a medida para empresas. Especializado en <b>Django y Python</"
@@ -326,11 +326,11 @@ msgstr ""
 "<b>Django et Python</b>, je conçois des applications efficaces adaptées aux "
 "processus réels de chaque client."
 
-#: templates/core/home.html:44
+#: templates/core/home.html:49
 msgid "Modernización de Software Empresarial"
 msgstr "Modernisation des Logiciels d'Entreprise"
 
-#: templates/core/home.html:45
+#: templates/core/home.html:50
 msgid ""
 "Cuento con amplia experiencia en la transición de sistemas legacy hacia "
 "potentes aplicaciones <b>web con Django</b>. Esta experiencia me permite "
@@ -342,11 +342,11 @@ msgstr ""
 "migrer d'anciens systèmes vers le web sans perte de données, adaptés aux "
 "processus réels de l'entreprise."
 
-#: templates/core/home.html:47
+#: templates/core/home.html:52
 msgid "Soluciones E-commerce y WordPress"
 msgstr "Solutions E-commerce et WordPress"
 
-#: templates/core/home.html:48
+#: templates/core/home.html:53
 msgid ""
 "Además de aplicaciones a medida, desarrollo <b>tiendas online con WordPress "
 "y WooCommerce</b>, asegurando plataformas rápidas, seguras y adaptadas a las "
@@ -356,11 +356,11 @@ msgstr ""
 "avec WordPress et WooCommerce</b>, garantissant des plateformes rapides, "
 "sécurisées et adaptées aux besoins de chaque entreprise."
 
-#: templates/core/home.html:50
+#: templates/core/home.html:55
 msgid "¿Tienes un proyecto en mente?"
 msgstr "Vous avez un projet en tête ?"
 
-#: templates/core/home.html:51
+#: templates/core/home.html:56
 #, python-format
 msgid ""
 "Cuéntame tu idea y encontramos juntos la mejor solución técnica. Trabajo de "
@@ -370,21 +370,29 @@ msgstr ""
 "technique. Je travaille <b>100%%</b> à distance avec des clients du monde "
 "entier."
 
-#: templates/core/home.html:55
+#: templates/core/home.html:60
 msgid "Contactar ahora"
 msgstr "Contactez-moi"
 
-#: templates/core/home.html:65
+#: templates/core/home.html:70
 msgid "Lo que dicen mis clientes"
 msgstr "Ce que disent mes clients"
 
-#: templates/core/home.html:68
+#: templates/core/home.html:73
 msgid "reseñas en Google"
 msgstr "avis sur Google"
 
-#: templates/core/home.html:105
+#: templates/core/home.html:110
 msgid "Ver todas las reseñas en Google"
 msgstr "Voir tous les avis sur Google"
+
+#: templates/core/home.html:116
+msgid "Dejar una reseña"
+msgstr "Laisser un avis"
+
+#: templates/core/home.html:119 templates/core/home.html:121
+msgid "Escanea para dejar tu reseña"
+msgstr "Scannez pour laisser votre avis"
 
 #~ msgid ""
 #~ "Programador experto en Django y WordPress E-commerce. Soluciones para "
