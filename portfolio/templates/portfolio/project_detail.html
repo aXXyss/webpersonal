@@ -48,10 +48,11 @@
 {% endblock %}
 
 {% block extra_js %}
+<script>
 window.projectTranslatedSlugs = {
-    'es': '{{ project.slug }}',
-    {% for lang, slug in language_slugs.items %}
-    '{{ lang }}': '{{ slug }}',
-    {% endfor %}
+    'es': '{{ language_slugs.es }}',
+    'en': '{{ language_slugs.en }}',
+    'fr': '{{ language_slugs.fr }}'
 };
+</script>
 {% endblock %}

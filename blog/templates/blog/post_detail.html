@@ -158,10 +158,9 @@
 {% endblock %}
 
 {% block extra_js %}
-    {% load static %}
-    <script defer src="{% static 'core/js/prism.js' %}"></script>
-    <script>
-    // Slugs traducidos del post actual
+{% load static %}
+<script src="{% static 'core/js/prism.js' %}"></script>
+<script>
     window.postTranslatedSlugs = {
         'es': '{{ translated_slugs.es }}',
         'en': '{{ translated_slugs.en }}',
@@ -309,4 +308,5 @@
             return commentDiv;
         }
     });
+</script>
 {% endblock %}
