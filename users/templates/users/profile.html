@@ -31,7 +31,7 @@
         <div class="card mb-3">
             <div class="card-body">
                 <p class="text-muted text-sm mb-1">
-                    {% trans "En" %}: <a href="{% url 'blog:post_detail' slug=comment.post.slug %}">{{ comment.post.title }}</a>
+                    {% trans "En" %}: <a href="{% url 'blog:post_detail' slug=comment.post.slug %}" class="back-link">{{ comment.post.title }}</a>
                     · {{ comment.created_at|date:"d M Y" }}
                     {% if comment.replies.count > 0 %}
                         · <span class="text-success">{{ comment.replies.count }} {% trans "respuesta(s)" %}</span>

@@ -42,7 +42,7 @@
             {% elif project.link %}
                 <p><a class="btn btn-dark btn-lg mt-3 shadow-dark" href="{{ project.link }}" target="_blank">{% trans "Visitar sitio web" %}</a></p>
             {% endif %}
-            <p><a href="{% url 'portfolio:project_list' %}">{% trans "Volver a la lista de proyectos" %}</a></p>
+            <p><a href="{% url 'portfolio:project_list' %}" class="back-link">{% trans "Volver a la lista de proyectos" %}</a></p>
         </div>
     </div>
 {% endblock %}

@@ -47,7 +47,7 @@
                         </div>
                         <p class="mt-4 text-sm text-center">
                             {% trans "Todavía no tiene una cuenta?" %}
-                            <a href="{% url 'users:register' %}">{% trans "Registrarse" %}</a>
+                            <a href="{% url 'users:register' %}" class="back-link">{% trans "Registrarse" %}</a>
                         </p>
 
                         {% if form.errors %}
