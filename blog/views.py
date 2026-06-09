@@ -187,6 +187,35 @@ def save_reply(request, comment_id):
 
                 reply.save()
 
+                # Notificar al autor del comentario padre (si tiene email y no es el mismo usuario)
+                if parent_comment.user.email and parent_comment.user != request.user:
+                    try:
+                        post_url = request.build_absolute_uri(reply.post.get_absolute_url())
+                        send_mail(
+                            subject=f'Alguien ha respondido a tu comentario en aXXyss',
+                            message=f"""Hola {parent_comment.user.username},
+
+                {reply.user.username} ha respondido a tu comentario en el post "{reply.post.title}":
+
+                Tu comentario:
+                {parent_comment.comment}
+
+                Respuesta de {reply.user.username}:
+                {reply.comment}
+
+                Ver la conversación: {post_url}
+
+                Un saludo,
+                aXXyss Soluciones
+                https://axxyss.com
+                """,
+                            from_email=settings.DEFAULT_FROM_EMAIL,
+                            recipient_list=[parent_comment.user.email],
+                            fail_silently=True,
+                        )
+                    except Exception as e:
+                        print(f"Error enviando notificación al usuario: {e}")
+
                 # Enviar email de notificación
                 try:
                     post_url = request.build_absolute_uri(reply.post.get_absolute_url())

@@ -1,4 +1,5 @@
 {# blog/partials/comment_tree.html #}
+{% load i18n %}
 <div class="media mb-4{% if comment.parent %} indented-comment{% endif %}" id="comment-{{ comment.id }}">
     {% if comment.user.profile.photo %}
         <img class="d-flex mr-3 rounded-circle" width="50px" height="50px" src="/media/{{ comment.user.profile.photo }}" alt="{{ comment.user.username }}">
@@ -8,21 +9,29 @@
     <div class="media-body">
         <h5 class="mt-1 text-sm">{{ comment.user.username }} <small class="text-muted">{{ comment.created_at }}</small></h5>
         <div class="mt-2">{{ comment.comment |linebreaks }}</div>
-        <button class="btn btn-sm btn-outline-secondary reply-button" data-comment-id="{{ comment.id }}">Responder</button>
+        <button class="btn btn-sm btn-outline-dark reply-button" data-comment-id="{{ comment.id }}">{% trans "Responder" %}</button>
 
-        {# Formulario de respuesta en blog/partials/comment_tree.html #}
+        {# Formulario de respuesta #}
         <div id="reply-form-{{ comment.id }}" style="display: none; margin-top: 10px;">
-            <form method="POST" action="{% url 'blog:save_reply' comment.id %}" id="reply-form-{{ comment.id }}-submit">
-                {% csrf_token %}
-                <div class="form-group">
-                    <textarea class="form-control" name="comment" rows="2" placeholder="Responder"></textarea>
-                </div>
-                <input type="hidden" name="parent_id" value="{{ comment.id }}">
-                <button type="submit" class="btn btn-sm btn-primary">Enviar Respuesta</button>
-            </form>
+            <div style="background-color: #f8f9fa; border-radius: 10px; padding: 15px; border: 1px solid #e9ecef;">
+                <form method="POST" action="{% url 'blog:save_reply' comment.id %}" id="reply-form-{{ comment.id }}-submit">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <textarea
+                            class="form-control"
+                            name="comment"
+                            rows="3"
+                            placeholder="Escribe tu respuesta..."
+                            style="border: 1px solid #d2d6da; border-radius: 8px; padding: 10px; background-color: #fff; box-shadow: 0 1px 3px rgba(0,0,0,0.1); resize: vertical;">
+                        </textarea>
+                    </div>
+                    <input type="hidden" name="parent_id" value="{{ comment.id }}">
+                    <button type="submit" class="btn btn-dark btn-sm mt-2">{% trans "Enviar Respuesta" %}</button>
+                </form>
+            </div>
         </div>
 
-        <div class="replies-container" id="replies-{{ comment.id }}"> {# Nuevo contenedor para las respuestas #}
+        <div class="replies-container" id="replies-{{ comment.id }}">
             {% for reply in comment.replies.all %}
                 {% include 'blog/partials/comment_tree.html' with comment=reply %}
             {% endfor %}
