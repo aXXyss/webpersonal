@@ -29,15 +29,8 @@ class Post(models.Model):
         self.published_date = timezone.now()
         self.save()
 
-    # Volvemos al método original para que la web funcione normal
     def get_absolute_url(self):
         return reverse('blog:post_detail', kwargs={'slug': self.slug})
-
-    # Creamos un método NUEVO exclusivo para el sitemap
-    def get_sitemap_url(self, lang):
-        localized_slug = getattr(self, f'slug_{lang}', self.slug)
-        if not localized_slug:
-            localized_slug = self.slug
 
     def __str__(self):
         return self.title

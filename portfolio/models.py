@@ -22,15 +22,6 @@ class Project(models.Model):
     def get_absolute_url(self):
         return reverse('portfolio:project_detail', kwargs={'slug': self.slug})
 
-    # Creamos un método NUEVO exclusivo para el sitemap
-    def get_sitemap_url(self, lang):
-        localized_slug = self.slug
-        if lang != 'es':
-            translation = self.translations.filter(language=lang).first()
-            if translation and translation.slug:
-                localized_slug = translation.slug
-        return reverse('portfolio:project_detail', kwargs={'slug': localized_slug})
-
     def save(self, *args, **kwargs):
         if not self.slug:
             self.slug = slugify(self.title)

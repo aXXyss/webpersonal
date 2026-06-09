@@ -24,9 +24,7 @@ urlpatterns = [
     path('i18n/', set_language, name='set_language'), # Agrega esta línea
 
     # --- SITEMAPS MULTILINGÜES EN LA RAÍZ ---
-    # Índice global idéntico a producción para pruebas locales
-    path('sitemap.xml', index, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.index'),
-    path('sitemap-<section>.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
+    path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
 
     # --- RUTA DE VERIFICACIÓN DE GOOGLE (FUERA DE i18n_patterns) ---
     path(

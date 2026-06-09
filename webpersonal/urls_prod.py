@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.i18n import i18n_patterns, set_language
-from django.contrib.sitemaps.views import index, sitemap
+from django.contrib.sitemaps.views import sitemap
 from core.sitemaps import StaticViewSitemap
 from blog.sitemaps import PostSitemap
 from portfolio.sitemaps import ProjectSitemap
@@ -20,13 +20,6 @@ urlpatterns = [
      path('axxysswebadmin/', admin.site.urls),
      path('ckeditor5/', include('django_ckeditor_5.urls')),
      path('i18n/', set_language, name='set_language'),
-
-     # --- SITEMAPS MULTILINGÜES EN LA RAÍZ ---
-     # El índice global que buscará Google:
-     path('sitemap.xml', index, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.index'),
-     
-     # Esto generará los sitemaps específicos por sección (ej. sitemap-static.xml)
-     path('sitemap-<section>.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
 
 
      # Ruta de verificación de Google (Debe estar fuera de i18n para que Google la encuentre en la raíz)
@@ -74,6 +67,7 @@ urlpatterns = [
 
 # 2. RUTAS MULTILINGÜES (Con prefijo /es/, /fr/, /en/)
 urlpatterns += i18n_patterns(
+     path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
      path('', include('core.urls')),
      path('portfolio/', include('portfolio.urls')),
      path('page/', include('pages.urls')),
