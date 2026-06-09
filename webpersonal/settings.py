@@ -87,7 +87,7 @@ MIDDLEWARE = [
 ]
 
 
-ROOT_URLCONF = 'webpersonal.urls'
+ROOT_URLCONF = env('ROOT_URLCONF', default='webpersonal.urls')
 
 TEMPLATES = [
     {
