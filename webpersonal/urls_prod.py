@@ -27,6 +27,14 @@ urlpatterns = [
         TemplateView.as_view(template_name="core/google19c4ca07d59e3550.html", content_type="text/html"),
      ),
 
+     path(
+        '34a9356adbb141a18b3c397a432e0b4c.txt',
+        TemplateView.as_view(
+            template_name='core/34a9356adbb141a18b3c397a432e0b4c.txt',
+            content_type='text/plain'
+        ),
+    ),
+
      # --- REDIRECCIONES 301 (URLs antiguas → URLs nuevas) ---
      # Posts Django/Debian (slugs con "-12" al final, renombrados al traducir)
      path('es/blog/post/desarrollo-web-con-django-en-debian-12/',
