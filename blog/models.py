@@ -3,6 +3,8 @@ from django.utils import timezone
 from django.contrib.auth.models import User
 from categories.models import Category
 from django.urls import reverse 
+from django.utils.translation import get_language
+
 
 class UserProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
@@ -29,6 +31,14 @@ class Post(models.Model):
         self.save()
 
     def get_absolute_url(self):
+        # Detecta el idioma del ciclo actual del sitemap (es, en, fr)
+        lang = get_language()
+        
+        # Extrae la columna slug_es, slug_en, o slug_fr de esta misma fila
+        localized_slug = getattr(self, f'slug_{lang}', self.slug)
+        
+        if not localized_slug:
+            localized_slug = self.slug
         return reverse('blog:post_detail', kwargs={'slug': self.slug})
 
     def __str__(self):

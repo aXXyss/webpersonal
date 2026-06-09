@@ -1,6 +1,8 @@
 from django.db import models
 from django.utils.text import slugify
 from django_ckeditor_5.fields import CKEditor5Field
+from django.urls import reverse 
+from django.utils.translation import get_language
 
 
 class Project(models.Model):
@@ -17,6 +19,22 @@ class Project(models.Model):
         verbose_name = "proyecto"
         verbose_name_plural = "proyectos"
         ordering = ["-created"]
+
+    def get_absolute_url(self):
+        # 1. Detecta el idioma del ciclo actual del sitemap (es, en, fr)
+        lang = get_language()
+        
+        # El idioma base en tu base de datos es 'es' (va directo a self.slug)
+        localized_slug = self.slug
+        
+        # 2. Si el sitemap va por el ciclo de inglés o francés, buscamos en su tabla aparte
+        if lang != 'es':
+            # Buscamos la traducción correspondiente en la relación inversa 'translations'
+            translation = self.translations.filter(language=lang).first()
+            if translation and translation.slug:
+                localized_slug = translation.slug
+            # Usamos 'project_detail' que es el nombre real que tienes en tus urlpatterns
+        return reverse('portfolio:project_detail', kwargs={'slug': self.slug})
 
     def save(self, *args, **kwargs):
         if not self.slug:

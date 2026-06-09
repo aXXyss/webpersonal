@@ -2,6 +2,7 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.i18n import i18n_patterns, set_language
+from django.contrib.sitemaps.views import index, sitemap
 from django.contrib.sitemaps.views import sitemap
 from core.sitemaps import StaticViewSitemap
 from blog.sitemaps import PostSitemap
@@ -22,7 +23,10 @@ urlpatterns = [
     path('ckeditor5/', include('django_ckeditor_5.urls')),
     path('i18n/', set_language, name='set_language'), # Agrega esta línea
 
-    path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
+    # --- SITEMAPS MULTILINGÜES EN LA RAÍZ ---
+    # Índice global idéntico a producción para pruebas locales
+    path('sitemap.xml', index, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.index'),
+    path('sitemap-<section>.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
 
     # --- RUTA DE VERIFICACIÓN DE GOOGLE (FUERA DE i18n_patterns) ---
     path(
