@@ -50,7 +50,7 @@
                     <em>{% trans "Sin categorías" %}</em>
                 {% endfor %}
             </div>
-            <a href="{% url 'blog:post_detail' slug=post.slug %}">{% trans "Leer más..." %}</a>
+            <a href="{% url 'blog:post_detail' slug=post.slug %}" class="back-link">{% trans "Leer más..." %}</a>
         </div>
         <hr>
     {% empty %}
