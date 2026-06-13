@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "@fontsource/inter": "^5.2.8",
+    "csso-cli": "^4.0.2",
+    "purgecss": "^8.0.0"
+  }
+}

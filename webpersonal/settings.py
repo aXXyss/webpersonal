@@ -87,7 +87,11 @@ MIDDLEWARE = [
 ]
 
 
-ROOT_URLCONF = env('ROOT_URLCONF', default='webpersonal.urls')
+# Si la variable DEBUG es False (es decir, estás en producción), usa urls_prod
+if not DEBUG:
+    ROOT_URLCONF = 'webpersonal.urls_prod'
+else:
+    ROOT_URLCONF = env('ROOT_URLCONF', default='webpersonal.urls')
 
 TEMPLATES = [
     {

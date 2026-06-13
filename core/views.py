@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.core.cache import cache
 from django.conf import settings
+from django.utils.translation import gettext_lazy as _
 import requests
 
 def get_google_reviews():
@@ -37,3 +38,18 @@ def home(request):
 
 def about(request):
     return render(request, "core/about.html")
+
+DEMOS = [
+    {
+        'name': 'Brûlé & Cacao',
+        'type': _('Pastelería artesanal'),
+        'description': _('Hero visual, vitrina de productos, formulario de encargo y footer con horario y ubicación.'),
+        'url': 'https://demos.axxyss.com/brule-cacao/',
+        'image': 'core/img/demos/brule-cacao.webp',
+        'tags': ['Tailwind CSS', 'Formspree'],
+    },
+]
+ 
+def demos(request):
+    return render(request, 'core/demos.html', {'demos': DEMOS})
+ 
