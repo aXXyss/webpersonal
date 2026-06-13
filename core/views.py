@@ -48,6 +48,15 @@ DEMOS = [
         'image': 'core/img/demos/brule-cacao.webp',
         'tags': ['Tailwind CSS', 'Formspree'],
     },
+
+    {
+        'name': 'Lumière Spa',
+        'type': _('Centro de estética'),
+        'description': _('Hero con imagen de fondo, servicios con precios, formulario de reserva y footer elegante.'),
+        'url': 'https://demos.axxyss.com/lumiere-spa/',
+        'image': 'core/img/demos/lumiere-spa.webp',
+        'tags': ['Tailwind CSS', 'Formspree'],
+    },
 ]
  
 def demos(request):
