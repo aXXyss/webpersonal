@@ -105,7 +105,7 @@
 
     <!-- POST DESTACADO (solo en página principal, no en filtro por categoría) -->
     {% if featured_post and not category %}
-    <div class="card border-0 shadow-sm mb-4 overflow-hidden">
+    <div class="card border-0 shadow-sm mb-5 overflow-hidden">
         <div class="row g-0">
             <div class="col-lg-5">
                 {% if featured_post.image %}
@@ -165,7 +165,7 @@
 
     <!-- GRID DE POSTS -->
     {% if posts %}
-    <div class="row g-3 mb-4">
+    <div class="row g-4 mb-4">
         {% for post in posts %}
         <div class="col-lg-4 col-md-6">
             <div class="card border-0 shadow-sm blog-card">
