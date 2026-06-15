@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: aXXyss 1.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-15 13:11+0200\n"
-"PO-Revision-Date: 2026-06-15 13:25+0200\n"
+"PO-Revision-Date: 2026-06-15 13:38+0200\n"
 "Last-Translator: Joaquin Denis\n"
 "Language-Team: English\n"
 "Language: en\n"
@@ -368,15 +368,11 @@ msgid "Programador web y desarrollador de software | Django & Python"
 msgstr "Web developer and software developer | Django & Python"
 
 #: templates/core/home.html:32
-#, fuzzy
-#| msgid ""
-#| "Soluciones digitales a medida para empresas en España, América del Norte "
-#| "y África"
 msgid ""
 "Soluciones digitales a medida para empresas en Europa, América del Norte y "
 "África"
 msgstr ""
-"Custom digital solutions for businesses in Spain, North America and Africa"
+"Custom digital solutions for businesses in Europe, North America and Africa"
 
 #: templates/core/home.html:46
 msgid "Desarrollo Web y Software a Medida"
