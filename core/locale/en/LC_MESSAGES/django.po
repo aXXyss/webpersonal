@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: aXXyss 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-13 14:16+0200\n"
-"PO-Revision-Date: 2026-06-13 14:24+0200\n"
+"POT-Creation-Date: 2026-06-15 13:11+0200\n"
+"PO-Revision-Date: 2026-06-15 13:13+0200\n"
 "Last-Translator: Joaquin Denis\n"
 "Language-Team: English\n"
 "Language: en\n"
@@ -65,11 +65,11 @@ msgstr ""
 
 #: templates/core/about.html:42
 msgid ""
-"Trabajo de forma remota con clientes en España, América del Norte y África, "
+"Trabajo de forma remota con clientes en Europa, América del Norte y África, "
 "transformando procesos empresariales complejos en herramientas digitales "
 "eficientes y fiables."
 msgstr ""
-"I work remotely with clients in Spain, North America and Africa, "
+"I work remotely with clients in Europe, North America and Africa, "
 "transforming complex business processes into efficient and reliable digital "
 "tools."
 
@@ -299,11 +299,11 @@ msgstr "IT Solutions"
 msgid "Hecho con Django por aXXyss"
 msgstr "Created with Django by aXXyss"
 
-#: templates/core/demos.html:4
+#: templates/core/demos.html:5
 msgid "Demos de webs"
 msgstr "Web demos"
 
-#: templates/core/demos.html:6
+#: templates/core/demos.html:7
 msgid ""
 "Ejemplos de webs profesionales para autónomos y pequeñas empresas. Webs "
 "rápidas, modernas y a medida por aXXyss Soluciones."
@@ -311,11 +311,11 @@ msgstr ""
 "Examples of professional websites for freelancers and small businesses. "
 "Fast, modern, custom-built websites by aXXyss Soluciones."
 
-#: templates/core/demos.html:16
+#: templates/core/demos.html:22
 msgid "Webs de demostración"
 msgstr "Web showcases"
 
-#: templates/core/demos.html:18
+#: templates/core/demos.html:24
 msgid ""
 "\n"
 "            ¿Necesitas una web para tu negocio? Aquí tienes ejemplos reales "
@@ -326,25 +326,25 @@ msgstr ""
 "\n"
 "            Need a website for your business? Here are real examples of what "
 "I can build for you..\n"
-"            Professional, fast and hassle-free."
+"            Professional, fast and hassle-free. "
 
-#: templates/core/demos.html:24
+#: templates/core/demos.html:30
 msgid "Solicitar presupuesto"
 msgstr "Request a quote"
 
-#: templates/core/demos.html:69
+#: templates/core/demos.html:75
 msgid "Ver demo"
 msgstr "View demo"
 
-#: templates/core/demos.html:76
+#: templates/core/demos.html:82
 msgid "Próximamente más demos disponibles."
 msgstr "More demos coming soon."
 
-#: templates/core/demos.html:85
+#: templates/core/demos.html:91
 msgid "¿Te gusta lo que ves?"
 msgstr "Like what you see?"
 
-#: templates/core/demos.html:87
+#: templates/core/demos.html:93
 msgid ""
 "\n"
 "              Puedo crear una web así para tu negocio. Entrega rápida, "
@@ -353,9 +353,9 @@ msgid ""
 msgstr ""
 "\n"
 "              I can build a website like this for your business. Fast "
-"delivery, fair price and no technical hassle."
+"delivery, fair price and no technical hassle. "
 
-#: templates/core/demos.html:92
+#: templates/core/demos.html:98
 msgid "Hablemos de tu proyecto"
 msgstr "Let's talk about your project"
 
@@ -368,8 +368,12 @@ msgid "Programador web y desarrollador de software | Django & Python"
 msgstr "Web developer and software developer | Django & Python"
 
 #: templates/core/home.html:32
+#, fuzzy
+#| msgid ""
+#| "Soluciones digitales a medida para empresas en España, América del Norte "
+#| "y África"
 msgid ""
-"Soluciones digitales a medida para empresas en España, América del Norte y "
+"Soluciones digitales a medida para empresas en Europa, América del Norte y "
 "África"
 msgstr ""
 "Custom digital solutions for businesses in Spain, North America and Africa"
@@ -467,6 +471,18 @@ msgid ""
 msgstr ""
 "Visual hero, product showcase, order form and footer with opening hours and "
 "location."
+
+#: views.py:54
+msgid "Centro de estética"
+msgstr "Aesthetic center"
+
+#: views.py:55
+msgid ""
+"Hero con imagen de fondo, servicios con precios, formulario de reserva y "
+"footer elegante."
+msgstr ""
+"Hero with background image, services with prices, booking form and elegant "
+"footer."
 
 #~ msgid ""
 #~ "Programador experto en Django y WordPress E-commerce. Soluciones para "
