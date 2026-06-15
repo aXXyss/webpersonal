@@ -14,8 +14,13 @@ from comments import models
 from categories.models import Category
 
 def post_list(request):
-    posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')
-    paginator = Paginator(posts, 5)
+    all_posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')
+    
+    # Separar post destacado del resto
+    featured_post = all_posts.first()
+    rest_posts = all_posts[1:] if featured_post else all_posts
+
+    paginator = Paginator(rest_posts, 6)  # 6 en grid de 3 columnas
 
     page = request.GET.get('page')
     try:
@@ -25,7 +30,14 @@ def post_list(request):
     except EmptyPage:
         posts = paginator.page(paginator.num_pages)
 
-    return render(request, 'blog/post_list.html', {'posts': posts})
+    # Todas las categorías para los filtros
+    categories = Category.objects.all().order_by('name')
+
+    return render(request, 'blog/post_list.html', {
+        'posts': posts,
+        'featured_post': featured_post,
+        'categories': categories,
+    })
 
 def post_detail(request, slug):
     current_lang = get_language()

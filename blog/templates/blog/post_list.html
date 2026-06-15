@@ -4,7 +4,6 @@
 {% block title %}{% blocktrans %}Blog{% endblocktrans %}{% endblock %}
 {% block meta_description %}{% blocktrans %}Descubre las últimas noticias, artículos y tutoriales sobre tecnología y programación.{% endblocktrans %}{% endblock %}
 
-
 {% block background %}{% load static %}{% static 'core/img/blog-bg.jpg' %}{% endblock %}
 
 {% block background_webp_style %}
@@ -19,6 +18,60 @@
 {% block extra_css %}
 {% load static %}
 <link rel="preload" as="image" href="{% static 'core/img/blog-bg.webp' %}" type="image/webp" fetchpriority="high">
+<style>
+.blog-featured-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    min-height: 260px;
+}
+.blog-card-img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+.blog-card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    height: 100%;
+}
+.blog-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12) !important;
+}
+.category-badge {
+    font-size: 10px;
+    padding: 3px 8px;
+    border-radius: 4px;
+    text-decoration: none;
+    display: inline-block;
+    margin-right: 4px;
+    margin-bottom: 4px;
+}
+.category-badge-django  { background: #e8f4fd; color: #1565c0; }
+.category-badge-python  { background: #e8f4fd; color: #1565c0; }
+.category-badge-linux   { background: #fff8e1; color: #f57f17; }
+.category-badge-debian  { background: #fff8e1; color: #f57f17; }
+.category-badge-servidor{ background: #fff8e1; color: #f57f17; }
+.category-badge-web     { background: #e8f5e9; color: #2e7d32; }
+.category-badge-ia      { background: #f3e5f5; color: #6a1b9a; }
+.category-badge-default { background: #f5f5f5; color: #616161; }
+.filter-btn {
+    font-size: 12px;
+    padding: 4px 14px;
+    border-radius: 20px;
+    border: 1px solid #dee2e6;
+    background: transparent;
+    color: #6c757d;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.2s;
+}
+.filter-btn:hover, .filter-btn.active {
+    background: #344767;
+    color: #fff;
+    border-color: #344767;
+}
+</style>
 {% endblock %}
 
 {% block headers %}
@@ -27,40 +80,149 @@
 {% endblock %}
 
 {% block content %}
+<div class="container py-2">
 
-        {% for post in posts %}
-        <div>
-            <h2><a href="{% url 'blog:post_detail' slug=post.slug %}">{{ post.title }}</a></h2>
-            <p>
-                {% trans "Publicado el" %}: {{ post.published_date|date:"d M Y" }} {% trans "por" %}
-                {% if post.author.userprofile.avatar %}
-                    <img src="{{ post.author.userprofile.avatar.url }}" alt="{{ post.author.get_full_name|default:post.author.username }}" style="width: 30px; height: 30px; border-radius: 50%; vertical-align: middle; margin-right: 5px;">
-                {% endif %}
-                {{ post.author.get_full_name|default:post.author.username }}
-            </p>
-            {% if post.image %}
-                <img src="{{ post.image.url }}" alt="{{ post.title }}" class="img-fluid d-block mx-auto" style="max-height: 400px; object-fit: cover;">
-            {% endif %}
-            <p>{{ post.content|truncatewords:30|safe }}</p>
-            <div>
-                <em>#</em>
-                {% for category in post.categories.all %}
-                    <em><a href="{% url 'blog:post_list_by_category' slug=category.slug %}">{{ category.name }}</a>{% if not forloop.last %}, {% endif %}</em>
-                {% empty %}
-                    <em>{% trans "Sin categorías" %}</em>
-                {% endfor %}
-            </div>
-            <a href="{% url 'blog:post_detail' slug=post.slug %}" class="back-link">{% trans "Leer más..." %}</a>
+    {% if not category %}
+    <!-- Filtros de categoría -->
+    <div class="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-4">
+        <h5 class="mb-0 text-dark font-weight-bold">{% trans "Artículos" %}</h5>
+        <div class="d-flex flex-wrap gap-1">
+            <a href="{% url 'blog:post_list' %}" class="filter-btn active">{% trans "Todos" %}</a>
+            {% for cat in categories %}
+            <a href="{% url 'blog:post_list_by_category' slug=cat.slug %}" class="filter-btn">{{ cat.name }}</a>
+            {% endfor %}
         </div>
-        <hr>
-    {% empty %}
-        {% if category %}
-            <p>{% blocktrans with category_name=category.name %}No hay artículos publicados en la categoría "{{ category_name }}"{% endblocktrans %}.</p>
-        {% else %}
-            <p>{% trans "Todavía no hay artículos publicados." %}</p>
-        {% endif %}
-    {% endfor %}
+    </div>
+    {% else %}
+    <!-- Cabecera filtro por categoría -->
+    <div class="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-4">
+        <h5 class="mb-0 text-dark font-weight-bold">
+            {% trans "Categoría" %}: <span class="text-primary">{{ category.name }}</span>
+        </h5>
+        <a href="{% url 'blog:post_list' %}" class="filter-btn">← {% trans "Todos los artículos" %}</a>
+    </div>
+    {% endif %}
 
+    <!-- POST DESTACADO (solo en página principal, no en filtro por categoría) -->
+    {% if featured_post and not category %}
+    <div class="card border-0 shadow-sm mb-4 overflow-hidden">
+        <div class="row g-0">
+            <div class="col-lg-5">
+                {% if featured_post.image %}
+                    <img src="{{ featured_post.image.url }}" alt="{{ featured_post.title }}" class="blog-featured-img">
+                {% else %}
+                    <div class="blog-featured-img d-flex align-items-center justify-content-center" style="background: linear-gradient(135deg, #344767, #1a2035);">
+                        <span class="text-white opacity-5" style="font-size: 3rem;">✦</span>
+                    </div>
+                {% endif %}
+            </div>
+            <div class="col-lg-7 d-flex flex-column justify-content-between p-4 p-lg-5">
+                <div>
+                    <span class="badge badge-sm mb-2" style="background: #344767; color: #fff; font-size: 10px; letter-spacing: 0.05em;">
+                        {% trans "Más reciente" %}
+                    </span>
+                    <h2 class="h4 font-weight-bold mb-3" style="line-height: 1.4;">
+                        <a href="{% url 'blog:post_detail' slug=featured_post.slug %}" class="text-dark" style="text-decoration: none;">
+                            {{ featured_post.title }}
+                        </a>
+                    </h2>
+                    <p class="text-muted mb-3" style="font-size: 14px; line-height: 1.7;">
+                        {{ featured_post.content|truncatewords:40|safe }}
+                    </p>
+                    <div class="mb-3">
+                        {% for cat in featured_post.categories.all %}
+                            <a href="{% url 'blog:post_list_by_category' slug=cat.slug %}"
+                               class="category-badge category-badge-{{ cat.slug|lower|cut:' ' }}">
+                                {{ cat.name }}
+                            </a>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="d-flex align-items-center justify-content-between">
+                    <div class="d-flex align-items-center gap-2">
+                        {% if featured_post.author.userprofile.avatar %}
+                            <img src="{{ featured_post.author.userprofile.avatar.url }}"
+                                 alt="{{ featured_post.author.get_full_name|default:featured_post.author.username }}"
+                                 style="width:28px; height:28px; border-radius:50%; object-fit:cover;">
+                        {% else %}
+                            <div style="width:28px; height:28px; border-radius:50%; background:#344767; display:flex; align-items:center; justify-content:center; font-size:11px; color:#fff; font-weight:600;">
+                                {{ featured_post.author.username|slice:":2"|upper }}
+                            </div>
+                        {% endif %}
+                        <span class="text-muted" style="font-size:12px;">
+                            {{ featured_post.author.get_full_name|default:featured_post.author.username }}
+                            · {{ featured_post.published_date|date:"d M Y" }}
+                        </span>
+                    </div>
+                    <a href="{% url 'blog:post_detail' slug=featured_post.slug %}" class="btn btn-sm" style="background: #344767; color: #fff; font-size: 12px;">
+                        {% trans "Leer más" %} →
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+
+    <!-- GRID DE POSTS -->
+    {% if posts %}
+    <div class="row g-3 mb-4">
+        {% for post in posts %}
+        <div class="col-lg-4 col-md-6">
+            <div class="card border-0 shadow-sm blog-card">
+                {% if post.image %}
+                    <a href="{% url 'blog:post_detail' slug=post.slug %}">
+                        <img src="{{ post.image.url }}" alt="{{ post.title }}" class="blog-card-img card-img-top">
+                    </a>
+                {% else %}
+                    <div class="blog-card-img card-img-top d-flex align-items-center justify-content-center"
+                         style="background: linear-gradient(135deg, #344767, #1a2035);">
+                        <span class="text-white opacity-5" style="font-size: 2rem;">✦</span>
+                    </div>
+                {% endif %}
+                <div class="card-body d-flex flex-column p-4">
+                    <div class="mb-2">
+                        {% for cat in post.categories.all %}
+                            <a href="{% url 'blog:post_list_by_category' slug=cat.slug %}"
+                               class="category-badge category-badge-{{ cat.slug|lower|cut:' ' }}">
+                                {{ cat.name }}
+                            </a>
+                        {% empty %}
+                            <span class="category-badge category-badge-default">{% trans "Sin categoría" %}</span>
+                        {% endfor %}
+                    </div>
+                    <h3 class="h6 font-weight-bold mb-2 flex-grow-1" style="line-height: 1.5;">
+                        <a href="{% url 'blog:post_detail' slug=post.slug %}" class="text-dark" style="text-decoration: none;">
+                            {{ post.title }}
+                        </a>
+                    </h3>
+                    <p class="text-muted mb-3" style="font-size: 13px; line-height: 1.6;">
+                        {{ post.content|truncatewords:20|safe }}
+                    </p>
+                    <div class="d-flex align-items-center justify-content-between mt-auto pt-2"
+                         style="border-top: 1px solid #f0f0f0;">
+                        <span class="text-muted" style="font-size: 11px;">
+                            {{ post.published_date|date:"d M Y" }}
+                        </span>
+                        <a href="{% url 'blog:post_detail' slug=post.slug %}" class="back-link" style="font-size: 12px;">
+                            {% trans "Leer más" %} →
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% empty %}
+        {% if category %}
+            <div class="col-12">
+                <p class="text-muted">{% blocktrans with category_name=category.name %}No hay artículos publicados en la categoría "{{ category_name }}"{% endblocktrans %}.</p>
+            </div>
+        {% else %}
+            <div class="col-12">
+                <p class="text-muted">{% trans "Todavía no hay artículos publicados." %}</p>
+            </div>
+        {% endif %}
+        {% endfor %}
+    </div>
+    {% endif %}
 
     <!-- Paginación -->
     {% if posts.has_other_pages %}
@@ -69,17 +231,21 @@
             <ul class="pagination pagination-sm">
                 {% if posts.has_previous %}
                     <li class="page-item">
-                        <a class="page-link" href="?page={{ posts.previous_page_number }}" style="background: transparent; border: 1px solid #344767; color: #344767; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; margin: 0 3px;">«</a>
+                        <a class="page-link" href="?page={{ posts.previous_page_number }}"
+                           style="background: transparent; border: 1px solid #344767; color: #344767; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; margin: 0 3px;">«</a>
                     </li>
                 {% endif %}
                 {% for num in posts.paginator.page_range %}
                     <li class="page-item">
-                        <a class="page-link {% if posts.number == num %}bg-gradient-dark text-white{% endif %}" href="?page={{ num }}" style="border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; margin: 0 3px; border: 1px solid #344767; {% if posts.number != num %}background: transparent; color: #344767;{% endif %}">{{ num }}</a>
+                        <a class="page-link {% if posts.number == num %}bg-gradient-dark text-white{% endif %}"
+                           href="?page={{ num }}"
+                           style="border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; margin: 0 3px; border: 1px solid #344767; {% if posts.number != num %}background: transparent; color: #344767;{% endif %}">{{ num }}</a>
                     </li>
                 {% endfor %}
                 {% if posts.has_next %}
                     <li class="page-item">
-                        <a class="page-link" href="?page={{ posts.next_page_number }}" style="background: transparent; border: 1px solid #344767; color: #344767; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; margin: 0 3px;">»</a>
+                        <a class="page-link" href="?page={{ posts.next_page_number }}"
+                           style="background: transparent; border: 1px solid #344767; color: #344767; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; margin: 0 3px;">»</a>
                     </li>
                 {% endif %}
             </ul>
@@ -87,19 +253,19 @@
     </div>
     {% endif %}
 
+</div>
 {% endblock %}
-
-
 
 {% block extra_js %}
     {{ block.super }}
-    
+
     {% if category and translated_category_slugs %}
-    {# JavaScript para traducir slugs de categorías #}
+    <script>
     window.categoryTranslatedSlugs = {
         'es': '{{ translated_category_slugs.es }}',
         'en': '{{ translated_category_slugs.en }}',
         'fr': '{{ translated_category_slugs.fr }}'
     };
+    </script>
     {% endif %}
 {% endblock %}
