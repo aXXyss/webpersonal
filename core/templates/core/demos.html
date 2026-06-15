@@ -6,10 +6,16 @@
 
 {% block meta_description %}{% blocktrans %}Ejemplos de webs profesionales para autónomos y pequeñas empresas. Webs rápidas, modernas y a medida por aXXyss Soluciones.{% endblocktrans %}{% endblock %}
 
-
-
 {% block background %}{% static 'core/img/demos-header.webp' %}{% endblock %}
 
+{% block extra_css %}
+<link rel="preload" as="image" href="{% static 'core/img/demos-header.webp' %}" type="image/webp" fetchpriority="high">
+{% endblock %}
+
+{% block headers %}
+<h1 class="text-white font-weight-black pt-3 mt-n5">{% trans "Demos" %}</h1>
+<p class="lead text-white mt-3">{% trans "Webs de demostración" %}</p>
+{% endblock %}
 
 {% block content %}
 
@@ -54,7 +60,7 @@
               <span class="text-muted text-sm">{{ demo.name }}</span>
             </div>
             <!-- Badge tipo negocio -->
-            <span class="badge badge-sm style="background: linear-gradient(195deg, #42424a, #191919); color: #fff;" position-absolute top-0 start-0 m-2">
+            <span class="badge badge-sm position-absolute top-0 start-0 m-2" style="background: linear-gradient(195deg, #42424a, #191919); color: #fff;">
               {{ demo.type }}
             </span>
           </div>
@@ -66,7 +72,7 @@
             <!-- Tags tecnología -->
             <div class="mb-3">
               {% for tag in demo.tags %}
-                <span class="badge badge-sm style="background: #6c757d; color: #fff;" me-1">{{ tag }}</span>
+                <span class="badge badge-sm me-1" style="background: #6c757d; color: #fff;">{{ tag }}</span>
               {% endfor %}
             </div>
 
@@ -94,7 +100,7 @@
               Puedo crear una web así para tu negocio. Entrega rápida, precio ajustado y sin complicaciones técnicas.
             {% endblocktrans %}
           </p>
-          <a href="{% url 'contact:contact' %}" class="btn btn-white ">
+          <a href="{% url 'contact:contact' %}" class="btn btn-white">
             {% trans "Hablemos de tu proyecto" %}
           </a>
         </div>
