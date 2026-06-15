@@ -40,6 +40,16 @@ def about(request):
     return render(request, "core/about.html")
 
 DEMOS = [
+
+    {
+        'name': 'AquaFix',
+        'type': _('Fontanería'),
+        'description': _('Hero con contacto de urgencias, 6 servicios, proceso paso a paso y dos formularios: consulta rápida y presupuesto detallado.'),
+        'url': 'https://demos.axxyss.com/aquafix/',
+        'image': 'core/img/demos/aquafix.webp',
+        'tags': ['CSS puro', 'Formspree'],
+    },
+
     {
         'name': 'Brûlé & Cacao',
         'type': _('Pastelería artesanal'),
@@ -50,11 +60,29 @@ DEMOS = [
     },
 
     {
+        'name': 'Old Town Barber',
+        'type': _('Barbería'),
+        'description': _('Hero con imagen, servicios con precios, equipo de barberos, integración Booksy y formulario de contacto.'),
+        'url': 'https://demos.axxyss.com/oldtown-barber/',
+        'image': 'core/img/demos/oldtown-barber.webp',
+        'tags': ['CSS puro', 'Booksy', 'Formspree'],
+    },
+
+    {
         'name': 'Lumière Spa',
         'type': _('Centro de estética'),
         'description': _('Hero con imagen de fondo, servicios con precios, formulario de reserva y footer elegante.'),
         'url': 'https://demos.axxyss.com/lumiere-spa/',
         'image': 'core/img/demos/lumiere-spa.webp',
+        'tags': ['Tailwind CSS', 'Formspree'],
+    },
+
+    {
+        'name': 'FORGE Training',
+        'type': _('Entrenador personal'),
+        'description': _('Hero impactante, programas con precios, sección entrenador y formulario de contacto.'),
+        'url': 'https://demos.axxyss.com/forge-training/',
+        'image': 'core/img/demos/forge-training.webp',
         'tags': ['Tailwind CSS', 'Formspree'],
     },
 ]
