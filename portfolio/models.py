@@ -11,13 +11,14 @@ class Project(models.Model):
     description = CKEditor5Field(verbose_name="Descripción")
     image = models.ImageField(verbose_name="Imagen", upload_to="projects")
     link = models.URLField(verbose_name="Dirección WEB", null=True, blank=True)
+    order = models.PositiveIntegerField(default=0, verbose_name="Orden")
     created = models.DateTimeField(auto_now_add=True, verbose_name="Fecha de creación")
     updated = models.DateTimeField(auto_now=True, verbose_name="Fecha de edición")
 
     class Meta:
         verbose_name = "proyecto"
         verbose_name_plural = "proyectos"
-        ordering = ["-created"]
+        ordering = ["order", "-created"]
 
     def get_absolute_url(self):
         return reverse('portfolio:project_detail', kwargs={'slug': self.slug})
