@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: aXXyss 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-15 13:11+0200\n"
-"PO-Revision-Date: 2026-06-15 13:38+0200\n"
+"POT-Creation-Date: 2026-06-15 16:58+0200\n"
+"PO-Revision-Date: 2026-06-15 17:00+0200\n"
 "Last-Translator: Joaquin Denis\n"
 "Language-Team: English\n"
 "Language: en\n"
@@ -236,6 +236,7 @@ msgid "Blog"
 msgstr "Blog"
 
 #: templates/core/base.html:154 templates/core/base.html:282
+#: templates/core/demos.html:16
 msgid "Demos"
 msgstr "Demos"
 
@@ -311,11 +312,11 @@ msgstr ""
 "Examples of professional websites for freelancers and small businesses. "
 "Fast, modern, custom-built websites by aXXyss Soluciones."
 
-#: templates/core/demos.html:22
+#: templates/core/demos.html:17 templates/core/demos.html:28
 msgid "Webs de demostración"
 msgstr "Web showcases"
 
-#: templates/core/demos.html:24
+#: templates/core/demos.html:30
 msgid ""
 "\n"
 "            ¿Necesitas una web para tu negocio? Aquí tienes ejemplos reales "
@@ -328,23 +329,23 @@ msgstr ""
 "I can build for you..\n"
 "            Professional, fast and hassle-free. "
 
-#: templates/core/demos.html:30
+#: templates/core/demos.html:36
 msgid "Solicitar presupuesto"
 msgstr "Request a quote"
 
-#: templates/core/demos.html:75
+#: templates/core/demos.html:81
 msgid "Ver demo"
 msgstr "View demo"
 
-#: templates/core/demos.html:82
+#: templates/core/demos.html:88
 msgid "Próximamente más demos disponibles."
 msgstr "More demos coming soon."
 
-#: templates/core/demos.html:91
+#: templates/core/demos.html:97
 msgid "¿Te gusta lo que ves?"
 msgstr "Like what you see?"
 
-#: templates/core/demos.html:93
+#: templates/core/demos.html:99
 msgid ""
 "\n"
 "              Puedo crear una web así para tu negocio. Entrega rápida, "
@@ -355,7 +356,7 @@ msgstr ""
 "              I can build a website like this for your business. Fast "
 "delivery, fair price and no technical hassle. "
 
-#: templates/core/demos.html:98
+#: templates/core/demos.html:104
 msgid "Hablemos de tu proyecto"
 msgstr "Let's talk about your project"
 
@@ -456,11 +457,23 @@ msgstr "Leave a review"
 msgid "Escanea para dejar tu reseña"
 msgstr "Scan to leave your review"
 
-#: views.py:45
+#: views.py:46
+msgid "Fontanería"
+msgstr "Plumbing"
+
+#: views.py:47
+msgid ""
+"Hero con contacto de urgencias, 6 servicios, proceso paso a paso y dos "
+"formularios: consulta rápida y presupuesto detallado."
+msgstr ""
+"Hero with emergency contact, 6 services, step-by-step process and two forms: "
+"quick enquiry and detailed quote."
+
+#: views.py:55
 msgid "Pastelería artesanal"
 msgstr "Artisan bakery"
 
-#: views.py:46
+#: views.py:56
 msgid ""
 "Hero visual, vitrina de productos, formulario de encargo y footer con "
 "horario y ubicación."
@@ -468,17 +481,39 @@ msgstr ""
 "Visual hero, product showcase, order form and footer with opening hours and "
 "location."
 
-#: views.py:54
+#: views.py:64
+msgid "Barbería"
+msgstr "Barbershop"
+
+#: views.py:65
+msgid ""
+"Hero con imagen, servicios con precios, equipo de barberos, integración "
+"Booksy y formulario de contacto."
+msgstr ""
+"Hero with image, services with prices, barber team, Booksy integration and "
+"contact form."
+
+#: views.py:73
 msgid "Centro de estética"
 msgstr "Aesthetic center"
 
-#: views.py:55
+#: views.py:74
 msgid ""
 "Hero con imagen de fondo, servicios con precios, formulario de reserva y "
 "footer elegante."
 msgstr ""
 "Hero with background image, services with prices, booking form and elegant "
 "footer."
+
+#: views.py:82
+msgid "Entrenador personal"
+msgstr "Personal trainer"
+
+#: views.py:83
+msgid ""
+"Hero impactante, programas con precios, sección entrenador y formulario de "
+"contacto."
+msgstr "Bold hero, programs with prices, trainer section and contact form."
 
 #~ msgid ""
 #~ "Programador experto en Django y WordPress E-commerce. Soluciones para "
