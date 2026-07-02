@@ -85,15 +85,15 @@
                         {% if forloop.counter <= review.rating %}★{% else %}☆{% endif %}
                     {% endfor %}
                 </div>
-                <p class="card-text fst-italic">"{{ review.originalText.text }}"</p>
+                <p class="card-text fst-italic">"{{ review.texto }}"</p>
             </div>
             <div class="card-footer bg-white border-0 d-flex align-items-center gap-2">
-                <img src="{{ review.authorAttribution.photoUri }}" 
-                     alt="{{ review.authorAttribution.displayName }}"
+                <img src="{{ review.foto_url }}" 
+                     alt="{{ review.autor }}"
                      class="rounded-circle" width="36" height="36">
                 <div>
-                    <div class="fw-semibold small">{{ review.authorAttribution.displayName }}</div>
-                    <div class="text-muted" style="font-size:0.75rem;">{{ review.relativePublishTimeDescription }}</div>
+                    <div class="fw-semibold small">{{ review.autor }}</div>
+                    <div class="text-muted" style="font-size:0.75rem;">{{ review.fecha_relativa }}</div>
                 </div>
                 <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg"
                      alt="Google" height="14" class="ms-auto opacity-50">
