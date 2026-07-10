@@ -69,7 +69,6 @@ INSTALLED_APPS = [
     'comments',
     'portfolio.apps.PortfolioConfig',
     'social.apps.SocialConfig',
-    'django_recaptcha',
     'django_countries',
 
 
@@ -265,18 +264,12 @@ DEFAULT_FROM_EMAIL = env('ENV_DEFAULT_FROM_EMAIL')
 #EMAIL_USE_TLS = False
 #EMAIL_USE_SSL = False
 
-# Captcha
-RECAPTCHA_PUBLIC_KEY = env('ENV_RECAPTCHA_PUBLIC_KEY')
-RECAPTCHA_ENTERPRISE_PROJECT_ID = env('ENV_RECAPTCHA_ENTERPRISE_PROJECT_ID')
-RECAPTCHA_DEFAULT_SCORE = 0.6 # Puedes ajustarlo entre 0.0 (bot) y 1.0 (humano)
-RECAPTCHA_USE_SSL = True
-#SILENCED_SYSTEM_CHECKS = ['captcha.recaptcha_test_key_error']
+
+TURNSTILE_SITE_KEY = env('TURNSTILE_SITE_KEY') 
+TURNSTILE_SECRET_KEY = env('TURNSTILE_SECRET_KEY')
+
 
 SITE_ID = 1
-
-SILENCED_SYSTEM_CHECKS = [
-    'django_recaptcha.recaptcha_test_key_error',
-]
 
 
 LOGIN_URL = '/es/login/'

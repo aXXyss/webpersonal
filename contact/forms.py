@@ -1,8 +1,7 @@
 from django import forms
-from django_recaptcha.fields import ReCaptchaField
-from django_recaptcha.widgets import ReCaptchaV2Checkbox
 from django.utils.translation import gettext_lazy as _
 from django_countries.fields import CountryField
+from .fields import TurnstileField
 from django.utils import timezone
 
 
@@ -86,9 +85,9 @@ class ContactForm(forms.Form):
     )
 
     # -------------------------
-    # CAPTCHA
+    # Turnstile - Cloudflare
     # -------------------------
-    captcha = ReCaptchaField(widget=ReCaptchaV2Checkbox, label='')
+    captcha = TurnstileField(label='')
 
     # -------------------------
     # CAMPO start_time (oculto)
@@ -135,3 +134,8 @@ class ContactForm(forms.Form):
             raise forms.ValidationError(_("Formulario enviado demasiado rápido (posible spam)."))
 
         return form_load_timestamp
+    
+    def __init__(self, *args, remote_ip=None, **kwargs):
+        super().__init__(*args, **kwargs)
+        if remote_ip:
+            self.fields['captcha'].remote_ip = remote_ip

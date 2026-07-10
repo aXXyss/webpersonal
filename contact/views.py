@@ -13,7 +13,11 @@ logger = logging.getLogger(__name__)
 
 def contact(request):
     if request.method == 'POST':
-        form = ContactForm(request.POST)
+        remote_ip = request.META.get('HTTP_X_FORWARDED_FOR', request.META.get('REMOTE_ADDR'))
+        if remote_ip and ',' in remote_ip:
+            remote_ip = remote_ip.split(',')[0].strip()
+
+        form = ContactForm(request.POST, remote_ip=remote_ip)
 
         if form.is_valid():
 
@@ -168,5 +172,5 @@ def contact(request):
 
     return render(request, 'contact/contact.html', {
         'form': form,
-        'RECAPTCHA_PUBLIC_KEY': settings.RECAPTCHA_PUBLIC_KEY
+        'TURNSTILE_SITE_KEY': settings.TURNSTILE_SITE_KEY
     })
