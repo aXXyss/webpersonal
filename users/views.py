@@ -5,23 +5,42 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth import views as auth_views
 from django.utils.decorators import method_decorator
 from django.contrib.auth.decorators import login_required
-from users.forms import SignupForm
+from users.forms import SignupForm, LoginForm
 from users.models import Profile
 from django.utils.translation import get_language
 from comments.models import Comment
+
 
 class SignupView(FormView):
     template_name = 'users/register.html'
     form_class = SignupForm
     success_url = reverse_lazy('users:registerok')
 
+    def get_form_kwargs(self):
+        kwargs = super().get_form_kwargs()
+        remote_ip = self.request.META.get('HTTP_X_FORWARDED_FOR', self.request.META.get('REMOTE_ADDR'))
+        if remote_ip and ',' in remote_ip:
+            remote_ip = remote_ip.split(',')[0].strip()
+        kwargs['remote_ip'] = remote_ip
+        return kwargs
+
     def form_valid(self, form):
         form.save(language=get_language())
         return super().form_valid(form)
+    
 
 class LoginView(auth_views.LoginView):
     """Login view."""
     template_name = 'users/login.html'
+    form_class = LoginForm
+
+    def get_form_kwargs(self):
+        kwargs = super().get_form_kwargs()
+        remote_ip = self.request.META.get('HTTP_X_FORWARDED_FOR', self.request.META.get('REMOTE_ADDR'))
+        if remote_ip and ',' in remote_ip:
+            remote_ip = remote_ip.split(',')[0].strip()
+        kwargs['remote_ip'] = remote_ip
+        return kwargs
 
 class LogoutView(LoginRequiredMixin, auth_views.LogoutView):
     """Logout view."""

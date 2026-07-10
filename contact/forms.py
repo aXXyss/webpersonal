@@ -1,7 +1,7 @@
 from django import forms
 from django.utils.translation import gettext_lazy as _
 from django_countries.fields import CountryField
-from .fields import TurnstileField
+from core.fields import TurnstileField
 from django.utils import timezone
 
 

@@ -6,6 +6,8 @@ from users.models import Profile
 from django.urls import reverse
 from django.utils.translation import gettext_lazy as _
 from django.utils.translation import activate, get_language
+from django.contrib.auth.forms import AuthenticationForm
+from core.fields import TurnstileField
 
 class SignupForm(forms.Form):
     """Sign up form."""
@@ -27,6 +29,14 @@ class SignupForm(forms.Form):
         max_length=70,
         widget=forms.PasswordInput()
     )
+
+    captcha = TurnstileField(label='')
+
+    def __init__(self, *args, remote_ip=None, **kwargs):
+        super().__init__(*args, **kwargs)
+        if remote_ip:
+            self.fields['captcha'].remote_ip = remote_ip
+    
 
     def clean_username(self):
         username = self.cleaned_data['username']
@@ -76,3 +86,12 @@ class SignupForm(forms.Form):
             print(f"Error enviando email de activación: {e}")
         finally:
             activate(current_language)
+
+
+class LoginForm(AuthenticationForm):
+    captcha = TurnstileField(label='')
+
+    def __init__(self, *args, remote_ip=None, **kwargs):
+        super().__init__(*args, **kwargs)
+        if remote_ip:
+            self.fields['captcha'].remote_ip = remote_ip
