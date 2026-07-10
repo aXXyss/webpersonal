@@ -20,19 +20,19 @@
                     <form class="form-signin" method="POST" action="{% url 'users:register' %}">
                         {% csrf_token %}
                         <div class="input-group input-group-outline my-3">
-                            <label for="id_email" class="sr-only">{% trans "Correo electrónico" %}</label>
+                            <label for="id_email" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">{% trans "Correo electrónico" %}</label>
                             <input type="email" name="email" id="id_email" class="form-control" placeholder="{% trans 'Correo electrónico' %}" required autofocus>
                         </div>
                         <div class="input-group input-group-outline my-3">
-                            <label for="id_username" class="sr-only">{% trans "Nombre de usuario" %}</label>
+                            <label for="id_username" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">{% trans "Nombre de usuario" %}</label>
                             <input type="text" name="username" id="id_username" class="form-control" placeholder="{% trans 'Nombre de usuario' %}" required>
                         </div>
                         <div class="input-group input-group-outline my-3">
-                            <label for="id_password" class="sr-only">{% trans "Contraseña" %}</label>
+                            <label for="id_password" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">{% trans "Contraseña" %}</label>
                             <input type="password" name="password" id="id_password" class="form-control" placeholder="{% trans 'Contraseña' %}" required>
                         </div>
                         <div class="input-group input-group-outline my-3">
-                            <label for="id_password_confirmation" class="sr-only">{% trans "Repetir contraseña" %}</label>
+                            <label for="id_password_confirmation" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">{% trans "Repetir contraseña" %}</label>
                             <input type="password" name="password_confirmation" id="id_password_confirmation" class="form-control" placeholder="{% trans 'Repetir contraseña' %}" required>
                         </div>
                         <div class="checkbox mb-3"></div>

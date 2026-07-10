@@ -26,13 +26,13 @@
                         {% csrf_token %}
 
                         <div class="input-group input-group-outline my-3">
-                            <label class="form-label">{% trans "Usuario" %}</label>
-                            <input type="text" name="username" class="form-control" autocapitalize="none" autocomplete="username" maxlength="150" required id="id_username">
+                            <label for="id_username" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">{% trans "Usuario" %}</label>
+                            <input type="text" name="username" class="form-control" placeholder="{% trans 'Usuario' %}" autocapitalize="none" autocomplete="username" maxlength="150" required id="id_username">
                         </div>
-                        
+
                         <div class="input-group input-group-outline my-3">
-                            <label class="form-label">{% trans "Contraseña" %}</label>
-                            <input type="password" name="password" autocomplete="current-password" class="form-control" required id="id_password">
+                            <label for="id_password" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">{% trans "Contraseña" %}</label>
+                            <input type="password" name="password" autocomplete="current-password" class="form-control" placeholder="{% trans 'Contraseña' %}" required id="id_password">
                         </div>
                         
                         <div class="form-check form-switch d-flex align-items-center mb-3">
