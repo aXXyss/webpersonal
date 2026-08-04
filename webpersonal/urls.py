@@ -31,6 +31,7 @@ urlpatterns = [
         "google19c4ca07d59e3550.html",
         TemplateView.as_view(template_name="core/google19c4ca07d59e3550.html", content_type="text/html"),
     ),
+    path('api/helpdesk/', include('helpdesk.urls')),
 ]
 urlpatterns += i18n_patterns(
     path('', include('core.urls')),

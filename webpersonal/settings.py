@@ -67,9 +67,11 @@ INSTALLED_APPS = [
     'users',
     'categories',
     'comments',
+    'helpdesk',
     'portfolio.apps.PortfolioConfig',
     'social.apps.SocialConfig',
     'django_countries',
+
 
 
 ]
@@ -104,7 +106,8 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'social.processors.ctx_dict',
-                'django.template.context_processors.i18n',         
+                'django.template.context_processors.i18n', 
+                'core.context_processors.turnstile_site_key',        
             ],
         },
     },
@@ -288,6 +291,9 @@ if not DEBUG:
 # API para las Google Reviews
 GOOGLE_PLACES_API_KEY = env('GOOGLE_PLACES_API_KEY')
 GOOGLE_PLACE_ID = env('GOOGLE_PLACE_ID')
+
+# API para Anthropic
+ANTHROPIC_API_KEY = env('ANTHROPIC_API_KEY')
 
 
 SITE_URL = env('SITE_URL', default='https://axxyss.com').strip()
