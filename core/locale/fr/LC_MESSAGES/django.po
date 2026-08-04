@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: aXXyss 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-15 16:58+0200\n"
+"POT-Creation-Date: 2026-08-04 12:27+0200\n"
 "PO-Revision-Date: 2026-06-15 17:01+0200\n"
 "Last-Translator: Joaquin Denis\n"
 "Language-Team: French\n"
@@ -17,6 +17,14 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Poedit 3.6\n"
+
+#: fields.py:26
+msgid "Por favor, verifica que no eres un robot."
+msgstr ""
+
+#: fields.py:27
+msgid "La verificación ha fallado, inténtalo de nuevo."
+msgstr ""
 
 #: templates/core/about.html:4 templates/core/base.html:130
 #: templates/core/base.html:270
@@ -212,6 +220,7 @@ msgid "aXXyss Soluciones"
 msgstr "aXXyss Solutions"
 
 #: templates/core/base.html:102 templates/core/base.html:105
+#: templates/core/base.html:453
 msgid "Soluciones"
 msgstr "Solutions"
 
@@ -264,6 +273,38 @@ msgstr "Réalisé avec"
 #: templates/core/base.html:316
 msgid "por"
 msgstr "par"
+
+#: templates/core/base.html:447
+msgid "Cerrar"
+msgstr "Fermer"
+
+#: templates/core/base.html:448
+msgid "Hola"
+msgstr "Bonjour"
+
+#: templates/core/base.html:449
+msgid "¿En qué podemos ayudarte?"
+msgstr "Comment pouvons-nous vous aider ?"
+
+#: templates/core/base.html:454 templates/core/base.html:472
+msgid "Hola, me gustaría más información"
+msgstr "Bonjour, j'aimerais plus d'informations"
+
+#: templates/core/base.html:457
+msgid "Escribir por WhatsApp"
+msgstr "Écrire sur WhatsApp"
+
+#: templates/core/base.html:461
+msgid "Ir a Contacto"
+msgstr "Aller à Contact"
+
+#: templates/core/base.html:467
+msgid "Ayuda"
+msgstr "Aide"
+
+#: templates/core/base.html:474
+msgid "WhatsApp"
+msgstr "WhatsApp"
 
 #: templates/core/base_perso_cookies_banner.html:9
 msgid ""
@@ -459,11 +500,11 @@ msgstr "Laisser un avis"
 msgid "Escanea para dejar tu reseña"
 msgstr "Scannez pour laisser votre avis"
 
-#: views.py:46
+#: views.py:29
 msgid "Fontanería"
 msgstr "Plomberie"
 
-#: views.py:47
+#: views.py:30
 msgid ""
 "Hero con contacto de urgencias, 6 servicios, proceso paso a paso y dos "
 "formularios: consulta rápida y presupuesto detallado."
@@ -471,11 +512,11 @@ msgstr ""
 "Hero avec contact d'urgence, 6 services, processus étape par étape et deux "
 "formulaires: consultation rapide et devis détaillé."
 
-#: views.py:55
+#: views.py:38
 msgid "Pastelería artesanal"
 msgstr "Boulangerie artisanale"
 
-#: views.py:56
+#: views.py:39
 msgid ""
 "Hero visual, vitrina de productos, formulario de encargo y footer con "
 "horario y ubicación."
@@ -483,11 +524,11 @@ msgstr ""
 "Hero visuel, vitrine de produits, formulaire de commande et footer avec "
 "horaires et localisation."
 
-#: views.py:64
+#: views.py:47
 msgid "Barbería"
 msgstr "Barbier"
 
-#: views.py:65
+#: views.py:48
 msgid ""
 "Hero con imagen, servicios con precios, equipo de barberos, integración "
 "Booksy y formulario de contacto."
@@ -495,11 +536,11 @@ msgstr ""
 "Hero avec image, services avec tarifs, équipe de barbiers, intégration "
 "Booksy et formulaire de contact."
 
-#: views.py:73
+#: views.py:56
 msgid "Centro de estética"
 msgstr "Centre d'esthétique"
 
-#: views.py:74
+#: views.py:57
 msgid ""
 "Hero con imagen de fondo, servicios con precios, formulario de reserva y "
 "footer elegante."
@@ -507,11 +548,11 @@ msgstr ""
 "Hero avec image de fond, services avec tarifs, formulaire de réservation et "
 "footer élégant."
 
-#: views.py:82
+#: views.py:65
 msgid "Entrenador personal"
 msgstr "Coach sportif"
 
-#: views.py:83
+#: views.py:66
 msgid ""
 "Hero impactante, programas con precios, sección entrenador y formulario de "
 "contacto."
