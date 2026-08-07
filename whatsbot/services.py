@@ -65,7 +65,7 @@ def generar_respuesta(conversacion, texto_entrante):
 
     if es_primer_mensaje:
         texto_respuesta = (
-            "🤖 Soy el asistente virtual de aXXyss Soluciones (no una persona). "
+            "Soy un asistente automatizado de aXXyss Soluciones. "
             "Si prefieres hablar directamente con Joaquin, dímelo en cualquier momento.\n\n"
             + texto_respuesta
         )

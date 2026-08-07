@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: aXXyss 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-04 12:27+0200\n"
+"POT-Creation-Date: 2026-08-07 10:49+0200\n"
 "PO-Revision-Date: 2026-06-15 17:00+0200\n"
 "Last-Translator: Joaquin Denis\n"
 "Language-Team: English\n"
@@ -26,8 +26,8 @@ msgstr ""
 msgid "La verificación ha fallado, inténtalo de nuevo."
 msgstr ""
 
-#: templates/core/about.html:4 templates/core/base.html:130
-#: templates/core/base.html:270
+#: templates/core/about.html:4 templates/core/base.html:133
+#: templates/core/base.html:273
 #: templates/core/base_perso_cookies_banner.html:77
 #: templates/core/base_perso_cookies_banner.html:211
 msgid "Sobre mí"
@@ -201,8 +201,8 @@ msgstr ""
 "<b>ERP: </b><a href=\"https://www.dolibarr.org/\" target=\"_blank\" "
 "rel=\"noopener\">Dolibarr</a>"
 
-#: templates/core/about.html:65 templates/core/base.html:142
-#: templates/core/base.html:276
+#: templates/core/about.html:65 templates/core/base.html:145
+#: templates/core/base.html:279
 #: templates/core/base_perso_cookies_banner.html:87
 #: templates/core/base_perso_cookies_banner.html:217
 msgid "Contacto"
@@ -221,92 +221,110 @@ msgstr ""
 msgid "aXXyss Soluciones"
 msgstr "aXXyss Solutions"
 
-#: templates/core/base.html:102 templates/core/base.html:105
-#: templates/core/base.html:453
+#: templates/core/base.html:105 templates/core/base.html:108
+#: templates/core/base.html:462
 msgid "Soluciones"
 msgstr "Solutions"
 
-#: templates/core/base.html:124 templates/core/base.html:267
+#: templates/core/base.html:127 templates/core/base.html:270
 #: templates/core/base_perso_cookies_banner.html:72
 #: templates/core/base_perso_cookies_banner.html:208
 msgid "Portada"
 msgstr "Home"
 
-#: templates/core/base.html:136 templates/core/base.html:273
+#: templates/core/base.html:139 templates/core/base.html:276
 #: templates/core/base_perso_cookies_banner.html:82
 #: templates/core/base_perso_cookies_banner.html:214
 msgid "Portafolio"
 msgstr "Portfolio"
 
-#: templates/core/base.html:148 templates/core/base.html:279
+#: templates/core/base.html:151 templates/core/base.html:282
 #: templates/core/base_perso_cookies_banner.html:92
 #: templates/core/base_perso_cookies_banner.html:220
 msgid "Blog"
 msgstr "Blog"
 
-#: templates/core/base.html:154 templates/core/base.html:282
+#: templates/core/base.html:157 templates/core/base.html:285
 #: templates/core/demos.html:16
 msgid "Demos"
 msgstr "Demos"
 
-#: templates/core/base.html:176
+#: templates/core/base.html:179
 #: templates/core/base_perso_cookies_banner.html:115
 msgid "Iniciar sesión"
 msgstr "Log In"
 
-#: templates/core/base.html:264
+#: templates/core/base.html:267
 #: templates/core/base_perso_cookies_banner.html:205
 msgid "Información"
 msgstr "Information"
 
-#: templates/core/base.html:288
+#: templates/core/base.html:291
 #: templates/core/base_perso_cookies_banner.html:226
 msgid "Legal"
 msgstr "Legal"
 
-#: templates/core/base.html:309
+#: templates/core/base.html:312
 msgid "Desarrollo Web en Torrent"
 msgstr "Web Development in Torrent (Valencia)"
 
-#: templates/core/base.html:314
+#: templates/core/base.html:317
 msgid "Hecho con"
 msgstr "Powered by"
 
-#: templates/core/base.html:316
+#: templates/core/base.html:319
 msgid "por"
 msgstr "by"
 
-#: templates/core/base.html:447
+#: templates/core/base.html:455
 msgid "Cerrar"
 msgstr "Close"
 
-#: templates/core/base.html:448
+#: templates/core/base.html:456
 msgid "Hola"
 msgstr "Hello"
 
-#: templates/core/base.html:449
+#: templates/core/base.html:457
 msgid "¿En qué podemos ayudarte?"
 msgstr "How can we help you?"
 
-#: templates/core/base.html:454 templates/core/base.html:472
+#: templates/core/base.html:474
+msgid "¡Hola! Soy un asistente automatizado de aXXyss. ¿En qué puedo ayudarte?"
+msgstr "Hi! I'm an automated assistant from aXXyss. How can I help you?"
+
+#: templates/core/base.html:480
+msgid "Escribe tu pregunta..."
+msgstr "Type your question..."
+
+#: templates/core/base.html:481
+msgid "Enviar"
+msgstr "Send"
+
+#: templates/core/base.html:489 templates/core/base.html:503
 msgid "Hola, me gustaría más información"
 msgstr "Hi, I'd like more information"
 
-#: templates/core/base.html:457
-msgid "Escribir por WhatsApp"
+#: templates/core/base.html:492
+#, fuzzy
+#| msgid "Escribir por WhatsApp"
+msgid "Prefiero WhatsApp"
 msgstr "Message us on WhatsApp"
 
-#: templates/core/base.html:461
-msgid "Ir a Contacto"
-msgstr "Go to Contact"
-
-#: templates/core/base.html:467
+#: templates/core/base.html:498
 msgid "Ayuda"
 msgstr "Help"
 
-#: templates/core/base.html:474
+#: templates/core/base.html:505
 msgid "WhatsApp"
 msgstr "WhatsApp"
+
+#: templates/core/base.html:599
+msgid "Ahora mismo no puedo responder, prueba por WhatsApp."
+msgstr "I can't respond right now, please try WhatsApp instead."
+
+#: templates/core/base.html:603
+msgid "Error de conexión. Prueba por WhatsApp."
+msgstr "Connection error. Please try WhatsApp instead."
 
 #: templates/core/base_perso_cookies_banner.html:9
 msgid ""
@@ -555,6 +573,9 @@ msgid ""
 "Hero impactante, programas con precios, sección entrenador y formulario de "
 "contacto."
 msgstr "Bold hero, programs with prices, trainer section and contact form."
+
+#~ msgid "Ir a Contacto"
+#~ msgstr "Go to Contact"
 
 #~ msgid ""
 #~ "Programador experto en Django y WordPress E-commerce. Soluciones para "

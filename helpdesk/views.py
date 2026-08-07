@@ -90,9 +90,8 @@ def chat(request):
 
     # Historial de conversación guardado en sesión (máx 6 turnos para no disparar tokens)
     history = request.session.get('chat_history', [])
-    es_primer_mensaje = len(history) == 0
     history.append({'role': 'user', 'content': user_message})
-    history = history[-12:]  # 6 turnos = 12 mensajes (user+assistant)
+    history = history[-12:]
 
     try:
         response = client.messages.create(
@@ -108,13 +107,6 @@ def chat(request):
     assistant_reply = ''.join(
         block.text for block in response.content if block.type == 'text'
     )
-
-    if es_primer_mensaje:
-        assistant_reply = (
-            "🤖 Soy el asistente virtual de aXXyss (no una persona). "
-            "Si prefieres hablar directamente con nosotros, indícalo en cualquier momento.\n\n"
-            + assistant_reply
-        )
 
     history.append({'role': 'assistant', 'content': assistant_reply})
     request.session['chat_history'] = history
