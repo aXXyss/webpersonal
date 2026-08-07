@@ -68,6 +68,7 @@ INSTALLED_APPS = [
     'categories',
     'comments',
     'helpdesk',
+    'whatsbot',
     'portfolio.apps.PortfolioConfig',
     'social.apps.SocialConfig',
     'django_countries',
@@ -294,6 +295,12 @@ GOOGLE_PLACE_ID = env('GOOGLE_PLACE_ID')
 
 # API para Anthropic
 ANTHROPIC_API_KEY = env('ANTHROPIC_API_KEY')
+
+# API para Whatsapp
+WHATSAPP_ACCESS_TOKEN = env('WHATSAPP_ACCESS_TOKEN')
+WHATSAPP_PHONE_NUMBER_ID = env('WHATSAPP_PHONE_NUMBER_ID')
+WHATSAPP_VERIFY_TOKEN = env('WHATSAPP_VERIFY_TOKEN')
+WHATSAPP_APP_SECRET = env('WHATSAPP_APP_SECRET')
 
 
 SITE_URL = env('SITE_URL', default='https://axxyss.com').strip()

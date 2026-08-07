@@ -36,6 +36,10 @@ urlpatterns = [
         ),
     ),
 
+    path('api/helpdesk/', include('helpdesk.urls')),
+    path('whatsbot/', include('whatsbot.urls')),
+
+
      # --- REDIRECCIONES 301 (URLs antiguas → URLs nuevas) ---
      # Posts Django/Debian (slugs con "-12" al final, renombrados al traducir)
      path('es/blog/post/desarrollo-web-con-django-en-debian-12/',
