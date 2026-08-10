@@ -295,7 +295,7 @@
             {% get_page_list as page_list %}
             {% for page in page_list %}
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'page' page.id translation.link|default:page.link %}">
+              <a class="nav-link" href="{% page_url page %}">                
                 ›
                 {% translated_page_content page %} {# Mostrar el título traducido en el enlace #}
               </a>
