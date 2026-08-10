@@ -93,8 +93,9 @@
                     <div class="fw-semibold small">{{ review.autor }}</div>
                     <div class="text-muted" style="font-size:0.75rem;">{{ review.fecha_relativa }}</div>
                 </div>
-                <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg"
-                     alt="Google" height="14" class="ms-auto opacity-50">
+                {% load static %}
+                    <img src="{% static 'core/img/google-logo.svg' %}"
+                         alt="Google" height="14" class="ms-auto opacity-50">
             </div>
         </div>
     </div>

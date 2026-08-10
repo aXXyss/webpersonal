@@ -7,9 +7,22 @@ import logging
 from django.utils import timezone
 from django.http import HttpResponse
 import re
+from django.utils.translation import get_language
+from pages.models import Page
+
 
 logger = logging.getLogger(__name__)
 
+def _page_url(page_id):
+    """Devuelve la URL localizada y actualizada de una Page por su id, sin hardcodear el slug."""
+    try:
+        page = Page.objects.get(id=page_id)
+    except Page.DoesNotExist:
+        return None
+    language_code = get_language()
+    translation = page.translations.filter(language=language_code).first()
+    slug = page.link if language_code == 'es' else (translation.link if translation else page.link)
+    return reverse('page', kwargs={'page_id': page.id, 'page_slug': slug})
 
 def contact(request):
     if request.method == 'POST':
@@ -172,5 +185,7 @@ def contact(request):
 
     return render(request, 'contact/contact.html', {
         'form': form,
-        'TURNSTILE_SITE_KEY': settings.TURNSTILE_SITE_KEY
+        'TURNSTILE_SITE_KEY': settings.TURNSTILE_SITE_KEY,
+        'data_protection_url': _page_url(1),
+        'privacy_policy_url': _page_url(2),
     })

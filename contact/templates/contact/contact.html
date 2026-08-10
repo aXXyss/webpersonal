@@ -65,7 +65,7 @@ soluciones Linux. Envía tu mensaje a través de nuestro formulario de contacto.
               {{ form.avisolegal }}
               <label class="form-check-label ms-3 mb-0" for="{{ form.avisolegal.id_for_label }}">
                 {% trans "He leído y acepto la" %}
-                <a href="/page/1/politica-privacidad/" class="text-dark">
+                 <a href="{{ data_protection_url }}" class="text-dark">
                   <u>{% trans "Política de privacidad" %}</u>
                 </a>.
               </label>
@@ -141,7 +141,7 @@ soluciones Linux. Envía tu mensaje a través de nuestro formulario de contacto.
               <p>{% trans "Tiene derecho a saber qué información tenemos sobre usted, corregirla y eliminarla." %}</p>
 
               <h6><strong>{% trans "Información adicional" %}</strong></h6>
-              <p>{% trans "Más información en" %} <a href="/page/2/politica-de-privacidad/" class="text-dark">
+              <p>{% trans "Más información en" %} <a href="{{ privacy_policy_url }}" class="text-dark">
                   <u>{% trans "Política de privacidad" %}</u></a>
               </p>
 
