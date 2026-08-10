@@ -2,6 +2,7 @@ User-agent: *
 Allow: /
 Disallow: /axxysswebadmin/
 Disallow: /ckeditor5/
+Disallow: /*/login/
 
 # Sitemaps para buscadores
 Sitemap: https://axxyss.com/es/sitemap.xml

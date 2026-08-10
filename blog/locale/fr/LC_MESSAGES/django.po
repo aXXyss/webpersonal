@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-01-30 19:09+0100\n"
+"POT-Creation-Date: 2026-08-10 11:24+0200\n"
 "PO-Revision-Date: 2026-01-29 20:10+0100\n"
 "Last-Translator: Gemini\n"
 "Language-Team: French\n"
@@ -15,6 +15,16 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: templates/blog/partials/comment_tree.html:12
+msgid "Responder"
+msgstr ""
+
+#: templates/blog/partials/comment_tree.html:29
+#, fuzzy
+#| msgid "Enviar comentario"
+msgid "Enviar Respuesta"
+msgstr "Envoyer le commentaire"
 
 #: templates/blog/partials/share_buttons.html:4
 msgid "Compartir este artículo"
@@ -36,70 +46,114 @@ msgstr "Copier"
 msgid "Enlace copiado al portapapeles"
 msgstr "Lien copié dans le presse-papiers"
 
-#: templates/blog/post_detail.html:4 templates/blog/post_list.html:4
-#: templates/blog/post_list.html:11
-msgid "Blog"
-msgstr "Blog"
-
-#: templates/blog/post_detail.html:58 templates/blog/post_list.html:21
+#: templates/blog/post_detail.html:80
 msgid "Publicado el"
 msgstr "Publié le"
 
-#: templates/blog/post_detail.html:58 templates/blog/post_list.html:21
+#: templates/blog/post_detail.html:80
 msgid "por"
 msgstr "par"
 
-#: templates/blog/post_detail.html:79 templates/blog/post_list.html:36
+#: templates/blog/post_detail.html:101
 msgid "Sin categorías"
 msgstr "Sans catégories"
 
-#: templates/blog/post_detail.html:90
+#: templates/blog/post_detail.html:112
 msgid "Deja un comentario:"
 msgstr "Laissez un commentaire :"
 
-#: templates/blog/post_detail.html:99
+#: templates/blog/post_detail.html:121
 msgid "Enviar comentario"
 msgstr "Envoyer le commentaire"
 
-#: templates/blog/post_detail.html:105
+#: templates/blog/post_detail.html:127
 msgid "Para dejar un comentario tiene que estar conectado:"
 msgstr "Pour laisser un commentaire, vous devez être connecté :"
 
-#: templates/blog/post_detail.html:115
+#: templates/blog/post_detail.html:137
 msgid "Comentarios:"
 msgstr "Commentaires :"
 
-#: templates/blog/post_detail.html:122
+#: templates/blog/post_detail.html:144
 msgid "Todavía no hay comentarios."
 msgstr "Il n'y a pas encore de commentaires."
 
-#: templates/blog/post_detail.html:127
+#: templates/blog/post_detail.html:149
 msgid "Volver al blog"
 msgstr "Retour au blog"
 
-#: templates/blog/post_list.html:5
-msgid ""
-"Descubre las últimas noticias, artículos y tutoriales sobre tecnología y "
-"programación."
-msgstr ""
-"Découvrez les dernières actualités, articles et tutoriels sur la technologie "
-"et la programmation."
+#: templates/blog/post_list.html:5 templates/blog/post_list.html:79
+msgid "Blog"
+msgstr "Blog"
 
-#: templates/blog/post_list.html:12
+#: templates/blog/post_list.html:6
+#, python-format
+msgid ""
+"Artículos sobre %(category_name)s: tutoriales, guías y experiencias reales "
+"de desarrollo web con Django, Python y administración de servidores Linux."
+msgstr ""
+"Articles sur %(category_name)s : tutoriels, guides et expériences réelles "
+"de développement web avec Django, Python et administration de serveurs "
+"Linux."
+
+#: templates/blog/post_list.html:6
+msgid ""
+"Descubre las últimas noticias, artículos y tutoriales sobre tecnología, "
+"Django, Python y administración de servidores."
+msgstr ""
+"Découvrez les dernières actualités, articles et tutoriels sur la "
+"technologie, Django, Python et l'administration de serveurs."
+
+#: templates/blog/post_list.html:80
+msgid "Artículos sobre"
+msgstr "Articles sur"
+
+#: templates/blog/post_list.html:80
 msgid "Últimas publicaciones"
 msgstr "Dernières publications"
 
-#: templates/blog/post_list.html:39
-msgid "Leer más..."
+#: templates/blog/post_list.html:89
+msgid "Artículos"
+msgstr ""
+
+#: templates/blog/post_list.html:91
+msgid "Todos"
+msgstr ""
+
+#: templates/blog/post_list.html:101
+#, fuzzy
+#| msgid "Sin categorías"
+msgid "Categoría"
+msgstr "Sans catégories"
+
+#: templates/blog/post_list.html:103
+#, fuzzy
+#| msgid "Te recomiendo este artículo"
+msgid "Todos los artículos"
+msgstr "Je recommande cet article"
+
+#: templates/blog/post_list.html:123
+msgid "Más reciente"
+msgstr ""
+
+#: templates/blog/post_list.html:159 templates/blog/post_list.html:208
+#, fuzzy
+#| msgid "Leer más..."
+msgid "Leer más"
 msgstr "Lire la suite..."
 
-#: templates/blog/post_list.html:44
+#: templates/blog/post_list.html:191
+#, fuzzy
+#| msgid "Sin categorías"
+msgid "Sin categoría"
+msgstr "Sans catégories"
+
+#: templates/blog/post_list.html:217
 #, python-format
 msgid "No hay artículos publicados en la categoría \"%(category_name)s\""
 msgstr ""
 "Il n'y a pas d'articles publiés dans la catégorie \"%(category_name)s\""
 
-#: templates/blog/post_list.html:46
+#: templates/blog/post_list.html:221
 msgid "Todavía no hay artículos publicados."
 msgstr "Il n'y a pas encore d'articles publiés."
-

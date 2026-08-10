@@ -15,7 +15,7 @@ def page(request, page_id, page_slug):
 
     # Si el slug de la URL no coincide, redirige al correcto
     if page_slug != expected_slug:
-        return redirect('page', page_id=page.id, page_slug=expected_slug)
+        return redirect('page', page_id=page.id, page_slug=expected_slug, permanent=True)
 
     
     context = {

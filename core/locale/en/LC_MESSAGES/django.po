@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: aXXyss 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-07 10:49+0200\n"
+"POT-Creation-Date: 2026-08-10 11:20+0200\n"
 "PO-Revision-Date: 2026-06-15 17:00+0200\n"
 "Last-Translator: Joaquin Denis\n"
 "Language-Team: English\n"
@@ -33,7 +33,7 @@ msgstr ""
 msgid "Sobre mí"
 msgstr "About me"
 
-#: templates/core/about.html:5 templates/core/home.html:9
+#: templates/core/about.html:5 templates/core/home.html:7
 msgid ""
 "Joaquin Denis — Programador web freelance en Torrent, Valencia. "
 "Especializado en Django y Python. Desarrollo web a medida, e-commerce y "
@@ -222,7 +222,7 @@ msgid "aXXyss Soluciones"
 msgstr "aXXyss Solutions"
 
 #: templates/core/base.html:105 templates/core/base.html:108
-#: templates/core/base.html:462
+#: templates/core/base.html:458
 msgid "Soluciones"
 msgstr "Solutions"
 
@@ -276,53 +276,53 @@ msgstr "Powered by"
 msgid "por"
 msgstr "by"
 
-#: templates/core/base.html:455
+#: templates/core/base.html:451
 msgid "Cerrar"
 msgstr "Close"
 
-#: templates/core/base.html:456
+#: templates/core/base.html:452
 msgid "Hola"
 msgstr "Hello"
 
-#: templates/core/base.html:457
+#: templates/core/base.html:453
 msgid "¿En qué podemos ayudarte?"
 msgstr "How can we help you?"
 
-#: templates/core/base.html:474
+#: templates/core/base.html:470
 msgid "¡Hola! Soy un asistente automatizado de aXXyss. ¿En qué puedo ayudarte?"
 msgstr "Hi! I'm an automated assistant from aXXyss. How can I help you?"
 
-#: templates/core/base.html:480
+#: templates/core/base.html:476
 msgid "Escribe tu pregunta..."
 msgstr "Type your question..."
 
-#: templates/core/base.html:481
+#: templates/core/base.html:477
 msgid "Enviar"
 msgstr "Send"
 
-#: templates/core/base.html:489 templates/core/base.html:503
+#: templates/core/base.html:485 templates/core/base.html:499
 msgid "Hola, me gustaría más información"
 msgstr "Hi, I'd like more information"
 
-#: templates/core/base.html:492
+#: templates/core/base.html:488
 #, fuzzy
 #| msgid "Escribir por WhatsApp"
 msgid "Prefiero WhatsApp"
 msgstr "Message us on WhatsApp"
 
-#: templates/core/base.html:498
+#: templates/core/base.html:494
 msgid "Ayuda"
 msgstr "Help"
 
-#: templates/core/base.html:505
+#: templates/core/base.html:501
 msgid "WhatsApp"
 msgstr "WhatsApp"
 
-#: templates/core/base.html:599
+#: templates/core/base.html:595
 msgid "Ahora mismo no puedo responder, prueba por WhatsApp."
 msgstr "I can't respond right now, please try WhatsApp instead."
 
-#: templates/core/base.html:603
+#: templates/core/base.html:599
 msgid "Error de conexión. Prueba por WhatsApp."
 msgstr "Connection error. Please try WhatsApp instead."
 
@@ -419,26 +419,26 @@ msgstr ""
 msgid "Hablemos de tu proyecto"
 msgstr "Let's talk about your project"
 
-#: templates/core/home.html:5
-msgid "Programador Web Django en Torrent, Valencia | aXXyss Soluciones"
-msgstr "Django Web Developer in Torrent, Valencia | aXXyss Soluciones"
+#: templates/core/home.html:4
+msgid "Programador Web Django en Torrent, Valencia"
+msgstr "Web developer in Torrent, Valencia"
 
-#: templates/core/home.html:31
+#: templates/core/home.html:29
 msgid "Programador web y desarrollador de software | Django & Python"
 msgstr "Web developer and software developer | Django & Python"
 
-#: templates/core/home.html:32
+#: templates/core/home.html:30
 msgid ""
 "Soluciones digitales a medida para empresas en Europa, América del Norte y "
 "África"
 msgstr ""
 "Custom digital solutions for businesses in Europe, North America and Africa"
 
-#: templates/core/home.html:46
+#: templates/core/home.html:44
 msgid "Desarrollo Web y Software a Medida"
 msgstr "Custom Web Development and Software"
 
-#: templates/core/home.html:47
+#: templates/core/home.html:45
 msgid ""
 "Desde mi estudio en <b>Torrent (Valencia)</b>, desarrollo <b>soluciones web</"
 "b> y software a medida para empresas. Especializado en <b>Django y Python</"
@@ -449,11 +449,11 @@ msgstr ""
 "and custom software for businesses. Specialized in <b>Django and Python</b>, "
 "I design efficient applications tailored to each client's real processes."
 
-#: templates/core/home.html:49
+#: templates/core/home.html:47
 msgid "Modernización de Software Empresarial"
 msgstr "Business Software Modernization"
 
-#: templates/core/home.html:50
+#: templates/core/home.html:48
 msgid ""
 "Cuento con amplia experiencia en la transición de sistemas legacy hacia "
 "potentes aplicaciones <b>web con Django</b>. Esta experiencia me permite "
@@ -464,11 +464,11 @@ msgstr ""
 "<b>web applications with Django</b>. This allows me to migrate old systems "
 "to the web without data loss, adapted to real business processes."
 
-#: templates/core/home.html:52
+#: templates/core/home.html:50
 msgid "Soluciones E-commerce y WordPress"
 msgstr "E-commerce and WordPress Solutions"
 
-#: templates/core/home.html:53
+#: templates/core/home.html:51
 msgid ""
 "Además de aplicaciones a medida, desarrollo <b>tiendas online con WordPress "
 "y WooCommerce</b>, asegurando plataformas rápidas, seguras y adaptadas a las "
@@ -478,11 +478,11 @@ msgstr ""
 "WordPress and WooCommerce</b>, ensuring fast, secure platforms tailored to "
 "each business's needs."
 
-#: templates/core/home.html:55
+#: templates/core/home.html:53
 msgid "¿Tienes un proyecto en mente?"
 msgstr "Do you have a project in mind?"
 
-#: templates/core/home.html:56
+#: templates/core/home.html:54
 #, python-format
 msgid ""
 "Cuéntame tu idea y encontramos juntos la mejor solución técnica. Trabajo de "
@@ -491,28 +491,28 @@ msgstr ""
 "Tell me your idea and we'll find the best technical solution together. I "
 "work <b>100%%</b> remotely with clients from anywhere in the world."
 
-#: templates/core/home.html:60
+#: templates/core/home.html:58
 msgid "Contactar ahora"
 msgstr "Contact now"
 
-#: templates/core/home.html:70
+#: templates/core/home.html:68
 msgid "Lo que dicen mis clientes"
 msgstr "What my clients say"
 
-#: templates/core/home.html:73
+#: templates/core/home.html:71
 #, fuzzy
 msgid "reseñas en Google"
 msgstr "Google reviews"
 
-#: templates/core/home.html:110
+#: templates/core/home.html:108
 msgid "Ver todas las reseñas en Google"
 msgstr "See all Google reviews"
 
-#: templates/core/home.html:116
+#: templates/core/home.html:114
 msgid "Dejar una reseña"
 msgstr "Leave a review"
 
-#: templates/core/home.html:119 templates/core/home.html:121
+#: templates/core/home.html:117 templates/core/home.html:119
 msgid "Escanea para dejar tu reseña"
 msgstr "Scan to leave your review"
 
@@ -573,6 +573,9 @@ msgid ""
 "Hero impactante, programas con precios, sección entrenador y formulario de "
 "contacto."
 msgstr "Bold hero, programs with prices, trainer section and contact form."
+
+#~ msgid "Programador Web Django en Torrent, Valencia | aXXyss Soluciones"
+#~ msgstr "Django Web Developer in Torrent, Valencia | aXXyss Soluciones"
 
 #~ msgid "Ir a Contacto"
 #~ msgstr "Go to Contact"

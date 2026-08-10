@@ -2,7 +2,7 @@
 {% load static %}
 
 {% load i18n %}
-{% block title %}{% blocktrans %}Políticas{% endblocktrans %}{% endblock %}
+{% block title %}{{ translation.title|default:page.title }} | {% trans "Políticas" %}{% endblock %}
 
 {% block background %}{% load static %}{% static 'core/img/politica-bg.jpg' %}{% endblock %}
 

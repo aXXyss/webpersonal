@@ -1,8 +1,9 @@
 {% extends 'core/base.html' %}
 
 {% load i18n %}
-{% block title %}{% blocktrans %}Blog{% endblocktrans %}{% endblock %}
-{% block meta_description %}{% blocktrans %}Descubre las últimas noticias, artículos y tutoriales sobre tecnología y programación.{% endblocktrans %}{% endblock %}
+
+{% block title %}{% if category %}{{ category.name }} | {% trans "Blog" %}{% else %}{% trans "Blog" %}{% endif %}{% endblock %}
+{% block meta_description %}{% if category %}{% blocktrans with category_name=category.name %}Artículos sobre {{ category_name }}: tutoriales, guías y experiencias reales de desarrollo web con Django, Python y administración de servidores Linux.{% endblocktrans %}{% else %}{% blocktrans %}Descubre las últimas noticias, artículos y tutoriales sobre tecnología, Django, Python y administración de servidores.{% endblocktrans %}{% endif %}{% endblock %}
 
 {% block background %}{% load static %}{% static 'core/img/blog-bg.jpg' %}{% endblock %}
 
@@ -75,8 +76,8 @@
 {% endblock %}
 
 {% block headers %}
-<h1 class="text-white font-weight-black pt-3 mt-n5">{% trans "Blog" %}</h1>
-<p class="lead text-white mt-3">{% trans "Últimas publicaciones" %}</p>
+<h1 class="text-white font-weight-black pt-3 mt-n5">{% if category %}{{ category.name }}{% else %}{% trans "Blog" %}{% endif %}</h1>
+<p class="lead text-white mt-3">{% if category %}{% trans "Artículos sobre" %} {{ category.name }}{% else %}{% trans "Últimas publicaciones" %}{% endif %}</p>
 {% endblock %}
 
 {% block content %}
