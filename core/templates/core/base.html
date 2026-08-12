@@ -526,15 +526,35 @@
         },
         body: JSON.stringify({ token: token })
       })
-        .then(function (res) { return res.json(); })
+        .then(function (res) {
+          if (!res.ok) { throw new Error('HTTP ' + res.status); }
+          return res.json();
+        })
         .then(function (data) {
           if (data.verified) {
             verified = true;
             turnstileBox.style.display = 'none';
             chatBox.style.display = 'flex';
+          } else {
+            showTurnstileError();
           }
+        })
+        .catch(function () {
+          showTurnstileError();
         });
     };
+
+    function showTurnstileError() {
+      var existing = document.getElementById('helpWidgetTurnstileError');
+      if (existing) return; // no duplicar el mensaje
+      var errEl = document.createElement('p');
+      errEl.id = 'helpWidgetTurnstileError';
+      errEl.style.color = '#c0392b';
+      errEl.style.fontSize = '0.85rem';
+      errEl.style.marginTop = '8px';
+      errEl.textContent = "{% trans 'No se pudo verificar. Recarga la página o prueba por WhatsApp.' %}";
+      turnstileBox.insertAdjacentElement('afterend', errEl);
+    }
 
     function getCookie(name) {
       var value = '; ' + document.cookie;

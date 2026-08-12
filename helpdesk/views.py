@@ -1,10 +1,14 @@
 import json
+import requests
 import anthropic
 from django.conf import settings
 from django.http import JsonResponse
 from django.views.decorators.http import require_POST
 from django.views.decorators.csrf import csrf_protect
 from django.core.cache import cache
+import logging
+
+logger = logging.getLogger(__name__)
 
 client = anthropic.Anthropic(api_key=settings.ANTHROPIC_API_KEY)
 
@@ -133,21 +137,29 @@ def verify_turnstile(request):
 
     token = data.get('token', '')
     if not token:
+        logger.warning("Helpdesk verify: token vacío recibido")
         return JsonResponse({'verified': False}, status=400)
 
-    import requests
-    result = requests.post(
-        'https://challenges.cloudflare.com/turnstile/v0/siteverify',
-        data={
-            'secret': settings.TURNSTILE_SECRET_KEY,
-            'response': token,
-            'remoteip': request.META.get('REMOTE_ADDR'),
-        },
-        timeout=5,
-    ).json()
+    ip = get_client_ip(request)
+
+    try:
+        resp = requests.post(
+            'https://challenges.cloudflare.com/turnstile/v0/siteverify',
+            data={
+                'secret': settings.TURNSTILE_SECRET_KEY,
+                'response': token,
+                'remoteip': ip,
+            },
+            timeout=8,
+        )
+        result = resp.json()
+    except requests.RequestException as e:
+        logger.warning(f"Helpdesk verify: fallo de red/timeout: {e}")
+        return JsonResponse({'verified': False, 'error': 'network'}, status=502)
 
     if result.get('success'):
         request.session['chat_verified'] = True
         return JsonResponse({'verified': True})
 
+    logger.warning(f"Helpdesk verify: rechazado por Cloudflare. error-codes: {result.get('error-codes')}, ip: {ip}")
     return JsonResponse({'verified': False}, status=403)

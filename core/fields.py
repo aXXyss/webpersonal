@@ -4,6 +4,9 @@ from django.conf import settings
 from django.core.exceptions import ValidationError
 from django.utils.translation import gettext_lazy as _
 from django.utils.html import format_html
+import logging
+
+logger = logging.getLogger(__name__)
 
 TURNSTILE_VERIFY_URL = "https://challenges.cloudflare.com/turnstile/v0/siteverify"
 
@@ -45,10 +48,12 @@ class TurnstileField(forms.CharField):
             payload["remoteip"] = self.remote_ip
 
         try:
-            resp = requests.post(TURNSTILE_VERIFY_URL, data=payload, timeout=5)
+            resp = requests.post(TURNSTILE_VERIFY_URL, data=payload, timeout=8)
             result = resp.json()
-        except requests.RequestException:
+        except requests.RequestException as e:
+            logger.warning(f"Turnstile: fallo de red/timeout al verificar: {e}")
             raise ValidationError(self.error_messages["invalid"], code="invalid")
 
         if not result.get("success"):
+            logger.warning(f"Turnstile: verificación rechazada por Cloudflare. error-codes: {result.get('error-codes')}")
             raise ValidationError(self.error_messages["invalid"], code="invalid")
