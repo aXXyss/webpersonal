@@ -109,7 +109,7 @@
   height: 64px;
   border-radius: 50%;
   object-fit: cover;
-  margin: -44px auto 10px;
+  margin: -17px auto 10px;
   display: block;
   border: 3px solid #fff;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
@@ -216,4 +216,35 @@
   color: #fff;
   width: 44px;
   cursor: pointer;
+}
+
+.help-widget-demo {
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px dashed #e0e0e0;
+  text-align: center;
+}
+
+.help-widget-demo__label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #555;
+  margin-bottom: 8px;
+}
+
+.help-widget-panel__action--demo {
+  background: linear-gradient(135deg, #7c4dff, #536dfe);
+  color: #fff;
+}
+
+.help-widget-panel__action--demo:hover {
+  filter: brightness(1.05);
+}
+
+.help-widget-demo__note {
+  font-size: 0.72rem;
+  color: #888;
+  margin-top: 8px;
+  margin-bottom: 0;
+  line-height: 1.4;
 }

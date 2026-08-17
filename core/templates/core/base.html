@@ -483,10 +483,22 @@
     </div>
 
     <a href="https://wa.me/34641424864?text={% trans 'Hola, me gustaría más información'|urlencode %}"
-       target="_blank" rel="noopener"
-       class="help-widget-panel__action help-widget-panel__action--whatsapp" style="margin-top: 12px;">
-      {% trans "Prefiero WhatsApp" %}
+      target="_blank" rel="noopener"
+      class="help-widget-panel__action help-widget-panel__action--whatsapp" style="margin-top: 12px;">
+      {% trans "WhatsApp directo (humano)" %}
     </a>
+
+    <div class="help-widget-demo">
+      <p class="help-widget-demo__label">🤖 {% trans "O prueba nuestro asistente" %}</p>
+      <a href="https://wa.me/34641270827?text={% trans 'Hola, quiero probar el bot con IA'|urlencode %}"
+        target="_blank" rel="noopener"
+        class="help-widget-panel__action help-widget-panel__action--demo">
+        {% trans "Asistente de WhatsApp con IA" %}
+      </a>
+      <p class="help-widget-demo__note">
+        {% trans "Este número está gestionado por un asistente con IA — responde automáticamente." %}
+      </p>
+    </div>
   </div>
 </div>
 

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: aXXyss 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-10 11:20+0200\n"
+"POT-Creation-Date: 2026-08-17 17:19+0200\n"
 "PO-Revision-Date: 2026-06-15 17:00+0200\n"
 "Last-Translator: Joaquin Denis\n"
 "Language-Team: English\n"
@@ -18,11 +18,11 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.6\n"
 
-#: fields.py:26
+#: fields.py:29
 msgid "Por favor, verifica que no eres un robot."
 msgstr ""
 
-#: fields.py:27
+#: fields.py:30
 msgid "La verificación ha fallado, inténtalo de nuevo."
 msgstr ""
 
@@ -300,29 +300,49 @@ msgstr "Type your question..."
 msgid "Enviar"
 msgstr "Send"
 
-#: templates/core/base.html:485 templates/core/base.html:499
+#: templates/core/base.html:485 templates/core/base.html:511
 msgid "Hola, me gustaría más información"
 msgstr "Hi, I'd like more information"
 
 #: templates/core/base.html:488
-#, fuzzy
-#| msgid "Escribir por WhatsApp"
-msgid "Prefiero WhatsApp"
-msgstr "Message us on WhatsApp"
+msgid "WhatsApp directo (humano)"
+msgstr "Direct WhatsApp (human)"
 
-#: templates/core/base.html:494
+#: templates/core/base.html:492
+msgid "O prueba nuestro asistente"
+msgstr "Or try our assistant"
+
+#: templates/core/base.html:493
+msgid "Hola, quiero probar el bot con IA"
+msgstr "Hi, I'd like to try the AI bot"
+
+#: templates/core/base.html:496
+msgid "Asistente de WhatsApp con IA"
+msgstr "AI WhatsApp assistant"
+
+#: templates/core/base.html:499
+msgid ""
+"Este número está gestionado por un asistente con IA — responde "
+"automáticamente."
+msgstr "This number is managed by an AI assistant — it replies automatically."
+
+#: templates/core/base.html:506
 msgid "Ayuda"
 msgstr "Help"
 
-#: templates/core/base.html:501
+#: templates/core/base.html:513
 msgid "WhatsApp"
 msgstr "WhatsApp"
 
-#: templates/core/base.html:595
+#: templates/core/base.html:567
+msgid "No se pudo verificar. Recarga la página o prueba por WhatsApp."
+msgstr "Verification failed. Reload the page or try WhatsApp instead."
+
+#: templates/core/base.html:627
 msgid "Ahora mismo no puedo responder, prueba por WhatsApp."
 msgstr "I can't respond right now, please try WhatsApp instead."
 
-#: templates/core/base.html:599
+#: templates/core/base.html:631
 msgid "Error de conexión. Prueba por WhatsApp."
 msgstr "Connection error. Please try WhatsApp instead."
 
@@ -504,15 +524,15 @@ msgstr "What my clients say"
 msgid "reseñas en Google"
 msgstr "Google reviews"
 
-#: templates/core/home.html:108
+#: templates/core/home.html:109
 msgid "Ver todas las reseñas en Google"
 msgstr "See all Google reviews"
 
-#: templates/core/home.html:114
+#: templates/core/home.html:115
 msgid "Dejar una reseña"
 msgstr "Leave a review"
 
-#: templates/core/home.html:117 templates/core/home.html:119
+#: templates/core/home.html:118 templates/core/home.html:120
 msgid "Escanea para dejar tu reseña"
 msgstr "Scan to leave your review"
 
@@ -573,6 +593,16 @@ msgid ""
 "Hero impactante, programas con precios, sección entrenador y formulario de "
 "contacto."
 msgstr "Bold hero, programs with prices, trainer section and contact form."
+
+#, fuzzy
+#~| msgid "Escribir por WhatsApp"
+#~ msgid "Prefiero WhatsApp"
+#~ msgstr "Message us on WhatsApp"
+
+#, fuzzy
+#~| msgid "Ahora mismo no puedo responder, prueba por WhatsApp."
+#~ msgid "También puedes probarlo por WhatsApp"
+#~ msgstr "I can't respond right now, please try WhatsApp instead."
 
 #~ msgid "Programador Web Django en Torrent, Valencia | aXXyss Soluciones"
 #~ msgstr "Django Web Developer in Torrent, Valencia | aXXyss Soluciones"
