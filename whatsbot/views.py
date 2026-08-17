@@ -3,6 +3,7 @@ import hmac
 import json
 import logging
 
+import anthropic
 import requests
 from django.conf import settings
 from django.http import HttpResponse, HttpResponseForbidden, JsonResponse
@@ -68,6 +69,17 @@ def recibir_mensaje(request):
             return JsonResponse({'status': 'ignored'})
 
         mensaje_meta = cambio['messages'][0]
+        mensaje_id = mensaje_meta.get('id')
+
+        # Deduplicación: Meta reintenta el webhook si no recibe 200 a tiempo,
+        # lo que puede generar respuestas duplicadas para el mismo mensaje.
+        if mensaje_id:
+            dedup_key = f'whatsbot_msg_{mensaje_id}'
+            if cache.get(dedup_key):
+                logger.info("Mensaje duplicado ignorado: %s", mensaje_id)
+                return JsonResponse({'status': 'duplicate'})
+            cache.set(dedup_key, True, timeout=3600)
+
         numero = mensaje_meta['from']
         texto_entrante = mensaje_meta.get('text', {}).get('body', '')
 
