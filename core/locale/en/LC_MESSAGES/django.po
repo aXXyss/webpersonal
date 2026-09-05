@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: aXXyss 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-17 17:19+0200\n"
-"PO-Revision-Date: 2026-06-15 17:00+0200\n"
+"POT-Creation-Date: 2026-09-05 20:27+0200\n"
+"PO-Revision-Date: 2026-09-05 20:27+0200\n"
 "Last-Translator: Joaquin Denis\n"
 "Language-Team: English\n"
 "Language: en\n"
@@ -20,180 +20,247 @@ msgstr ""
 
 #: fields.py:29
 msgid "Por favor, verifica que no eres un robot."
-msgstr ""
+msgstr "Please confirm that you are not a robot."
 
 #: fields.py:30
 msgid "La verificación ha fallado, inténtalo de nuevo."
-msgstr ""
+msgstr "Verification failed, please try again."
 
-#: templates/core/about.html:4 templates/core/base.html:133
-#: templates/core/base.html:273
+#: templates/core/about.html:4 templates/core/base.html:137
+#: templates/core/base.html:285
 #: templates/core/base_perso_cookies_banner.html:77
 #: templates/core/base_perso_cookies_banner.html:211
 msgid "Sobre mí"
 msgstr "About me"
 
-#: templates/core/about.html:5 templates/core/home.html:7
+#: templates/core/about.html:5
 msgid ""
-"Joaquin Denis — Programador web freelance en Torrent, Valencia. "
-"Especializado en Django y Python. Desarrollo web a medida, e-commerce y "
-"software de gestión para empresas."
+"Joaquin Denis — Desarrollador especializado en software de gestión y "
+"trazabilidad para la industria forestal. Más de 25 años entre Costa de "
+"Marfil, Camerún y Congo. Django, Python y Linux."
 msgstr ""
-"Joaquin Denis — Freelance web developer in Torrent, Valencia. Specialized in "
-"Django and Python. Custom web development, e-commerce and business "
-"management software."
+"Joaquin Denis — Developer specialized in management and traceability "
+"software for the forestry industry. Over 25 years between Ivory Coast, "
+"Cameroon and Congo. Django, Python and Linux."
 
 #: templates/core/about.html:24
-msgid "Acerca de"
-msgstr "About me"
+msgid "Veinticinco años sobre el terreno"
+msgstr "Twenty-five years on the ground"
 
 #: templates/core/about.html:25
-msgid "Biografía"
-msgstr "Biography"
+msgid "Suiza · Costa de Marfil · Venezuela · Camerún · Congo · España"
+msgstr "Switzerland · Ivory Coast · Venezuela · Cameroon · Congo · Spain"
 
-#: templates/core/about.html:40
-msgid "Programador web freelance en Torrent, Valencia"
-msgstr "Freelance web developer in Torrent, Valencia"
+#: templates/core/about.html:36
+msgid "Fotografía de perfil de Joaquin Denis"
+msgstr "Profile photo of Joaquin Denis"
 
 #: templates/core/about.html:41
-msgid ""
-"Soy Joaquin Denis, programador web independiente con sede en Torrent "
-"(Valencia). Con más de 25 años de experiencia en informática y desarrollo de "
-"software, me especializo en la creación de aplicaciones web a medida con <a "
-"href=\"https://www.djangoproject.com/\" target=\"_blank\" "
-"rel=\"noopener\"><b>Django</b></a> y <a href=\"https://www.python.org/\" "
-"target=\"_blank\" rel=\"noopener\"><b>Python</b></a>."
-msgstr ""
-"I am Joaquin Denis, an independent web developer based in Torrent "
-"(Valencia). With over 25 years of experience in IT and software development, "
-"I specialize in building custom web applications with <a href=\"https://"
-"www.djangoproject.com/\" target=\"_blank\" rel=\"noopener\"><b>Django</b></"
-"a> and <a href=\"https://www.python.org/\" target=\"_blank\" "
-"rel=\"noopener\"><b>Python</b></a>."
+msgid "Quién soy"
+msgstr "Who I am"
 
 #: templates/core/about.html:42
 msgid ""
-"Trabajo de forma remota con clientes en Europa, América del Norte y África, "
-"transformando procesos empresariales complejos en herramientas digitales "
-"eficientes y fiables."
+"Soy Joaquin Denis, desarrollador independiente especializado en software de "
+"gestión y trazabilidad para la industria forestal y de transformación de la "
+"madera. Trabajo desde <b>Torrent (Valencia)</b> con clientes en África "
+"central, Europa y América del Norte."
 msgstr ""
-"I work remotely with clients in Europe, North America and Africa, "
-"transforming complex business processes into efficient and reliable digital "
-"tools."
+"I'm Joaquin Denis, an independent developer specialized in management and "
+"traceability software for the forestry and timber processing industry. I "
+"work from <b>Torrent (Valencia)</b> with clients in Central Africa, Europe "
+"and North America."
 
 #: templates/core/about.html:44
-msgid "Servicios que Ofrezco"
-msgstr "Services I Offer"
+msgid "Casi treinta años en el sector"
+msgstr "Nearly thirty years in the industry"
+
+#: templates/core/about.html:45
+msgid ""
+"En <b>1997</b> me instalé en <b>Costa de Marfil</b> para trabajar como "
+"informático en empresas del sector forestal. Allí desarrollé mis primeros "
+"programas de gestión: primero para producción de chapa fina y desenrollo, "
+"después para aserraderos. Cuando me independicé seguí mejorándolos con cada "
+"nuevo cliente."
+msgstr ""
+"In <b>1997</b> I moved to <b>Ivory Coast</b> to work as an IT professional "
+"in forestry companies. There I developed my first management programs: "
+"first for veneer and peeling production, then for sawmills. Once I went "
+"independent, I kept improving them with each new client."
 
 #: templates/core/about.html:46
 msgid ""
-"<b>Desarrollo web</b> personalizado con <a href=\"https://"
-"www.djangoproject.com/\" target=\"_blank\" rel=\"noopener\"><b>Django</b></"
-"a> y <a href=\"https://wordpress.org/\" target=\"_blank\" "
-"rel=\"noopener\"><b>WordPress</b></a>"
+"Antes de mudarme a Venezuela empecé con un cliente en la <b>República del "
+"Congo</b>, para quien construí el sistema de trazabilidad de troncos con "
+"puntos GPS, transporte, aserradero y secaderos, junto con la preparación "
+"para la certificación."
 msgstr ""
-"Custom <b>web development</b> with <a href=\"https://www.djangoproject.com/"
-"\" target=\"_blank\" rel=\"noopener\"><b>Django</b></a> and <a "
-"href=\"https://wordpress.org/\" target=\"_blank\" "
-"rel=\"noopener\"><b>WordPress</b></a>"
+"Before moving to Venezuela, I started working with a client in the "
+"<b>Republic of Congo</b>, for whom I built the log traceability system with "
+"GPS points, transport, sawmill and kiln drying, along with certification "
+"readiness."
 
 #: templates/core/about.html:47
-msgid "<b>Diseño web</b> responsive y atractivo"
-msgstr "Responsive and attractive <b>Web Design</b>"
-
-#: templates/core/about.html:48
-msgid "<b>E-commerce</b> y tiendas online"
-msgstr "<b>E-commerce</b> and online stores"
+msgid ""
+"En <b>Venezuela</b> monté una empresa de servicios informáticos, que dirigí "
+"durante varios años mientras seguía atendiendo en remoto al cliente del "
+"Congo. Aquel sistema sigue en explotación hoy."
+msgstr ""
+"In <b>Venezuela</b> I set up an IT services company, which I ran for "
+"several years while continuing to support the Congo client remotely. That "
+"system is still in operation today."
 
 #: templates/core/about.html:49
-msgid "<b>Software de gestión</b> empresarial a medida"
-msgstr "Custom business <b>management software</b>"
+msgid "Por qué la madera"
+msgstr "Why timber"
 
 #: templates/core/about.html:50
-msgid "<b>Alojamiento web</b> y configuración de servidores Linux"
-msgstr "<b>Web hosting</b> and Linux server configuration"
+msgid ""
+"Porque conozco el terreno. Sé lo que es un parque de troncos, una carta de "
+"porte y un permiso de corte. Sé lo que pasa cuando el enlace satelital se "
+"cae a mitad de una sincronización y el equipo de campo sigue trabajando "
+"igualmente. Ese contexto no se aprende leyendo una especificación."
+msgstr ""
+"Because I know the ground. I know what a log yard is, what a waybill is, "
+"and what a felling permit is. I know what happens when the satellite link "
+"drops mid-sync and the field team keeps working anyway. That context isn't "
+"learned by reading a spec sheet."
 
 #: templates/core/about.html:51
-msgid "<b>Optimización SEO</b> y mantenimiento web"
-msgstr "<b>SEO optimization</b> and web maintenance"
+msgid ""
+"El software de gestión que desarrollé está en explotación continua en "
+"<b>Congo desde 2006</b> y en <b>Camerún desde 2013</b>, y ambas concesiones "
+"están certificadas <b>OLB</b>. Cubre la cadena entera: prospección, "
+"inventario GPS, explotación, parque de troncos, aserradero, embarque y "
+"facturación."
+msgstr ""
+"The management software I developed has been running continuously in "
+"<b>Congo since 2006</b> and in <b>Cameroon since 2013</b>, and both "
+"concessions are <b>OLB</b> certified. It covers the entire chain: "
+"prospecting, GPS inventory, logging, log yard, sawmill, shipping and "
+"invoicing."
+
+#: templates/core/about.html:53
+msgid "Cómo trabajo"
+msgstr "How I work"
 
 #: templates/core/about.html:54
-#, fuzzy
-#| msgid "Mis Habilidades Técnicas"
-msgid "Habilidades Técnicas"
-msgstr "Technical Skills"
+msgid ""
+"En remoto la mayor parte del tiempo, con desplazamientos a terreno cuando el "
+"proyecto lo requiere: puesta en marcha, formación de equipos o resolución de "
+"incidencias que necesitan estar allí. Hablo español y francés, y trabajo "
+"habitualmente en ambos idiomas con equipos multiculturales."
+msgstr ""
+"Remotely most of the time, with on-site trips when the project requires "
+"it: go-live, team training, or issues that need a physical presence. I "
+"speak Spanish and French, and regularly work in both languages with "
+"multicultural teams."
 
 #: templates/core/about.html:56
-msgid ""
-"<b>Lenguajes: </b><a href=\"https://www.python.org/\" target=\"_blank\" "
-"rel=\"noopener\">Python</a>, <a href=\"https://developer.mozilla.org/es/docs/"
-"Web/HTML\" target=\"_blank\" rel=\"noopener\">HTML</a>, <a href=\"https://"
-"developer.mozilla.org/es/docs/Web/CSS\" target=\"_blank\" "
-"rel=\"noopener\">CSS</a>"
-msgstr ""
-"<b>Languages: </b><a href=\"https://www.python.org/\" target=\"_blank\" "
-"rel=\"noopener\">Python</a>, <a href=\"https://developer.mozilla.org/en/docs/"
-"Web/HTML\" target=\"_blank\" rel=\"noopener\">HTML</a>, <a href=\"https://"
-"developer.mozilla.org/en/docs/Web/CSS\" target=\"_blank\" "
-"rel=\"noopener\">CSS</a>"
-
-#: templates/core/about.html:57
-msgid ""
-"<b>Frameworks: </b><a href=\"https://www.djangoproject.com/\" "
-"target=\"_blank\" rel=\"noopener\">Django</a>, <a href=\"https://"
-"wordpress.org/\" target=\"_blank\" rel=\"noopener\">WordPress</a>"
-msgstr ""
-"<b>Frameworks: </b><a href=\"https://www.djangoproject.com/\" "
-"target=\"_blank\" rel=\"noopener\">Django</a>, <a href=\"https://"
-"wordpress.org/\" target=\"_blank\" rel=\"noopener\">WordPress</a>"
+msgid "Ámbitos de trabajo"
+msgstr "Areas of work"
 
 #: templates/core/about.html:58
 msgid ""
-"<b>Servidores: </b><a href=\"https://www.debian.org/\" target=\"_blank\" "
-"rel=\"noopener\">Linux (Debian</a>, <a href=\"https://ubuntu.com/\" "
-"target=\"_blank\" rel=\"noopener\">Ubuntu</a>), <a href=\"https://"
-"httpd.apache.org/\" target=\"_blank\" rel=\"noopener\">Apache</a>, <a "
-"href=\"https://nginx.org/\" target=\"_blank\" rel=\"noopener\">nginx</a>, <a "
-"href=\"https://gunicorn.org/\" target=\"_blank\" rel=\"noopener\">gunicorn</"
-"a>"
+"<b>Trazabilidad y conformidad</b>: geolocalización de origen, cadena de "
+"custodia, declaraciones EUDR"
 msgstr ""
-"<b>Servers: </b><a href=\"https://www.debian.org/\" target=\"_blank\" "
-"rel=\"noopener\">Linux (Debian</a>, <a href=\"https://ubuntu.com/\" "
-"target=\"_blank\" rel=\"noopener\">Ubuntu</a>), <a href=\"https://"
-"httpd.apache.org/\" target=\"_blank\" rel=\"noopener\">Apache</a>, <a "
-"href=\"https://nginx.org/\" target=\"_blank\" rel=\"noopener\">nginx</a>, <a "
-"href=\"https://gunicorn.org/\" target=\"_blank\" rel=\"noopener\">gunicorn</"
-"a>"
+"<b>Traceability and compliance</b>: origin geolocation, chain of custody, "
+"EUDR due diligence statements"
 
 #: templates/core/about.html:59
 msgid ""
-"<b>Bases de datos: </b><a href=\"https://www.mysql.com/\" target=\"_blank\" "
-"rel=\"noopener\">MySQL</a>, <a href=\"https://mariadb.org/\" "
-"target=\"_blank\" rel=\"noopener\">MariaDB</a>"
+"<b>Software de gestión</b> a medida para explotación forestal y "
+"transformación"
 msgstr ""
-"<b>Databases: </b><a href=\"https://www.mysql.com/\" target=\"_blank\" "
-"rel=\"noopener\">MySQL</a>, <a href=\"https://mariadb.org/\" "
-"target=\"_blank\" rel=\"noopener\">MariaDB</a>"
+"Custom <b>management software</b> for logging operations and timber "
+"processing"
 
 #: templates/core/about.html:60
 msgid ""
-"<b>Virtualización: </b><a href=\"https://www.proxmox.com/\" "
-"target=\"_blank\" rel=\"noopener\">Proxmox</a>, <a href=\"https://"
-"www.vmware.com/\" target=\"_blank\" rel=\"noopener\">VMware</a>"
+"<b>Modernización de sistemas legacy</b> hacia aplicaciones web sin pérdida "
+"de datos"
 msgstr ""
-"<b>Virtualization: </b><a href=\"https://www.proxmox.com/\" "
-"target=\"_blank\" rel=\"noopener\">Proxmox</a>, <a href=\"https://"
-"www.vmware.com/\" target=\"_blank\" rel=\"noopener\">VMware</a>"
+"<b>Legacy system modernization</b> into web applications with no data loss"
 
 #: templates/core/about.html:61
 msgid ""
-"<b>Automatización: </b><a href=\"https://www.ansible.com/\" "
-"target=\"_blank\" rel=\"noopener\">Ansible</a> (iniciando)"
+"<b>Infraestructura</b>: servidores Linux, bases de datos, copias de "
+"seguridad y continuidad"
 msgstr ""
-"<b>Automation: </b><a href=\"https://www.ansible.com/\" target=\"_blank\" "
-"rel=\"noopener\">Ansible</a> (beginner)"
+"<b>Infrastructure</b>: Linux servers, databases, backups and continuity"
 
 #: templates/core/about.html:62
+msgid "<b>Desarrollo web</b> y sitios corporativos con Django y WordPress"
+msgstr "<b>Web development</b> and corporate sites with Django and WordPress"
+
+#: templates/core/about.html:65
+msgid "Herramientas"
+msgstr "Tools"
+
+#: templates/core/about.html:67
+msgid ""
+"<b>Lenguajes: </b><a href=\"https://www.python.org/\" target=\"_blank\" "
+"rel=\"noopener\">Python</a>, SQL, VBA, <a href=\"https://"
+"developer.mozilla.org/es/docs/Web/HTML\" target=\"_blank\" "
+"rel=\"noopener\">HTML</a>, <a href=\"https://developer.mozilla.org/es/docs/"
+"Web/CSS\" target=\"_blank\" rel=\"noopener\">CSS</a>"
+msgstr ""
+"<b>Languages: </b><a href=\"https://www.python.org/\" target=\"_blank\" "
+"rel=\"noopener\">Python</a>, SQL, VBA, <a href=\"https://developer.mozilla."
+"org/en/docs/Web/HTML\" target=\"_blank\" rel=\"noopener\">HTML</a>, <a "
+"href=\"https://developer.mozilla.org/en/docs/Web/CSS\" target=\"_blank\" "
+"rel=\"noopener\">CSS</a>"
+
+#: templates/core/about.html:68
+msgid ""
+"<b>Frameworks: </b><a href=\"https://www.djangoproject.com/\" "
+"target=\"_blank\" rel=\"noopener\">Django</a>, <a href=\"https://"
+"wordpress.org/\" target=\"_blank\" rel=\"noopener\">WordPress</a>"
+msgstr ""
+"<b>Frameworks: </b><a href=\"https://www.djangoproject.com/\" "
+"target=\"_blank\" rel=\"noopener\">Django</a>, <a href=\"https://"
+"wordpress.org/\" target=\"_blank\" rel=\"noopener\">WordPress</a>"
+
+#: templates/core/about.html:69
+msgid ""
+"<b>Datos y cartografía: </b><a href=\"https://mariadb.org/\" "
+"target=\"_blank\" rel=\"noopener\">MariaDB</a>, <a href=\"https://"
+"www.mysql.com/\" target=\"_blank\" rel=\"noopener\">MySQL</a>, <a "
+"href=\"https://qgis.org/\" target=\"_blank\" rel=\"noopener\">QGIS</a>, "
+"importación GPS"
+msgstr ""
+"<b>Data and mapping: </b><a href=\"https://mariadb.org/\" target=\"_blank\" "
+"rel=\"noopener\">MariaDB</a>, <a href=\"https://www.mysql.com/\" "
+"target=\"_blank\" rel=\"noopener\">MySQL</a>, <a href=\"https://qgis.org/\" "
+"target=\"_blank\" rel=\"noopener\">QGIS</a>, GPS import"
+
+#: templates/core/about.html:70
+msgid ""
+"<b>Servidores: </b><a href=\"https://www.debian.org/\" target=\"_blank\" "
+"rel=\"noopener\">Linux (Debian</a>, <a href=\"https://ubuntu.com/\" "
+"target=\"_blank\" rel=\"noopener\">Ubuntu</a>), <a href=\"https://nginx.org/"
+"\" target=\"_blank\" rel=\"noopener\">nginx</a>, <a href=\"https://"
+"gunicorn.org/\" target=\"_blank\" rel=\"noopener\">gunicorn</a>, <a "
+"href=\"https://httpd.apache.org/\" target=\"_blank\" "
+"rel=\"noopener\">Apache</a>"
+msgstr ""
+"<b>Servers: </b><a href=\"https://www.debian.org/\" target=\"_blank\" "
+"rel=\"noopener\">Linux (Debian</a>, <a href=\"https://ubuntu.com/\" "
+"target=\"_blank\" rel=\"noopener\">Ubuntu</a>), <a href=\"https://nginx.org/"
+"\" target=\"_blank\" rel=\"noopener\">nginx</a>, <a href=\"https://gunicorn."
+"org/\" target=\"_blank\" rel=\"noopener\">gunicorn</a>, <a href=\"https://"
+"httpd.apache.org/\" target=\"_blank\" rel=\"noopener\">Apache</a>"
+
+#: templates/core/about.html:71
+msgid ""
+"<b>Virtualización: </b><a href=\"https://www.proxmox.com/\" "
+"target=\"_blank\" rel=\"noopener\">Proxmox</a>, Docker"
+msgstr ""
+"<b>Virtualization: </b><a href=\"https://www.proxmox.com/\" "
+"target=\"_blank\" rel=\"noopener\">Proxmox</a>, Docker"
+
+#: templates/core/about.html:72
 msgid ""
 "<b>ERP: </b><a href=\"https://www.dolibarr.org/\" target=\"_blank\" "
 "rel=\"noopener\">Dolibarr</a>"
@@ -201,12 +268,9 @@ msgstr ""
 "<b>ERP: </b><a href=\"https://www.dolibarr.org/\" target=\"_blank\" "
 "rel=\"noopener\">Dolibarr</a>"
 
-#: templates/core/about.html:65 templates/core/base.html:145
-#: templates/core/base.html:279
-#: templates/core/base_perso_cookies_banner.html:87
-#: templates/core/base_perso_cookies_banner.html:217
-msgid "Contacto"
-msgstr "Contact"
+#: templates/core/about.html:76
+msgid "Hablemos de su proyecto"
+msgstr "Let's talk about your project"
 
 #: templates/core/base.html:10
 msgid ""
@@ -221,128 +285,143 @@ msgstr ""
 msgid "aXXyss Soluciones"
 msgstr "aXXyss Solutions"
 
-#: templates/core/base.html:105 templates/core/base.html:108
-#: templates/core/base.html:458
+#: templates/core/base.html:109 templates/core/base.html:112
+#: templates/core/base.html:479
 msgid "Soluciones"
 msgstr "Solutions"
 
-#: templates/core/base.html:127 templates/core/base.html:270
+#: templates/core/base.html:131 templates/core/base.html:282
 #: templates/core/base_perso_cookies_banner.html:72
 #: templates/core/base_perso_cookies_banner.html:208
 msgid "Portada"
 msgstr "Home"
 
-#: templates/core/base.html:139 templates/core/base.html:276
+#: templates/core/base.html:143 templates/core/base.html:300
 #: templates/core/base_perso_cookies_banner.html:82
 #: templates/core/base_perso_cookies_banner.html:214
 msgid "Portafolio"
 msgstr "Portfolio"
 
-#: templates/core/base.html:151 templates/core/base.html:282
+#: templates/core/base.html:149 templates/core/base.html:306
+#: templates/core/base_perso_cookies_banner.html:87
+#: templates/core/base_perso_cookies_banner.html:217
+msgid "Contacto"
+msgstr "Contact"
+
+#: templates/core/base.html:155 templates/core/base.html:303
 #: templates/core/base_perso_cookies_banner.html:92
 #: templates/core/base_perso_cookies_banner.html:220
 msgid "Blog"
 msgstr "Blog"
 
-#: templates/core/base.html:157 templates/core/base.html:285
+#: templates/core/base.html:160 templates/core/base.html:291
+#: templates/core/servicios.html:5
+msgid "Servicios"
+msgstr "Services"
+
+#: templates/core/base.html:163 templates/core/base.html:294
+msgid "Infraestructura"
+msgstr "Infrastructure"
+
+#: templates/core/base.html:164 templates/core/base.html:297
 #: templates/core/demos.html:16
 msgid "Demos"
 msgstr "Demos"
 
-#: templates/core/base.html:179
+#: templates/core/base.html:191
 #: templates/core/base_perso_cookies_banner.html:115
 msgid "Iniciar sesión"
 msgstr "Log In"
 
-#: templates/core/base.html:267
+#: templates/core/base.html:279
 #: templates/core/base_perso_cookies_banner.html:205
 msgid "Información"
 msgstr "Information"
 
-#: templates/core/base.html:291
+#: templates/core/base.html:312
 #: templates/core/base_perso_cookies_banner.html:226
 msgid "Legal"
 msgstr "Legal"
 
-#: templates/core/base.html:312
+#: templates/core/base.html:333
 msgid "Desarrollo Web en Torrent"
 msgstr "Web Development in Torrent (Valencia)"
 
-#: templates/core/base.html:317
+#: templates/core/base.html:338
 msgid "Hecho con"
 msgstr "Powered by"
 
-#: templates/core/base.html:319
+#: templates/core/base.html:340
 msgid "por"
 msgstr "by"
 
-#: templates/core/base.html:451
+#: templates/core/base.html:472
 msgid "Cerrar"
 msgstr "Close"
 
-#: templates/core/base.html:452
+#: templates/core/base.html:473
 msgid "Hola"
 msgstr "Hello"
 
-#: templates/core/base.html:453
+#: templates/core/base.html:474
 msgid "¿En qué podemos ayudarte?"
 msgstr "How can we help you?"
 
-#: templates/core/base.html:470
+#: templates/core/base.html:491
 msgid "¡Hola! Soy un asistente automatizado de aXXyss. ¿En qué puedo ayudarte?"
 msgstr "Hi! I'm an automated assistant from aXXyss. How can I help you?"
 
-#: templates/core/base.html:476
+#: templates/core/base.html:497
 msgid "Escribe tu pregunta..."
 msgstr "Type your question..."
 
-#: templates/core/base.html:477
+#: templates/core/base.html:498
 msgid "Enviar"
 msgstr "Send"
 
-#: templates/core/base.html:485 templates/core/base.html:511
+#: templates/core/base.html:506 templates/core/base.html:532
 msgid "Hola, me gustaría más información"
 msgstr "Hi, I'd like more information"
 
-#: templates/core/base.html:488
+#: templates/core/base.html:509
 msgid "WhatsApp directo (humano)"
 msgstr "Direct WhatsApp (human)"
 
-#: templates/core/base.html:492
+#: templates/core/base.html:513
 msgid "O prueba nuestro asistente"
 msgstr "Or try our assistant"
 
-#: templates/core/base.html:493
+#: templates/core/base.html:514
 msgid "Hola, quiero probar el bot con IA"
 msgstr "Hi, I'd like to try the AI bot"
 
-#: templates/core/base.html:496
+#: templates/core/base.html:517
 msgid "Asistente de WhatsApp con IA"
 msgstr "AI WhatsApp assistant"
 
-#: templates/core/base.html:499
+#: templates/core/base.html:520
 msgid ""
 "Este número está gestionado por un asistente con IA — responde "
 "automáticamente."
 msgstr "This number is managed by an AI assistant — it replies automatically."
 
-#: templates/core/base.html:506
+#: templates/core/base.html:527
 msgid "Ayuda"
 msgstr "Help"
 
-#: templates/core/base.html:513
+#: templates/core/base.html:534
 msgid "WhatsApp"
 msgstr "WhatsApp"
 
-#: templates/core/base.html:567
+#: templates/core/base.html:588
 msgid "No se pudo verificar. Recarga la página o prueba por WhatsApp."
 msgstr "Verification failed. Reload the page or try WhatsApp instead."
 
-#: templates/core/base.html:627
+#: templates/core/base.html:648
 msgid "Ahora mismo no puedo responder, prueba por WhatsApp."
 msgstr "I can't respond right now, please try WhatsApp instead."
 
-#: templates/core/base.html:631
+#: templates/core/base.html:652
 msgid "Error de conexión. Prueba por WhatsApp."
 msgstr "Connection error. Please try WhatsApp instead."
 
@@ -404,11 +483,11 @@ msgid ""
 "          "
 msgstr ""
 "\n"
-"            Need a website for your business? Here are real examples of what "
-"I can build for you..\n"
+"            Need a website for your business? Here are real examples of "
+"what I can build for you.\n"
 "            Professional, fast and hassle-free. "
 
-#: templates/core/demos.html:36
+#: templates/core/demos.html:36 templates/core/servicios.html:40
 msgid "Solicitar presupuesto"
 msgstr "Request a quote"
 
@@ -439,102 +518,560 @@ msgstr ""
 msgid "Hablemos de tu proyecto"
 msgstr "Let's talk about your project"
 
-#: templates/core/home.html:4
-msgid "Programador Web Django en Torrent, Valencia"
-msgstr "Web developer in Torrent, Valencia"
+#: templates/core/fuelaxflow.html:5
+msgid "FuelAxFlow — Gestión de carburante"
+msgstr "FuelAxFlow — Fuel Management"
 
-#: templates/core/home.html:29
-msgid "Programador web y desarrollador de software | Django & Python"
-msgstr "Web developer and software developer | Django & Python"
+#: templates/core/fuelaxflow.html:7
+msgid ""
+"FuelAxFlow: aplicación de gestión de carburante para los sectores forestal, "
+"obra pública, minero y transporte. Multi-depósito, instalación local, sin "
+"dependencia de internet."
+msgstr ""
+"FuelAxFlow: fuel management application for the forestry, construction, "
+"mining and transport sectors. Multi-depot, local installation, no internet "
+"dependency."
+
+#: templates/core/fuelaxflow.html:18
+msgid "Gestión de carburante para forestal, obra pública, minería y transporte"
+msgstr "Fuel management for forestry, construction, mining and transport"
+
+#: templates/core/fuelaxflow.html:19
+msgid "Instalación local · Multi-depósito · Sin dependencia de internet"
+msgstr "Local installation · Multi-depot · No internet dependency"
+
+#: templates/core/fuelaxflow.html:27
+msgid "El carburante es el segundo coste de la explotación"
+msgstr "Fuel is the second-largest operating cost"
+
+#: templates/core/fuelaxflow.html:28
+msgid ""
+"Y suele ser el peor controlado. Depósitos repartidos entre bosque, fábrica y "
+"estación, consumos anotados en papel, distribuciones a terceros sin registro "
+"fiable y facturación que se reconstruye a fin de mes de memoria. FuelAxFlow "
+"cierra ese circuito."
+msgstr ""
+"And usually the worst controlled one. Depots scattered across the forest, "
+"the mill and the station, consumption logged on paper, third-party "
+"distributions with no reliable record, and invoicing reconstructed from "
+"memory at month's end. FuelAxFlow closes that loop."
+
+#: templates/core/fuelaxflow.html:30
+msgid "Qué cubre"
+msgstr "What it covers"
+
+#: templates/core/fuelaxflow.html:32
+msgid ""
+"<b>Stock multi-depósito</b>: central, bosque, fábrica, estación y tránsito, "
+"con alertas de nivel bajo"
+msgstr ""
+"<b>Multi-depot stock</b>: central, forest, mill, station and transit, with "
+"low-level alerts"
+
+#: templates/core/fuelaxflow.html:33
+msgid "<b>Circuito de compra</b>: pedidos, recepciones y facturas de proveedor"
+msgstr "<b>Purchase workflow</b>: orders, receipts and supplier invoices"
+
+#: templates/core/fuelaxflow.html:34
+msgid ""
+"<b>Consumos</b> por equipo y contador, con imputación analítica por centro "
+"de coste"
+msgstr ""
+"<b>Consumption</b> by equipment and meter, with cost-center allocation"
+
+#: templates/core/fuelaxflow.html:35
+msgid ""
+"<b>Transferencias entre depósitos</b>, con control de las diferencias en "
+"tránsito"
+msgstr ""
+"<b>Transfers between depots</b>, with in-transit variance control"
+
+#: templates/core/fuelaxflow.html:36
+msgid ""
+"<b>Distribución a terceros</b> y prefacturación de transportistas y clientes"
+msgstr ""
+"<b>Third-party distribution</b> and pre-invoicing for carriers and clients"
+
+#: templates/core/fuelaxflow.html:37
+msgid "<b>Cuadros de mando</b> y perfiles de usuario por función"
+msgstr "<b>Dashboards</b> and role-based user profiles"
+
+#: templates/core/fuelaxflow.html:42
+msgid "Cuadro de mando de existencias de FuelAxFlow"
+msgstr "FuelAxFlow stock dashboard"
+
+#: templates/core/fuelaxflow.html:44
+msgid "Cuadro de mando de existencias por depósito"
+msgstr "Stock dashboard by depot"
+
+#: templates/core/fuelaxflow.html:47
+msgid "Instalación local, no en la nube"
+msgstr "Local installation, not in the cloud"
+
+#: templates/core/fuelaxflow.html:48
+msgid ""
+"FuelAxFlow se instala en los servidores de la empresa. Los datos no salen de "
+"sus instalaciones y el sistema sigue funcionando aunque la conexión falle, "
+"que en un sitio forestal es la norma y no la excepción. Existe además acceso "
+"móvil para la captura en campo."
+msgstr ""
+"FuelAxFlow is installed on the company's own servers. Data never leaves the "
+"premises, and the system keeps working even if the connection drops — the "
+"norm rather than the exception on a forestry site. Mobile access is also "
+"available for field data entry."
+
+#: templates/core/fuelaxflow.html:50
+msgid "Estado actual"
+msgstr "Current status"
+
+#: templates/core/fuelaxflow.html:51
+msgid ""
+"FuelAxFlow se encuentra en <b>despliegue piloto</b> en la República del "
+"Congo y en Camerún, sobre instalación local en servidores del cliente. "
+"Estamos abiertos a incorporar nuevas empresas al programa piloto en "
+"condiciones preferentes."
+msgstr ""
+"FuelAxFlow is currently in <b>pilot deployment</b> in the Republic of Congo "
+"and Cameroon, on local installations on the client's own servers. We are "
+"open to bringing new companies into the pilot program on preferential "
+"terms."
+
+#: templates/core/fuelaxflow.html:53
+msgid "Solicitar una demostración"
+msgstr "Request a demo"
+
+#: templates/core/home.html:4
+msgid "Software de Gestión y Trazabilidad Forestal"
+msgstr "Forestry Management and Traceability Software"
+
+#: templates/core/home.html:7
+msgid ""
+"Software de gestión y trazabilidad forestal: GPS por tronco, de la "
+"prospección al embarque. Conformidad EUDR. En producción desde 1997 en "
+"concesiones certificadas OLB de República del Congo y Camerún."
+msgstr ""
+"Forestry management and traceability software: GPS per log, from "
+"prospecting to shipping. EUDR compliance. In production since 1997 in OLB "
+"certified concessions in the Republic of Congo and Cameroon."
 
 #: templates/core/home.html:30
+msgid "Trazabilidad forestal, del bosque al embarque"
+msgstr "Forestry traceability, from the forest to the shipment"
+
+#: templates/core/home.html:33
 msgid ""
-"Soluciones digitales a medida para empresas en Europa, América del Norte y "
-"África"
+"Suite de gestión para la industria forestal · Trazabilidad GPS por tronco · "
+"Conformidad EUDR"
 msgstr ""
-"Custom digital solutions for businesses in Europe, North America and Africa"
+"Management suite for the forestry industry · GPS traceability per log · "
+"EUDR compliance"
 
-#: templates/core/home.html:44
-msgid "Desarrollo Web y Software a Medida"
-msgstr "Custom Web Development and Software"
-
-#: templates/core/home.html:45
+#: templates/core/home.html:34
 msgid ""
-"Desde mi estudio en <b>Torrent (Valencia)</b>, desarrollo <b>soluciones web</"
-"b> y software a medida para empresas. Especializado en <b>Django y Python</"
-"b>, diseño aplicaciones eficientes adaptadas a los procesos reales de cada "
-"cliente."
+"Desarrollando software forestal desde 1997 · En producción en concesiones "
+"certificadas OLB de República del Congo y Camerún"
 msgstr ""
-"From my studio in <b>Torrent (Valencia)</b>, I develop <b>web solutions</b> "
-"and custom software for businesses. Specialized in <b>Django and Python</b>, "
-"I design efficient applications tailored to each client's real processes."
+"Developing forestry software since 1997 · In production in OLB certified "
+"concessions in the Republic of Congo and Cameroon"
 
-#: templates/core/home.html:47
-msgid "Modernización de Software Empresarial"
-msgstr "Business Software Modernization"
-
-#: templates/core/home.html:48
-msgid ""
-"Cuento con amplia experiencia en la transición de sistemas legacy hacia "
-"potentes aplicaciones <b>web con Django</b>. Esta experiencia me permite "
-"migrar sistemas antiguos a la web sin pérdida de datos y adaptados a los "
-"procesos reales de la empresa."
-msgstr ""
-"I have extensive experience in transitioning legacy systems to powerful "
-"<b>web applications with Django</b>. This allows me to migrate old systems "
-"to the web without data loss, adapted to real business processes."
-
-#: templates/core/home.html:50
-msgid "Soluciones E-commerce y WordPress"
-msgstr "E-commerce and WordPress Solutions"
+#: templates/core/home.html:38
+msgid "Hablemos de su trazabilidad EUDR"
+msgstr "Let's talk about your EUDR traceability"
 
 #: templates/core/home.html:51
-msgid ""
-"Además de aplicaciones a medida, desarrollo <b>tiendas online con WordPress "
-"y WooCommerce</b>, asegurando plataformas rápidas, seguras y adaptadas a las "
-"necesidades de cada negocio."
-msgstr ""
-"In addition to custom applications, I develop <b>online stores with "
-"WordPress and WooCommerce</b>, ensuring fast, secure platforms tailored to "
-"each business's needs."
+msgid "Diciembre de 2026: la fecha ya está fijada"
+msgstr "December 2026: the deadline is already set"
 
 #: templates/core/home.html:53
-msgid "¿Tienes un proyecto en mente?"
-msgstr "Do you have a project in mind?"
-
-#: templates/core/home.html:54
-#, python-format
 msgid ""
-"Cuéntame tu idea y encontramos juntos la mejor solución técnica. Trabajo de "
-"forma <b>100%% remota</b> con clientes de cualquier parte del mundo."
+"El Reglamento europeo contra la deforestación (<b>EUDR</b>) se aplica desde "
+"el <b>30 de diciembre de 2026</b> a medianas y grandes empresas, y desde el "
+"<b>30 de junio de 2027</b> a micro y pequeñas empresas. Exige "
+"geolocalización de la parcela de origen, evaluación de riesgos y declaración "
+"de diligencia debida para poder comercializar madera en la Unión Europea."
 msgstr ""
-"Tell me your idea and we'll find the best technical solution together. I "
-"work <b>100%%</b> remotely with clients from anywhere in the world."
+"The European Union Deforestation Regulation (<b>EUDR</b>) applies from "
+"<b>30 December 2026</b> for medium and large companies, and from <b>30 June "
+"2027</b> for micro and small companies. It requires geolocation of the plot "
+"of origin, risk assessment and a due diligence statement in order to place "
+"timber on the EU market."
 
-#: templates/core/home.html:58
+#: templates/core/home.html:55
+msgid ""
+"No es solo Europa. Estados Unidos exige declaración de especie y origen bajo "
+"la <b>Lacey Act</b>, y la ley forestal china prohíbe la compra y el "
+"transporte de madera de origen ilegal. Los tres mercados piden esencialmente "
+"el mismo dato: <b>de dónde salió este tronco y con qué permiso</b>."
+msgstr ""
+"It's not just Europe. The United States requires species and origin "
+"declarations under the <b>Lacey Act</b>, and China's forestry law bans the "
+"purchase and transport of illegally sourced timber. All three markets "
+"essentially ask for the same thing: <b>where this log came from and under "
+"what permit</b>."
+
+#: templates/core/home.html:57
+msgid ""
+"La trazabilidad no se improvisa en unos meses. O el dato se captura desde el "
+"bosque, o no existe."
+msgstr ""
+"Traceability can't be improvised in a few months. Either the data is "
+"captured from the forest, or it doesn't exist."
+
+#: templates/core/home.html:67
+msgid "Una sola cadena de datos, sin rupturas"
+msgstr "One single data chain, with no gaps"
+
+#: templates/core/home.html:68
+msgid ""
+"Cada tronco vinculado a su UFA, su parcela y su punto GPS, desde el "
+"inventario hasta el contenedor."
+msgstr ""
+"Every log linked to its forest management unit, its plot and its GPS "
+"point, from inventory to container."
+
+#: templates/core/home.html:76
+msgid "Prospección"
+msgstr "Prospecting"
+
+#: templates/core/home.html:77
+msgid "Inventario de campo, UFA, AAC, parcelas. Importación GPS y QGIS."
+msgstr ""
+"Field inventory, forest management units, annual cutting areas, plots. GPS "
+"and QGIS import."
+
+#: templates/core/home.html:84
+msgid "Explotación"
+msgstr "Logging"
+
+#: templates/core/home.html:85
+msgid "Apeo, arrastre, preparación de parque, transporte y CITES."
+msgstr "Felling, skidding, yard preparation, transport and CITES."
+
+#: templates/core/home.html:92
+msgid "Parque de troncos"
+msgstr "Log yard"
+
+#: templates/core/home.html:93
+msgid "Existencias, transferencias entre sitios, cartas de porte."
+msgstr "Stock, transfers between sites, waybills."
+
+#: templates/core/home.html:100
+msgid "Aserradero y embarque"
+msgstr "Sawmill and shipping"
+
+#: templates/core/home.html:101
+msgid "Producción, paquetes, transporte de exportación y facturación."
+msgstr "Production, packages, export transport and invoicing."
+
+#: templates/core/home.html:114
+msgid "Troncos marcados e inventariados en parque forestal"
+msgstr "Marked and inventoried logs in a forest log yard"
+
+#: templates/core/home.html:118
+msgid "Casi treinta años en producción, no una promesa"
+msgstr "Nearly thirty years in production, not a promise"
+
+#: templates/core/home.html:120
+msgid ""
+"Desarrollo software para la industria forestal desde <b>1997</b>. La suite "
+"está en explotación continua en la <b>República del Congo desde 2006</b> y "
+"en <b>Camerún desde 2013</b>. Ambas empresas están <b>certificadas OLB</b> "
+"(Origen y Legalidad de la Madera, Bureau Veritas), en 2022 y 2026 "
+"respectivamente."
+msgstr ""
+"I've been developing software for the forestry industry since <b>1997</b>. "
+"The suite has been running continuously in the <b>Republic of Congo since "
+"2006</b> and in <b>Cameroon since 2013</b>. Both companies are <b>OLB "
+"certified</b> (Origin and Legality of Timber, Bureau Veritas), in 2022 and "
+"2026 respectively."
+
+#: templates/core/home.html:122
+msgid ""
+"El sistema del Congo se construyó desde el principio con la trazabilidad y "
+"la certificación como requisito, no como añadido posterior. Por eso lleva "
+"veinte años capturando la posición GPS de cada tronco: exactamente el "
+"histórico que hoy el sector intenta reconstruir a contrarreloj."
+msgstr ""
+"The Congo system was built from the start with traceability and "
+"certification as a requirement, not as an afterthought. That's why it has "
+"been capturing the GPS position of every log for twenty years — exactly the "
+"track record the industry is now racing to rebuild."
+
+#: templates/core/home.html:124
+msgid ""
+"Detrás hay casi treinta años de terreno en Costa de Marfil, República del "
+"Congo y Camerún, incluidos varios como responsable del desarrollo "
+"informático de un grupo maderero italiano con dos fábricas y oficina de "
+"exportación. El software lo he diseñado, desarrollado y mantenido yo mismo."
+msgstr ""
+"Behind it are nearly thirty years on the ground in Ivory Coast, the "
+"Republic of Congo and Cameroon, including several years as head of IT "
+"development for an Italian timber group with two mills and an export "
+"office. I've designed, developed and maintained the software myself."
+
+#: templates/core/home.html:132
+msgid "Diseñado donde la conectividad falla"
+msgstr "Designed for where connectivity fails"
+
+#: templates/core/home.html:135
+msgid "Sitios forestales aislados"
+msgstr "Remote forest sites"
+
+#: templates/core/home.html:136
+msgid ""
+"Captura en campo sin conexión permanente y sincronización cuando hay enlace "
+"disponible."
+msgstr ""
+"Field data capture without a permanent connection, syncing whenever a link "
+"is available."
+
+#: templates/core/home.html:139
+msgid "Multi-sitio e interconexión"
+msgstr "Multi-site and interconnection"
+
+#: templates/core/home.html:140
+msgid ""
+"Varias fábricas y parques de troncos consolidados, con transferencias entre "
+"sitios trazadas."
+msgstr ""
+"Multiple mills and log yards consolidated, with fully traced transfers "
+"between sites."
+
+#: templates/core/home.html:143
+msgid "Equipos locales"
+msgstr "Local teams"
+
+#: templates/core/home.html:144
+msgid ""
+"Formación presencial o remota, en francés y español, adaptada a los equipos "
+"de terreno."
+msgstr ""
+"On-site or remote training, in French and Spanish, adapted to field teams."
+
+#: templates/core/home.html:154
+msgid "¿Cómo va a documentar el origen de su madera?"
+msgstr "How will you document the origin of your timber?"
+
+#: templates/core/home.html:155
+msgid ""
+"Cuénteme su situación y vemos qué falta para llegar a la fecha límite. "
+"Trabajo en remoto y me desplazo a terreno cuando el proyecto lo requiere."
+msgstr ""
+"Tell me about your situation and let's see what's missing to meet the "
+"deadline. I work remotely and travel on-site when the project requires it."
+
+#: templates/core/home.html:158
 msgid "Contactar ahora"
 msgstr "Contact now"
 
-#: templates/core/home.html:68
+#: templates/core/home.html:169
 msgid "Lo que dicen mis clientes"
 msgstr "What my clients say"
 
-#: templates/core/home.html:71
-#, fuzzy
+#: templates/core/home.html:172
 msgid "reseñas en Google"
 msgstr "Google reviews"
 
-#: templates/core/home.html:109
+#: templates/core/home.html:210
 msgid "Ver todas las reseñas en Google"
 msgstr "See all Google reviews"
 
-#: templates/core/home.html:115
+#: templates/core/home.html:216
 msgid "Dejar una reseña"
 msgstr "Leave a review"
 
-#: templates/core/home.html:118 templates/core/home.html:120
+#: templates/core/home.html:219 templates/core/home.html:221
 msgid "Escanea para dejar tu reseña"
 msgstr "Scan to leave your review"
+
+#: templates/core/infraestructura.html:5 templates/core/infraestructura.html:16
+msgid "Infraestructura y servidores"
+msgstr "Infrastructure and servers"
+
+#: templates/core/infraestructura.html:7
+msgid ""
+"Servidores Linux, virtualización Proxmox y VMware, copias de seguridad y "
+"continuidad para empresas con sitios remotos. Modernización de "
+"infraestructuras obsoletas."
+msgstr ""
+"Linux servers, Proxmox virtualization, backups and continuity for "
+"businesses with remote sites. Modernization of outdated infrastructure."
+
+#: templates/core/infraestructura.html:17
+msgid "Virtualización, continuidad y sistemas para sitios remotos"
+msgstr "Virtualization, continuity and systems for remote sites"
+
+#: templates/core/infraestructura.html:24
+msgid "Servidores donde la conexión no es fiable"
+msgstr "Servers for where the connection isn't reliable"
+
+#: templates/core/infraestructura.html:25
+msgid ""
+"Una fábrica en el bosque o una oficina a miles de kilómetros no puede "
+"depender de que internet funcione para operar. Monto infraestructuras "
+"<b>locales</b> que siguen trabajando cuando el enlace se cae y sincronizan "
+"cuando vuelve."
+msgstr ""
+"A mill in the forest or an office thousands of kilometers away can't rely "
+"on internet uptime to operate. I set up <b>local</b> infrastructure that "
+"keeps working when the link drops and syncs back up when it returns."
+
+#: templates/core/infraestructura.html:27
+msgid "Virtualización con Proxmox"
+msgstr "Virtualization with Proxmox"
+
+#: templates/core/infraestructura.html:28
+msgid ""
+"Instalación y administración de entornos <b>Proxmox</b>: máquinas virtuales, "
+"contenedores, aislamiento de servicios y aprovechamiento del hardware "
+"existente en lugar de comprar un servidor por aplicación. Solución de código "
+"abierto, sin licencias por socket ni sorpresas de facturación."
+msgstr ""
+"Installation and administration of <b>Proxmox</b> environments: virtual "
+"machines, containers, service isolation, and making the most of existing "
+"hardware instead of buying a server per application. Open source, with no "
+"per-socket licensing or billing surprises."
+
+#: templates/core/infraestructura.html:30
+msgid "Modernización de sistemas obsoletos"
+msgstr "Modernizing outdated systems"
+
+#: templates/core/infraestructura.html:31
+msgid ""
+"Muchas empresas siguen funcionando sobre versiones fuera de soporte, sin "
+"actualizaciones de seguridad y sin plan de recuperación. He trabajado con "
+"entornos de ese tipo en producción, migrando servicios críticos —"
+"contabilidad, nóminas, dominio, antivirus— hacia plataformas actualizadas "
+"sin interrumpir la operación de la empresa."
+msgstr ""
+"Many companies are still running unsupported versions, with no security "
+"updates and no recovery plan. I've worked with environments like that in "
+"production, migrating critical services — accounting, payroll, domain "
+"controller, antivirus — to updated platforms without interrupting business "
+"operations."
+
+#: templates/core/infraestructura.html:33
+msgid "Copias de seguridad y continuidad"
+msgstr "Backups and continuity"
+
+#: templates/core/infraestructura.html:34
+msgid ""
+"Copias automatizadas, externalizadas y verificadas. Una copia que nunca se "
+"ha restaurado no es una copia: forma parte del trabajo comprobar que la "
+"recuperación funciona antes de necesitarla."
+msgstr ""
+"Automated, off-site, verified backups. A backup that's never been restored "
+"isn't a backup: checking that recovery actually works before you need it is "
+"part of the job."
+
+#: templates/core/infraestructura.html:36
+msgid "Administración de sistemas"
+msgstr "Systems administration"
+
+#: templates/core/infraestructura.html:37
+msgid ""
+"Servidores <b>Linux</b> (Debian, Ubuntu), <b>nginx</b> y Apache, bases de "
+"datos <b>MariaDB</b> y <b>MySQL</b>, certificados, cortafuegos, "
+"monitorización y endurecimiento de seguridad. Administración remota y "
+"desplazamiento a terreno cuando hace falta."
+msgstr ""
+"<b>Linux</b> servers (Debian, Ubuntu), <b>nginx</b> and Apache, <b>MariaDB</"
+"b> and <b>MySQL</b> databases, certificates, firewalls, monitoring and "
+"security hardening. Remote administration, with on-site visits when "
+"needed."
+
+#: templates/core/infraestructura.html:39
+msgid "Hablemos de su infraestructura"
+msgstr "Let's talk about your infrastructure"
+
+#: templates/core/servicios.html:7
+msgid ""
+"Desarrollo web con Django y WordPress, tiendas online, administración de "
+"servidores Linux y consultoría IT. aXXyss Soluciones, Torrent (Valencia)."
+msgstr ""
+"Web development with Django and WordPress, online stores, Linux server "
+"administration and IT consulting. aXXyss Soluciones, Torrent (Valencia)."
+
+#: templates/core/servicios.html:16
+msgid "Desarrollo web y servicios IT"
+msgstr "Web development and IT services"
+
+#: templates/core/servicios.html:17
+msgid "Sitios web, tiendas online e infraestructura para empresas"
+msgstr "Websites, online stores and infrastructure for businesses"
+
+#: templates/core/servicios.html:24
+msgid "Desarrollo web a medida"
+msgstr "Custom web development"
+
+#: templates/core/servicios.html:25
+msgid ""
+"Desde mi estudio en <b>Torrent (Valencia)</b> desarrollo sitios web y "
+"aplicaciones a medida. Especializado en <b>Django y Python</b>, diseño "
+"aplicaciones adaptadas a los procesos reales de cada cliente en lugar de "
+"forzar el negocio a encajar en una plantilla."
+msgstr ""
+"From my studio in <b>Torrent (Valencia)</b>, I build custom websites and "
+"applications. Specialized in <b>Django and Python</b>, I design "
+"applications shaped around each client's real processes rather than "
+"forcing the business to fit a template."
+
+#: templates/core/servicios.html:27
+msgid "Tiendas online y WordPress"
+msgstr "Online stores and WordPress"
+
+#: templates/core/servicios.html:28
+msgid ""
+"Desarrollo <b>tiendas online con WordPress y WooCommerce</b>, cuidando la "
+"velocidad de carga, la seguridad y el mantenimiento posterior. También asumo "
+"la migración y el saneamiento de sitios existentes."
+msgstr ""
+"I build <b>online stores with WordPress and WooCommerce</b>, paying close "
+"attention to load speed, security and ongoing maintenance. I also take on "
+"migration and cleanup of existing sites."
+
+#: templates/core/servicios.html:30
+msgid "Modernización de sistemas antiguos"
+msgstr "Modernizing legacy systems"
+
+#: templates/core/servicios.html:31
+msgid ""
+"Muchas empresas funcionan con aplicaciones de escritorio que ya no dan más "
+"de sí. Migro esos sistemas a <b>aplicaciones web con Django</b> sin pérdida "
+"de datos y sin interrumpir la operación, sustituyendo módulo a módulo en "
+"lugar de reescribir todo de golpe."
+msgstr ""
+"Many companies run on desktop applications that have reached their limits. "
+"I migrate those systems to <b>web applications with Django</b> with no "
+"data loss and no operational downtime, replacing module by module instead "
+"of rewriting everything at once."
+
+#: templates/core/servicios.html:33
+msgid "Servidores e infraestructura"
+msgstr "Servers and infrastructure"
+
+#: templates/core/servicios.html:34
+msgid ""
+"Instalación y administración de <b>servidores Linux</b>, bases de datos, "
+"copias de seguridad, certificados y monitorización. Trabajo habitualmente "
+"con Debian, nginx, MariaDB y entornos virtualizados."
+msgstr ""
+"Installation and administration of <b>Linux servers</b>, databases, "
+"backups, certificates and monitoring. I typically work with Debian, nginx, "
+"MariaDB and virtualized environments."
+
+#: templates/core/servicios.html:36
+msgid "¿Quiere ver ejemplos?"
+msgstr "Want to see examples?"
+
+#: templates/core/servicios.html:38
+#, python-format
+msgid ""
+"En la sección de <a href=\"%(demos_url)s\">demos</a> hay sitios de "
+"demostración navegables para distintos tipos de negocio."
+msgstr ""
+"The <a href=\"%(demos_url)s\">demos</a> section has browsable showcase "
+"sites for different types of businesses."
 
 #: views.py:29
 msgid "Fontanería"
@@ -545,8 +1082,8 @@ msgid ""
 "Hero con contacto de urgencias, 6 servicios, proceso paso a paso y dos "
 "formularios: consulta rápida y presupuesto detallado."
 msgstr ""
-"Hero with emergency contact, 6 services, step-by-step process and two forms: "
-"quick enquiry and detailed quote."
+"Hero with emergency contact, 6 services, step-by-step process and two "
+"forms: quick enquiry and detailed quote."
 
 #: views.py:38
 msgid "Pastelería artesanal"
@@ -557,8 +1094,8 @@ msgid ""
 "Hero visual, vitrina de productos, formulario de encargo y footer con "
 "horario y ubicación."
 msgstr ""
-"Visual hero, product showcase, order form and footer with opening hours and "
-"location."
+"Visual hero, product showcase, order form and footer with opening hours "
+"and location."
 
 #: views.py:47
 msgid "Barbería"
@@ -581,8 +1118,8 @@ msgid ""
 "Hero con imagen de fondo, servicios con precios, formulario de reserva y "
 "footer elegante."
 msgstr ""
-"Hero with background image, services with prices, booking form and elegant "
-"footer."
+"Hero with background image, services with prices, booking form and "
+"elegant footer."
 
 #: views.py:65
 msgid "Entrenador personal"
@@ -593,125 +1130,3 @@ msgid ""
 "Hero impactante, programas con precios, sección entrenador y formulario de "
 "contacto."
 msgstr "Bold hero, programs with prices, trainer section and contact form."
-
-#, fuzzy
-#~| msgid "Escribir por WhatsApp"
-#~ msgid "Prefiero WhatsApp"
-#~ msgstr "Message us on WhatsApp"
-
-#, fuzzy
-#~| msgid "Ahora mismo no puedo responder, prueba por WhatsApp."
-#~ msgid "También puedes probarlo por WhatsApp"
-#~ msgstr "I can't respond right now, please try WhatsApp instead."
-
-#~ msgid "Programador Web Django en Torrent, Valencia | aXXyss Soluciones"
-#~ msgstr "Django Web Developer in Torrent, Valencia | aXXyss Soluciones"
-
-#~ msgid "Ir a Contacto"
-#~ msgstr "Go to Contact"
-
-#~ msgid ""
-#~ "Programador experto en Django y WordPress E-commerce. Soluciones para "
-#~ "aserraderos en África, tiendas online en Canadá (Quebec) y soporte IT en "
-#~ "Torrent, Valencia."
-#~ msgstr ""
-#~ "Expert Django and WordPress E-commerce developer. Solutions for sawmills "
-#~ "in Africa, online stores in Canada (Quebec) and IT support in Torrent, "
-#~ "Valencia."
-
-#~ msgid "Desarrollador Full-Stack | Django & WordPress E-commerce"
-#~ msgstr "Full-Stack Developer | Django & WordPress E-commerce Specialist"
-
-#~ msgid ""
-#~ "Convierto procesos industriales complejos en aplicaciones web modernas"
-#~ msgstr "I turn complex industrial processes into modern web applications"
-
-#~ msgid "Software a Medida para la Industria Forestal y Global"
-#~ msgstr "Custom Software for the Global Forestry Industry"
-
-#~ msgid "Más de 20 años de experiencia integral"
-#~ msgstr "Over 20 Years of Comprehensive Experience"
-
-#~ msgid ""
-#~ "Mi trayectoria me permite abordar proyectos con una perspectiva única, "
-#~ "enfocándome en la eficiencia y la escalabilidad. Ya sea un aserradero en "
-#~ "el Congo o una web en España, aseguro una solución que satisface sus "
-#~ "necesidades reales."
-#~ msgstr ""
-#~ "My career allows me to approach projects with a unique perspective, "
-#~ "focusing on efficiency and scalability. Whether it's a sawmill in Congo "
-#~ "or a website in Switzerland, I ensure a solution that meets your real "
-#~ "needs."
-
-#~ msgid ""
-#~ "Conoce más sobre aXXyss soluciones, mi experiencia en tecnología de la "
-#~ "información, programación y mi enfoque en soluciones Linux."
-#~ msgstr ""
-#~ "Learn more about aXXyss solutions, my experience in information "
-#~ "technology, programming, and my focus on Linux solutions."
-
-#~ msgid "Mi Trayectoria Profesional"
-#~ msgstr "My Professional Career"
-
-#~ msgid ""
-#~ "Evolucionando de 25 Años en <b>Desarrollo de Sistemas de Gestión</b> a "
-#~ "<b>Desarrollador Full-Stack</b>"
-#~ msgstr ""
-#~ "Evolving from 25 Years in <b>Management Systems Development</b> to "
-#~ "<b>Full-Stack Developer</b>"
-
-#~ msgid ""
-#~ "Ahora aplico mi profunda comprensión de la gestión empresarial a la "
-#~ "<b>creación de soluciones web</b> integrales e innovadoras."
-#~ msgstr ""
-#~ "Now I apply my deep understanding of business management to the creation "
-#~ "of comprehensive and innovative <b>web solutions</b>."
-
-#~ msgid ""
-#~ "Desde la planificación estratégica hasta la implementación técnica, mi "
-#~ "objetivo es transformar ideas en realidades digitales que impulsen el "
-#~ "crecimiento y la\n"
-#~ "            productividad de mis clientes en Europa, África y América "
-#~ "Latina."
-#~ msgstr ""
-#~ "From strategic planning to technical implementation, my goal is to "
-#~ "transform ideas into digital realities that drive the growth and "
-#~ "productivity of my clients in Europe, Africa, and North America."
-
-#~ msgid "Mis servicios incluyen:"
-#~ msgstr "My services include:"
-
-#~ msgid ""
-#~ "<b>Desarrollo web</b> personalizado con <b>Django</b> y <b>WordPress</b>"
-#~ msgstr ""
-#~ "Custom <b>Web Development</b> with <b>Django</b> and <b>WordPress</b>"
-
-#~ msgid "<b>Optimización</b> para motores de búsqueda (SEO)"
-#~ msgstr "Search Engine <b>Optimization</b> (SEO)"
-
-#~ msgid "<b>Mantenimiento</b> y <b>soporte</b> web"
-#~ msgstr "Web <b>Maintenance</b> and <b>Support</b>"
-
-#~ msgid "Mis habilidades incluyen:"
-#~ msgstr "My skills include:"
-
-#~ msgid "<b>Sistemas operativos: </b>Servidores Linux (Debian, Ubuntu)"
-#~ msgstr "<b>Operating Systems: </b>Linux Servers (Debian, Ubuntu)"
-
-#~ msgid "<b>Bases de datos: </b>MySQL, MariaDB"
-#~ msgstr "<b>Databases: </b>MySQL, MariaDB"
-
-#~ msgid "<b>Virtualización: </b>Proxmox, VMware, VirtualBox"
-#~ msgstr "<b>Virtualization: </b>Proxmox, VMware, VirtualBox"
-
-#~ msgid "<b>Herramientas: </b>Python (Django), MS-Access"
-#~ msgstr "<b>Tools: </b>Python (Django), MS-Access"
-
-#~ msgid "<b>ERP: </b>Dolibarr"
-#~ msgstr "<b>ERP: </b>Dolibarr"
-
-#~ msgid ""
-#~ "Soluciones de Gestión Forestal y Comercio Electrónico para Europa, África "
-#~ "y Canadá"
-#~ msgstr ""
-#~ "Forestry Management and E-commerce Solutions for Europe, Africa and Canada"
