@@ -1,0 +1,44 @@
+{% extends 'core/base.html' %}
+{% load i18n %}
+{% load static %}
+
+{% block title %}{% trans "Servicios" %}{% endblock %}
+
+{% block meta_description %}{% blocktrans %}Desarrollo web con Django y WordPress, tiendas online, administración de servidores Linux y consultoría IT. aXXyss Soluciones, Torrent (Valencia).{% endblocktrans %}{% endblock %}
+
+{% block background %}{% static 'core/img/servicios-bg.webp' %}{% endblock %}
+
+{% block extra_css %}
+<link rel="preload" as="image" href="{% static 'core/img/servicios-bg.webp' %}" type="image/webp" fetchpriority="high">
+{% endblock %}
+
+{% block headers %}
+<h1 class="text-white font-weight-black">{% trans "Desarrollo web y servicios IT" %}</h1>
+<p class="lead text-white mt-3">{% trans "Sitios web, tiendas online e infraestructura para empresas" %}</p>
+{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-lg-9">
+
+        <h2>{% trans "Desarrollo web a medida" %}</h2>
+        <p>{% blocktrans %}Desde mi estudio en <b>Torrent (Valencia)</b> desarrollo sitios web y aplicaciones a medida. Especializado en <b>Django y Python</b>, diseño aplicaciones adaptadas a los procesos reales de cada cliente en lugar de forzar el negocio a encajar en una plantilla.{% endblocktrans %}</p>
+
+        <h2>{% trans "Tiendas online y WordPress" %}</h2>
+        <p>{% blocktrans %}Desarrollo <b>tiendas online con WordPress y WooCommerce</b>, cuidando la velocidad de carga, la seguridad y el mantenimiento posterior. También asumo la migración y el saneamiento de sitios existentes.{% endblocktrans %}</p>
+
+        <h2>{% trans "Modernización de sistemas antiguos" %}</h2>
+        <p>{% blocktrans %}Muchas empresas funcionan con aplicaciones de escritorio que ya no dan más de sí. Migro esos sistemas a <b>aplicaciones web con Django</b> sin pérdida de datos y sin interrumpir la operación, sustituyendo módulo a módulo en lugar de reescribir todo de golpe.{% endblocktrans %}</p>
+
+        <h2>{% trans "Servidores e infraestructura" %}</h2>
+        <p>{% blocktrans %}Instalación y administración de <b>servidores Linux</b>, bases de datos, copias de seguridad, certificados y monitorización. Trabajo habitualmente con Debian, nginx, MariaDB y entornos virtualizados.{% endblocktrans %}</p>
+
+        <h2>{% trans "¿Quiere ver ejemplos?" %}</h2>
+        {% url 'demos' as demos_url %}
+        <p>{% blocktrans %}En la sección de <a href="{{ demos_url }}">demos</a> hay sitios de demostración navegables para distintos tipos de negocio.{% endblocktrans %}</p>
+
+        <p><a class="btn btn-lg btn-cta shadow-lg mt-3" href="{% url 'contact:contact' %}">{% trans "Solicitar presupuesto" %}</a></p>
+
+    </div>
+</div>
+{% endblock %}

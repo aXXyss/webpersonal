@@ -151,10 +151,18 @@
                       data-bs-placement="bottom" title="Blog">{% trans "Blog" %}</p>
                   </a>
                 </li>
+                <li class="nav-item ms-lg-auto nav-dropdown">
+                  <a class="nav-link px-lg-3 py-3 py-lg-4" href="{% url 'servicios' %}">
+                    <p class="d-inline text-sm z-index-1 font-weight-semibold">{% trans "Servicios" %}</p>
+                  </a>
+                  <ul class="nav-dropdown-menu">
+                    <li><a href="{% url 'infraestructura' %}">{% trans "Infraestructura" %}</a></li>
+                    <li><a href="{% url 'demos' %}">{% trans "Demos" %}</a></li>
+                  </ul>
+                </li>
                 <li class="nav-item ms-lg-auto">
-                  <a class="nav-link px-lg-3 py-3 py-lg-4" href="{% url 'demos' %}">
-                    <p class="d-inline text-sm z-index-1 font-weight-semibold" data-bs-toggle="tooltip"
-                      data-bs-placement="bottom" title="Demos">{% trans "Demos" %}</p>
+                  <a class="nav-link px-lg-3 py-3 py-lg-4" href="{% url 'fuelaxflow' %}">
+                    <p class="d-inline text-sm z-index-1 font-weight-semibold">FuelAxFlow</p>
                   </a>
                 </li>
                 {% if user.is_authenticated %}
@@ -273,16 +281,25 @@
               <a class="nav-link" href="{% url 'about' %}">› {% trans "Sobre mí" %}</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'portfolio:project_list' %}">› {% trans "Portafolio" %}</a>
+              <a class="nav-link" href="{% url 'fuelaxflow' %}">› FuelAxFlow</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'contact:contact' %}">› {% trans "Contacto" %}</a>
+              <a class="nav-link" href="{% url 'servicios' %}">› {% trans "Servicios" %}</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'infraestructura' %}">› {% trans "Infraestructura" %}</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'demos' %}">› {% trans "Demos" %}</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'portfolio:project_list' %}">› {% trans "Portafolio" %}</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{% url 'blog:post_list' %}">› {% trans "Blog" %}</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'demos' %}">› {% trans "Demos" %}</a>
+              <a class="nav-link" href="{% url 'contact:contact' %}">› {% trans "Contacto" %}</a>
             </li>
           </ul>
         </div>

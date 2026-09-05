@@ -137,11 +137,17 @@ def contact(request):
             avisolegal = form.cleaned_data.get('avisolegal', False)
             publicidad = form.cleaned_data.get('publicidad', False)
 
+            project_type = form.cleaned_data.get('project_type', '')
+            project_label = dict(form.fields['project_type'].choices).get(project_type, '')
+            if not project_label:
+                project_label = 'No especificado'
+
             subject = f'Contact Form Submission from {name}'
             body = (
                 f'Message from {name} ({email}):\n\n'
                 f'Company: {company}\n\n'
                 f'Country: {country_name} (Code: {country_code})\n\n'
+                f'Tipo de proyecto: {project_label}\n\n'
                 f'Consiente aviso legal: {"Sí" if avisolegal else "No"}\n\n'
                 f'Consiente publicidad: {"Sí" if publicidad else "No"}\n\n'
                 f'Message:\n{content}'

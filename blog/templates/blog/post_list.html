@@ -76,7 +76,7 @@
 {% endblock %}
 
 {% block headers %}
-<h1 class="text-white font-weight-black pt-3 mt-n5">{% if category %}{{ category.name }}{% else %}{% trans "Blog" %}{% endif %}</h1>
+<h1 class="text-white font-weight-black">{% if category %}{{ category.name }}{% else %}{% trans "Blog" %}{% endif %}</h1>
 <p class="lead text-white mt-3">{% if category %}{% trans "Artículos sobre" %} {{ category.name }}{% else %}{% trans "Últimas publicaciones" %}{% endif %}</p>
 {% endblock %}
 

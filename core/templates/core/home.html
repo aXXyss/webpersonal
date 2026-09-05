@@ -1,10 +1,10 @@
 {% extends 'core/base.html' %}
 {% load i18n %}
 
-{% block title %}{% trans "Programador Web Django en Torrent, Valencia" %}{% endblock %}
+{% block title %}{% trans "Software de Gestión y Trazabilidad Forestal" %}{% endblock %}
 
 {% block meta_description %}
-    {% trans "Joaquin Denis — Programador web freelance en Torrent, Valencia. Especializado en Django y Python. Desarrollo web a medida, e-commerce y software de gestión para empresas." %}
+    {% trans "Suite de gestión forestal con trazabilidad GPS por tronco, de la prospección al embarque. Conformidad EUDR. En producción desde 2006 en concesiones certificadas de Congo y Camerún." %}
 {% endblock %}
 
 {% block background %}{% load static %}{% static 'core/img/home-bg.jpg' %}{% endblock %}
@@ -23,45 +23,146 @@
     <link rel="preload" as="image" href="{% static 'core/img/home-bg.webp' %}" type="image/webp" fetchpriority="high">
 {% endblock %}
 
+
+{# ==================== 1. HÉROE ==================== #}
 {% block headers %}
-<h1 class="text-white font-weight-black pt-3 mt-n5">Joaquin Denis</h1>
+<h1 class="text-white font-weight-black">
+    {% trans "Trazabilidad forestal, del bosque al embarque" %}
+</h1>
 <p class="lead text-white mt-3">
-    {% trans "Programador web y desarrollador de software | Django & Python" %}<br>
-    <small class="opacity-8">{% trans "Soluciones digitales a medida para empresas en Europa, América del Norte y África" %}</small>
+    {% trans "Suite de gestión para la industria forestal · Trazabilidad GPS por tronco · Conformidad EUDR" %}<br>
+    <small class="opacity-8">{% trans "Desarrollando software forestal desde 1997 · En producción en concesiones certificadas OLB de República del Congo y Camerún" %}</small>
+</p>
+<p class="mt-4">
+    <a class="btn btn-lg btn-cta shadow-lg mt-2" href="{% url 'contact:contact' %}">
+        {% trans "Hablemos de su trazabilidad EUDR" %}
+    </a>
 </p>
 {% endblock %}
 
+
 {% block content %}
-<div class="row">
-    <div class="col-lg-3 col-md-4 offset-lg-1">
+
+{# ==================== 2. URGENCIA — EUDR ==================== #}
+<div class="row justify-content-center mb-5">
+    <div class="col-lg-10">
+        <div class="card shadow-lg border-0">
+            <div class="card-body p-4 p-lg-5">
+                <h2 class="mb-3">{% trans "Diciembre de 2026: la fecha ya está fijada" %}</h2>
+
+                <p>{% blocktrans %}El Reglamento europeo contra la deforestación (<b>EUDR</b>) se aplica desde el <b>30 de diciembre de 2026</b> a medianas y grandes empresas, y desde el <b>30 de junio de 2027</b> a micro y pequeñas empresas. Exige geolocalización de la parcela de origen, evaluación de riesgos y declaración de diligencia debida para poder comercializar madera en la Unión Europea.{% endblocktrans %}</p>
+
+                <p>{% blocktrans %}No es solo Europa. Estados Unidos exige declaración de especie y origen bajo la <b>Lacey Act</b>, y la ley forestal china prohíbe la compra y el transporte de madera de origen ilegal. Los tres mercados piden esencialmente el mismo dato: <b>de dónde salió este tronco y con qué permiso</b>.{% endblocktrans %}</p>
+
+                <p class="lead mb-0">{% blocktrans %}La trazabilidad no se improvisa en unos meses. O el dato se captura desde el bosque, o no existe.{% endblocktrans %}</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{# ==================== 3. LA CADENA COMPLETA ==================== #}
+<div class="row mb-4">
+    <div class="col-12 text-center">
+        <h2>{% trans "Una sola cadena de datos, sin rupturas" %}</h2>
+        <p class="text-muted">{% trans "Cada tronco vinculado a su UFA, su parcela y su punto GPS, desde el inventario hasta el contenedor." %}</p>
+    </div>
+</div>
+
+<div class="row row-cols-2 row-cols-md-4 g-3 mb-5">
+    <div class="col">
+        <div class="card h-100 border-0 shadow-sm">
+            <div class="card-body">
+                <h5 class="mb-1">{% trans "Prospección" %}</h5>
+                <p class="text-sm text-muted mb-0">{% trans "Inventario de campo, UFA, AAC, parcelas. Importación GPS y QGIS." %}</p>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card h-100 border-0 shadow-sm">
+            <div class="card-body">
+                <h5 class="mb-1">{% trans "Explotación" %}</h5>
+                <p class="text-sm text-muted mb-0">{% trans "Apeo, arrastre, preparación de parque, transporte y CITES." %}</p>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card h-100 border-0 shadow-sm">
+            <div class="card-body">
+                <h5 class="mb-1">{% trans "Parque de troncos" %}</h5>
+                <p class="text-sm text-muted mb-0">{% trans "Existencias, transferencias entre sitios, cartas de porte." %}</p>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card h-100 border-0 shadow-sm">
+            <div class="card-body">
+                <h5 class="mb-1">{% trans "Aserradero y embarque" %}</h5>
+                <p class="text-sm text-muted mb-0">{% trans "Producción, paquetes, transporte de exportación y facturación." %}</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{# ==================== 4. PRUEBA ==================== #}
+<div class="row align-items-center mb-5">
+    <div class="col-lg-4 col-md-5 mb-4 mb-md-0">
         <picture>
             <source srcset="{% static 'core/img/desarrollador.webp' %}" type="image/webp">
-            <img class="img-fluid rounded shadow" src="{% static 'core/img/desarrollador.jpg' %}" alt="Joaquin Denis - Programador web en Torrent Valencia" width="692" height="462">
+            <img class="img-fluid rounded shadow" src="{% static 'core/img/desarrollador.jpg' %}"
+                 alt="{% trans 'Joaquin Denis - Software de gestión forestal' %}" width="692" height="462">
         </picture>
     </div>
-    <div class="col-lg-7 col-md-8">
+    <div class="col-lg-8 col-md-7">
+        <h2>{% trans "Casi treinta años en producción, no una promesa" %}</h2>
 
-        <h2>{% trans "Desarrollo Web y Software a Medida" %}</h2>
-        <p>{% blocktrans %}Desde mi estudio en <b>Torrent (Valencia)</b>, desarrollo <b>soluciones web</b> y software a medida para empresas. Especializado en <b>Django y Python</b>, diseño aplicaciones eficientes adaptadas a los procesos reales de cada cliente.{% endblocktrans %}</p>
+        <p>{% blocktrans %}Desarrollo software para la industria forestal desde <b>1997</b>. La suite está en explotación continua en la <b>República del Congo desde 2006</b> y en <b>Camerún desde 2013</b>. Ambas empresas están <b>certificadas OLB</b> (Origen y Legalidad de la Madera, Bureau Veritas), en 2022 y 2026 respectivamente.{% endblocktrans %}</p>
 
-        <h2>{% trans "Modernización de Software Empresarial" %}</h2>
-        <p>{% blocktrans %}Cuento con amplia experiencia en la transición de sistemas legacy hacia potentes aplicaciones <b>web con Django</b>. Esta experiencia me permite migrar sistemas antiguos a la web sin pérdida de datos y adaptados a los procesos reales de la empresa.{% endblocktrans %}</p>
+        <p>{% blocktrans %}El sistema del Congo se construyó desde el principio con la trazabilidad y la certificación como requisito, no como añadido posterior. Por eso lleva veinte años capturando la posición GPS de cada tronco: exactamente el histórico que hoy el sector intenta reconstruir a contrarreloj.{% endblocktrans %}</p>
 
-        <h2>{% trans "Soluciones E-commerce y WordPress" %}</h2>
-        <p>{% blocktrans %}Además de aplicaciones a medida, desarrollo <b>tiendas online con WordPress y WooCommerce</b>, asegurando plataformas rápidas, seguras y adaptadas a las necesidades de cada negocio.{% endblocktrans %}</p>
+        <p>{% blocktrans %}Detrás hay casi treinta años de terreno en Costa de Marfil, República del Congo y Camerún, incluidos varios como responsable del desarrollo informático de un grupo maderero italiano con dos fábricas y oficina de exportación. El software lo he diseñado, desarrollado y mantenido yo mismo.{% endblocktrans %}</p>
+    </div>
+</div>
 
-        <h2>{% trans "¿Tienes un proyecto en mente?" %}</h2>
-        <p>{% blocktrans %}Cuéntame tu idea y encontramos juntos la mejor solución técnica. Trabajo de forma <b>100% remota</b> con clientes de cualquier parte del mundo.{% endblocktrans %}</p>
 
+{# ==================== 5. REALIDAD DE CAMPO ==================== #}
+<div class="row justify-content-center mb-5">
+    <div class="col-lg-10">
+        <h2 class="text-center mb-4">{% trans "Diseñado donde la conectividad falla" %}</h2>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="col">
+                <h5>{% trans "Sitios forestales aislados" %}</h5>
+                <p class="text-sm text-muted">{% trans "Captura en campo sin conexión permanente y sincronización cuando hay enlace disponible." %}</p>
+            </div>
+            <div class="col">
+                <h5>{% trans "Multi-sitio e interconexión" %}</h5>
+                <p class="text-sm text-muted">{% trans "Varias fábricas y parques de troncos consolidados, con transferencias entre sitios trazadas." %}</p>
+            </div>
+            <div class="col">
+                <h5>{% trans "Equipos locales" %}</h5>
+                <p class="text-sm text-muted">{% trans "Formación presencial o remota, en francés y español, adaptada a los equipos de terreno." %}</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{# ==================== 6. CTA ==================== #}
+<div class="row justify-content-center mb-5">
+    <div class="col-lg-8 text-center">
+        <h2>{% trans "¿Cómo va a documentar el origen de su madera?" %}</h2>
+        <p>{% blocktrans %}Cuénteme su situación y vemos qué falta para llegar a la fecha límite. Trabajo en remoto y me desplazo a terreno cuando el proyecto lo requiere.{% endblocktrans %}</p>
         <p>
             <a class="btn btn-dark btn-lg mt-3 shadow-dark" href="{% url 'contact:contact' %}">
                 {% trans "Contactar ahora" %}
             </a>
         </p>
-
     </div>
 </div>
 
+
+{# ==================== 7. RESEÑAS (sin cambios) ==================== #}
 {% if reviews %}
 <div class="row mt-5">
     <div class="col-12 text-center mb-4">
@@ -86,7 +187,7 @@
                 <p class="card-text fst-italic">"{{ review.texto }}"</p>
             </div>
             <div class="card-footer bg-white border-0 d-flex align-items-center gap-2">
-                <img src="{{ review.foto_url }}" 
+                <img src="{{ review.foto_url }}"
                      alt="{{ review.autor }}"
                      class="rounded-circle" width="36" height="36">
                 <div>
@@ -104,7 +205,7 @@
 
 <div class="row mb-5 align-items-center justify-content-center">
     <div class="col-auto text-center">
-        <a href="https://www.google.com/maps/search/?api=1&query=Axxyss+Soluciones&query_place_id={{ place_id }}" 
+        <a href="https://www.google.com/maps/search/?api=1&query=Axxyss+Soluciones&query_place_id={{ place_id }}"
             target="_blank" rel="noopener" class="btn btn-outline-dark">
             {% trans "Ver todas las reseñas en Google" %} ↗
         </a>
@@ -114,7 +215,7 @@
         <a href="https://search.google.com/local/writereview?placeid={{ place_id }}" target="_blank" rel="noopener" class="btn btn-sm btn-outline-secondary mb-2">
             {% trans "Dejar una reseña" %} ↗
         </a><br>
-        <img src="{% static 'core/img/qr-resenas-axxyss.png' %}" 
+        <img src="{% static 'core/img/qr-resenas-axxyss.png' %}"
              alt="{% trans 'Escanea para dejar tu reseña' %}"
              width="100" height="100">
         <p class="text-muted small mt-1">{% trans "Escanea para dejar tu reseña" %}</p>

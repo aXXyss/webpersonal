@@ -69,6 +69,17 @@ DEMOS = [
         'tags': ['Tailwind CSS', 'Formspree'],
     },
 ]
+
+def servicios(request):
+    return render(request, "core/servicios.html")
+
+def infraestructura(request):
+    return render(request, "core/infraestructura.html")
+
+
+def fuelaxflow(request):
+    return render(request, "core/fuelaxflow.html")
+
  
 def demos(request):
     return render(request, 'core/demos.html', {'demos': DEMOS})

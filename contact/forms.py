@@ -51,6 +51,20 @@ class ContactForm(forms.Form):
         widget=forms.Select(attrs={'class': 'form-control'})
     )
 
+    project_type = forms.ChoiceField(
+        label=_("Tipo de proyecto"),
+        required=False,
+        choices=[
+            ('', _("Tipo de proyecto (opcional)")),
+            ('trazabilidad', _("Trazabilidad forestal / EUDR")),
+            ('gestion', _("Software de gestión a medida")),
+            ('web', _("Sitio web o tienda online")),
+            ('infra', _("Servidores e infraestructura")),
+            ('otro', _("Otro")),
+        ],
+        widget=forms.Select(attrs={'class': 'form-control'})
+    )
+
     content = forms.CharField(
         label=_("Contenido"),
         required=True,

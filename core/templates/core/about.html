@@ -2,7 +2,7 @@
 
 {% load i18n %}
 {% block title %}{% blocktrans %}Sobre mí{% endblocktrans %}{% endblock %}
-{% block meta_description %}{% blocktrans %}Joaquin Denis — Programador web freelance en Torrent, Valencia. Especializado en Django y Python. Desarrollo web a medida, e-commerce y software de gestión para empresas.{% endblocktrans %}{% endblock %}
+{% block meta_description %}{% blocktrans %}Joaquin Denis — Desarrollador especializado en software de gestión y trazabilidad para la industria forestal. Más de 25 años entre Costa de Marfil, Camerún y Congo. Django, Python y Linux.{% endblocktrans %}{% endblock %}
 
 {% block background %}{% load static %}{% static 'core/img/about-bg.jpg' %}{% endblock %}
 
@@ -21,8 +21,8 @@
 {% endblock %}
 
 {% block headers %}
-<h1 class="text-white font-weight-black pt-3 mt-n5">{% trans "Acerca de" %}</h1>
-<p class="lead text-white mt-3">{% trans "Biografía" %}</p>
+<h1 class="text-white font-weight-black">{% trans "Veinticinco años sobre el terreno" %}</h1>
+<p class="lead text-white mt-3">{% trans "Suiza · Costa de Marfil · Venezuela · Camerún · Congo · España" %}</p>
 {% endblock %}
 
 {% block content %}
@@ -33,36 +33,47 @@
             data-bs-placement="bottom"
             title="Joaquin Denis"
             src="{% static 'core/img/avatar.jpg' %}"
-            alt="Fotografía de perfil de Joaquin Denis"
+            alt="{% trans 'Fotografía de perfil de Joaquin Denis' %}"
             style="width:80%; margin: 0 auto; display: block;">
     </div>
     <div class="col-lg-7 col-md-8">
-        <h2>{% blocktrans %}Programador web freelance en Torrent, Valencia{% endblocktrans %}</h2>
-        <p>{% blocktrans %}Soy Joaquin Denis, programador web independiente con sede en Torrent (Valencia). Con más de 25 años de experiencia en informática y desarrollo de software, me especializo en la creación de aplicaciones web a medida con <a href="https://www.djangoproject.com/" target="_blank" rel="noopener"><b>Django</b></a> y <a href="https://www.python.org/" target="_blank" rel="noopener"><b>Python</b></a>.{% endblocktrans %}</p>
-        <p>{% blocktrans %}Trabajo de forma remota con clientes en Europa, América del Norte y África, transformando procesos empresariales complejos en herramientas digitales eficientes y fiables.{% endblocktrans %}</p>
 
-        <h2>{% blocktrans %}Servicios que Ofrezco{% endblocktrans %}</h2>
+                <h2>{% blocktrans %}Quién soy{% endblocktrans %}</h2>
+        <p>{% blocktrans %}Soy Joaquin Denis, desarrollador independiente especializado en software de gestión y trazabilidad para la industria forestal y de transformación de la madera. Trabajo desde <b>Torrent (Valencia)</b> con clientes en África central, Europa y América del Norte.{% endblocktrans %}</p>
+
+        <h2>{% blocktrans %}Casi treinta años en el sector{% endblocktrans %}</h2>
+        <p>{% blocktrans %}En <b>1997</b> me instalé en <b>Costa de Marfil</b> para trabajar como informático en empresas del sector forestal. Allí desarrollé mis primeros programas de gestión: primero para producción de chapa fina y desenrollo, después para aserraderos. Cuando me independicé seguí mejorándolos con cada nuevo cliente.{% endblocktrans %}</p>
+        <p>{% blocktrans %}Antes de mudarme a Venezuela empecé con un cliente en la <b>República del Congo</b>, para quien construí el sistema de trazabilidad de troncos con puntos GPS, transporte, aserradero y secaderos, junto con la preparación para la certificación.{% endblocktrans %}</p>
+        <p>{% blocktrans %}En <b>Venezuela</b> monté una empresa de servicios informáticos, que dirigí durante varios años mientras seguía atendiendo en remoto al cliente del Congo. Aquel sistema sigue en explotación hoy.{% endblocktrans %}</p>
+
+        <h2>{% blocktrans %}Por qué la madera{% endblocktrans %}</h2>
+        <p>{% blocktrans %}Porque conozco el terreno. Sé lo que es un parque de troncos, una carta de porte y un permiso de corte. Sé lo que pasa cuando el enlace satelital se cae a mitad de una sincronización y el equipo de campo sigue trabajando igualmente. Ese contexto no se aprende leyendo una especificación.{% endblocktrans %}</p>
+        <p>{% blocktrans %}El software de gestión que desarrollé está en explotación continua en <b>Congo desde 2006</b> y en <b>Camerún desde 2013</b>, y ambas concesiones están certificadas <b>OLB</b>. Cubre la cadena entera: prospección, inventario GPS, explotación, parque de troncos, aserradero, embarque y facturación.{% endblocktrans %}</p>
+
+        <h2>{% blocktrans %}Cómo trabajo{% endblocktrans %}</h2>
+        <p>{% blocktrans %}En remoto la mayor parte del tiempo, con desplazamientos a terreno cuando el proyecto lo requiere: puesta en marcha, formación de equipos o resolución de incidencias que necesitan estar allí. Hablo español y francés, y trabajo habitualmente en ambos idiomas con equipos multiculturales.{% endblocktrans %}</p>
+
+        <h2>{% blocktrans %}Ámbitos de trabajo{% endblocktrans %}</h2>
         <ul>
-            <li>{% blocktrans %}<b>Desarrollo web</b> personalizado con <a href="https://www.djangoproject.com/" target="_blank" rel="noopener"><b>Django</b></a> y <a href="https://wordpress.org/" target="_blank" rel="noopener"><b>WordPress</b></a>{% endblocktrans %}</li>
-            <li>{% blocktrans %}<b>Diseño web</b> responsive y atractivo{% endblocktrans %}</li>
-            <li>{% blocktrans %}<b>E-commerce</b> y tiendas online{% endblocktrans %}</li>
-            <li>{% blocktrans %}<b>Software de gestión</b> empresarial a medida{% endblocktrans %}</li>
-            <li>{% blocktrans %}<b>Alojamiento web</b> y configuración de servidores Linux{% endblocktrans %}</li>
-            <li>{% blocktrans %}<b>Optimización SEO</b> y mantenimiento web{% endblocktrans %}</li>
+            <li>{% blocktrans %}<b>Trazabilidad y conformidad</b>: geolocalización de origen, cadena de custodia, declaraciones EUDR{% endblocktrans %}</li>
+            <li>{% blocktrans %}<b>Software de gestión</b> a medida para explotación forestal y transformación{% endblocktrans %}</li>
+            <li>{% blocktrans %}<b>Modernización de sistemas legacy</b> hacia aplicaciones web sin pérdida de datos{% endblocktrans %}</li>
+            <li>{% blocktrans %}<b>Infraestructura</b>: servidores Linux, bases de datos, copias de seguridad y continuidad{% endblocktrans %}</li>
+            <li>{% blocktrans %}<b>Desarrollo web</b> y sitios corporativos con Django y WordPress{% endblocktrans %}</li>
         </ul>
 
-        <h2>{% blocktrans %}Habilidades Técnicas{% endblocktrans %}</h2>
+        <h2>{% blocktrans %}Herramientas{% endblocktrans %}</h2>
         <ul>
-            <li>{% blocktrans %}<b>Lenguajes: </b><a href="https://www.python.org/" target="_blank" rel="noopener">Python</a>, <a href="https://developer.mozilla.org/es/docs/Web/HTML" target="_blank" rel="noopener">HTML</a>, <a href="https://developer.mozilla.org/es/docs/Web/CSS" target="_blank" rel="noopener">CSS</a>{% endblocktrans %}</li>
+            <li>{% blocktrans %}<b>Lenguajes: </b><a href="https://www.python.org/" target="_blank" rel="noopener">Python</a>, SQL, VBA, <a href="https://developer.mozilla.org/es/docs/Web/HTML" target="_blank" rel="noopener">HTML</a>, <a href="https://developer.mozilla.org/es/docs/Web/CSS" target="_blank" rel="noopener">CSS</a>{% endblocktrans %}</li>
             <li>{% blocktrans %}<b>Frameworks: </b><a href="https://www.djangoproject.com/" target="_blank" rel="noopener">Django</a>, <a href="https://wordpress.org/" target="_blank" rel="noopener">WordPress</a>{% endblocktrans %}</li>
-            <li>{% blocktrans %}<b>Servidores: </b><a href="https://www.debian.org/" target="_blank" rel="noopener">Linux (Debian</a>, <a href="https://ubuntu.com/" target="_blank" rel="noopener">Ubuntu</a>), <a href="https://httpd.apache.org/" target="_blank" rel="noopener">Apache</a>, <a href="https://nginx.org/" target="_blank" rel="noopener">nginx</a>, <a href="https://gunicorn.org/" target="_blank" rel="noopener">gunicorn</a>{% endblocktrans %}</li>
-            <li>{% blocktrans %}<b>Bases de datos: </b><a href="https://www.mysql.com/" target="_blank" rel="noopener">MySQL</a>, <a href="https://mariadb.org/" target="_blank" rel="noopener">MariaDB</a>{% endblocktrans %}</li>
-            <li>{% blocktrans %}<b>Virtualización: </b><a href="https://www.proxmox.com/" target="_blank" rel="noopener">Proxmox</a>, <a href="https://www.vmware.com/" target="_blank" rel="noopener">VMware</a>{% endblocktrans %}</li>
-            <li>{% blocktrans %}<b>Automatización: </b><a href="https://www.ansible.com/" target="_blank" rel="noopener">Ansible</a> (iniciando){% endblocktrans %}</li>
+            <li>{% blocktrans %}<b>Datos y cartografía: </b><a href="https://mariadb.org/" target="_blank" rel="noopener">MariaDB</a>, <a href="https://www.mysql.com/" target="_blank" rel="noopener">MySQL</a>, <a href="https://qgis.org/" target="_blank" rel="noopener">QGIS</a>, importación GPS{% endblocktrans %}</li>
+            <li>{% blocktrans %}<b>Servidores: </b><a href="https://www.debian.org/" target="_blank" rel="noopener">Linux (Debian</a>, <a href="https://ubuntu.com/" target="_blank" rel="noopener">Ubuntu</a>), <a href="https://nginx.org/" target="_blank" rel="noopener">nginx</a>, <a href="https://gunicorn.org/" target="_blank" rel="noopener">gunicorn</a>, <a href="https://httpd.apache.org/" target="_blank" rel="noopener">Apache</a>{% endblocktrans %}</li>
+            <li>{% blocktrans %}<b>Virtualización: </b><a href="https://www.proxmox.com/" target="_blank" rel="noopener">Proxmox</a>, Docker{% endblocktrans %}</li>
             <li>{% blocktrans %}<b>ERP: </b><a href="https://www.dolibarr.org/" target="_blank" rel="noopener">Dolibarr</a>{% endblocktrans %}</li>
         </ul>
+
         <br>
-        <p><a class="btn btn-dark btn-lg mt-3 shadow-dark" href="{% url 'contact:contact' %}">{% trans "Contacto" %}</a></p>
+        <p><a class="btn btn-lg btn-cta shadow-lg mt-3" href="{% url 'contact:contact' %}">{% trans "Hablemos de su proyecto" %}</a></p>
     </div>
 </div>
 {% endblock %}

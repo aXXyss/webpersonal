@@ -23,7 +23,7 @@
 {% endblock %}
 
 {% block headers %}
-<h1 class="text-white font-weight-black pt-3 mt-n5">{% if project.translation %}{{ project.translation.title }}{% else %}{{ project.title }}{% endif %}</h1>
+<h1 class="text-white font-weight-black">{% if project.translation %}{{ project.translation.title }}{% else %}{{ project.title }}{% endif %}</h1>
 {% endblock %}
 
 {% block content %}

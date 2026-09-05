@@ -1,0 +1,57 @@
+{% extends 'core/base.html' %}
+{% load i18n %}
+{% load static %}
+
+{% block title %}{% trans "FuelAxFlow — Gestión de carburante" %}{% endblock %}
+
+{% block meta_description %}{% blocktrans %}FuelAxFlow: aplicación de gestión de carburante para los sectores forestal, obra pública, minero y transporte. Multi-depósito, instalación local, sin dependencia de internet.{% endblocktrans %}{% endblock %}
+
+{% block background %}{% static 'core/img/fuelaxflow-bg.webp' %}{% endblock %}
+
+{% block extra_css %}
+<link rel="preload" as="image" href="{% static 'core/img/fuelaxflow-bg.webp' %}" type="image/webp" fetchpriority="high">
+{% endblock %}
+
+{% block headers %}
+<h1 class="text-white font-weight-black">FuelAxFlow</h1>
+<p class="lead text-white mt-3">
+    {% trans "Gestión de carburante para forestal, obra pública, minería y transporte" %}<br>
+    <small class="opacity-8">{% trans "Instalación local · Multi-depósito · Sin dependencia de internet" %}</small>
+</p>
+{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center mb-5">
+    <div class="col-lg-9">
+
+        <h2>{% trans "El carburante es el segundo coste de la explotación" %}</h2>
+        <p>{% blocktrans %}Y suele ser el peor controlado. Depósitos repartidos entre bosque, fábrica y estación, consumos anotados en papel, distribuciones a terceros sin registro fiable y facturación que se reconstruye a fin de mes de memoria. FuelAxFlow cierra ese circuito.{% endblocktrans %}</p>
+
+        <h2>{% trans "Qué cubre" %}</h2>
+        <ul>
+            <li>{% blocktrans %}<b>Stock multi-depósito</b>: central, bosque, fábrica, estación y tránsito, con alertas de nivel bajo{% endblocktrans %}</li>
+            <li>{% blocktrans %}<b>Circuito de compra</b>: pedidos, recepciones y facturas de proveedor{% endblocktrans %}</li>
+            <li>{% blocktrans %}<b>Consumos</b> por equipo y contador, con imputación analítica por centro de coste{% endblocktrans %}</li>
+            <li>{% blocktrans %}<b>Transferencias entre depósitos</b>, con control de las diferencias en tránsito{% endblocktrans %}</li>
+            <li>{% blocktrans %}<b>Distribución a terceros</b> y prefacturación de transportistas y clientes{% endblocktrans %}</li>
+            <li>{% blocktrans %}<b>Cuadros de mando</b> y perfiles de usuario por función{% endblocktrans %}</li>
+        </ul>
+
+        <div class="my-4">
+            <img src="{% static 'core/img/fuelaxflow-dashboard.webp' %}"
+                 alt="{% trans 'Cuadro de mando de existencias de FuelAxFlow' %}"
+                 class="img-fluid rounded shadow-lg" width="1400" height="1095">
+            <p class="text-muted text-sm mt-2 text-center">{% trans "Cuadro de mando de existencias por depósito" %}</p>
+        </div>
+
+        <h2>{% trans "Instalación local, no en la nube" %}</h2>
+        <p>{% blocktrans %}FuelAxFlow se instala en los servidores de la empresa. Los datos no salen de sus instalaciones y el sistema sigue funcionando aunque la conexión falle, que en un sitio forestal es la norma y no la excepción. Existe además acceso móvil para la captura en campo.{% endblocktrans %}</p>
+
+        <h2>{% trans "Estado actual" %}</h2>
+        <p>{% blocktrans %}FuelAxFlow se encuentra en <b>despliegue piloto</b> en la República del Congo y en Camerún, sobre instalación local en servidores del cliente. Estamos abiertos a incorporar nuevas empresas al programa piloto en condiciones preferentes.{% endblocktrans %}</p>
+
+        <p><a class="btn btn-lg btn-cta shadow-lg mt-3" href="{% url 'contact:contact' %}">{% trans "Solicitar una demostración" %}</a></p>
+
+    </div>
+</div>
+{% endblock %}

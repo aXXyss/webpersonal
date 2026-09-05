@@ -1,0 +1,43 @@
+{% extends 'core/base.html' %}
+{% load i18n %}
+{% load static %}
+
+{% block title %}{% trans "Infraestructura y servidores" %}{% endblock %}
+
+{% block meta_description %}{% blocktrans %}Servidores Linux, virtualización Proxmox y VMware, copias de seguridad y continuidad para empresas con sitios remotos. Modernización de infraestructuras obsoletas.{% endblocktrans %}{% endblock %}
+
+{% block background %}{% static 'core/img/infra-bg.webp' %}{% endblock %}
+
+{% block extra_css %}
+<link rel="preload" as="image" href="{% static 'core/img/infra-bg.webp' %}" type="image/webp" fetchpriority="high">
+{% endblock %}
+
+{% block headers %}
+<h1 class="text-white font-weight-black">{% trans "Infraestructura y servidores" %}</h1>
+<p class="lead text-white mt-3">{% trans "Virtualización, continuidad y sistemas para sitios remotos" %}</p>
+{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-lg-9">
+
+        <h2>{% trans "Servidores donde la conexión no es fiable" %}</h2>
+        <p>{% blocktrans %}Una fábrica en el bosque o una oficina a miles de kilómetros no puede depender de que internet funcione para operar. Monto infraestructuras <b>locales</b> que siguen trabajando cuando el enlace se cae y sincronizan cuando vuelve.{% endblocktrans %}</p>
+
+        <h2>{% trans "Virtualización con Proxmox" %}</h2>
+        <p>{% blocktrans %}Instalación y administración de entornos <b>Proxmox</b>: máquinas virtuales, contenedores, aislamiento de servicios y aprovechamiento del hardware existente en lugar de comprar un servidor por aplicación. Solución de código abierto, sin licencias por socket ni sorpresas de facturación.{% endblocktrans %}</p>
+
+        <h2>{% trans "Modernización de sistemas obsoletos" %}</h2>
+        <p>{% blocktrans %}Muchas empresas siguen funcionando sobre versiones fuera de soporte, sin actualizaciones de seguridad y sin plan de recuperación. He trabajado con entornos de ese tipo en producción, migrando servicios críticos —contabilidad, nóminas, dominio, antivirus— hacia plataformas actualizadas sin interrumpir la operación de la empresa.{% endblocktrans %}</p>
+
+        <h2>{% trans "Copias de seguridad y continuidad" %}</h2>
+        <p>{% blocktrans %}Copias automatizadas, externalizadas y verificadas. Una copia que nunca se ha restaurado no es una copia: forma parte del trabajo comprobar que la recuperación funciona antes de necesitarla.{% endblocktrans %}</p>
+
+        <h2>{% trans "Administración de sistemas" %}</h2>
+        <p>{% blocktrans %}Servidores <b>Linux</b> (Debian, Ubuntu), <b>nginx</b> y Apache, bases de datos <b>MariaDB</b> y <b>MySQL</b>, certificados, cortafuegos, monitorización y endurecimiento de seguridad. Administración remota y desplazamiento a terreno cuando hace falta.{% endblocktrans %}</p>
+
+        <p><a class="btn btn-lg btn-cta shadow-lg mt-3" href="{% url 'contact:contact' %}">{% trans "Hablemos de su infraestructura" %}</a></p>
+
+    </div>
+</div>
+{% endblock %}

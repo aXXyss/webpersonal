@@ -4,8 +4,7 @@
 
 {% block title %}{% blocktrans %}Contact{% endblocktrans %}{% endblock %}
 {% block meta_description %}
-{% translate "Ponte en contacto con aXXyss soluciones para consultas sobre tecnología de la información, programación y
-soluciones Linux. Envía tu mensaje a través de nuestro formulario de contacto." %}
+{% translate "Contacte con aXXyss Soluciones: software de gestión forestal, trazabilidad EUDR, desarrollo web y consultoría IT." %}
 {% endblock %}
 
 {% block background %}{% static 'core/img/contact-bg.jpg' %}{% endblock %}
@@ -20,8 +19,8 @@ soluciones Linux. Envía tu mensaje a través de nuestro formulario de contacto.
 {% endblock %}
 
 {% block headers %}
-<h1 class="text-white font-weight-black pt-3 mt-n5">{% trans "Contacto" %}</h1>
-<p class="lead text-white mt-3">{% trans "Asesoría - Desarrollo - Servicios" %}</p>
+<h1 class="text-white font-weight-black">{% trans "Contacto" %}</h1>
+<p class="lead text-white mt-3">{% trans "Trazabilidad forestal · Software de gestión · Desarrollo web" %}</p>
 {% endblock %}
 
 {% block content %}
@@ -54,6 +53,11 @@ soluciones Linux. Envía tu mensaje a través de nuestro formulario de contacto.
             <div class="input-group input-group-dynamic mb-4">
               <div class="input-group">{{ form.country }}</div>
               {{ form.country.errors }}
+            </div>
+
+            <div class="input-group input-group-dynamic mb-4">
+              <div class="input-group">{{ form.project_type }}</div>
+              {{ form.project_type.errors }}
             </div>
 
             <div class="input-group mb-4 input-group-static">
@@ -96,7 +100,7 @@ soluciones Linux. Envía tu mensaje a través de nuestro formulario de contacto.
 
             <!-- BOTÓN ENVIAR -->
             <div class="col-md-12">
-              <button type="submit" class="btn bg-gradient-dark w-100">
+              <button type="submit" class="btn btn-lg btn-cta">
                 {% trans "Enviar mensaje" %}
               </button>
             </div>
@@ -122,7 +126,7 @@ soluciones Linux. Envía tu mensaje a través de nuestro formulario de contacto.
               <p>Joaquín Denis Tremols</p>
 
               <h6><strong>{% trans "Dirección del responsable" %}</strong></h6>
-              <p>Calle 25 de Abril 10, piso 4, puerta 8, CP 46900, Torrent (Valencia/València) - España</p>
+              <p>Calle 25 de Abril 10, CP 46900, Torrent (Valencia/València) - España</p>
 
               <h6><strong>{% trans "Finalidad" %}</strong></h6>
               <p>{% trans "Sus datos serán usados para poder atender sus solicitudes y prestarle nuestros servicios." %}
