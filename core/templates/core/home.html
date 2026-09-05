@@ -4,7 +4,7 @@
 {% block title %}{% trans "Software de Gestión y Trazabilidad Forestal" %}{% endblock %}
 
 {% block meta_description %}
-    {% trans "Suite de gestión forestal con trazabilidad GPS por tronco, de la prospección al embarque. Conformidad EUDR. En producción desde 2006 en concesiones certificadas de Congo y Camerún." %}
+    {% trans "Software de gestión y trazabilidad forestal: GPS por tronco, de la prospección al embarque. Conformidad EUDR. En producción desde 1997 en concesiones certificadas OLB de República del Congo y Camerún." %}
 {% endblock %}
 
 {% block background %}{% load static %}{% static 'core/img/home-bg.jpg' %}{% endblock %}
@@ -106,16 +106,16 @@
 
 
 {# ==================== 4. PRUEBA ==================== #}
-<div class="row align-items-center mb-5">
+<div class="row align-items-start mb-5">
     <div class="col-lg-4 col-md-5 mb-4 mb-md-0">
         <picture>
-            <source srcset="{% static 'core/img/desarrollador.webp' %}" type="image/webp">
-            <img class="img-fluid rounded shadow" src="{% static 'core/img/desarrollador.jpg' %}"
-                 alt="{% trans 'Joaquin Denis - Software de gestión forestal' %}" width="692" height="462">
+            <source srcset="{% static 'core/img/parque-troncos.webp' %}" type="image/webp">
+                <img class="img-fluid rounded shadow" src="{% static 'core/img/parque-troncos.jpg' %}"
+                 alt="{% trans 'Troncos marcados e inventariados en parque forestal' %}" width="800" height="600">
         </picture>
     </div>
     <div class="col-lg-8 col-md-7">
-        <h2>{% trans "Casi treinta años en producción, no una promesa" %}</h2>
+        <h2 class="mt-0">{% trans "Casi treinta años en producción, no una promesa" %}</h2>
 
         <p>{% blocktrans %}Desarrollo software para la industria forestal desde <b>1997</b>. La suite está en explotación continua en la <b>República del Congo desde 2006</b> y en <b>Camerún desde 2013</b>. Ambas empresas están <b>certificadas OLB</b> (Origen y Legalidad de la Madera, Bureau Veritas), en 2022 y 2026 respectivamente.{% endblocktrans %}</p>
 

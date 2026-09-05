@@ -37,7 +37,7 @@
       <link rel="alternate" hreflang="fr-FR" href="https://axxyss.com/fr{{ request.path|slice:'3:' }}" />
     {% endif %}
   {% endfor %}
-  <link rel="alternate" hreflang="x-default" href="https://axxyss.com/es{{ request.path|slice:'3:' }}" />
+    <link rel="alternate" hreflang="x-default" href="https://axxyss.com/fr{{ request.path|slice:'3:' }}" />
   {% endblock %}
 
 
@@ -72,11 +72,15 @@
     "latitude": 39.43,
     "longitude": -0.46
   },
-  "jobTitle": "Programador Web Django",
-  "sameAs": [
-    "https://www.linkedin.com/in/joaquin-denis/",
-    "https://www.instagram.com/axxyss_sol/"
-  ]
+  "jobTitle": "Desarrollador de software de gestión y trazabilidad forestal",
+  "areaServed": [
+    {"@type": "Country", "name": "Cameroun"},
+    {"@type": "Country", "name": "République du Congo"},
+    {"@type": "Country", "name": "Gabon"},
+    {"@type": "Country", "name": "Côte d'Ivoire"},
+    {"@type": "Country", "name": "España"},
+    {"@type": "Country", "name": "France"}
+  ],
 }
 </script>
 
