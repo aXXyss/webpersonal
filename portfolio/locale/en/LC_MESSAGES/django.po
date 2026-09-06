@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-04-29 16:42+0200\n"
+"POT-Creation-Date: 2026-09-06 19:51+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,20 +17,21 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: portfolio/templates/portfolio/project_detail.html:22
+#: templates/portfolio/project_detail.html:41
+#: templates/portfolio/project_detail.html:43
 msgid "Visitar sitio web"
 msgstr "Visit website"
 
-#: portfolio/templates/portfolio/project_detail.html:24
+#: templates/portfolio/project_detail.html:45
 msgid "Volver a la lista de proyectos"
 msgstr "Return to the list of projects"
 
-#: portfolio/templates/portfolio/project_list.html:5
-#: portfolio/templates/portfolio/project_list.html:11
+#: templates/portfolio/project_list.html:5
+#: templates/portfolio/project_list.html:56
 msgid "Portafolio"
 msgstr "Portfolio"
 
-#: portfolio/templates/portfolio/project_list.html:6
+#: templates/portfolio/project_list.html:6
 msgid ""
 "Explora mi portfolio de proyectos en tecnología de la información, "
 "desarrollo de software y soluciones Linux. Mira ejemplos de mi trabajo y "
@@ -39,14 +40,26 @@ msgstr ""
 "Explore my portfolio of projects in information technology, software "
 "development, and Linux solutions. See examples of my work and experience."
 
-#: portfolio/templates/portfolio/project_list.html:12
-msgid "Aplicaciones"
-msgstr "Applications"
+#: templates/portfolio/project_list.html:57
+msgid "Proyectos destacados"
+msgstr "Featured projects"
 
-#: portfolio/templates/portfolio/project_list.html:24
-msgid "Ver detalles"
-msgstr "See details"
+#: templates/portfolio/project_list.html:86
+msgid "Proyecto destacado"
+msgstr "Featured project"
 
-#: portfolio/templates/portfolio/project_list.html:31
+#: templates/portfolio/project_list.html:101
+#: templates/portfolio/project_list.html:142
+msgid "Ver proyecto"
+msgstr "View project"
+
+#: templates/portfolio/project_list.html:155
+#: templates/portfolio/project_list.html:159
 msgid "No hay proyectos disponibles."
 msgstr "There are no projects available."
+
+#~ msgid "Aplicaciones"
+#~ msgstr "Applications"
+
+#~ msgid "Ver detalles"
+#~ msgstr "See details"
