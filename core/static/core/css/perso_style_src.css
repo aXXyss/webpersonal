@@ -419,3 +419,9 @@ h2.mt-0 {
     font-size: 1.6rem;
   }
 }
+
+@media (max-width: 768px) {
+  .page-header {
+    padding-top: 180px;
+  }
+}
