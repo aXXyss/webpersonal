@@ -106,7 +106,7 @@ body {
   height: 70vh;
   background-size: cover;
   background-position: center;
-  padding-top: clamp(160px, 14vh, 220px);
+  padding-top: clamp(140px, 14vh, 220px);
 }
 @media (min-width: 600px) {
   .page-header {
@@ -413,4 +413,9 @@ body.index-page {
 
 h2.mt-0 {
   margin-top: 0 !important;
+}
+@media (max-width: 768px) {
+  .home-hero-title {
+    font-size: 1.6rem;
+  }
 }
