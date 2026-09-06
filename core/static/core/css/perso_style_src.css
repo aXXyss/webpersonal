@@ -52,6 +52,7 @@ Ok to proceed? (y) @keyframes wa-fade-in {
 }
 .logo {
   height: 80px;
+  width: auto;
 }
 .navbar {
   font-size: 18px;
@@ -59,6 +60,7 @@ Ok to proceed? (y) @keyframes wa-fade-in {
 @media (max-width: 768px) {
   .logo {
     height: 50px;
+    width: auto;
   }
   .navbar {
     padding: 10px 20px;
