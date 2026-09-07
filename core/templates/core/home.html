@@ -108,11 +108,13 @@
 {# ==================== 4. PRUEBA ==================== #}
 <div class="row align-items-start mb-5">
     <div class="col-lg-4 col-md-5 mb-4 mb-md-0">
-        <picture>
-            <source srcset="{% static 'core/img/parque-troncos.webp' %}" type="image/webp">
-                <img class="img-fluid rounded shadow" src="{% static 'core/img/parque-troncos.jpg' %}"
-                 alt="{% trans 'Troncos marcados e inventariados en parque forestal' %}" width="800" height="600">
-        </picture>
+        <img
+          src="{% static 'core/img/parque-troncos-800.webp' %}"
+          srcset="{% static 'core/img/parque-troncos-400.webp' %} 400w, {% static 'core/img/parque-troncos-800.webp' %} 800w"
+          sizes="(max-width: 768px) 346px, 380px"
+          class="img-fluid rounded shadow"
+          alt="{% trans 'Troncos marcados e inventariados en parque forestal' %}"
+          width="800" height="600" loading="lazy">
     </div>
     <div class="col-lg-8 col-md-7">
         <h2 class="mt-0">{% trans "Casi treinta años en producción, no una promesa" %}</h2>
