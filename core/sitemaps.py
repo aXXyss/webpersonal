@@ -7,7 +7,17 @@ class StaticViewSitemap(Sitemap):
     changefreq = 'monthly'
 
     def items(self):
-        return ['home', 'about', 'contact:contact', 'demos']
+        return [
+            'home',
+            'about',
+            'contact:contact',
+            'demos',
+            'servicios',
+            'infraestructura',
+            'fuelaxflow',
+            'blog:post_list',
+            'portfolio:project_list',
+        ]
       
 
     def location(self, item):
