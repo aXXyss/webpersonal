@@ -135,24 +135,6 @@
                       data-bs-placement="bottom" title="About">{% trans "Sobre mí" %}</p>
                   </a>
                 </li>
-                <li class="nav-item ms-lg-auto">
-                  <a class="nav-link px-lg-3 py-3 py-lg-4" href="{% url 'portfolio:project_list' %}">
-                    <p class="d-inline text-sm z-index-1 font-weight-semibold" data-bs-toggle="tooltip"
-                      data-bs-placement="bottom" title="Portfolio">{% trans "Portafolio" %}</p>
-                  </a>
-                </li>
-                <li class="nav-item ms-lg-auto">
-                  <a class="nav-link px-lg-3 py-3 py-lg-4" href="{% url 'contact:contact' %}">
-                    <p class="d-inline text-sm z-index-1 font-weight-semibold" data-bs-toggle="tooltip"
-                      data-bs-placement="bottom" title="Contact">{% trans "Contacto" %}</p>
-                  </a>
-                </li>
-                <li class="nav-item ms-lg-auto">
-                  <a class="nav-link px-lg-3 py-3 py-lg-4" href="{% url 'blog:post_list' %}">
-                    <p class="d-inline text-sm z-index-1 font-weight-semibold" data-bs-toggle="tooltip"
-                      data-bs-placement="bottom" title="Blog">{% trans "Blog" %}</p>
-                  </a>
-                </li>
                 <li class="nav-item ms-lg-auto nav-dropdown">
                   <a class="nav-link px-lg-3 py-3 py-lg-4" href="{% url 'servicios' %}">
                     <p class="d-inline text-sm z-index-1 font-weight-semibold">{% trans "Servicios" %}</p>
@@ -165,6 +147,24 @@
                 <li class="nav-item ms-lg-auto">
                   <a class="nav-link px-lg-3 py-3 py-lg-4" href="{% url 'fuelaxflow' %}">
                     <p class="d-inline text-sm z-index-1 font-weight-semibold">FuelAxFlow</p>
+                  </a>
+                </li>
+                <li class="nav-item ms-lg-auto">
+                  <a class="nav-link px-lg-3 py-3 py-lg-4" href="{% url 'portfolio:project_list' %}">
+                    <p class="d-inline text-sm z-index-1 font-weight-semibold" data-bs-toggle="tooltip"
+                      data-bs-placement="bottom" title="Portfolio">{% trans "Portafolio" %}</p>
+                  </a>
+                </li>
+                <li class="nav-item ms-lg-auto">
+                  <a class="nav-link px-lg-3 py-3 py-lg-4" href="{% url 'blog:post_list' %}">
+                    <p class="d-inline text-sm z-index-1 font-weight-semibold" data-bs-toggle="tooltip"
+                      data-bs-placement="bottom" title="Blog">{% trans "Blog" %}</p>
+                  </a>
+                </li>
+                <li class="nav-item ms-lg-auto">
+                  <a class="nav-link px-lg-3 py-3 py-lg-4" href="{% url 'contact:contact' %}">
+                    <p class="d-inline text-sm z-index-1 font-weight-semibold" data-bs-toggle="tooltip"
+                      data-bs-placement="bottom" title="Contact">{% trans "Contacto" %}</p>
                   </a>
                 </li>
                 {% if user.is_authenticated %}
@@ -283,13 +283,13 @@
               <a class="nav-link" href="{% url 'about' %}">› {% trans "Sobre mí" %}</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'fuelaxflow' %}">› FuelAxFlow</a>
-            </li>
-            <li class="nav-item">
               <a class="nav-link" href="{% url 'servicios' %}">› {% trans "Servicios" %}</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{% url 'infraestructura' %}">› {% trans "Infraestructura" %}</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'fuelaxflow' %}">› FuelAxFlow</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{% url 'demos' %}">› {% trans "Demos" %}</a>
