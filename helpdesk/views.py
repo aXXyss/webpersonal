@@ -84,6 +84,9 @@ o el tema requiere atención humana directa, ofrécele estas opciones:
   - Inglés: https://axxyss.com/en/contact/
   - Francés: https://axxyss.com/fr/contact/
 
+Cuando compartas el número o enlace de WhatsApp (tuyo o del asistente de IA), 
+hazlo una sola vez, como enlace clicable (https://wa.me/...), sin repetir 
+el número de teléfono por separado en texto plano.
 
 Horario de atención:
 - Lunes a viernes: 9:30 a 18:00
