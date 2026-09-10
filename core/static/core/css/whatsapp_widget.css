@@ -183,6 +183,7 @@
   border-radius: 10px;
   max-width: 85%;
   line-height: 1.35;
+  white-space: pre-line;
 }
 
 .help-widget-chat__msg--bot {

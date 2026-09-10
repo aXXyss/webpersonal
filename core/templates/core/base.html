@@ -610,10 +610,33 @@
     var input = document.getElementById('helpWidgetInput');
     var messages = document.getElementById('helpWidgetMessages');
 
+    function escapeHtml(text) {
+      var div = document.createElement('div');
+      div.textContent = text;
+      return div.innerHTML;
+    }
+
+    function linkify(text) {
+      var urlRegex = /(https?:\/\/[^\s<]+)/g;
+      return text.replace(urlRegex, function (url) {
+        return '<a href="' + url + '" target="_blank" rel="noopener">' + url + '</a>';
+      });
+    }
+
     function addMessage(text, sender) {
       var el = document.createElement('div');
       el.className = 'help-widget-chat__msg help-widget-chat__msg--' + sender;
-      el.textContent = text;
+
+      if (sender === 'bot') {
+        // Escapamos primero (seguridad), luego convertimos saltos de línea y URLs
+        var safe = escapeHtml(text);
+        safe = safe.replace(/\n/g, '<br>');
+        safe = linkify(safe);
+        el.innerHTML = safe;
+      } else {
+        el.textContent = text; // el mensaje del usuario siempre como texto plano
+      }
+
       messages.appendChild(el);
       messages.scrollTop = messages.scrollHeight;
     }
