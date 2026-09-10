@@ -661,8 +661,24 @@
           },
           body: JSON.stringify({ message: text })
         })
-          .then(function (res) { return res.json(); })
+          .then(function (res) {
+            if (res.status === 403) {
+              return res.json().then(function (data) {
+                if (data.error === 'blocked') {
+                  addMessage(data.reply || "{% trans 'Este chat ha sido cerrado por seguridad.' %}", 'bot');
+                  input.disabled = true;
+                  input.placeholder = "{% trans 'Chat cerrado' %}";
+                  form.querySelector('.help-widget-chat__send').disabled = true;
+                  return null; // señal para no seguir procesando en el siguiente .then()
+                }
+                // 403 pero no es un bloqueo (ej. not_verified) — tratamos como error genérico
+                throw new Error('forbidden');
+              });
+            }
+            return res.json();
+          })
           .then(function (data) {
+            if (data === null) return; // ya se gestionó el bloqueo arriba
             if (data.reply) {
               addMessage(data.reply, 'bot');
             } else {
@@ -673,8 +689,11 @@
             addMessage("{% trans 'Error de conexión. Prueba por WhatsApp.' %}", 'bot');
           })
           .finally(function () {
-            input.disabled = false;
-            input.focus();
+            // No reactivamos el input si el chat quedó bloqueado
+            if (!input.disabled || input.placeholder !== "{% trans 'Chat cerrado' %}") {
+              input.disabled = false;
+              input.focus();
+            }
           });
       });
     }
