@@ -193,14 +193,14 @@
 }
 
 .help-widget-chat__msg--bot a {
-  color: #344767;
-  font-weight: 600;
-  text-decoration: underline;
+  color: #344767 !important;
+  font-weight: 600 !important;
+  text-decoration: underline !important;
   word-break: break-all;
 }
 
 .help-widget-chat__msg--bot a:hover {
-  color: #25D366;
+  color: #25D366 !important;
 }
 
 .help-widget-chat__msg--user {
