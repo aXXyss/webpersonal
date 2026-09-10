@@ -192,6 +192,17 @@
   align-self: flex-start;
 }
 
+.help-widget-chat__msg--bot a {
+  color: #344767;
+  font-weight: 600;
+  text-decoration: underline;
+  word-break: break-all;
+}
+
+.help-widget-chat__msg--bot a:hover {
+  color: #25D366;
+}
+
 .help-widget-chat__msg--user {
   background: #344767;
   color: #fff;
