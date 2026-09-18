@@ -81,6 +81,26 @@ def recibir_mensaje(request):
             cache.set(dedup_key, True, timeout=3600)
 
         numero = mensaje_meta['from']
+        tipo_mensaje = mensaje_meta.get('type', 'text')
+
+        # Los mensajes de voz/audio aún no se transcriben — de momento avisamos
+        # con claridad en vez de dejar que la llamada a Claude falle en silencio
+        # con un mensaje vacío.
+        if tipo_mensaje != 'text':
+            nombre = cambio.get('contacts', [{}])[0].get('profile', {}).get('name', '')
+            conversacion, _ = Conversacion.objects.get_or_create(
+                numero_cliente=numero,
+                defaults={'nombre_cliente': nombre}
+            )
+            respuesta = (
+                "Por ahora solo puedo leer mensajes de texto, no notas de voz. "
+                "¿Puedes escribir tu pregunta? Así te ayudo al momento. Estamos "
+                "trabajando para que los mensajes de voz también funcionen próximamente."
+            )
+            Mensaje.objects.create(conversacion=conversacion, direccion=Mensaje.SALIENTE, texto=respuesta)
+            enviar_mensaje_whatsapp(numero, respuesta)
+            return JsonResponse({'status': 'ok'})
+
         texto_entrante = mensaje_meta.get('text', {}).get('body', '')
 
         nombre = cambio.get('contacts', [{}])[0].get('profile', {}).get('name', '')
