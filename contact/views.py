@@ -62,13 +62,14 @@ def contact(request):
                 return render(request, 'contact/success.html')
 
             # 2. Bloqueo por palabras de spam comunes
-            spam_words = [
-                "bonus", "casino", "spin", "free spins", "flash sale",
-                "viagra", "promotion", "crypto", "gambling", "porn",
-                "bet", "loan", "investment"
+            spam_patterns = [
+                r'\bbonus\b', r'\bcasino\b', r'\bfree spins?\b', r'\bflash sale\b',
+                r'\bviagra\b', r'\bcrypto\b', r'\bgambling\b', r'\bporn\b',
+                r'google my business', r'\bgmb\b',
+                r'rese[ñn]as gratis', r'eliminaci[oó]n de rese[ñn]as',
             ]
 
-            if any(word in content.lower() for word in spam_words):
+            if any(re.search(p, content.lower()) for p in spam_patterns):
                 logger.warning(f"SPAM BLOQUEADO (PALABRAS CLAVE): {content[:60]}")
                 return render(request, 'contact/success.html')
 
@@ -164,15 +165,6 @@ def contact(request):
                 )
                 logger.info(f"Email enviado desde {email} a contacto@axxyss.com")
 
-                # Copia al remitente
-                send_mail(
-                    f'Copy of Your Message to axxyss.com',
-                    f'Thank you for your message! Here is a copy of what you sent:\n\n{body}',
-                    settings.DEFAULT_FROM_EMAIL,
-                    [email],
-                    fail_silently=True,
-                )
-                logger.info(f"Copia enviada a {email}")
 
                 return render(request, 'contact/success.html')
 
