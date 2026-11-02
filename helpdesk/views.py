@@ -270,9 +270,9 @@ def chat(request):
             messages=history,
         )
     except anthropic.APIError as e:
-        print("ERROR ANTHROPIC:", repr(e))
+        logger.error(f"Error de la API de Anthropic: {e!r}")
         _log_chat(session_key, ip, user_message, '', flagged=sospechoso)
-        return JsonResponse({'error': 'ai_unavailable', 'detail': str(e)}, status=503)
+        return JsonResponse({'error': 'ai_unavailable'}, status=503)
 
     assistant_reply = ''.join(
         block.text for block in response.content if block.type == 'text'
