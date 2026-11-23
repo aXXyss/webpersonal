@@ -85,7 +85,6 @@
 }
 </script>
 
-<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 
   {% block extra_meta %}
   <!-- Meta tags adicionales para páginas específicas -->
@@ -476,10 +475,8 @@
     <img src="{% static 'core/img/aXXyss.webp' %}" alt="aXXyss" class="help-widget-panel__avatar">
     <p class="help-widget-panel__name">aXXyss {% trans "Soluciones" %}</p>
 
-    <div id="helpWidgetTurnstile" class="cf-turnstile"
+    <div id="helpWidgetTurnstile"
         data-sitekey="{{ TURNSTILE_SITE_KEY }}"
-        data-callback="onHelpWidgetVerified"
-        data-theme="light"
         style="display:none; margin-bottom: 10px;">
     </div>
 
@@ -593,8 +590,27 @@
       if (parts.length === 2) return parts.pop().split(';').shift();
     }
 
+    var turnstileRequested = false;
+    function loadTurnstile() {
+      if (turnstileRequested) return;
+      turnstileRequested = true;
+      var s = document.createElement('script');
+      s.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit';
+      s.async = true;
+      s.onload = function () {
+        turnstile.render('#helpWidgetTurnstile', {
+          sitekey: turnstileBox.getAttribute('data-sitekey'),
+          callback: window.onHelpWidgetVerified,
+          theme: 'light'
+        });
+      };
+      s.onerror = function () { showTurnstileError(); };
+      document.head.appendChild(s);
+    }
+
     toggleBtn.addEventListener('click', function () {
       panel.classList.toggle('is-open');
+      if (panel.classList.contains('is-open') && !verified) { loadTurnstile(); }
     });
     closeBtn.addEventListener('click', function () {
       panel.classList.remove('is-open');
